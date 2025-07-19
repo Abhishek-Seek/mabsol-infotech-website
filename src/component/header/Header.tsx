@@ -26,28 +26,30 @@ const Header = () => {
                 <div>
                     <Image src={img} alt="imgs" height={150} width={150} />
                 </div>
-                <nav data-aos="fade-up" className='lg:flex hidden justify-center items-center gap-10 text-white text-sm font-bold'>
-                    <a href="">Home <DownOutlined /></a>
-                    <a href="">About Us <DownOutlined /></a>
-                    <a href="">Service <DownOutlined /></a>
-                    <a href="">Software Products <DownOutlined /></a>
-                    <a href="">Mabsol Portal <DownOutlined /></a>
-                </nav>
-                <div className='lg:flex hidden gap-4 items-center'>
-                    <div data-aos="fade-down"
-                        data-aos-easing="linear"
-                        data-aos-duration="700" >
-                        <Button className='!bg-green-700 !text-white !py-5 !px-5'>
-                            Raise a Support Ticket
-                        </Button>
-                    </div>
+                <div className='flex justify-center items-center gap-20'>
+                    <nav data-aos="fade-up" className='lg:flex hidden justify-center items-center gap-10 text-white text-sm font-bold'>
+                        <a href="">Home <DownOutlined /></a>
+                        <a href="">About Us <DownOutlined /></a>
+                        <a href="">Service <DownOutlined /></a>
+                        <a href="">Software Products <DownOutlined /></a>
+                        <a href="">Mabsol Portal <DownOutlined /></a>
+                    </nav>
+                    <div className='lg:flex hidden gap-4 items-center'>
+                        <div data-aos="fade-down"
+                            data-aos-easing="linear"
+                            data-aos-duration="700" >
+                            <Button className='!bg-green-700 !text-white !py-5 !px-5'>
+                                Raise a Support Ticket
+                            </Button>
+                        </div>
 
-                    <div data-aos="fade-down"
-                        data-aos-easing="linear"
-                        data-aos-duration="700">
-                        <Button className=' !text-white !py-5 !bg-blue-950'>
-                            contact Us
-                        </Button>
+                        <div data-aos="fade-down"
+                            data-aos-easing="linear"
+                            data-aos-duration="700">
+                            <Button className=' !text-white !py-5 !bg-blue-950'>
+                                contact Us
+                            </Button>
+                        </div>
                     </div>
                 </div>
 
@@ -62,7 +64,7 @@ const Header = () => {
                 placement='right'
                 open={open}
                 onClose={() => { setOpen(false) }}
-                // className='px-4'
+            // className='px-4'
             >
                 <nav data-aos="fade-up" className='flex flex-col gap-6 text-sm font-bold'>
                     <a href="">Home</a>

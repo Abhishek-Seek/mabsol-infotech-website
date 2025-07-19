@@ -1,28 +1,38 @@
-// eslint.config.js
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import { defineConfig } from "eslint/config";
+import js from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import pluginReact from 'eslint-plugin-react';
+import pluginNext from 'eslint-plugin-next'; // ✅ Add this
+import globals from 'globals';
 
-export default defineConfig([
+export default [
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    files: ['**/*.{js,ts,jsx,tsx}'],
     languageOptions: {
-      globals: globals.browser,
+      parser: tseslint.parser,
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: 'module',
+        ecmaFeatures: { jsx: true },
+      },
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
     },
     plugins: {
-      js,
       react: pluginReact,
+      next: pluginNext, // ✅ Add plugin
     },
     rules: {
-      "react/react-in-jsx-scope": "off",
-      "react/no-unescaped-entities": "off",
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
     },
-    extends: [
-      js.configs.recommended,
-      ...pluginReact.configs.recommended, // ✅ This is safe for most ESLint versions
-    ],
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
   },
-  ...tseslint.configs.recommended, // ✅ Spread the array into config
-]);
+];
