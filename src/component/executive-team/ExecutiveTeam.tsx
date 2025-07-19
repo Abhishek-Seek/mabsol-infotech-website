@@ -39,7 +39,7 @@ const ExecutiveTeam = () => {
           <Card
             key={index}
             className="!bg-gray-100 shadow-md rounded-2xl"
-            bodyStyle={{ padding: 0 }}
+            styles={{body:{padding:0}}}
           >
             <div className="p-4 sm:p-6 md:p-8 lg:p-10">
               {/* Image */}

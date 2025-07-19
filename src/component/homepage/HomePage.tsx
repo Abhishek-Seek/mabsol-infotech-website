@@ -43,11 +43,11 @@ const HomePage = () => {
             </div>
 
             <div className='relative z-10 flex flex-col h-full justify-center items-center gap-6 px-4 text-center bg-black/50 text-white'>
-                <h1 className='text-5xl text-center font-bold max-w-[700px]'>
+                <h1 className='text-3xl lg:text-5xl text-center font-bold max-w-[700px] pt-6'>
                     Smart Solutions for Smarter Business Management
                 </h1>
 
-                <p className='text-center max-w-[800px] w-full leading-8'>
+                <p className='text-center lg:max-w-[800px] w-full lg:leading-8'>
                     Mabsol Infotech empowers businesses with cutting-edge software solutions like Marg, Tally, MR Reporting, and greytHR. From accounting to HR management, we simplify your operations and ensure seamless workflows with top-notch customer support.
                 </p>
 
@@ -63,7 +63,7 @@ const HomePage = () => {
                     </Button>
                 </div>
 
-                <div data-aos="fade-up" className='absolute -bottom-20 flex justify-center items-center gap-4 lg:px-40'>
+                <div data-aos="fade-up" className='absolute -bottom-32 lg:-bottom-20 flex justify-center items-center gap-4 lg:px-40'>
                     {image.map((item, index) => (
                         <Card key={index} className='h-[200px] w-[200px]'>
                             <img src={item.image} alt="" />

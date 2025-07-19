@@ -5,7 +5,7 @@ import React from 'react'
 const CaseStudy = () => {
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 lg:px-60 py-20'>
-            <Card data-aos="fade-right" bodyStyle={{ padding: "40px 20px 40px 20px" }} className='!bg-blue-800'>
+            <Card data-aos="fade-right"  styles={{ body: { padding: '40px 20px 40px 20px' } }} className='!bg-blue-800'>
                 <div className='h-[400px] overflow-hidden'>
                     <img src="images/slider2.webp" alt="" className='h-[100%] w-[100%] rounded-2xl overflow-hidden' />
                 </div>

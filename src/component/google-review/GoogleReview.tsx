@@ -70,9 +70,9 @@ const GoogleReview = () => {
                         </div>
                         <div className='flex flex-col justify-center items-center gap-2'>
                             <h1 className='font-bold'>Mabsol Infotech Pvt.Ltd.</h1>
-                            <p className='text-xl text-yellow-500 font-bold flex gap-2 items-center'>
+                            <div className='text-xl text-yellow-500 font-bold flex gap-2 items-center'>
                                 4.9 <Rate onChange={setValue} value={value} />
-                            </p>
+                            </div>
                             <p>Based on 42 reviews</p>
                             <p className='text-gray-700'>powered by Google</p>
                             <Button type='primary'>
