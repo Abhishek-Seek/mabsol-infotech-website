@@ -29,11 +29,20 @@ const image = [
 
 ]
 
-
 const HomePage = () => {
     return (
-        <div className='flex flex-col h-[600px] justify-center items-center gap-6 '>
-            <div className='flex flex-col justify-center items-center'>
+        <div className='relative h-[80vh] w-full overflow-hidden'>
+
+            <div
+                style={{
+                    backgroundImage: `url(images/background.jpg)`
+
+                }}
+                className='absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat z-0'
+            >
+            </div>
+
+            <div className='relative z-10 flex flex-col h-full justify-center items-center gap-6 px-4 text-center bg-black/50 text-white'>
                 <h1 className='text-5xl text-center font-bold max-w-[700px]'>
                     Smart Solutions for Smarter Business Management
                 </h1>
@@ -41,28 +50,30 @@ const HomePage = () => {
                 <p className='text-center max-w-[800px] w-full leading-8'>
                     Mabsol Infotech empowers businesses with cutting-edge software solutions like Marg, Tally, MR Reporting, and greytHR. From accounting to HR management, we simplify your operations and ensure seamless workflows with top-notch customer support.
                 </p>
-            </div>
 
-            <div className='flex gap-6'>
-                <Button className='
-                      !py-6 !px-10 !rounded-full bg-transparent
+                <div data-aos="fade-up" className='flex gap-6'>
+                    <Button className='
+                      !py-6 !px-10 !rounded-full bg-transparent hover:!bg-blue-900 hover:!text-white
                     '>
-                    About Us
-                </Button>
+                        About Us
+                    </Button>
 
-                <Button className='!bg-green-600  !py-6 !px-10 !rounded-full !text-white'>
-                    Contact Us
-                </Button>
+                    <Button className='!bg-green-600  !py-6 !px-10 !rounded-full !text-white hover:!bg-blue-900 hover:!text-white'>
+                        Contact Us
+                    </Button>
+                </div>
+
+                <div data-aos="fade-up" className='absolute -bottom-20 flex justify-center items-center gap-4 lg:px-40'>
+                    {image.map((item, index) => (
+                        <Card key={index} className='h-[200px] w-[200px]'>
+                            <img src={item.image} alt="" />
+                        </Card>
+
+                    ))}
+                </div>
             </div>
 
-            <div className='flex justify-center items-center gap-10 lg:px-40'>
-                {image.map((item, index) => (
-                    <Card key={index} className='h-[200px] w-[200px]'>
-                        <img src={item.image} alt="" />
-                    </Card>
 
-                ))}
-            </div>
         </div>
     )
 }
