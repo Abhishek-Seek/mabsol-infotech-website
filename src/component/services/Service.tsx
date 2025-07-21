@@ -5,7 +5,7 @@ import React from 'react'
 
 const Service = () => {
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-10 lg:px-20 px-6 pt-20'>
+        <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-10 lg:px-20 px-6 pt-32'>
              <Card data-aos="fade-right"
                 styles={{
                     body: {

@@ -31,7 +31,7 @@ const image = [
 
 const HomePage = () => {
     return (
-        <div className='relative h-[80vh] w-full overflow-hidden'>
+        <div className='relative h-[80vh] w-full'>
 
             <div
                 style={{

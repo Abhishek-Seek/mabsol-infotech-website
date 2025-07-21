@@ -3,7 +3,7 @@ import React from 'react'
 
 const OurUsp = () => {
   return (
-    <div className='h-[400px]'>
+    <div className='py-10'>
       <Row className='lg:px-60'>
         <Col span={12}>
           <div className='flex justify-center items-center'>
