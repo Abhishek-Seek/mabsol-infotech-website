@@ -30,7 +30,7 @@ const reviews = [
     },
     {
         text: "Very good company. Helpful staff and good environment.",
-        author_name: "Bhan singh",
+        author_name: "Bhag singh",
         rating: 5,
         relative_time_description: "3 days ago"
     }

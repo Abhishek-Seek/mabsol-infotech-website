@@ -3,6 +3,7 @@ import CaseStudy from "@/component/case-study/CaseStudy";
 import CompanyProformance from "@/component/company-Proformance/CompanyProformance";
 import ContactUs from "@/component/contact-us/ContactUs";
 import ExecutiveTeam from "@/component/executive-team/ExecutiveTeam";
+import Footer from "@/component/footer/Footer";
 import GoogleReview from "@/component/google-review/GoogleReview";
 import Header from "@/component/header/Header";
 import HomePage from "@/component/homepage/HomePage";
@@ -31,6 +32,7 @@ export default function Home() {
       <OurTestimonial/>
       <ContactUs/>
       <GoogleReview/>
+      <Footer/>
     </>
   );
 }

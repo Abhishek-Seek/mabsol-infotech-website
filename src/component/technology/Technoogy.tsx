@@ -4,7 +4,7 @@ import React from 'react'
 
 const Technoogy = () => {
     return (
-        <div className='relative py-20 overflow-hidden px-6 lg:px-60'>
+        <div className='relative py-20 overflow-hidden px-6 lg:px-20'>
             <div
                 className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-20"
                 style={{ backgroundImage: `url(/bg5.jpeg)` }}
@@ -69,7 +69,7 @@ const Technoogy = () => {
                         </p>
                     </div>
                 </div>
-                <div className='h-[400px] lg:h-[600px] w-full overflow-hidden'>
+                <div className='h-[300px] md:h-[400px] lg:h-[600px] w-full overflow-hidden'>
                     <img
                         src="images/section1.webp"
                         alt=""
