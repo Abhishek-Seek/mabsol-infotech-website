@@ -18,7 +18,8 @@ const Service = () => {
           },
         }}
       >
-        <MailFilled className="text-6xl text-blue-700" />
+        {/* <MailFilled /> */}
+        <FcEditImage className="text-6xl text-blue-700" />
         <h1 className="text-3xl font-serif text- font-bold text-blue-800">
           Accounting Software
         </h1>
@@ -27,7 +28,7 @@ const Service = () => {
           for invoicing, GST, and reporting.
         </p>
         <Button className="!bg-blue-800 !py-5 !px-8 !text-white">
-          View<FcEditImage />
+          View
         </Button>
       </Card>
       <Card
@@ -42,14 +43,15 @@ const Service = () => {
           },
         }}
       >
-        <MailFilled className="text-6xl text-blue-700" />
+        {/* <MailFilled/> */}
+        <FcGlobe  className="text-6xl text-blue-700" />
         <h1 className="text-3xl font-serif font-bold text-blue-800">Web Development</h1>
         <p className="text-lg italic">
           We design responsive, user-friendly websites to enhance your online
           presence and drive engagement.
         </p>
          <Button className="!bg-blue-800 !py-5 !px-8 !text-white">
-          View  <FcGlobe />
+          View 
         </Button>
       </Card>
       <Card
@@ -64,14 +66,15 @@ const Service = () => {
           },
         }}
       >
-        <MailFilled className="text-6xl text-blue-700" />
+        {/* <MailFilled/> */}
+         <FcPlanner  className="text-6xl text-blue-700" />
         <h1 className="text-3xl font-serif font-bold text-blue-800">ERP Software</h1>
         <p className="text-lg italic">
           Optimize business operations with ERP solutions that integrate
           inventory, resource planning, and more.
         </p>
          <Button className="!bg-blue-800 !py-5 !px-8 !text-white">
-          View <FcPlanner />
+          View
         </Button>
       </Card>
       <Card
@@ -86,14 +89,15 @@ const Service = () => {
           },
         }}
       >
-        <MailFilled className="text-6xl text-blue-700" />
+        {/* <MailFilled /> */}
+        <FcElectronics  className="text-6xl text-blue-700"/>
         <h1 className="text-3xl font-bold text-blue-800 font-serif">Payroll Software</h1>
         <p className="text-lg italic">
           Automate payroll and compliance with reliable tools like greytHR,
           saving time and ensuring accuracy.
         </p>
           <Button className="!bg-blue-800 !py-5 !px-8 !text-white">
-          View <FcElectronics />
+          View 
         </Button>
       </Card>
     </div>

@@ -7,13 +7,21 @@ import {
   InstagramFilled,
   LinkedinFilled,
 } from "@ant-design/icons";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Footer = () => {
+  const router = useRouter();
+
   const handleScroll = (id: any) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleClick = () => {
+    router.push("/faq");
   };
 
   return (
@@ -62,7 +70,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Email Address *"
-              className="w-full px-4 py-2 rounded mb-3 text-white"
+              className="w-full px-4 py-2 rounded mb-3 text-white "
               required
             />
             <button
@@ -121,18 +129,27 @@ const Footer = () => {
             <li>
               <a href="#">Career</a>
             </li>
+            {/* <li>
+              <a href="#" onClick={handleClick}>
+                FAQ
+              </a>
+            </li> */}
+
             <li>
-              <a href="#">FAQ</a>
+              <Link href="/faq">FAQ</Link>
             </li>
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                handleScroll("Team");
-              }}
-            >
-              Team
-            </a>
+
+            <li>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScroll("Team");
+                }}
+              >
+                Team
+              </a>
+            </li>
             <li>
               <a href="#">Portfolio Single</a>
             </li>

@@ -395,7 +395,7 @@ const Header = () => {
               content={MegaMenu()}
               trigger="hover"
               placement="bottomLeft"
-              overlayInnerStyle={{ padding: 0, borderRadius: 8 }}
+               styles={{ body: { padding: 0,  borderRadius: 8 } }}
             >
               <Button
                 type="text"
@@ -410,7 +410,7 @@ const Header = () => {
               content={Mega()}
               trigger="hover"
               placement="bottomLeft"
-              overlayInnerStyle={{ padding: 0, borderRadius: 8 }}
+               styles={{ body: { padding: 0,  borderRadius: 8 } }}
             >
               <Button
                 type="text"
@@ -426,7 +426,7 @@ const Header = () => {
               content={Content()}
               trigger="hover"
               placement="bottomLeft"
-              overlayInnerStyle={{ padding: 0, borderRadius: 8 }}
+               styles={{ body: { padding: 0,  borderRadius: 8 } }}
             >
               <Button
                 type="text"
@@ -441,7 +441,7 @@ const Header = () => {
               content={MegaMenuContent()}
               trigger="hover"
               placement="bottomLeft"
-              overlayInnerStyle={{ padding: 0, borderRadius: 8 }}
+               styles={{ body: { padding: 0,  borderRadius: 8 } }}
             >
               <Button
                 type="text"
