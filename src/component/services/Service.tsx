@@ -5,7 +5,7 @@ import { FcEditImage, FcElectronics, FcGlobe, FcPlanner } from "react-icons/fc";
 
 const Service = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-10 lg:px-20 px-6 pt-32">
+    <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-10 lg:px-20 px-6 pt-32 bg-white">
       <Card
         data-aos="fade-right"
         styles={{

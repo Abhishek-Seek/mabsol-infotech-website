@@ -43,7 +43,7 @@ const AboutUs = () => {
                         ].map((text, index) => (
                             <li key={index} className="flex items-start gap-2">
                                 <CheckOutlined className="bg-blue-800 !text-white p-1 rounded-full text-sm" />
-                                <span className="text-base italic text-black">{text}</span>
+                                <span className="text-base italic lg:text-black text-white">{text}</span>
                             </li>
                         ))}
                     </ul>
@@ -100,7 +100,7 @@ const AboutUs = () => {
                         ].map((text, index) => (
                             <li key={index} className="flex items-start gap-2">
                                 <CheckOutlined className="bg-blue-800 !text-white p-1 rounded-full text-sm" />
-                                <span className="text-base italic text-black">{text}</span>
+                                <span className="text-base italic lg:text-black text-white">{text}</span>
                             </li>
                         ))}
                     </ul>
@@ -131,7 +131,7 @@ const AboutUs = () => {
                         ].map((text, index) => (
                             <li key={index} className="flex items-start gap-2">
                                 <CheckOutlined className="bg-blue-800 !text-white p-1 rounded-full text-sm" />
-                                <span className="text-base italic text-black">{text}</span>
+                                <span className="text-base italic lg:text-black text-white">{text}</span>
                             </li>
                         ))}
                     </ul>

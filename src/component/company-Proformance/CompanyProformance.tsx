@@ -25,7 +25,7 @@ const CompanyProformance = () => {
                 <h1 className='text-4xl font-bold text-blue-800 py-6'>
                     Results For The Last 3 Years
                 </h1>
-                <p className='text-lg italic'>
+                <p className='text-lg italic text-black'>
                     We will strive to meet all your business necessities and plans. You can rely on easy accessibility to our qualified staff.
                 </p>
                 <p className='text-lg italic py-6'>
