@@ -63,8 +63,8 @@ const Faq = () => {
   ];
 
   return (
-    <div className="h-[90vh] w-[100vw] px-4 lg:px-40">
-      <h1 className="text-5xl font-bold text-center w-full mb-4 underline text-gray-700 pt-10">
+    <div className="lg:h-[90vh] h-full w-[100vw] px-4 lg:px-40 bg-white">
+      <h1 className="text-5xl font-bold text-center w-full mb-4 underline text-gray-700  pt-10">
         FAQ
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 px-4 py-10">

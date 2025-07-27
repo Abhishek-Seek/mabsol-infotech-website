@@ -79,13 +79,13 @@ const OurTestimonial = () => {
     }, []);
 
     return (
-        <div className='py-20 lg:px-20 px-6'>
+        <div className='py-20 lg:px-20 px-6 bg-white'>
             <div className='text-center'>
                 <h1 className='text-blue-800 text-2xl font-bold underline'>
-                    # Our Customer
+                    # Our Testimonial
                 </h1>
 
-                <p className='text-5xl font-bold font-serif py-6'>
+                <p className='text-5xl font-bold font-serif py-6 text-black'>
                     <span className='text-5xl text-blue-800'>What our</span> clients says?
                 </p>
 

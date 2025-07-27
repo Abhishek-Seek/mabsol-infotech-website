@@ -20,9 +20,6 @@ const Footer = () => {
     }
   };
 
-  const handleClick = () => {
-    router.push("/faq");
-  };
 
   return (
     <div className="relative bg-blue-950 text-white pt-16 pb-8 px-4 sm:px-8 lg:px-16">

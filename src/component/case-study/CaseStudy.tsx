@@ -4,7 +4,7 @@ import React from "react";
 
 const CaseStudy = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 lg:px-20 py-20 max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-2 lg:px-20 py-20 max-w-7xl mx-auto text-white">
       <Card
         data-aos="fade-right"
         styles={{ body: { padding: "40px 20px 40px 20px" } }}

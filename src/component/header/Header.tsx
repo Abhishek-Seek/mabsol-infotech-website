@@ -145,36 +145,110 @@ const Header = () => {
     </div>
   );
 
-const content = ()=>(
-    <div className="flex flex-col gap-2 text-blue-600 text-sm font-normal">
+  // const click = () => (
+  //   <div className="flex flex-col gap-2 text-blue-600 text-sm font-normal">
+  //     <a
+  //       href="https://mabsolinfotech.com/product/tally-software-solutions/"
+  //     >
+  //       Tally
+  //     </a>
+  //     <a
+  //       href="https://mabsolinfotech.com/product/marg-erp-software/"
+  //     >
+  //       MArg ERP 9+
+  //     </a>
+  //     <a
+  //       href="https://mabsolinfotech.com/product/mr-reporting-pharma-crm-software/"
+  //     >
+  //       MR Reporting
+  //     </a>
+  //     <a
+  //       href="https://mabsolinfotech.com/human-resources-demo-portal/"
+  //     >
+  //       HR Payroll Portal
+  //     </a>
+  //     <a
+  //       href="https://mabsolinfotech.com/dcr-portal-demo-form/"
+  //     >
+  //       DCR Portal
+  //     </a>
+  //     <a
+  //       href="https://mabsolinfotech.com/institute-portal-demo-form/"
+  //     >
+  //       Institute Portal
+  //     </a>
+  //     <a
+  //       href="https://mabsolinfotech.com/school-portal-demo/"
+  //     >
+  //       School Portal
+  //     </a>
+  //   </div>)
+
+  const contents = () => (
+    <div className="flex flex-col gap-4 text-blue-600 text-sm font-normal">
+      <a
+        href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
+      // className="!text-white"
+      >
+        Employee Attendance
+      </a>
+      <a
+        href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
+      // className="!text-blue-300"
+      >
+        Admin Portal
+      </a>
+      <a
+        href="https://demo.mabsolinfotech.com/crm/employee/employee_register.php"
+      // className="!text-blue-300"
+      >
+        Employee Portal
+      </a>
+      <a
+        href="https://demo.mabsolinfotech.com/crm/"
+      // className="!text-blue-300"
+      >
+        Users Portal
+      </a>
       <a
         href="https://demo.mabsolinfotech.com/hr/admin/index"
-        // target="_blank"
-        // rel="noopener noreferrer"
+      // target="_blank"
+      // rel="noopener noreferrer"
       >
         HR Admin
       </a>
-      <a
+      {/* <a
         href="https://demo.mabsolinfotech.com/hr/employee/"
         // target="_blank"
         // rel="noopener noreferrer"
       >
         Employee Portal
-      </a>
+      </a> */}
       <a
         href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
-        // target="_blank"
-        // rel="noopener noreferrer"
+      // target="_blank"
+      // rel="noopener noreferrer"
       >
         CRM Admin
       </a>
       <a
         href="https://demo.mabsolinfotech.com/institute/admin/"
-        // target="_blank"
-        // rel="noopener noreferrer"
+      // target="_blank"
+      // rel="noopener noreferrer"
       >
         Institute Admin
       </a>
+
+       <a
+          href="https://humanresources.mabsolinfotech.com/admin/index.php"
+        >
+          Admin Login
+        </a>
+        <a
+          href="https://humanresources.mabsolinfotech.com/employee/"
+        >
+          Employee Login
+        </a>
     </div>)
 
   const MegaMenuContent = () => (
@@ -202,7 +276,6 @@ const content = ()=>(
         >
           Employee Login
         </a>
-        {/* <a href="#">Careers</a> */}
       </div>
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <span>HR Payroll Demo</span>
@@ -535,14 +608,19 @@ const content = ()=>(
           data-aos="fade-up"
           className="flex flex-col gap-6 text-sm font-bold"
         >
-          <a href="">Home</a>
+          <a href="/">Home</a>
           <a href="">About Us</a>
           <a href="">Service</a>
+          {/* <Popover content={click} title="Software Product" trigger="click" placement="topRight">
+            <div className="cursor-pointer font-semibold text-sm text-blue-600">
+              Software Product<DownOutlined />
+            </div>
+          </Popover> */}
           <a href="">Software Product</a>
           {/* <a href="">Mabsol Portal</a> */}
-          <Popover content={content} title="Mabsol Portal" trigger="click" placement="topRight">
+          <Popover content={contents} title="Mabsol Portal" trigger="click" placement="topRight">
             <div className="cursor-pointer font-semibold text-sm text-blue-600">
-                 Mabsol Portal <DownOutlined />
+              Mabsol Portal <DownOutlined />
             </div>
           </Popover>
         </nav>

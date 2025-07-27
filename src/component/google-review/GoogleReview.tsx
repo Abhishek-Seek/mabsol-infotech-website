@@ -47,7 +47,7 @@ const GoogleReview = () => {
                     # Google Reviews
                 </h1>
 
-                <p className='text-5xl font-bold font-serif py-6'>
+                <p className='text-5xl font-bold font-serif py-6 text-black'>
                     <span className='text-5xl text-blue-800'>What our</span> clients says?
                 </p>
 
@@ -69,11 +69,11 @@ const GoogleReview = () => {
                             <Image src="/gmlogo.svg" alt='img' height={60} width={60} />
                         </div>
                         <div className='flex flex-col justify-center items-center gap-2'>
-                            <h1 className='font-bold'>Mabsol Infotech Pvt.Ltd.</h1>
+                            <h1 className='font-bold text-black'>Mabsol Infotech Pvt.Ltd.</h1>
                             <div className='text-xl text-yellow-500 font-bold flex gap-2 items-center'>
                                 4.9 <Rate onChange={setValue} value={value} />
                             </div>
-                            <p>Based on 42 reviews</p>
+                            <p className='text-black'>Based on 42 reviews</p>
                             <p className='text-gray-700'>powered by Google</p>
                             <Button type='primary'>
                                 review us on <FcGoogle />

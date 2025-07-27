@@ -2,20 +2,20 @@ import React from 'react'
 
 const OurCustomer = () => {
     return (
-        <div className='lg:px-20 px-6 py-10'>
+        <div className='lg:px-20 px-6 py-10 bg-white'>
             <div className='text-center'>
                 <h1 className='text-blue-800 text-2xl font-bold underline'>
                     # Our Customer
                 </h1>
 
-                <p className='text-4xl font-bold font-serif py-6'>
+                <p className='text-4xl font-bold font-serif py-6 text-black'>
                     <span className='text-4xl text-blue-800'>See What Our Customer Have to Say:</span> Video Review's
                 </p>
 
                 <div className="pt-4 w-full flex justify-center items-center">
                     <hr className="w-[20%] border-t-4 border-blue-800" />
                 </div>
-                <p className='italic pt-10 max-w-[1200px] text-center mx-auto'>
+                <p className='italic pt-10 max-w-[1200px] text-center mx-auto lg:text-black text-white'>
                     At Mabsol Infotech, our commitment to excellence is reflected in the success
                     stories of our clients. We invite you to explore our collection of video testimonials,
                     where real customers share their firsthand experiences with our software solutions,

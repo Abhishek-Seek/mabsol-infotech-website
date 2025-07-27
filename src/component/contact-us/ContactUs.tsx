@@ -4,6 +4,7 @@ import {
     ShopOutlined
 } from '@ant-design/icons';
 import React from 'react';
+import { AiOutlineMail } from 'react-icons/ai';
 
 const ContactUs = () => {
     return (
@@ -13,7 +14,7 @@ const ContactUs = () => {
                     <h1 className="text-4xl md:text-5xl font-semibold text-blue-700 underline">
                         Contact Us
                     </h1>
-                    <p className="text-base md:text-lg italic pt-4">
+                    <p className="text-base md:text-lg italic pt-4 text-black">
                         At Mabsol Infotech, we’re here to assist you with your technology needs.
                         Whether you have questions, need support, or are interested in our services,
                         we’d love to hear from you.
@@ -22,18 +23,18 @@ const ContactUs = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <PhoneFilled className="text-3xl text-blue-600" />
-                        <p className="text-lg font-bold py-2 font-serif">Telephone</p>
+                        <PhoneFilled className="text-3xl !text-green-600" />
+                        <p className="text-lg font-bold py-2 font-serif text-black">Telephone</p>
                         
-                        <div className="text-sm space-y-1">
+                        <div className="text-sm space-y-1 text-black">
                             <a href="">9888914287, 9888914283, 9356042496, 9357815181, 9855605181, 9023415181, 9855145181</a>
                         </div>
                     </div>
 
                     <div>
-                        <ShopOutlined className="text-3xl text-green-600" />
-                        <p className="text-lg font-bold py-2 font-serif">Email</p>
-                        <p className="text-sm break-words">
+                        <AiOutlineMail className="text-3xl !text-red-600" />
+                        <p className="text-lg font-bold py-2 font-serif text-black">Email</p>
+                        <p className="text-sm break-words text-black">
                             <a href="mailto:mabsolinfotech@gmail.com">mabsolinfotech@gmail.com</a><br />
                             <a href="mailto:contact@mabsolinfotech.com">contact@mabsolinfotech.com</a>
                         </p>
@@ -42,17 +43,17 @@ const ContactUs = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <PhoneFilled className="text-3xl text-blue-600" />
-                        <p className="text-lg font-bold py-2 font-serif">Office Phone Number</p>
-                        <p className="italic underline">
+                        <PhoneFilled className="text-3xl !text-green-600" />
+                        <p className="text-lg font-bold py-2 font-serif text-black">Office Phone Number</p>
+                        <p className="italic underline text-black">
                             <a href="tel:+01722575181">+01722575181</a>
                         </p>
                     </div>
 
                     <div>
-                        <HomeOutlined className="text-3xl text-purple-600" />
-                        <p className="text-lg font-bold py-2 font-serif">Working Hours</p>
-                        <p className="italic text-sm">
+                        <HomeOutlined className="text-3xl !text-blue-600" />
+                        <p className="text-lg font-bold py-2 font-serif text-black">Working Hours</p>
+                        <p className="italic text-sm text-black">
                             Monday to Saturday<br />
                             10:00 am to 6:30 pm (Except Holidays)
                         </p>
