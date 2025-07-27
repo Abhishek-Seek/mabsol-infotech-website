@@ -28,7 +28,7 @@ const CompanyProformance = () => {
                 <p className='text-lg italic text-black'>
                     We will strive to meet all your business necessities and plans. You can rely on easy accessibility to our qualified staff.
                 </p>
-                <p className='text-lg italic py-6'>
+                <p className='text-lg italic py-6 text-black'>
                     Feel free to have a look at the services we are providing and to contact us for a detailed review of your case and a quote. Stay up-to-date and receive professional advice on specific regulatory requirements.
                 </p>
                 <Button type='primary' className='!px-10 !py-5 !font-bold'>

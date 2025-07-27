@@ -21,7 +21,7 @@ const productData = [
 
 const OurProduct = () => {
   return (
-    <div className="py-10 lg:py-20 lg:px-20 px-6">
+    <div className="py-10 lg:py-20 lg:px-20 px-6 bg-white">
       <h1
         data-aos="fade-down"
         data-aos-easing="linear"
@@ -31,7 +31,7 @@ const OurProduct = () => {
         Our Products
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center max-w-6xl mx-auto py-6 bg-white">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center max-w-6xl mx-auto py-6">
         {productData.map((product, index) => (
           <Card
             key={index}

@@ -41,7 +41,7 @@ const reviews = [
 const GoogleReview = () => {
     const [value, setValue] = useState(5);
     return (
-        <div className='lg:px-20 px-6 py-6'>
+        <div className='lg:px-20 px-6 py-6 bg-white'>
             <div className='text-center pt-20'>
                 <h1 className='text-blue-800 text-2xl font-bold underline'>
                     # Google Reviews
