@@ -3,9 +3,11 @@
 import { DownOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import { Button, Drawer, Dropdown, Popover } from "antd";
 import Aos from "aos";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 // import Image from 'next/image'
 import React, { useEffect, useState } from "react";
+
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -142,6 +144,39 @@ const Header = () => {
       </div>
     </div>
   );
+
+const content = ()=>(
+    <div className="flex flex-col gap-2 text-blue-600 text-sm font-normal">
+      <a
+        href="https://demo.mabsolinfotech.com/hr/admin/index"
+        // target="_blank"
+        // rel="noopener noreferrer"
+      >
+        HR Admin
+      </a>
+      <a
+        href="https://demo.mabsolinfotech.com/hr/employee/"
+        // target="_blank"
+        // rel="noopener noreferrer"
+      >
+        Employee Portal
+      </a>
+      <a
+        href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
+        // target="_blank"
+        // rel="noopener noreferrer"
+      >
+        CRM Admin
+      </a>
+      <a
+        href="https://demo.mabsolinfotech.com/institute/admin/"
+        // target="_blank"
+        // rel="noopener noreferrer"
+      >
+        Institute Admin
+      </a>
+    </div>)
+
   const MegaMenuContent = () => (
     <div className="bg-blue-900 text-white grid grid-cols-5 gap-10 p-14">
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
@@ -380,12 +415,14 @@ const Header = () => {
           >
             <div>
               {/* <a href="" className='text-lg font-extrabold text-green-600 font-serif'>Home</a> */}
-              <Button
-                type="link"
-                className="text-lg !font-extrabold !text-green-600 !font-serif"
-              >
-                Home
-              </Button>
+              <Link href="/">
+                <Button
+                  type="link"
+                  className="text-lg !font-extrabold !text-green-600 !font-serif"
+                >
+                  Home
+                </Button>
+              </Link>
               <div className="w-full">
                 <hr className="border-t-4 border-green-600" />
               </div>
@@ -395,7 +432,7 @@ const Header = () => {
               content={MegaMenu()}
               trigger="hover"
               placement="bottomLeft"
-               styles={{ body: { padding: 0,  borderRadius: 8 } }}
+              styles={{ body: { padding: 0, borderRadius: 8 } }}
             >
               <Button
                 type="text"
@@ -410,7 +447,7 @@ const Header = () => {
               content={Mega()}
               trigger="hover"
               placement="bottomLeft"
-               styles={{ body: { padding: 0,  borderRadius: 8 } }}
+              styles={{ body: { padding: 0, borderRadius: 8 } }}
             >
               <Button
                 type="text"
@@ -426,7 +463,7 @@ const Header = () => {
               content={Content()}
               trigger="hover"
               placement="bottomLeft"
-               styles={{ body: { padding: 0,  borderRadius: 8 } }}
+              styles={{ body: { padding: 0, borderRadius: 8 } }}
             >
               <Button
                 type="text"
@@ -441,7 +478,7 @@ const Header = () => {
               content={MegaMenuContent()}
               trigger="hover"
               placement="bottomLeft"
-               styles={{ body: { padding: 0,  borderRadius: 8 } }}
+              styles={{ body: { padding: 0, borderRadius: 8 } }}
             >
               <Button
                 type="text"
@@ -502,28 +539,37 @@ const Header = () => {
           <a href="">About Us</a>
           <a href="">Service</a>
           <a href="">Software Product</a>
-          <a href="">Mabsol Portal</a>
+          {/* <a href="">Mabsol Portal</a> */}
+          <Popover content={content} title="Mabsol Portal" trigger="click" placement="topRight">
+            <div className="cursor-pointer font-semibold text-sm text-blue-600">
+                 Mabsol Portal <DownOutlined />
+            </div>
+          </Popover>
         </nav>
         <div className="flex justify-center items-center pt-10 gap-6 ">
-          <div
-            data-aos="fade-down"
-            data-aos-easing="linear"
-            data-aos-duration="700"
-          >
-            <Button className="!bg-green-700 !text-white !py-5 !px-5">
-              Raise a Support Ticket
-            </Button>
-          </div>
+          <Link href="https://mabsolinfotech.com/crmtest/">
+            <div
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="700"
+            >
+              <Button className="!bg-green-700 !text-white !py-5 !px-5">
+                Raise a Support Ticket
+              </Button>
+            </div>
+          </Link>
 
-          <div
-            data-aos="fade-down"
-            data-aos-easing="linear"
-            data-aos-duration="700"
-          >
-            <Button className=" !text-white !py-5 !bg-blue-950">
-              contact Us
-            </Button>
-          </div>
+          <Link href="https://mabsolinfotech.com/contact-us/">
+            <div
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="700"
+            >
+              <Button className=" !text-white !py-5 !bg-blue-950">
+                contact Us
+              </Button>
+            </div>
+          </Link>
         </div>
       </Drawer>
     </div>
