@@ -7,7 +7,7 @@ import React from 'react'
 const AboutUs = () => {
     return (
         <div id='about'
-            className="bg-cover bg-center bg-no-repeat min-h-screen pt-20 px-4 sm:px-6 lg:px-20"
+            className="bg-cover bg-center bg-no-repeat min-h-screen lg:py-20 py-14 px-4 sm:px-6 lg:px-20"
             style={{ backgroundImage: "url('/base-1.png')" }}
         >
             {/* Title + Description */}
