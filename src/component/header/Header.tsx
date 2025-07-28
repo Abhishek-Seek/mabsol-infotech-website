@@ -1,6 +1,6 @@
 "use client";
 
-import { DownOutlined, MenuFoldOutlined } from "@ant-design/icons";
+import { CloseOutlined, DownOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import { Button, Drawer, Dropdown, Popover } from "antd";
 import Aos from "aos";
 import Link from "next/link";
@@ -602,6 +602,7 @@ const Header = () => {
         onClose={() => {
           setOpen(false);
         }}
+        closeIcon={<CloseOutlined style={{color:"white"}}/>}
         className="!bg-blue-500 text-white"
       >
         <nav
@@ -612,10 +613,11 @@ const Header = () => {
           <a href="/" className="!text-white">
             Home
           </a>
-          <a href="" className="!text-white">
+          
+          <a className="!text-white">
             About Us
           </a>
-          <a href="" className="!text-white">
+          <a className="!text-white">
             Service
           </a>
           {/* <Popover content={click} title="Software Product" trigger="click" placement="topRight">
@@ -623,7 +625,7 @@ const Header = () => {
               Software Product<DownOutlined />
             </div>
           </Popover> */}
-          <a href="" className="!text-white">
+          <a className="!text-white">
             Software Product
           </a>
           {/* <a href="">Mabsol Portal</a> */}

@@ -45,5 +45,9 @@ body {
   font-style: normal;
 }
 
+/* .custom-drawer :global(.ant-drawer-close .anticon-close) {
+  color: white;
+} */
+
 
 

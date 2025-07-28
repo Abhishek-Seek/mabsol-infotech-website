@@ -1,40 +1,60 @@
+
+"use client"
+
 import { Button, Card } from "antd";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const image = [
-  {
-    image: "/1.webp",
-  },
-  {
-    image: "/2.webp",
-  },
-  {
-    image: "/3.webp",
-  },
-  {
-    image: "/4.png",
-  },
-  {
-    image: "/5.jpg",
-  },
-  {
-    image: "/1.webp",
-  },
-  {
-    image: "/1.webp",
-  },
-  {
-    image: "/1.webp",
-  },
-];
+// const image = [
+//   {
+//     image: "/1.webp",
+//   },
+//   {
+//     image: "/2.webp",
+//   },
+//   {
+//     image: "/3.webp",
+//   },
+//   {
+//     image: "/4.png",
+//   },
+//   {
+//     image: "/5.jpg",
+//   },
+//   {
+//     image: "/1.webp",
+//   },
+//   {
+//     image: "/1.webp",
+//   },
+//   {
+//     image: "/1.webp",
+//   },
+// ];
 
 const HomePage = () => {
+
+  const images = [
+    "images/background.jpg",
+    "images/background2.jpg",
+    "images/background.avif",
+  ];
+
+
+   const [index, setIndex] = useState(0);
+   useEffect(()=>{
+    const interval = setInterval(()=>{
+      setIndex((preIndex)=>(preIndex+1)%images.length);
+    },3000);
+    return ()=> clearInterval(interval)
+   },[])
+  
   return (
     <div className="relative h-[80vh] w-full">
       <div
         style={{
-          backgroundImage: `url(images/background.jpg)`,
+          backgroundImage: `url(${images[index]})`,
+          transition:"background-image 1s ease-in-out"
         }}
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
       ></div>
