@@ -38,4 +38,12 @@ body {
   transition: width 1.5s ease;
 }
 
+.montserrat{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+
 

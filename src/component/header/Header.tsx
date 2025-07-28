@@ -8,7 +8,6 @@ import { useRouter } from "next/navigation";
 // import Image from 'next/image'
 import React, { useEffect, useState } from "react";
 
-
 const Header = () => {
   const [open, setOpen] = useState(false);
   const img = "/images/logo.webp";
@@ -185,35 +184,38 @@ const Header = () => {
   //   </div>)
 
   const contents = () => (
-    <div className="flex flex-col gap-4 text-blue-600 text-sm font-normal">
+    <div
+      style={{ fontFamily: "Montserrat, sans-serif" }}
+      className="flex flex-col gap-4 text-blue-600 text-sm font-normal"
+    >
       <a
         href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
-      // className="!text-white"
+        // className="!text-white"
       >
         Employee Attendance
       </a>
       <a
         href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
-      // className="!text-blue-300"
+        // className="!text-blue-300"
       >
         Admin Portal
       </a>
       <a
         href="https://demo.mabsolinfotech.com/crm/employee/employee_register.php"
-      // className="!text-blue-300"
+        // className="!text-blue-300"
       >
         Employee Portal
       </a>
       <a
         href="https://demo.mabsolinfotech.com/crm/"
-      // className="!text-blue-300"
+        // className="!text-blue-300"
       >
         Users Portal
       </a>
       <a
         href="https://demo.mabsolinfotech.com/hr/admin/index"
-      // target="_blank"
-      // rel="noopener noreferrer"
+        // target="_blank"
+        // rel="noopener noreferrer"
       >
         HR Admin
       </a>
@@ -226,30 +228,27 @@ const Header = () => {
       </a> */}
       <a
         href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
-      // target="_blank"
-      // rel="noopener noreferrer"
+        // target="_blank"
+        // rel="noopener noreferrer"
       >
         CRM Admin
       </a>
       <a
         href="https://demo.mabsolinfotech.com/institute/admin/"
-      // target="_blank"
-      // rel="noopener noreferrer"
+        // target="_blank"
+        // rel="noopener noreferrer"
       >
         Institute Admin
       </a>
 
-       <a
-          href="https://humanresources.mabsolinfotech.com/admin/index.php"
-        >
-          Admin Login
-        </a>
-        <a
-          href="https://humanresources.mabsolinfotech.com/employee/"
-        >
-          Employee Login
-        </a>
-    </div>)
+      <a href="https://humanresources.mabsolinfotech.com/admin/index.php">
+        Admin Login
+      </a>
+      <a href="https://humanresources.mabsolinfotech.com/employee/">
+        Employee Login
+      </a>
+    </div>
+  );
 
   const MegaMenuContent = () => (
     <div className="bg-blue-900 text-white grid grid-cols-5 gap-10 p-14">
@@ -603,23 +602,38 @@ const Header = () => {
         onClose={() => {
           setOpen(false);
         }}
+        className="!bg-blue-500 text-white"
       >
         <nav
           data-aos="fade-up"
-          className="flex flex-col gap-6 text-sm font-bold"
+          style={{ fontFamily: "Montserrat, sans-serif" }}
+          className="flex flex-col gap-6 text-sm font-bold !text-white"
         >
-          <a href="/">Home</a>
-          <a href="">About Us</a>
-          <a href="">Service</a>
+          <a href="/" className="!text-white">
+            Home
+          </a>
+          <a href="" className="!text-white">
+            About Us
+          </a>
+          <a href="" className="!text-white">
+            Service
+          </a>
           {/* <Popover content={click} title="Software Product" trigger="click" placement="topRight">
             <div className="cursor-pointer font-semibold text-sm text-blue-600">
               Software Product<DownOutlined />
             </div>
           </Popover> */}
-          <a href="">Software Product</a>
+          <a href="" className="!text-white">
+            Software Product
+          </a>
           {/* <a href="">Mabsol Portal</a> */}
-          <Popover content={contents} title="Mabsol Portal" trigger="click" placement="topRight">
-            <div className="cursor-pointer font-semibold text-sm text-blue-600">
+          <Popover
+            content={contents}
+            title="Mabsol Portal"
+            trigger="click"
+            placement="topRight"
+          >
+            <div className="cursor-pointer font-semibold text-sm text-white">
               Mabsol Portal <DownOutlined />
             </div>
           </Popover>
@@ -631,7 +645,7 @@ const Header = () => {
               data-aos-easing="linear"
               data-aos-duration="700"
             >
-              <Button className="!bg-green-700 !text-white !py-5 !px-5">
+              <Button className="!bg-gradient-to-r from-yellow-200 to-orange-500 !text-white !py-5 !px-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                 Raise a Support Ticket
               </Button>
             </div>
@@ -643,8 +657,8 @@ const Header = () => {
               data-aos-easing="linear"
               data-aos-duration="700"
             >
-              <Button className=" !text-white !py-5 !bg-blue-950">
-                contact Us
+              <Button className="!text-white !py-5 !bg-transparent border border-white hover:!bg-white hover:!text-blue-950 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                Contact Us
               </Button>
             </div>
           </Link>

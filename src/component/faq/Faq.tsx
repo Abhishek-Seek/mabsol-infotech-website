@@ -78,14 +78,14 @@ const Faq = () => {
                 onClick={() => toggle1(index)}
                 className=" bg-blue-900 flex justify-between items-center px-4 py-4"
               >
-                <h1 className="text-lg font-semibold font-serif text-white">
+                <h1 style={{ fontFamily: "Montserrat, sans-serif" }} className="text-[16px]  text-white">
                   {item.question}
                 </h1>
                 {openIndex1 === index ? (
-                  <MinusOutlined className="text-2xl !text-white rounded-full p-1" />
+                  <MinusOutlined className="text-xl !text-white rounded-full p-1" />
                 ) : (
                   <PlusOutlined
-                    className="text-2xl !
+                    className="text-xl !
                   !text-white rounded-full p-1"
                   />
                 )}
@@ -95,7 +95,7 @@ const Faq = () => {
                   openIndex1 === index ? "max-h-[1000px] py-4" : "max-h-0"
                 }`}
               >
-                <p className="text-gray-800">{item.answer}</p>
+                <p style={{ fontFamily: "Montserrat, sans-serif" }} className="text-gray-800">{item.answer}</p>
               </div>
             </div>
           ))}
@@ -111,14 +111,14 @@ const Faq = () => {
                 onClick={() => toggle2(index)}
                 className=" bg-blue-900 flex justify-between items-center px-4 py-4"
               >
-                <h1 className="text-lg font-semibold font-serif text-white">
+                <h1 style={{ fontFamily: "Montserrat, sans-serif" }} className="text-lg text-white">
                   {item.question}
                 </h1>
                 {openIndex2 === index ? (
-                  <MinusOutlined className="text-2xl !text-white rounded-full p-1" />
+                  <MinusOutlined className="text-xl !text-white rounded-full p-1" />
                 ) : (
                   <PlusOutlined
-                    className="text-2xl !
+                    className="text-xl !
                   !text-white rounded-full p-1"
                   />
                 )}
@@ -128,7 +128,7 @@ const Faq = () => {
                   openIndex2 === index ? "max-h-[1000px] py-4" : "max-h-0"
                 }`}
               >
-                <p className="text-gray-800">{item.answer}</p>
+                <p style={{ fontFamily: "Montserrat, sans-serif" }} className="text-gray-800">{item.answer}</p>
               </div>
             </div>
           ))}
