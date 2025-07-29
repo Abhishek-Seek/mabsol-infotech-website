@@ -653,7 +653,7 @@ const Header = () => {
               data-aos-easing="linear"
               data-aos-duration="700"
             >
-              <Button className="!bg-gradient-to-r !rounded-none from-yellow-200 to-orange-500 !text-white !py-6 !px-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+              <Button className="!bg-orange-500 !text-white !rounded-none !py-6 !px-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                 Raise a Support Ticket
               </Button>
             </div>

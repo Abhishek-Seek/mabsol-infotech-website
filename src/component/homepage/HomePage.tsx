@@ -71,17 +71,17 @@ const HomePage = () => {
           workflows with top-notch customer support.
         </p>
 
-        <div data-aos="fade-up" className="flex gap-6">
+        <div data-aos="fade-up" className="flex justify-start items-center text-start">
           <Link href="https://mabsolinfotech.com/tally/">
-            <Button className="!py-6 !px-10 !rounded-none !text-lg  hover:!text-white !bg-transparent">
+            <Button className="!py-6 !px-8 !rounded-none !text-md text-white!  hover:!bg-blue-900 !bg-transparent">
               About Us
             </Button>
           </Link>
-          <Link href="https://mabsolinfotech.com/contact-us/">
-            <Button className="!py-6 !px-10 !bg-orange-600 !rounded-none !text-lg !text-white hover:!bg-orange-600 hover:!text-white">
+          {/* <Link href="https://mabsolinfotech.com/contact-us/">
+            <Button className="!py-6 !px-8 !bg-orange-600 !rounded-full !text-lg !text-white hover:!bg-orange-600 hover:!text-white">
               Contact Us
             </Button>
-          </Link>
+          </Link> */}
         </div>
       </div>
       {/* <div
