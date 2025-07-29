@@ -58,7 +58,7 @@ const OurProduct = () => {
                 <div className="mt-auto">
                   <Button
                     type="primary"
-                    className="!rounded-full !px-10 !py-5 mt-4"
+                    className="!rounded-none !px-10 !py-5 mt-4"
                   >
                     Select options
                   </Button>

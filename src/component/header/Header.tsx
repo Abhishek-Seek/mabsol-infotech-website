@@ -25,43 +25,43 @@ const Header = () => {
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <a
           href="https://mabsolinfotech.com/product/tally-software-solutions/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Tally
         </a>
         <a
           href="https://mabsolinfotech.com/product/marg-erp-software/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           MArg ERP 9+
         </a>
         <a
           href="https://mabsolinfotech.com/product/mr-reporting-pharma-crm-software/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           MR Reporting
         </a>
         <a
           href="https://mabsolinfotech.com/human-resources-demo-portal/"
-          className="!text-blue-300"
+          className="!text-blue- select-none"
         >
           HR Payroll Portal
         </a>
         <a
           href="https://mabsolinfotech.com/dcr-portal-demo-form/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           DCR Portal
         </a>
         <a
           href="https://mabsolinfotech.com/institute-portal-demo-form/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Institute Portal
         </a>
         <a
           href="https://mabsolinfotech.com/school-portal-demo/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           School Portal
         </a>
@@ -74,31 +74,31 @@ const Header = () => {
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <a
           href="https://mabsolinfotech.com/website-development/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Website Development
         </a>
         <a
           href="https://mabsolinfotech.com/accounting-software-services/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Accounting Software
         </a>
         <a
           href="https://mabsolinfotech.com/payroll-software-services/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           PayRoll Software
         </a>
         <a
           href="https://mabsolinfotech.com/erp-software-services/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           ERP Software
         </a>
         <a
           href="https://mabsolinfotech.com/sfa-software/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           SFA Software
         </a>
@@ -255,7 +255,7 @@ const Header = () => {
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <a
           href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
-          className="!text-white"
+          className="!text-white select-none"
         >
           Employee Attendance
         </a>
@@ -265,13 +265,13 @@ const Header = () => {
         <span className="">HR Payroll</span>
         <a
           href="https://humanresources.mabsolinfotech.com/admin/index.php"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Admin Login
         </a>
         <a
           href="https://humanresources.mabsolinfotech.com/employee/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Employee Login
         </a>
@@ -280,19 +280,19 @@ const Header = () => {
         <span>HR Payroll Demo</span>
         <a
           href="https://demo.mabsolinfotech.com/hr/admin/index"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Admin Portal
         </a>
         <a
           href="https://demo.mabsolinfotech.com/hr/employee/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Empoyee Portal
         </a>
         <a
           href="https://mabsolinfotech.com/human-resources-demo-portal/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Get Demo
         </a>
@@ -301,13 +301,13 @@ const Header = () => {
         <span>DCR</span>
         <a
           href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Employee Login
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Report
         </a>
@@ -318,31 +318,31 @@ const Header = () => {
         <span>DCR Demo</span>
         <a
           href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Admin Portal
         </a>
         <a
           href="https://demo.mabsolinfotech.com/crm/employee/employee_register.php"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Employee Portal
         </a>
         <a
           href="https://demo.mabsolinfotech.com/crm/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Users Portal
         </a>
         <a
           href="https://mabsolinfotech.com/dcr-portal-demo-form/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Get DCR Demo
         </a>
         <a
           href="https://mabsolinfotech.com/pricing-contact-form/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Get Demo Or Pricing Detail
         </a>
@@ -351,13 +351,13 @@ const Header = () => {
         <span>Customer Portal</span>
         <a
           href="https://mabsolinfotech.com/crmtest/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Raise A Ticket
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Report
         </a>
@@ -367,13 +367,13 @@ const Header = () => {
         <span>Testing Portal</span>
         <a
           href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           DCR Portal
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Customer Portal
         </a>
@@ -382,7 +382,7 @@ const Header = () => {
 
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <span>Download Merg ERP Setup</span>
-        <a href="#" className="!text-blue-300">
+        <a href="#" className="!text-blue-300 select-none">
           Download Merg ERP Setup
         </a>
       </div>
@@ -390,25 +390,25 @@ const Header = () => {
         <span>Institute Portal Demo</span>
         <a
           href="https://demo.mabsolinfotech.com/institute/admin/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Admin Portal
         </a>
         <a
           href="https://demo.mabsolinfotech.com/institute/staff/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Staff Portal
         </a>
         <a
           href="https://demo.mabsolinfotech.com/institute/student/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Student Portal
         </a>
         <a
           href="https://mabsolinfotech.com/institute-portal-demo-form/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Get Demo
         </a>
@@ -417,34 +417,34 @@ const Header = () => {
         <span>School Portal</span>
         <a
           href="https://mabsolinfotech.com/institute-portal-demo-form/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Admin Portal
         </a>
-        <a href="#" className="!text-blue-300">
+        <a href="#" className="!text-blue-30 select-none0">
           Student Portal
         </a>
         <a
           href="https://sms.mabsolinfotech.com/dashboard/teachers/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Teacher Portal
         </a>
         <a
           href="https://sms.mabsolinfotech.com/dashboard/reception/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Reception Portal
         </a>
         <a
           href="https://mabsolinfotech.com/school-portal-demo/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Get Demo
         </a>
       </div>
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
-        <a href="" className="!text-white">
+        <a href="" className="!text-white select-none">
           GST File Download
         </a>
       </div>
@@ -452,7 +452,7 @@ const Header = () => {
         <span>Hospital Information System</span>
         <a
           href="https://mabsolinfotech.com/his-portal-demo-form/"
-          className="!text-blue-300"
+          className="!text-blue-300 select-none"
         >
           Get Demo
         </a>
@@ -484,13 +484,15 @@ const Header = () => {
           <nav
             data-aos="fade-up"
             className="lg:flex hidden justify-center items-center gap-0 text-white text-sm font-bold"
+            style={{fontFamily:"Roboto,sans-serif"}}
           >
             <div>
               {/* <a href="" className='text-lg font-extrabold text-green-600 font-serif'>Home</a> */}
               <Link href="/">
                 <Button
                   type="link"
-                  className="text-lg !font-extrabold !text-green-600 !font-serif"
+                  className="text-lg !font-extrabold !text-green-600"
+                  style={{fontFamily:"Roboto,sans-serif"}}
                 >
                   Home
                 </Button>
@@ -508,7 +510,8 @@ const Header = () => {
             >
               <Button
                 type="text"
-                className="!text-white !text-sm !font-extrabold !font-serif"
+                className="!text-white !text-sm !font-extrabold"
+                style={{fontFamily:"Roboto,sans-serif"}}
               >
                 About Us
                 <DownOutlined />
@@ -523,7 +526,8 @@ const Header = () => {
             >
               <Button
                 type="text"
-                className="!text-white !text-sm !font-extrabold !font-serif"
+                className="!text-white !text-sm !font-extrabold "
+                style={{fontFamily:"Roboto,sans-serif"}}
               >
                 Service
                 <DownOutlined />
@@ -539,7 +543,8 @@ const Header = () => {
             >
               <Button
                 type="text"
-                className="!text-white !text-sm !font-extrabold !font-serif"
+                className="!text-white !text-sm !font-extrabold"
+                style={{fontFamily:"Roboto,sans-serif"}}
               >
                 Software Products
                 <DownOutlined />
@@ -554,7 +559,8 @@ const Header = () => {
             >
               <Button
                 type="text"
-                className="!text-white !text-sm !font-extrabold !font-serif"
+                className="!text-white !text-sm !font-extrabold"
+                style={{fontFamily:"Roboto,sans-serif"}}
               >
                 Mabsol Portal
                 <DownOutlined />
@@ -569,7 +575,7 @@ const Header = () => {
             >
               <Button
                 onClick={handleSupportClick}
-                className="!bg-green-700 !text-white !py-5 !px-5"
+                className="!bg-green-700 !text-white !py-6 !px-5 !rounded-none"
               >
                 Raise a Support Ticket
               </Button>
@@ -582,9 +588,9 @@ const Header = () => {
             >
               <Button
                 onClick={handleCRMClick}
-                className=" !text-white !py-5 !bg-blue-950"
+                className=" !text-white !rounded-none !py-6 !bg-blue-950"
               >
-                contact Us
+                Contact Us
               </Button>
             </div>
           </div>
@@ -647,7 +653,7 @@ const Header = () => {
               data-aos-easing="linear"
               data-aos-duration="700"
             >
-              <Button className="!bg-gradient-to-r from-yellow-200 to-orange-500 !text-white !py-5 !px-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+              <Button className="!bg-gradient-to-r !rounded-none from-yellow-200 to-orange-500 !text-white !py-6 !px-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                 Raise a Support Ticket
               </Button>
             </div>
@@ -659,7 +665,7 @@ const Header = () => {
               data-aos-easing="linear"
               data-aos-duration="700"
             >
-              <Button className="!text-white !py-5 !bg-transparent border border-white hover:!bg-white hover:!text-blue-950 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+              <Button className="!text-white !py-6 !rounded-none !bg-transparent border border-white hover:!bg-white hover:!text-blue-950 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                 Contact Us
               </Button>
             </div>

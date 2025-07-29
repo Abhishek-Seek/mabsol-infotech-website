@@ -19,7 +19,7 @@ const Technoogy = () => {
                     <p className='text-4xl font-bold font-serif max-w-[500px] py-2'>
                         Where Technology Transforms Business
                     </p>
-                    <Button className='!bg-transparent !py-6 !px-12 hover:!text-white hover:!bg-blue-800 !mt-6 !text-xl !border-black'>
+                    <Button className='!bg-transparent !rounded-none !py-6 !px-12 hover:!text-white hover:!bg-blue-800 !mt-6 !text-xl !border-black'>
                         Project <SnippetsFilled />
                     </Button>
                 </div>

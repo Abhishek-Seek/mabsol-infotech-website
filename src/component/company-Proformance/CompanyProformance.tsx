@@ -31,7 +31,7 @@ const CompanyProformance = () => {
                 <p className='text-lg italic py-6 text-black'>
                     Feel free to have a look at the services we are providing and to contact us for a detailed review of your case and a quote. Stay up-to-date and receive professional advice on specific regulatory requirements.
                 </p>
-                <Button type='primary' className='!px-10 !py-5 !font-bold'>
+                <Button type='primary' className='!px-10 !rounded-none !py-5 !font-semibold'>
                     Contact Us
                 </Button>
             </div>

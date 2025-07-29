@@ -75,7 +75,7 @@ const GoogleReview = () => {
                             </div>
                             <p className='text-black'>Based on 42 reviews</p>
                             <p className='text-gray-700'>powered by Google</p>
-                            <Button type='primary'>
+                            <Button type='primary' className='!rounded-none !py-4'>
                                 review us on <FcGoogle />
                             </Button>
                         </div>

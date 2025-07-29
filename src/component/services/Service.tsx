@@ -27,7 +27,7 @@ const Service = () => {
           Simplify financial management with tools like Tally, Marg, and Busy
           for invoicing, GST, and reporting.
         </p>
-        <Button className="!bg-blue-800 !py-5 !px-8 !text-white">
+        <Button className="!bg-blue-800 !py-5 !px-8 !rounded-none !text-white">
           View
         </Button>
       </Card>
@@ -50,7 +50,7 @@ const Service = () => {
           We design responsive, user-friendly websites to enhance your online
           presence and drive engagement.
         </p>
-         <Button className="!bg-blue-800 !py-5 !px-8 !text-white">
+         <Button className="!bg-blue-800 !py-5 !rounded-none !px-8 !text-white">
           View 
         </Button>
       </Card>
@@ -73,7 +73,7 @@ const Service = () => {
           Optimize business operations with ERP solutions that integrate
           inventory, resource planning, and more.
         </p>
-         <Button className="!bg-blue-800 !py-5 !px-8 !text-white">
+         <Button className="!bg-blue-800 !py-5 !px-8 !rounded-none !text-white">
           View
         </Button>
       </Card>
@@ -96,7 +96,7 @@ const Service = () => {
           Automate payroll and compliance with reliable tools like greytHR,
           saving time and ensuring accuracy.
         </p>
-          <Button className="!bg-blue-800 !py-5 !px-8 !text-white">
+          <Button className="!bg-blue-800 !rounded-none !py-5 !px-8 !text-white">
           View 
         </Button>
       </Card>

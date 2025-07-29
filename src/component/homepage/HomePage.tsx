@@ -73,12 +73,12 @@ const HomePage = () => {
 
         <div data-aos="fade-up" className="flex gap-6">
           <Link href="https://mabsolinfotech.com/tally/">
-            <Button className="!py-6 !px-10 !rounded-full bg-transparent hover:!bg-blue-900 hover:!text-white">
+            <Button className="!py-6 !px-10 !rounded-none !text-lg  hover:!text-white !bg-transparent">
               About Us
             </Button>
           </Link>
           <Link href="https://mabsolinfotech.com/contact-us/">
-            <Button className="!bg-green-600  !py-6 !px-10 !rounded-full !text-white hover:!bg-blue-900 hover:!text-white">
+            <Button className="!py-6 !px-10 !bg-orange-600 !rounded-none !text-lg !text-white hover:!bg-orange-600 hover:!text-white">
               Contact Us
             </Button>
           </Link>
