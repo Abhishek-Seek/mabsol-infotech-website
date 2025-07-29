@@ -40,19 +40,19 @@ const Footer = () => {
           </p>
 
           <div className="flex gap-4 mt-6 text-2xl text-white">
-            <a href="#">
+            <a href="https://www.facebook.com/people/Mabsol-Infotech-Pvt-Ltd-Haryana/61578120662281/">
               <FacebookFilled />
             </a>
-            <a href="#">
+            {/* <a href="#">
               <TwitterSquareFilled />
-            </a>
-            <a href="#">
+            </a> */}
+            <a href="https://www.youtube.com/@ABMINFOTECHPanchkula">
               <YoutubeFilled />
             </a>
-            <a href="#">
+            <a href="https://www.instagram.com/mabsol_infotech_pvt_ltd/">
               <InstagramFilled />
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/mabsol-infotech-pvt-ltd/">
               <LinkedinFilled />
             </a>
           </div>
