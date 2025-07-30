@@ -655,7 +655,7 @@ const Header = () => {
           style={{ fontFamily: "Montserrat, sans-serif" }}
           className="flex flex-col gap-6 text-lg font-medium"
         >
-          <a href="/" className="!text-blue-600">
+          <a href="/" className="!text-blue-600 font-semibold">
             Home
           </a>
 
