@@ -1,12 +1,17 @@
 "use client";
 
-import { CloseOutlined, DownOutlined, MenuFoldOutlined } from "@ant-design/icons";
-import { Button, Drawer, Dropdown, Popover } from "antd";
+import { CloseOutlined, DownOutlined, MenuFoldOutlined, UpOutlined } from "@ant-design/icons";
+import { Button, Drawer, Dropdown, MenuProps, Popover, Space } from "antd";
 import Aos from "aos";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
 // import Image from 'next/image'
 import React, { useEffect, useState } from "react";
+import { AiOutlineSolution, AiOutlineSync, AiOutlineTeam, AiOutlineUser } from "react-icons/ai";
+import { IoBagHandleOutline, IoSchool } from "react-icons/io5";
+import { SiCivicrm, SiSimplelogin } from "react-icons/si";
+import { MdOutlineAdminPanelSettings } from "react-icons/md";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -19,6 +24,34 @@ const Header = () => {
   const handleClick = () => {
     setOpen(true);
   };
+
+
+  // const items: MenuProps['items'] = [
+  //   {
+  //     label: (
+  //       <a href="https://www.antgroup.com" target="_blank" rel="noopener noreferrer">
+  //         1st menu item
+  //       </a>
+  //     ),
+  //     key: '0',
+  //   },
+  //   {
+  //     label: (
+  //       <a href="https://www.aliyun.com" target="_blank" rel="noopener noreferrer">
+  //         2nd menu item
+  //       </a>
+  //     ),
+  //     key: '1',
+  //   },
+  //   {
+  //     type: 'divider',
+  //   },
+  //   {
+  //     label: '3rd menu item',
+  //     key: '3',
+  //   },
+  // ];
+
 
   const Content = () => (
     <div className="bg-blue-900 text-white flex flex-col gap-4 p-8 ">
@@ -183,72 +216,72 @@ const Header = () => {
   //     </a>
   //   </div>)
 
-  const contents = () => (
-    <div
-      style={{ fontFamily: "Montserrat, sans-serif" }}
-      className="flex flex-col gap-4 text-blue-600 text-sm font-normal"
-    >
-      <a
-        href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
-        // className="!text-white"
-      >
-        Employee Attendance
-      </a>
-      <a
-        href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
-        // className="!text-blue-300"
-      >
-        Admin Portal
-      </a>
-      <a
-        href="https://demo.mabsolinfotech.com/crm/employee/employee_register.php"
-        // className="!text-blue-300"
-      >
-        Employee Portal
-      </a>
-      <a
-        href="https://demo.mabsolinfotech.com/crm/"
-        // className="!text-blue-300"
-      >
-        Users Portal
-      </a>
-      <a
-        href="https://demo.mabsolinfotech.com/hr/admin/index"
-        // target="_blank"
-        // rel="noopener noreferrer"
-      >
-        HR Admin
-      </a>
-      {/* <a
-        href="https://demo.mabsolinfotech.com/hr/employee/"
-        // target="_blank"
-        // rel="noopener noreferrer"
-      >
-        Employee Portal
-      </a> */}
-      <a
-        href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
-        // target="_blank"
-        // rel="noopener noreferrer"
-      >
-        CRM Admin
-      </a>
-      <a
-        href="https://demo.mabsolinfotech.com/institute/admin/"
-        // target="_blank"
-        // rel="noopener noreferrer"
-      >
-        Institute Admin
-      </a>
+  // const contents = () => (
+  //   <div
+  //     style={{ fontFamily: "Montserrat, sans-serif" }}
+  //     className="flex flex-col gap-4 text-blue-600 text-sm font-normal"
+  //   >
+  //     <a
+  //       href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
+  //     // className="!text-white"
+  //     >
+  //       Employee Attendance
+  //     </a>
+  //     <a
+  //       href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
+  //     // className="!text-blue-300"
+  //     >
+  //       Admin Portal
+  //     </a>
+  //     <a
+  //       href="https://demo.mabsolinfotech.com/crm/employee/employee_register.php"
+  //     // className="!text-blue-300"
+  //     >
+  //       Employee Portal
+  //     </a>
+  //     <a
+  //       href="https://demo.mabsolinfotech.com/crm/"
+  //     // className="!text-blue-300"
+  //     >
+  //       Users Portal
+  //     </a>
+  //     <a
+  //       href="https://demo.mabsolinfotech.com/hr/admin/index"
+  //     // target="_blank"
+  //     // rel="noopener noreferrer"
+  //     >
+  //       HR Admin
+  //     </a>
+  //     {/* <a
+  //       href="https://demo.mabsolinfotech.com/hr/employee/"
+  //       // target="_blank"
+  //       // rel="noopener noreferrer"
+  //     >
+  //       Employee Portal
+  //     </a> */}
+  //     <a
+  //       href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
+  //     // target="_blank"
+  //     // rel="noopener noreferrer"
+  //     >
+  //       CRM Admin
+  //     </a>
+  //     <a
+  //       href="https://demo.mabsolinfotech.com/institute/admin/"
+  //     // target="_blank"
+  //     // rel="noopener noreferrer"
+  //     >
+  //       Institute Admin
+  //     </a>
 
-      <a href="https://humanresources.mabsolinfotech.com/admin/index.php">
-        Admin Login
-      </a>
-      <a href="https://humanresources.mabsolinfotech.com/employee/">
-        Employee Login
-      </a>
-    </div>
-  );
+  //     <a href="https://humanresources.mabsolinfotech.com/admin/index.php">
+  //       Admin Login
+  //     </a>
+  //     <a href="https://humanresources.mabsolinfotech.com/employee/">
+  //       Employee Login
+  //     </a>
+  //   </div>
+  // );
 
   const MegaMenuContent = () => (
     <div className="bg-blue-900 text-white grid grid-cols-5 gap-10 p-14">
@@ -461,7 +494,13 @@ const Header = () => {
   );
 
   const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+
+
+  }
   const handleSupportClick = () => {
     router.push("https://mabsolinfotech.com/crmtest/");
   };
@@ -484,7 +523,7 @@ const Header = () => {
           <nav
             data-aos="fade-up"
             className="lg:flex hidden justify-center items-center gap-0 text-white text-sm font-bold"
-            style={{fontFamily:"Roboto,sans-serif"}}
+            style={{ fontFamily: "Roboto,sans-serif" }}
           >
             <div>
               {/* <a href="" className='text-lg font-extrabold text-green-600 font-serif'>Home</a> */}
@@ -492,7 +531,7 @@ const Header = () => {
                 <Button
                   type="link"
                   className="text-lg !font-extrabold !text-green-600"
-                  style={{fontFamily:"Roboto,sans-serif"}}
+                  style={{ fontFamily: "Roboto,sans-serif" }}
                 >
                   Home
                 </Button>
@@ -511,7 +550,7 @@ const Header = () => {
               <Button
                 type="text"
                 className="!text-white !text-sm !font-extrabold"
-                style={{fontFamily:"Roboto,sans-serif"}}
+                style={{ fontFamily: "Roboto,sans-serif" }}
               >
                 About Us
                 <DownOutlined />
@@ -527,7 +566,7 @@ const Header = () => {
               <Button
                 type="text"
                 className="!text-white !text-sm !font-extrabold "
-                style={{fontFamily:"Roboto,sans-serif"}}
+                style={{ fontFamily: "Roboto,sans-serif" }}
               >
                 Service
                 <DownOutlined />
@@ -544,7 +583,7 @@ const Header = () => {
               <Button
                 type="text"
                 className="!text-white !text-sm !font-extrabold"
-                style={{fontFamily:"Roboto,sans-serif"}}
+                style={{ fontFamily: "Roboto,sans-serif" }}
               >
                 Software Products
                 <DownOutlined />
@@ -560,7 +599,7 @@ const Header = () => {
               <Button
                 type="text"
                 className="!text-white !text-sm !font-extrabold"
-                style={{fontFamily:"Roboto,sans-serif"}}
+                style={{ fontFamily: "Roboto,sans-serif" }}
               >
                 Mabsol Portal
                 <DownOutlined />
@@ -608,22 +647,22 @@ const Header = () => {
         onClose={() => {
           setOpen(false);
         }}
-        closeIcon={<CloseOutlined style={{color:"white"}}/>}
-        className="!bg-blue-500 text-white"
+        closeIcon={<CloseOutlined style={{ color: "black" }} />}
+        className="!bg-white text-black w-full"
       >
         <nav
           data-aos="fade-up"
           style={{ fontFamily: "Montserrat, sans-serif" }}
-          className="flex flex-col gap-6 text-sm font-bold !text-white"
+          className="flex flex-col gap-6 text-lg font-medium"
         >
-          <a href="/" className="!text-white">
+          <a href="/" className="!text-blue-600">
             Home
           </a>
-          
-          <a className="!text-white">
+
+          <a className="!text-black">
             About Us
           </a>
-          <a className="!text-white">
+          <a className="!text-black">
             Service
           </a>
           {/* <Popover content={click} title="Software Product" trigger="click" placement="topRight">
@@ -631,11 +670,11 @@ const Header = () => {
               Software Product<DownOutlined />
             </div>
           </Popover> */}
-          <a className="!text-white">
+          <a className="!text-black">
             Software Product
           </a>
           {/* <a href="">Mabsol Portal</a> */}
-          <Popover
+          {/* <Popover
             content={contents}
             title="Mabsol Portal"
             trigger="click"
@@ -644,7 +683,93 @@ const Header = () => {
             <div className="cursor-pointer font-semibold text-sm text-white">
               Mabsol Portal <DownOutlined />
             </div>
-          </Popover>
+          </Popover> */}
+          {/* <Dropdown menu={{ items }} trigger={['click']}>
+            <a onClick={(e) => e.preventDefault()}>
+              <Space className="cursor-pointer font-semibold text-sm text-white w-full">
+                Mabsol Portal 
+                <DownOutlined />
+              </Space>
+            </a>
+          </Dropdown> */}
+
+          <div className="relative w-full">
+            {/* Trigger */}
+            <div
+              onClick={toggleDropdown}
+              className="cursor-pointer font-medium text-lg"
+            >
+              <Space>
+                Mabsol Portal
+                {isOpen ? <UpOutlined /> : <DownOutlined />}
+              </Space>
+            </div>
+
+            {/* Inline Dropdown Menu */}
+            <AnimatePresence initial={false}>
+              {isOpen && (
+                <motion.div
+                  layout
+                  key="dropdown"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="bg-white  border-none rounded py-4 text-sm mt-2"
+                >
+                  <a href="https://mabsolinfotech.com/crmtest/employee/employee_register.php" className="block border-b border-gray-300 p-2 !text-gray-600">
+                    <div className="flex justify-start items-center gap-1"><AiOutlineSolution />Employee Attendance</div>
+                  </a>
+                  <a href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php" className="block border-b border-gray-300 p-2 !text-gray-600">
+
+                    <div className="flex justify-start items-center gap-1"><AiOutlineUser />Admin Portal</div>
+                  </a>
+                  <a href="https://demo.mabsolinfotech.com/crm/employee/employee_register.php" className="block border-b border-gray-300 p-2 !text-gray-600">
+                    <div className="flex justify-start items-center gap-1"><AiOutlineTeam />
+                      Employee Portal
+                    </div>
+
+                  </a>
+                  <a href="https://demo.mabsolinfotech.com/crm/" className="block border-b border-gray-300 p-2 !text-gray-600">
+                    <div className="flex justify-start items-center gap-1"><AiOutlineSync />
+                      Users Portal
+                    </div>
+
+                  </a>
+                  <a href="https://demo.mabsolinfotech.com/hr/admin/index" className="block border-b border-gray-300 p-2 !text-gray-600">
+                    <div className="flex justify-start items-center gap-1"><IoBagHandleOutline />
+                      HR Admin
+
+                    </div>
+                  </a>
+                  <a href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php" className="block border-b border-gray-300 p-2 !text-gray-600">
+
+                    <div className="flex justify-start items-center gap-1"><SiCivicrm />
+                      CRM Admin
+                    </div>
+                  </a>
+                  <a href="https://demo.mabsolinfotech.com/institute/admin/" className="block border-b border-gray-300 p-2 !text-gray-600">
+
+                    <div className="flex justify-start items-center gap-1"><IoSchool />
+                      Institute Admin
+                    </div>
+                  </a>
+                  <a href="https://humanresources.mabsolinfotech.com/admin/index.php" className="block border-b border-gray-300 p-2 !text-gray-600">
+
+                    <div className="flex justify-start items-center gap-1"><MdOutlineAdminPanelSettings />
+                      Admin Login
+                    </div>
+                  </a>
+                  <a href="https://humanresources.mabsolinfotech.com/employee/" className="block border-b border-gray-300 p-2 !text-gray-600">
+
+                    <div className="flex justify-start items-center gap-1"><SiSimplelogin />
+                      Employee Login
+                    </div>
+                  </a>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </nav>
         <div className="flex justify-center items-center pt-10 gap-6 ">
           <Link href="https://mabsolinfotech.com/crmtest/">
@@ -653,7 +778,7 @@ const Header = () => {
               data-aos-easing="linear"
               data-aos-duration="700"
             >
-              <Button className="!bg-orange-500 !text-white !rounded-none !py-6 !px-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+              <Button type="primary" className="!text-white !rounded-none !py-6 !px-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                 Raise a Support Ticket
               </Button>
             </div>
@@ -665,7 +790,7 @@ const Header = () => {
               data-aos-easing="linear"
               data-aos-duration="700"
             >
-              <Button className="!text-white !py-6 !rounded-none !bg-transparent border border-white hover:!bg-white hover:!text-blue-950 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+              <Button type="primary" className="!text-white !py-6 !rounded-none border border-white hover:!bg-white hover:!text-blue-950 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                 Contact Us
               </Button>
             </div>
