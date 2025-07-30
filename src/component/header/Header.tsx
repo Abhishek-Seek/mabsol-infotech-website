@@ -12,6 +12,9 @@ import { AiOutlineSolution, AiOutlineSync, AiOutlineTeam, AiOutlineUser } from "
 import { IoBagHandleOutline, IoSchool } from "react-icons/io5";
 import { SiCivicrm, SiSimplelogin } from "react-icons/si";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
+import { FcBusinessman, FcComboChart } from "react-icons/fc";
+import { HiOutlineChartBar } from "react-icons/hi";
+import { RiBarChartGroupedLine } from "react-icons/ri";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -76,7 +79,7 @@ const Header = () => {
         </a>
         <a
           href="https://mabsolinfotech.com/human-resources-demo-portal/"
-          className="!text-blue- select-none"
+          className="!text-blue-300 select-none"
         >
           HR Payroll Portal
         </a>
@@ -454,7 +457,7 @@ const Header = () => {
         >
           Admin Portal
         </a>
-        <a href="#" className="!text-blue-30 select-none0">
+        <a href="#" className="!text-blue-300 select-none">
           Student Portal
         </a>
         <a
@@ -494,13 +497,16 @@ const Header = () => {
   );
 
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMainOpen, setIsMainOpen] = useState(false);
+  const [isHRSubOpen, setIsHRSubOpen] = useState(false);
+  const [isDCRSubOpen, setIsDCRSubOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+
+  const toggleMainDropdown = () => setIsMainOpen(!isMainOpen);
+  const toggleHRSubmenu = () => setIsHRSubOpen(!isHRSubOpen);
+  const toggleDCRSubmenu = () => setIsDCRSubOpen(!isDCRSubOpen);
 
 
-  }
   const handleSupportClick = () => {
     router.push("https://mabsolinfotech.com/crmtest/");
   };
@@ -647,22 +653,23 @@ const Header = () => {
         onClose={() => {
           setOpen(false);
         }}
-        closeIcon={<CloseOutlined style={{ color: "black" }} />}
-        className="!bg-white text-black w-full"
+        closeIcon={<CloseOutlined style={{ color: "white" }} />}
+        style={{ backgroundColor: "#2b6cb0" }}
+        className=" text-white w-full"
       >
         <nav
           data-aos="fade-up"
           style={{ fontFamily: "Montserrat, sans-serif" }}
           className="flex flex-col gap-6 text-lg font-medium"
         >
-          <a href="/" className="!text-blue-600 font-semibold">
+          <a href="/" className="!text-white font-semibold">
             Home
           </a>
 
-          <a className="!text-black">
+          <a className="!text-white">
             About Us
           </a>
-          <a className="!text-black">
+          <a className="!text-white">
             Service
           </a>
           {/* <Popover content={click} title="Software Product" trigger="click" placement="topRight">
@@ -670,7 +677,7 @@ const Header = () => {
               Software Product<DownOutlined />
             </div>
           </Popover> */}
-          <a className="!text-black">
+          <a className="!text-white">
             Software Product
           </a>
           {/* <a href="">Mabsol Portal</a> */}
@@ -696,18 +703,18 @@ const Header = () => {
           <div className="relative w-full">
             {/* Trigger */}
             <div
-              onClick={toggleDropdown}
-              className="cursor-pointer font-medium text-lg"
+              onClick={toggleMainDropdown}
+              className="cursor-pointer font-medium text-lg !text-white"
             >
               <Space>
                 Mabsol Portal
-                {isOpen ? <UpOutlined /> : <DownOutlined />}
+                {isMainOpen ? <UpOutlined /> : <DownOutlined />}
               </Space>
             </div>
 
             {/* Inline Dropdown Menu */}
             <AnimatePresence initial={false}>
-              {isOpen && (
+              {isMainOpen && (
                 <motion.div
                   layout
                   key="dropdown"
@@ -720,7 +727,7 @@ const Header = () => {
                   <a href="https://mabsolinfotech.com/crmtest/employee/employee_register.php" className="block border-b border-gray-300 p-2 !text-gray-600">
                     <div className="flex justify-start items-center gap-1"><AiOutlineSolution />Employee Attendance</div>
                   </a>
-                  <a href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php" className="block border-b border-gray-300 p-2 !text-gray-600">
+                  {/* <a href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php" className="block border-b border-gray-300 p-2 !text-gray-600">
 
                     <div className="flex justify-start items-center gap-1"><AiOutlineUser />Admin Portal</div>
                   </a>
@@ -729,13 +736,7 @@ const Header = () => {
                       Employee Portal
                     </div>
 
-                  </a>
-                  <a href="https://demo.mabsolinfotech.com/crm/" className="block border-b border-gray-300 p-2 !text-gray-600">
-                    <div className="flex justify-start items-center gap-1"><AiOutlineSync />
-                      Users Portal
-                    </div>
-
-                  </a>
+                  </a> */}
                   <a href="https://demo.mabsolinfotech.com/hr/admin/index" className="block border-b border-gray-300 p-2 !text-gray-600">
                     <div className="flex justify-start items-center gap-1"><IoBagHandleOutline />
                       HR Admin
@@ -754,7 +755,56 @@ const Header = () => {
                       Institute Admin
                     </div>
                   </a>
-                  <a href="https://humanresources.mabsolinfotech.com/admin/index.php" className="block border-b border-gray-300 p-2 !text-gray-600">
+                  <div className=" w-full">
+                    {/* Trigger */}
+                    <div
+                      onClick={toggleDCRSubmenu}
+                      className="cursor-pointer font-medium text-gray-600"
+                    >
+                      <Space className="pt-2 text-[16px] font-semibold">
+                        <div className="flex justify-start items-center gap-1"><FcComboChart />
+                          DCR Demo
+                        </div>
+
+                        {isDCRSubOpen ? <UpOutlined /> : <DownOutlined />}
+                      </Space>
+                    </div>
+
+                    {/* Inline Dropdown Menu */}
+                    <AnimatePresence initial={false}>
+                      {isDCRSubOpen && (
+                        <motion.div
+                          layout
+                          key="dropdown"
+                          initial={{ opacity: 0, maxHeight: 0 }}
+                          animate={{ opacity: 1, maxHeight: 700 }}
+                          exit={{ opacity: 0, maxHeight: 0 }}
+                          transition={{ duration: 0.4, ease: "easeInOut" }}
+                          className="overflow-hidden bg-white border-none rounded text-sm mt-2"
+                        >
+                          <a href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php" className="block border-b border-gray-300 p-2 !text-gray-600">
+
+                            <div className="flex justify-start items-center gap-1"><AiOutlineUser />Admin Portal</div>
+                          </a>
+                          <a href="https://demo.mabsolinfotech.com/crm/employee/employee_register.php" className="block border-b border-gray-300 p-2 !text-gray-600">
+                            <div className="flex justify-start items-center gap-1"><AiOutlineTeam />
+                              Employee Portal
+                            </div>
+
+                          </a>
+                          <a href="https://demo.mabsolinfotech.com/crm/" className="block border-b border-gray-300 p-2 !text-gray-600">
+                            <div className="flex justify-start items-center gap-1"><AiOutlineSync />
+                              Users Portal
+                            </div>
+
+                          </a>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+
+
+                  {/* <a href="https://humanresources.mabsolinfotech.com/admin/index.php" className="block border-b border-gray-300 p-2 !text-gray-600">
 
                     <div className="flex justify-start items-center gap-1"><MdOutlineAdminPanelSettings />
                       Admin Login
@@ -765,7 +815,56 @@ const Header = () => {
                     <div className="flex justify-start items-center gap-1"><SiSimplelogin />
                       Employee Login
                     </div>
-                  </a>
+                  </a> */}
+
+
+                  {/* *******************************************sub menu******************************************** */}
+
+                  <div className=" w-full">
+                    {/* Trigger */}
+                    <div
+                      onClick={toggleHRSubmenu}
+                      className="cursor-pointer font-medium text-gray-600"
+                    >
+                      <Space className="pt-2 text-[16px] font-semibold">
+                        <div className="flex justify-start items-center gap-1"><FcBusinessman />
+                          HR Payroll
+                        </div>
+
+                        {isHRSubOpen ? <UpOutlined /> : <DownOutlined />}
+                      </Space>
+                    </div>
+
+                    {/* Inline Dropdown Menu */}
+                    <AnimatePresence initial={false}>
+                      {/* <motion.div> */}
+                        {isHRSubOpen && (
+                          <motion.div
+                            layout
+                            key="dropdown"
+                            initial={{ opacity: 0, maxHeight: 0 }}
+                            animate={{ opacity: 1, maxHeight: 500 }}
+                            exit={{ opacity: 0, maxHeight: 0 }}
+                            transition={{ duration: 0.4, ease: "easeInOut" }}
+                            className="overflow-hidden bg-white border-none rounded text-sm mt-2"
+                          >
+                            <a href="https://humanresources.mabsolinfotech.com/admin/index.php" className="block border-b border-gray-300 p-2 !text-gray-600">
+
+                              <div className="flex justify-start items-center gap-1"><MdOutlineAdminPanelSettings />
+                                Admin Login
+                              </div>
+                            </a>
+                            <a href="https://humanresources.mabsolinfotech.com/employee/" className="block border-b border-gray-300 p-2 !text-gray-600">
+
+                              <div className="flex justify-start items-center gap-1"><SiSimplelogin />
+                                Employee Login
+                              </div>
+                            </a>
+                          </motion.div>
+                        )}
+                      {/* </motion.div> */}
+                    </AnimatePresence>
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -778,7 +877,7 @@ const Header = () => {
               data-aos-easing="linear"
               data-aos-duration="700"
             >
-              <Button type="primary" className="!text-white !rounded-none !py-6 !px-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+              <Button className="!text-white !bg-green-600 !rounded-none !py-6 !px-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                 Raise a Support Ticket
               </Button>
             </div>
