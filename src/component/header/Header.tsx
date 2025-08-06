@@ -512,7 +512,7 @@ const Header = () => {
   };
 
   const handleCRMClick = () => {
-    router.push("https://mabsolinfotech.com/contact-us/");
+    router.push("https://next-auth-email-verification-h7sd.vercel.app/");
   };
 
   return (
