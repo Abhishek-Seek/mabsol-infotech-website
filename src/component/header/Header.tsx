@@ -327,7 +327,7 @@ const Header = () => {
           Empoyee Portal
         </a>
         <a
-          href="https://mabsolinfotech.com/human-resources-demo-portal/"
+          href="https://mabsolinfotech.com/crmtest/demo_contact_hr.php"
           className="!text-blue-300 select-none"
         >
           Get Demo
@@ -377,7 +377,7 @@ const Header = () => {
           Get DCR Demo
         </a>
         <a
-          href="https://mabsolinfotech.com/pricing-contact-form/"
+          href="https://mabsolinfotech.com/crmtest/demo_contact_dcr.php"
           className="!text-blue-300 select-none"
         >
           Get Demo Or Pricing Detail
@@ -443,7 +443,7 @@ const Header = () => {
           Student Portal
         </a>
         <a
-          href="https://mabsolinfotech.com/institute-portal-demo-form/"
+          href="https://mabsolinfotech.com/crmtest/demo_contact.php"
           className="!text-blue-300 select-none"
         >
           Get Demo
@@ -473,7 +473,7 @@ const Header = () => {
           Reception Portal
         </a>
         <a
-          href="https://mabsolinfotech.com/school-portal-demo/"
+          href="https://mabsolinfotech.com/crmtest/demo_contact_school.php"
           className="!text-blue-300 select-none"
         >
           Get Demo
