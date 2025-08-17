@@ -1,6 +1,6 @@
 "use client";
 
-import { CloseOutlined, DownOutlined, MenuFoldOutlined, UpOutlined } from "@ant-design/icons";
+import { CloseOutlined, DownOutlined, ExperimentOutlined, MenuFoldOutlined, UpOutlined } from "@ant-design/icons";
 import { Button, Drawer, Dropdown, MenuProps, Popover, Space } from "antd";
 import Aos from "aos";
 import Link from "next/link";
@@ -287,7 +287,7 @@ const Header = () => {
   // );
 
   const MegaMenuContent = () => (
-    <div className="bg-blue-900 text-white grid grid-cols-5 gap-10 p-14">
+    <div className="bg-blue-900 text-white grid lg:grid-cols-4 xl:grid-cols-5 gap-4 p-14">
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <a
           href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
@@ -517,18 +517,18 @@ const Header = () => {
 
   return (
     <div className=" bg-blue-900 sticky top-0 z-50">
-      <div className="flex justify-around items-center gap-0 px-6 lg:px-20 py-4">
+      <div className="flex justify-around items-center gap-10 px-6 xl:px-10 py-4">
         <div>
           <img
             src={img}
             alt="imgs"
-            className="h-[50px] w-[160px] md:h-[80px] md:w-[180px] lg:h-[80px] lg:w-[200px]"
+            className="h-[50px] w-[130px] md:h-[80px] md:w-[180px] lg:h-[80px] lg:w-[200px]"
           />
         </div>
-        <div className="flex justify-center items-center gap-20">
+        <div className="flex justify-center items-center gap-10 min-w-0 overflow-hidden">
           <nav
             data-aos="fade-up"
-            className="lg:flex hidden justify-center items-center gap-0 text-white text-sm font-bold"
+            className="lg:flex flex-wrap hidden justify-center items-center gap-0 text-white text-sm font-bold"
             style={{ fontFamily: "Roboto,sans-serif" }}
           >
             <div>
@@ -647,29 +647,37 @@ const Header = () => {
       </div>
 
       <Drawer
-        title="Menu"
+        title={
+          <div className="flex justify-center gap-2">
+            <img
+              src="/images/logo.webp"
+              alt="Logo"
+              className="h-8 w-auto"
+            />
+            {/* <span className="text-lg font-semibold text-black">Menu</span> */}
+          </div>
+        }
         placement="right"
         open={open}
         onClose={() => {
           setOpen(false);
         }}
         closeIcon={<CloseOutlined style={{ color: "white" }} />}
-        style={{ backgroundColor: "#2b6cb0" }}
-        className=" text-white w-full"
+        style={{ backgroundColor: "#1E3A8A", width: "100%" }}
       >
         <nav
           data-aos="fade-up"
           style={{ fontFamily: "Montserrat, sans-serif" }}
-          className="flex flex-col gap-6 text-lg font-medium"
+          className="flex flex-col text-lg font-medium"
         >
-          <a href="/" className="!text-white font-semibold">
+          <a href="/" className="!text-white font-medium border-b border-gray-300 py-4 p-2">
             Home
           </a>
 
-          <a className="!text-white">
+          <a className="!text-white border-b border-gray-300 py-4 p-2">
             About Us
           </a>
-          <a className="!text-white">
+          <a className="!text-white border-b border-gray-300 py-4 p-2">
             Service
           </a>
           {/* <Popover content={click} title="Software Product" trigger="click" placement="topRight">
@@ -677,7 +685,7 @@ const Header = () => {
               Software Product<DownOutlined />
             </div>
           </Popover> */}
-          <a className="!text-white">
+          <a className="!text-white border-b border-gray-300 py-4 p-2">
             Software Product
           </a>
           {/* <a href="">Mabsol Portal</a> */}
@@ -704,7 +712,7 @@ const Header = () => {
             {/* Trigger */}
             <div
               onClick={toggleMainDropdown}
-              className="cursor-pointer font-medium text-lg !text-white"
+              className="cursor-pointer font-medium text-lg !text-white  pt-4 p-2"
             >
               <Space>
                 Mabsol Portal
@@ -722,9 +730,9 @@ const Header = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="bg-white  border-none rounded py-4 text-sm mt-2"
+                  className="bg-sky-blue-900  border-none rounded pb-4 text-sm"
                 >
-                  <a href="https://mabsolinfotech.com/crmtest/employee/employee_register.php" className="block border-b border-gray-300 p-2 !text-gray-600">
+                  <a href="https://mabsolinfotech.com/crmtest/employee/employee_register.php" className="block hover:border-b hover:border-gray-300 p-2 !text-white">
                     <div className="flex justify-start items-center gap-1"><AiOutlineSolution />Employee Attendance</div>
                   </a>
                   {/* <a href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php" className="block border-b border-gray-300 p-2 !text-gray-600">
@@ -737,29 +745,35 @@ const Header = () => {
                     </div>
 
                   </a> */}
-                  <a href="https://demo.mabsolinfotech.com/hr/admin/index" className="block border-b border-gray-300 p-2 !text-gray-600">
+                  <a href="https://demo.mabsolinfotech.com/hr/admin/index" className="block hover:border-b hover:border-gray-300 p-2 !text-white">
                     <div className="flex justify-start items-center gap-1"><IoBagHandleOutline />
                       HR Admin
 
                     </div>
                   </a>
-                  <a href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php" className="block border-b border-gray-300 p-2 !text-gray-600">
+                  <a href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php" className="block hover:border-b hover:border-gray-300 p-2 !text-white">
 
                     <div className="flex justify-start items-center gap-1"><SiCivicrm />
                       CRM Admin
                     </div>
                   </a>
-                  <a href="https://demo.mabsolinfotech.com/institute/admin/" className="block border-b border-gray-300 p-2 !text-gray-600">
+                  <a href="https://demo.mabsolinfotech.com/institute/admin/" className="block hover:border-b hover:border-gray-300 p-2 !text-white">
 
                     <div className="flex justify-start items-center gap-1"><IoSchool />
                       Institute Admin
+                    </div>
+                  </a>
+                  <a href="https://mabsolinfotech.com/crmtest/demo_contact_school.php" className="block hover:border-b hover:border-gray-300 p-2 !text-white">
+
+                    <div className="flex justify-start items-center gap-1"><ExperimentOutlined />
+                      Get Demo Or Pricing Details
                     </div>
                   </a>
                   <div className=" w-full">
                     {/* Trigger */}
                     <div
                       onClick={toggleDCRSubmenu}
-                      className="cursor-pointer font-medium text-gray-600"
+                      className="cursor-pointer font-medium text-white"
                     >
                       <Space className="pt-2 text-[16px] font-semibold">
                         <div className="flex justify-start items-center gap-1"><FcComboChart />
@@ -780,23 +794,29 @@ const Header = () => {
                           animate={{ opacity: 1, maxHeight: 700 }}
                           exit={{ opacity: 0, maxHeight: 0 }}
                           transition={{ duration: 0.4, ease: "easeInOut" }}
-                          className="overflow-hidden bg-white border-none rounded text-sm mt-2"
+                          className="overflow-hidden bg-sky-blue-900 border-none rounded text-sm mt-2"
                         >
-                          <a href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php" className="block border-b border-gray-300 p-2 !text-gray-600">
+                          <a href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php" className="block hover:border-b hover:border-gray-300 p-2 !text-white">
 
                             <div className="flex justify-start items-center gap-1"><AiOutlineUser />Admin Portal</div>
                           </a>
-                          <a href="https://demo.mabsolinfotech.com/crm/employee/employee_register.php" className="block border-b border-gray-300 p-2 !text-gray-600">
+                          <a href="https://demo.mabsolinfotech.com/crm/employee/employee_register.php" className="block hover:border-b hover:border-gray-300 p-2 !text-white">
                             <div className="flex justify-start items-center gap-1"><AiOutlineTeam />
                               Employee Portal
                             </div>
 
                           </a>
-                          <a href="https://demo.mabsolinfotech.com/crm/" className="block border-b border-gray-300 p-2 !text-gray-600">
+                          <a href="https://demo.mabsolinfotech.com/crm/" className="block hover:border-b hover:border-gray-300 p-2 !text-white">
                             <div className="flex justify-start items-center gap-1"><AiOutlineSync />
                               Users Portal
                             </div>
 
+                          </a>
+                          <a href="https://mabsolinfotech.com/crmtest/demo_contact_school.php" className="block hover:border-b hover:border-gray-300 p-2 !text-white">
+
+                            <div className="flex justify-start items-center gap-1"><ExperimentOutlined />
+                              Get Demo
+                            </div>
                           </a>
                         </motion.div>
                       )}
@@ -824,7 +844,7 @@ const Header = () => {
                     {/* Trigger */}
                     <div
                       onClick={toggleHRSubmenu}
-                      className="cursor-pointer font-medium text-gray-600"
+                      className="cursor-pointer font-medium text-white"
                     >
                       <Space className="pt-2 text-[16px] font-semibold">
                         <div className="flex justify-start items-center gap-1"><FcBusinessman />
@@ -838,30 +858,36 @@ const Header = () => {
                     {/* Inline Dropdown Menu */}
                     <AnimatePresence initial={false}>
                       {/* <motion.div> */}
-                        {isHRSubOpen && (
-                          <motion.div
-                            layout
-                            key="dropdown"
-                            initial={{ opacity: 0, maxHeight: 0 }}
-                            animate={{ opacity: 1, maxHeight: 500 }}
-                            exit={{ opacity: 0, maxHeight: 0 }}
-                            transition={{ duration: 0.4, ease: "easeInOut" }}
-                            className="overflow-hidden bg-white border-none rounded text-sm mt-2"
-                          >
-                            <a href="https://humanresources.mabsolinfotech.com/admin/index.php" className="block border-b border-gray-300 p-2 !text-gray-600">
+                      {isHRSubOpen && (
+                        <motion.div
+                          layout
+                          key="dropdown"
+                          initial={{ opacity: 0, maxHeight: 0 }}
+                          animate={{ opacity: 1, maxHeight: 500 }}
+                          exit={{ opacity: 0, maxHeight: 0 }}
+                          transition={{ duration: 0.4, ease: "easeInOut" }}
+                          className="overflow-hidden bg-sky-blue-900 border-none rounded text-sm mt-2"
+                        >
+                          <a href="https://humanresources.mabsolinfotech.com/admin/index.php" className="block hover:border-b hover:border-gray-300 p-2 !text-white">
 
-                              <div className="flex justify-start items-center gap-1"><MdOutlineAdminPanelSettings />
-                                Admin Login
-                              </div>
-                            </a>
-                            <a href="https://humanresources.mabsolinfotech.com/employee/" className="block border-b border-gray-300 p-2 !text-gray-600">
+                            <div className="flex justify-start items-center gap-1"><MdOutlineAdminPanelSettings />
+                              Admin Login
+                            </div>
+                          </a>
+                          <a href="https://humanresources.mabsolinfotech.com/employee/" className="block hover:border-b hover:border-gray-300 p-2 !text-white">
 
-                              <div className="flex justify-start items-center gap-1"><SiSimplelogin />
-                                Employee Login
-                              </div>
-                            </a>
-                          </motion.div>
-                        )}
+                            <div className="flex justify-start items-center gap-1"><SiSimplelogin />
+                              Employee Login
+                            </div>
+                          </a>
+                          <a href="https://mabsolinfotech.com/crmtest/demo_contact_school.php" className="block hover:border-b hover:border-gray-300 p-2 !text-white">
+
+                            <div className="flex justify-start items-center gap-1"><ExperimentOutlined />
+                              Get Demo
+                            </div>
+                          </a>
+                        </motion.div>
+                      )}
                       {/* </motion.div> */}
                     </AnimatePresence>
                   </div>
@@ -895,8 +921,10 @@ const Header = () => {
             </div>
           </Link>
         </div>
+
+
       </Drawer>
-    </div>
+    </div >
   );
 };
 
