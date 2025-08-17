@@ -652,7 +652,7 @@ const Header = () => {
             <img
               src="/images/logo.webp"
               alt="Logo"
-              className="h-8 w-auto"
+              className="h-14 w-auto"
             />
             {/* <span className="text-lg font-semibold text-black">Menu</span> */}
           </div>
