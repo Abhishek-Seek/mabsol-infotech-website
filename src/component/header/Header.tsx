@@ -474,12 +474,15 @@ const Header = () => {
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <span>School Portal</span>
         <a
-          href="https://mabsolinfotech.com/institute-portal-demo-form/"
+          href="https://sms.mabsolinfotech.com/dashboard/admin/"
           className="!text-blue-300 select-none"
         >
           Admin Portal
         </a>
-        <a href="#" className="!text-blue-300 select-none">
+        <a
+          href="https://sms.mabsolinfotech.com/dashboard/students/"
+          className="!text-blue-300 select-none"
+        >
           Student Portal
         </a>
         <a
@@ -1141,7 +1144,7 @@ const Header = () => {
                           >
                             <div className="flex justify-start items-center gap-1">
                               <SiSimplelogin />
-                              Get Demo 
+                              Get Demo
                             </div>
                           </a>
 
