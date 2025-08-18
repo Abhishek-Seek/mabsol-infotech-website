@@ -16,15 +16,25 @@ import { AnimatePresence, motion } from "framer-motion";
 // import Image from 'next/image'
 import React, { useEffect, useState } from "react";
 import {
+  AiFillSafetyCertificate,
+  AiOutlineAim,
   AiOutlineSolution,
   AiOutlineSync,
   AiOutlineTeam,
   AiOutlineUser,
 } from "react-icons/ai";
 import { IoBagHandleOutline, IoSchool } from "react-icons/io5";
-import { SiCivicrm, SiSimplelogin } from "react-icons/si";
-import { MdOutlineAdminPanelSettings } from "react-icons/md";
-import { FcBusinessman, FcComboChart } from "react-icons/fc";
+import {
+  SiCivicrm,
+  SiLinuxprofessionalinstitute,
+  SiSimplelogin,
+} from "react-icons/si";
+import {
+  MdCrisisAlert,
+  MdOutlineAdminPanelSettings,
+  MdSchool,
+} from "react-icons/md";
+import { FcBusinessman, FcComboChart, FcCustomerSupport } from "react-icons/fc";
 import { HiOutlineChartBar } from "react-icons/hi";
 import { RiBarChartGroupedLine } from "react-icons/ri";
 import { BiMapPin } from "react-icons/bi";
@@ -693,15 +703,15 @@ const Header = () => {
         >
           <a
             href="/"
-            className="!text-white font-medium border-b border-gray-300 py-4 p-2"
+            className="!text-white font-medium border-b border-gray-300 py-3 p-2"
           >
             Home
           </a>
 
-          <a className="!text-white border-b border-gray-300 py-4 p-2">
+          <a className="!text-white border-b border-gray-300 py-3 p-2">
             About Us
           </a>
-          <a className="!text-white border-b border-gray-300 py-4 p-2">
+          <a className="!text-white border-b border-gray-300 py-3 p-2">
             Service
           </a>
           {/* <Popover content={click} title="Software Product" trigger="click" placement="topRight">
@@ -709,7 +719,7 @@ const Header = () => {
               Software Product<DownOutlined />
             </div>
           </Popover> */}
-          <a className="!text-white border-b border-gray-300 py-4 p-2">
+          <a className="!text-white border-b border-gray-300 py-3 p-2">
             Software Product
           </a>
           {/* <a href="">Mabsol Portal</a> */}
@@ -738,14 +748,14 @@ const Header = () => {
               onClick={toggleMainDropdown}
               className="cursor-pointer font-medium text-lg !text-white  pt-4 p-2"
             >
-              <Space>
-                Mabsol Portal
+              <div className="flex justify-between items-center">
+                <div>Mabsol Portal</div>
                 {isMainOpen ? (
                   <UpOutlined className="text-sm" />
                 ) : (
                   <DownOutlined className="text-sm" />
                 )}
-              </Space>
+              </div>
             </div>
 
             {/* Inline Dropdown Menu */}
@@ -770,7 +780,7 @@ const Header = () => {
                     </div>
                   </a>
 
-                  <a
+                  {/* <a
                     href="https://demo.mabsolinfotech.com/hr/admin/index"
                     className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                   >
@@ -796,7 +806,7 @@ const Header = () => {
                       <IoSchool />
                       Institute Admin
                     </div>
-                  </a>
+                  </a> */}
 
                   {/* *******************************************sub menu******************************************** */}
 
@@ -806,7 +816,7 @@ const Header = () => {
                       onClick={toggleDcrDemoSubmenu}
                       className="cursor-pointer font-medium text-white"
                     >
-                      <div className="pt-2 text-[16px] font-medium flex justify-between items-center">
+                      <div className=" pt-4 py-2 text-[16px] font-medium flex justify-between items-center">
                         <div className="flex justify-start items-center gap-1">
                           <FcComboChart />
                           DCR Demo
@@ -834,7 +844,7 @@ const Header = () => {
                         >
                           <a
                             href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
-                            className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                            className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
                               <AiOutlineUser />
@@ -879,7 +889,7 @@ const Header = () => {
                       onClick={togglePayrollSubmenu}
                       className="cursor-pointer font-medium text-white"
                     >
-                      <div className="pt-2 text-[16px] font-medium flex justify-between items-center">
+                      <div className="py-2 text-[16px] font-medium flex justify-between items-center">
                         <div className="flex justify-start items-center gap-1">
                           <FcBusinessman />
                           HR Payroll
@@ -908,7 +918,7 @@ const Header = () => {
                         >
                           <a
                             href="https://humanresources.mabsolinfotech.com/admin/index.php"
-                            className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                            className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
                               <MdOutlineAdminPanelSettings />
@@ -938,15 +948,18 @@ const Header = () => {
                       {/* </motion.div> */}
                     </AnimatePresence>
                   </div>
+
                   <div className=" w-full">
                     {/* Trigger */}
                     <div
                       onClick={toggleDCRSubmenu}
                       className="cursor-pointer font-medium text-white"
                     >
-                      <div className="pt-2 text-[16px] font-medium flex justify-between items-center">
+                      <div className="py-2 text-[16px] font-medium flex justify-between items-center">
                         <div className="flex justify-start items-center gap-1">
-                           <DollarCircleFilled style={{ fontSize: "14px", color: "#16A34A" }} />
+                          <DollarCircleFilled
+                            style={{ fontSize: "14px", color: "#16A34A" }}
+                          />
                           HR Payroll Demo
                         </div>
 
@@ -973,7 +986,7 @@ const Header = () => {
                         >
                           <a
                             href="https://demo.mabsolinfotech.com/hr/admin/index"
-                            className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                            className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
                               <MdOutlineAdminPanelSettings />
@@ -1003,15 +1016,16 @@ const Header = () => {
                       {/* </motion.div> */}
                     </AnimatePresence>
                   </div>
+
                   <div className=" w-full">
                     {/* Trigger */}
                     <div
                       onClick={toggleHRSubmenu}
                       className="cursor-pointer font-medium text-white"
                     >
-                      <div className="pt-2 text-[16px] font-medium flex justify-between items-center">
+                      <div className="py-2 text-[16px] font-medium flex justify-between items-center">
                         <div className="flex justify-start items-center gap-1">
-                           <LiaCalendarDaySolid className="w-5 h-5 text-blue-200" />
+                          <MdCrisisAlert className=" text-blue-200" />
                           DCR
                         </div>
 
@@ -1038,7 +1052,7 @@ const Header = () => {
                         >
                           <a
                             href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
-                            className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                            className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
                               <MdOutlineAdminPanelSettings />
@@ -1066,9 +1080,9 @@ const Header = () => {
                       onClick={toggleDCRPortalSubmenu}
                       className="cursor-pointer font-medium text-white"
                     >
-                      <div className="pt-2 text-[16px] font-medium flex justify-between items-center">
+                      <div className="py-2 text-[16px] font-medium flex justify-between items-center">
                         <div className="flex justify-start items-center gap-1">
-                          <FcBusinessman />
+                          <AiFillSafetyCertificate />
                           DCR Portal Demo
                         </div>
 
@@ -1094,7 +1108,7 @@ const Header = () => {
                           className="overflow-hidden bg-sky-blue-900 border-none rounded text-sm mt-2"
                         >
                           <a
-                            href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
+                            href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
                             className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
@@ -1103,8 +1117,8 @@ const Header = () => {
                             </div>
                           </a>
                           <a
-                            href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
-                            className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                            href="https://demo.mabsolinfotech.com/crm/employee/employee_register.php"
+                            className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
                               <SiSimplelogin />
@@ -1112,7 +1126,7 @@ const Header = () => {
                             </div>
                           </a>
                           <a
-                            href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
+                            href="https://demo.mabsolinfotech.com/crm/"
                             className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
@@ -1120,8 +1134,19 @@ const Header = () => {
                               User Portal
                             </div>
                           </a>
+
                           <a
-                            href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
+                            href="https://mabsolinfotech.com/crmtest/demo_contact_dcr.php"
+                            className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                          >
+                            <div className="flex justify-start items-center gap-1">
+                              <SiSimplelogin />
+                              Get Demo 
+                            </div>
+                          </a>
+
+                          <a
+                            href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
                             className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
@@ -1141,9 +1166,9 @@ const Header = () => {
                       onClick={toggleCustomerSubmenu}
                       className="cursor-pointer font-medium text-white"
                     >
-                      <div className="pt-2 text-[16px] font-medium flex justify-between items-center">
+                      <div className="py-2 text-[16px] font-medium flex justify-between items-center">
                         <div className="flex justify-start items-center gap-1">
-                          <FcBusinessman />
+                          <FcCustomerSupport />
                           Customer Portal
                         </div>
 
@@ -1169,8 +1194,8 @@ const Header = () => {
                           className="overflow-hidden bg-sky-blue-900 border-none rounded text-sm mt-2"
                         >
                           <a
-                            href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
-                            className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                            href="https://mabsolinfotech.com/crmtest/"
+                            className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
                               <MdOutlineAdminPanelSettings />
@@ -1198,9 +1223,9 @@ const Header = () => {
                       onClick={toggleInstituteSubmenu}
                       className="cursor-pointer font-medium text-white"
                     >
-                      <div className="pt-2 text-[16px] font-medium flex justify-between items-center">
+                      <div className="py-2 text-[16px] font-medium flex justify-between items-center">
                         <div className="flex justify-start items-center gap-1">
-                          <FcBusinessman />
+                          <SiLinuxprofessionalinstitute />
                           Institute Portal
                         </div>
 
@@ -1226,8 +1251,8 @@ const Header = () => {
                           className="overflow-hidden bg-sky-blue-900 border-none rounded text-sm mt-2"
                         >
                           <a
-                            href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
-                            className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                            href="https://demo.mabsolinfotech.com/institute/admin/"
+                            className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
                               <MdOutlineAdminPanelSettings />
@@ -1235,7 +1260,7 @@ const Header = () => {
                             </div>
                           </a>
                           <a
-                            href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
+                            href="https://demo.mabsolinfotech.com/institute/staff/"
                             className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
@@ -1244,7 +1269,7 @@ const Header = () => {
                             </div>
                           </a>
                           <a
-                            href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
+                            href="https://demo.mabsolinfotech.com/institute/student/"
                             className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
@@ -1253,12 +1278,12 @@ const Header = () => {
                             </div>
                           </a>
                           <a
-                            href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
+                            href="https://mabsolinfotech.com/crmtest/demo_contact.php"
                             className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
                               <SiSimplelogin />
-                              Get Demo And Pricing Details
+                              Get Demo
                             </div>
                           </a>
                         </motion.div>
@@ -1276,7 +1301,7 @@ const Header = () => {
                       <div className="pt-2 text-[16px] font-medium flex items-center justify-between">
                         {/* Left Part */}
                         <div className="flex items-center gap-1">
-                          <FcBusinessman />
+                          <MdSchool className="text-yellow-600" />
                           School Portal
                         </div>
 
@@ -1303,8 +1328,8 @@ const Header = () => {
                           className="overflow-hidden bg-sky-blue-900 border-none rounded text-sm mt-2"
                         >
                           <a
-                            href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
-                            className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                            href="https://sms.mabsolinfotech.com/dashboard/admin/"
+                            className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
                               <MdOutlineAdminPanelSettings />
@@ -1312,7 +1337,7 @@ const Header = () => {
                             </div>
                           </a>
                           <a
-                            href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
+                            href="https://sms.mabsolinfotech.com/dashboard/teachers/"
                             className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
@@ -1321,7 +1346,7 @@ const Header = () => {
                             </div>
                           </a>
                           <a
-                            href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
+                            href="https://sms.mabsolinfotech.com/dashboard/reception/"
                             className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
@@ -1330,7 +1355,7 @@ const Header = () => {
                             </div>
                           </a>
                           <a
-                            href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
+                            href="https://sms.mabsolinfotech.com/dashboard/students/"
                             className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
@@ -1339,7 +1364,7 @@ const Header = () => {
                             </div>
                           </a>
                           <a
-                            href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
+                            href="https://sms.mabsolinfotech.com/dashboard/driver/"
                             className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
@@ -1348,7 +1373,7 @@ const Header = () => {
                             </div>
                           </a>
                           <a
-                            href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
+                            href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
                             className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                           >
                             <div className="flex justify-start items-center gap-1">
