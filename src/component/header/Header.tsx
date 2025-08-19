@@ -309,7 +309,7 @@ const Header = () => {
   // );
 
   const MegaMenuContent = () => (
-    <div className="bg-blue-900 text-white grid grid-cols-3 lg:grid-cols-4 gap-8 p-14">
+    <div className="bg-blue-900 text-white grid grid-cols-3 lg:grid-cols-4 gap-4 xl:gap-8 p-14">
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <a
           href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
@@ -560,13 +560,13 @@ const Header = () => {
           <img
             src={img}
             alt="imgs"
-            className="h-[50px] w-[130px] md:h-[80px] md:w-[180px] lg:h-[80px] lg:w-[200px]"
+            className="h-[50px] w-[130px] md:h-[80px] md:w-[150px] lg:h-[80px] lg:w-[170px]"
           />
         </div>
-        <div className="flex justify-center items-center gap-8 min-w-0 overflow-hidden">
+        <div className="flex justify-center items-center gap-8 xl:gap-20 min-w-0 overflow-hidden">
           <nav
             data-aos="fade-up"
-            className="lg:flex flex-wrap hidden justify-center items-center gap-0 text-white text-sm font-bold"
+            className="lg:flex flex-wrap hidden justify-center gap-4 xl:gap-6 items-center text-white text-sm font-bold"
             style={{ fontFamily: "Roboto,sans-serif" }}
           >
             <div>
@@ -594,7 +594,11 @@ const Header = () => {
               <Button
                 type="text"
                 className="!text-white !text-sm !font-extrabold"
-                style={{ fontFamily: "Roboto,sans-serif" }}
+                style={{
+                  fontFamily: "Roboto,sans-serif",
+                  padding: "0px",
+                  gap: "5px",
+                }}
               >
                 About Us
                 <DownOutlined />
@@ -610,7 +614,11 @@ const Header = () => {
               <Button
                 type="text"
                 className="!text-white !text-sm !font-extrabold "
-                style={{ fontFamily: "Roboto,sans-serif" }}
+                style={{
+                  fontFamily: "Roboto,sans-serif",
+                  padding: "0px",
+                 gap: "5px",
+                }}
               >
                 Service
                 <DownOutlined />
@@ -627,7 +635,11 @@ const Header = () => {
               <Button
                 type="text"
                 className="!text-white !text-sm !font-extrabold"
-                style={{ fontFamily: "Roboto,sans-serif" }}
+                style={{
+                  fontFamily: "Roboto,sans-serif",
+                  padding: "0px",
+                  gap: "5px",
+                }}
               >
                 Software Products
                 <DownOutlined />
@@ -643,7 +655,11 @@ const Header = () => {
               <Button
                 type="text"
                 className="!text-white !text-sm !font-extrabold"
-                style={{ fontFamily: "Roboto,sans-serif" }}
+                style={{
+                  fontFamily: "Roboto,sans-serif",
+                  padding: "0px",
+                  gap: "5px",
+                }}
               >
                 Mabsol Portal
                 <DownOutlined />
@@ -1407,7 +1423,7 @@ const Header = () => {
             </div>
           </Link>
 
-          <Link href="https://mabsolinfotech.com/contact-us/">
+          <Link href="https://next-auth-email-verification-h7sd.vercel.app/">
             <div
               data-aos="fade-down"
               data-aos-easing="linear"
