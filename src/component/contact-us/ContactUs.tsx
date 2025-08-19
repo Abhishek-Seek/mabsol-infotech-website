@@ -11,7 +11,7 @@ const ContactUs = () => {
         <div id='contact' className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 md:px-10 lg:px-20 py-6 lg:py-10 bg-white">
             <div data-aos="fade-right" className="flex flex-col justify-center space-y-8">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-4xl md:text-5xl font-semibold text-blue-700 underline">
+                    <h1 className="text-4xl md:text-5xl font-semibold text-[#185e9a] underline">
                         Contact Us
                     </h1>
                     <p className="text-base md:text-lg italic pt-4 text-black">

@@ -28,7 +28,7 @@ const ExecutiveTeam = () => {
           data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500"
-          className="text-3xl sm:text-4xl text-center font-bold text-blue-800 font-serif"
+          className="text-3xl sm:text-4xl text-center font-bold text-[#185e9a] font-serif"
         >
           Executive <span className="text-black">Team</span>
         </h1>

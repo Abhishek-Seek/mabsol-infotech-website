@@ -26,7 +26,7 @@ const OurProduct = () => {
         data-aos="fade-down"
         data-aos-easing="linear"
         data-aos-duration="1500"
-        className="text-center text-4xl font-bold text-blue-800 underline"
+        className="text-center text-4xl font-bold text-[#185e9a] underline"
       >
         Our Products
       </h1>

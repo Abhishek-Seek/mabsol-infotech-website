@@ -8,7 +8,7 @@ const CaseStudy = () => {
       <Card
         data-aos="fade-right"
         styles={{ body: { padding: "40px 20px 40px 20px" } }}
-        className="!bg-blue-800"
+        className="!bg-[#185e9a]"
       >
         <div className="h-[400px] overflow-hidden">
           <img
@@ -26,7 +26,7 @@ const CaseStudy = () => {
       </Card>
 
       <Card data-aos="fade-left" className="!bg-gray-200">
-        <span className="text-3xl font-semibold underline text-blue-800">
+        <span className="text-3xl font-semibold underline text-[#185e9a]">
           # Case Studies
         </span>
         <p className="text-4xl font-serif font-semibold py-8">
@@ -41,28 +41,28 @@ const CaseStudy = () => {
 
         <div className="flex flex-col gap-4 py-8">
           <li className="flex justify-start items-center gap-2">
-            <CheckOutlined className="p-1 bg-blue-800 rounded-full hover:text-black !text-white !font-bold" />
+            <CheckOutlined className="p-1 bg-[#185e9a] rounded-full hover:text-black !text-white !font-bold" />
             <span className="text-lg italic text-black">
               Revolutionizing Accounting with Tally
             </span>
           </li>
 
           <li className="flex justify-start items-center gap-2">
-            <CheckOutlined className="p-1 bg-blue-800 rounded-full hover:text-black !text-white !font-bold" />
+            <CheckOutlined className="p-1 bg-[#185e9a] rounded-full hover:text-black !text-white !font-bold" />
             <span className="text-lg italic text-black">
               Optimizing Business Operations with Marg ERP
             </span>
           </li>
 
           <li className="flex justify-start items-center gap-2">
-            <CheckOutlined className="p-1 bg-blue-800 rounded-full hover:text-black !text-white !font-bold" />
+            <CheckOutlined className="p-1 bg-[#185e9a] rounded-full hover:text-black !text-white !font-bold" />
             <span className="text-lg italic text-black">
               Enhancing Reporting Capabilities with MR Reporting
             </span>
           </li>
 
           <li className="flex justify-start items-center gap-2">
-            <CheckOutlined className="p-1 bg-blue-800 rounded-full hover:text-black !text-white !font-bold" />
+            <CheckOutlined className="p-1 bg-[#185e9a] rounded-full hover:text-black !text-white !font-bold" />
             <span className="text-lg italic text-black">
               Streamlining Clinic Management with Clinic Management Software
             </span>

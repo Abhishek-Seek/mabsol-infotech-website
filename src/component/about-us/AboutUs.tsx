@@ -12,7 +12,7 @@ const AboutUs = () => {
         >
             {/* Title + Description */}
             <div>
-                <h1 className="text-3xl sm:text-4xl font-bold underline text-blue-800 text-center">
+                <h1 className="text-3xl sm:text-4xl font-bold underline text-[#185e9a] text-center">
                     About Us
                 </h1>
                 <p className="text-base sm:text-lg italic py-4 text-justify">
@@ -27,7 +27,7 @@ const AboutUs = () => {
             {/* Why Choose Mabsol Section */}
             <div className="grid grid-cols-1 lg:grid-cols-2 pt-16 gap-8 lg:gap-14 items-center">
                 <div>
-                    <h1 className="text-3xl sm:text-4xl text-blue-800 underline font-bold">
+                    <h1 className="text-3xl sm:text-4xl text-[#185e9a] underline font-bold">
                         Why Choose Mabsol Infotech?
                     </h1>
                     <p className="text-base sm:text-lg italic py-4 text-justify">
@@ -42,7 +42,7 @@ const AboutUs = () => {
                             "Advanced Technology - Leveraging the latest tools to drive innovation and growth.",
                         ].map((text, index) => (
                             <li key={index} className="flex items-start gap-2">
-                                <CheckOutlined className="bg-blue-800 !text-white p-1 rounded-full text-sm" />
+                                <CheckOutlined className="bg-[#185e9a] !text-white p-1 rounded-full text-sm" />
                                 <span className="text-base italic lg:text-black text-white">{text}</span>
                             </li>
                         ))}
@@ -81,7 +81,7 @@ const AboutUs = () => {
                         data-aos="fade-down"
                         data-aos-easing="linear"
                         data-aos-duration="1500"
-                        className="text-3xl sm:text-4xl text-blue-800 underline font-bold"
+                        className="text-3xl sm:text-4xl text-[#185e9a] underline font-bold"
                     >
                         Our Mission
                     </h1>
@@ -99,7 +99,7 @@ const AboutUs = () => {
                             "Stay committed to quality and technological excellence.",
                         ].map((text, index) => (
                             <li key={index} className="flex items-start gap-2">
-                                <CheckOutlined className="bg-blue-800 !text-white p-1 rounded-full text-sm" />
+                                <CheckOutlined className="bg-[#185e9a] !text-white p-1 rounded-full text-sm" />
                                 <span className="text-base italic lg:text-black text-white">{text}</span>
                             </li>
                         ))}
@@ -113,7 +113,7 @@ const AboutUs = () => {
                     <h1
                         data-aos="fade-up"
                         data-aos-duration="3000"
-                        className="text-3xl sm:text-4xl text-blue-800 underline font-bold"
+                        className="text-3xl sm:text-4xl text-[#185e9a] underline font-bold"
                     >
                         Our Vision
                     </h1>
@@ -130,7 +130,7 @@ const AboutUs = () => {
                             "Foster long-term relationships built on trust and excellence.",
                         ].map((text, index) => (
                             <li key={index} className="flex items-start gap-2">
-                                <CheckOutlined className="bg-blue-800 !text-white p-1 rounded-full text-sm" />
+                                <CheckOutlined className="bg-[#185e9a] !text-white p-1 rounded-full text-sm" />
                                 <span className="text-base italic lg:text-black text-white">{text}</span>
                             </li>
                         ))}

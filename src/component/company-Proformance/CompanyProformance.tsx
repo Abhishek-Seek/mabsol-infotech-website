@@ -22,7 +22,7 @@ const CompanyProformance = () => {
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 lg:px-20 px-6 bg-gray-50 mt-20 py-10 gap-6'>
             <div  data-aos="fade-right" className=''>
-                <h1 className='text-4xl font-bold text-blue-800 py-6'>
+                <h1 className='text-4xl font-bold text-[#185e9a] py-6'>
                     Results For The Last 3 Years
                 </h1>
                 <p className='text-lg italic text-black'>

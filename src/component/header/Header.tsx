@@ -79,7 +79,7 @@ const Header = () => {
   // ];
 
   const Content = () => (
-    <div className="bg-blue-900 text-white flex flex-col gap-4 p-8 ">
+    <div className="bg-[#185e9a] text-white flex flex-col gap-4 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <a
           href="https://mabsolinfotech.com/product/tally-software-solutions/"
@@ -128,7 +128,7 @@ const Header = () => {
   );
 
   const Mega = () => (
-    <div className="bg-blue-900 text-white flex flex-col gap-0 p-8 ">
+    <div className="bg-[#185e9a] text-white flex flex-col gap-0 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <a
           href="https://mabsolinfotech.com/website-development/"
@@ -165,7 +165,7 @@ const Header = () => {
   );
 
   const MegaMenu = () => (
-    <div className="bg-blue-900 text-white grid grid-cols-2 gap-0 p-14 ">
+    <div className="bg-[#185e9a] text-white grid grid-cols-2 gap-0 p-14 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <span className="">Gallery</span>
         <a href="#" className="!text-blue-300">
@@ -309,7 +309,7 @@ const Header = () => {
   // );
 
   const MegaMenuContent = () => (
-    <div className="bg-blue-900 text-white grid grid-cols-3 xl:grid-cols-4 gap-2 2xl:gap-10 p-14">
+    <div className=" text-white grid grid-cols-3 xl:grid-cols-4 gap-2 2xl:gap-10 p-14" style={{backgroundColor:"#185e9a"}}>
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <a
           href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
@@ -554,13 +554,13 @@ const Header = () => {
   };
 
   return (
-    <div className=" bg-blue-900 sticky top-0 z-50">
+    <div className=" bg-[#185e9a] sticky top-0 z-50">
       <div className="flex justify-around items-center gap-10 px-6 py-4">
         <div>
           <img
             src={img}
             alt="imgs"
-            className="h-[50px] w-[130px] md:h-[80px] md:w-[150px] lg:h-[80px] lg:w-[170px]"
+            className="h-[50px] w-[130px] md:h-[70px] md:w-[150px] lg:h-[70px] lg:w-[170px]"
           />
         </div>
         <div className="flex justify-center items-center gap-8 xl:gap-16 min-w-0 overflow-hidden">

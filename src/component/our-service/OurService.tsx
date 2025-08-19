@@ -46,7 +46,7 @@ const OurService = () => {
 
             <div className='relative z-10 opacity-100 px-6 lg:px-20'>
                 <div>
-                    <h1 className='text-center text-4xl font-bold underline'>
+                    <h1 className='text-center text-[#185e9a] text-4xl font-bold underline'>
                         Our Services
                     </h1>
                     <div className='flex justify-center items-center gap-4 pt-4'>
@@ -66,7 +66,7 @@ const OurService = () => {
                             <div className='h-[300px] sm:h-[350px] md:h-[400px] lg:h-[300px] xl:h-[400px] w-full border-white rounded-2xl overflow-hidden'>
                                 <img src={item.image} alt="" className='h-[100%] w-[100%] bg-contain bg-center rounded-2xl transition duration-300 ease-in-out hover:scale-110' />
                             </div>
-                            <span className='text-3xl inline-block underline font-bold font-serif hover:text-blue-600 transition-colors duration-300 py-6'>
+                            <span className='text-3xl inline-block underline font-bold font-serif hover:text-[#185e9a] transition-colors duration-300 py-6'>
                                 {item.title}
                             </span>
                             <p className='pb-3'>

@@ -43,12 +43,12 @@ const GoogleReview = () => {
     return (
         <div className='lg:px-20 px-6 py-6 bg-white'>
             <div className='text-center pt-20'>
-                <h1 className='text-blue-800 text-2xl font-bold underline'>
+                <h1 className='text-[#185e9a] text-2xl font-bold underline'>
                     # Google Reviews
                 </h1>
 
                 <p className='text-5xl font-bold font-serif py-6 text-black'>
-                    <span className='text-5xl text-blue-800'>What our</span> clients says?
+                    <span className='text-5xl text-[#185e9a]'>What our</span> clients says?
                 </p>
 
                 <div className="pt-4 w-full flex justify-center items-center">

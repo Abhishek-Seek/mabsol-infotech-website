@@ -19,15 +19,15 @@ const Service = () => {
         }}
       >
         {/* <MailFilled /> */}
-        <FcEditImage className="text-6xl text-blue-700" />
-        <h1 className="text-3xl font-serif text- font-bold text-blue-800">
+        <FcEditImage className="text-6xl text-[#185e9a]" />
+        <h1 className="text-3xl font-serif font-bold text-[#185e9a]">
           Accounting Software
         </h1>
         <p className="text-lg italic">
           Simplify financial management with tools like Tally, Marg, and Busy
           for invoicing, GST, and reporting.
         </p>
-        <Button className="!bg-blue-800 !py-5 !px-8 !rounded-none !text-white">
+        <Button className="!bg-[#185e9a] !py-5 !px-8 !rounded-none !text-white">
           View
         </Button>
       </Card>
@@ -44,13 +44,13 @@ const Service = () => {
         }}
       >
         {/* <MailFilled/> */}
-        <FcGlobe  className="text-6xl text-blue-700" />
-        <h1 className="text-3xl font-serif font-bold text-blue-800">Web Development</h1>
+        <FcGlobe  className="text-6xl text-[#185e9a]" />
+        <h1 className="text-3xl font-serif font-bold text-[#185e9a]">Web Development</h1>
         <p className="text-lg italic">
           We design responsive, user-friendly websites to enhance your online
           presence and drive engagement.
         </p>
-         <Button className="!bg-blue-800 !py-5 !rounded-none !px-8 !text-white">
+         <Button className="!bg-[#185e9a] !py-5 !rounded-none !px-8 !text-white">
           View 
         </Button>
       </Card>
@@ -67,13 +67,13 @@ const Service = () => {
         }}
       >
         {/* <MailFilled/> */}
-         <FcPlanner  className="text-6xl text-blue-700" />
-        <h1 className="text-3xl font-serif font-bold text-blue-800">ERP Software</h1>
+         <FcPlanner  className="text-6xl text-[#185e9a]" />
+        <h1 className="text-3xl font-serif font-bold text-[#185e9a]">ERP Software</h1>
         <p className="text-lg italic">
           Optimize business operations with ERP solutions that integrate
           inventory, resource planning, and more.
         </p>
-         <Button className="!bg-blue-800 !py-5 !px-8 !rounded-none !text-white">
+         <Button className="!bg-[#185e9a] !py-5 !px-8 !rounded-none !text-white">
           View
         </Button>
       </Card>
@@ -90,13 +90,13 @@ const Service = () => {
         }}
       >
         {/* <MailFilled /> */}
-        <FcElectronics  className="text-6xl text-blue-700"/>
-        <h1 className="text-3xl font-bold text-blue-800 font-serif">Payroll Software</h1>
+        <FcElectronics  className="text-6xl text-[#185e9a]"/>
+        <h1 className="text-3xl font-bold text-[#185e9a] font-serif">Payroll Software</h1>
         <p className="text-lg italic">
           Automate payroll and compliance with reliable tools like greytHR,
           saving time and ensuring accuracy.
         </p>
-          <Button className="!bg-blue-800 !rounded-none !py-5 !px-8 !text-white">
+          <Button className="!bg-[#185e9a] !rounded-none !py-5 !px-8 !text-white">
           View 
         </Button>
       </Card>

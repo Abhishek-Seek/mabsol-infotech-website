@@ -4,12 +4,12 @@ const OurCustomer = () => {
     return (
         <div className='lg:px-20 px-6 py-10 bg-white'>
             <div className='text-center'>
-                <h1 className='text-blue-800 text-2xl font-bold underline'>
+                <h1 className='text-[#185e9a] text-2xl font-bold underline'>
                     # Our Customer
                 </h1>
 
                 <p className='text-4xl font-bold font-serif py-6 text-black'>
-                    <span className='text-4xl text-blue-800'>See What Our Customer Have to Say:</span> Video Review's
+                    <span className='text-4xl text-[#185e9a]'>See What Our Customer Have to Say:</span> Video Review's
                 </p>
 
                 <div className="pt-4 w-full flex justify-center items-center">
