@@ -309,7 +309,7 @@ const Header = () => {
   // );
 
   const MegaMenuContent = () => (
-    <div className="bg-blue-900 text-white grid grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-8 p-14">
+    <div className="bg-blue-900 text-white grid grid-cols-3 xl:grid-cols-4 gap-4 p-14">
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <a
           href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
@@ -563,7 +563,7 @@ const Header = () => {
             className="h-[50px] w-[130px] md:h-[80px] md:w-[150px] lg:h-[80px] lg:w-[170px]"
           />
         </div>
-        <div className="flex justify-center items-center gap-8 xl:gap-20 min-w-0 overflow-hidden">
+        <div className="flex justify-center items-center gap-8 xl:gap-16 min-w-0 overflow-hidden">
           <nav
             data-aos="fade-up"
             className="lg:flex flex-wrap hidden justify-center gap-4 xl:gap-6 items-center text-white text-sm font-bold"
