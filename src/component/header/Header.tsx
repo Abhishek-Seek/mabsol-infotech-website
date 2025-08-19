@@ -309,7 +309,7 @@ const Header = () => {
   // );
 
   const MegaMenuContent = () => (
-    <div className="bg-blue-900 text-white grid grid-cols-3 lg:grid-cols-4 gap-4 xl:gap-8 p-14">
+    <div className="bg-blue-900 text-white grid grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-8 p-14">
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <a
           href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
