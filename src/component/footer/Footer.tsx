@@ -20,9 +20,8 @@ const Footer = () => {
     }
   };
 
-
   return (
-    <div className="relative bg-blue-950 text-white pt-16 pb-8 px-4 sm:px-8 lg:px-16">
+    <div className="relative bg-[#185e9a] text-white pt-16 pb-8 px-4 sm:px-8 lg:px-16">
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-60"
         style={{ backgroundImage: `url(/footer.png)` }}
@@ -66,13 +65,15 @@ const Footer = () => {
           <form>
             <input
               type="email"
-              placeholder="Email Address *"
-              className="w-full rounded-none px-4 py-2  mb-3 text-white "
+              placeholder="Email Address"
               required
+              className="w-[300px] rounded-none px-4 py-2 mb-3 border 
+             focus:outline-1 focus:outline-white"
             />
+
             <button
               type="submit"
-              className="w-full bg-blue-600 !rounded-none hover:bg-blue-700 text-white py-2 "
+              className="w-[300px] text-center bg-[#33386f]  cursor-pointer rounded-none text-white py-2 "
             >
               Subscribe
             </button>

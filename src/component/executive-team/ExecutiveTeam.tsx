@@ -33,7 +33,7 @@ const ExecutiveTeam = () => {
           Executive <span className="text-black">Team</span>
         </h1>
         <div className="pt-4 w-full flex justify-center items-center">
-          <hr className="w-[80%] border-t-4 border-blue-800" />
+          <hr className="w-[80%] border-t-4 border-[#185e9a]" />
         </div>
       </div>
 
@@ -68,14 +68,14 @@ const ExecutiveTeam = () => {
 
                 {/* Divider */}
                 <div className="pt-6 w-full flex justify-center">
-                  <hr className="w-[80%] border-t-2 border-blue-800" />
+                  <hr className="w-[80%] border-t-2 border-[#185e9a]" />
                 </div>
 
                 {/* Social Icons */}
-                <div className="flex gap-4 text-xl text-blue-800 mt-4">
-                  <a href="#"><FacebookFilled /></a>
-                  <a href="#"><GoogleOutlined /></a>
-                  <a href="#"><TwitterOutlined /></a>
+                <div className="flex gap-4 text-xl mt-4">
+                  <a href="#" className='!text-[#185e9a]'><FacebookFilled /></a>
+                  <a href="#" className='!text-[#185e9a]'><GoogleOutlined /></a>
+                  <a href="#" className='!text-[#185e9a]'><TwitterOutlined /></a>
                 </div>
               </div>
             </div>

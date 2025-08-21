@@ -31,7 +31,7 @@ const CompanyProformance = () => {
                 <p className='text-lg italic py-6 text-black'>
                     Feel free to have a look at the services we are providing and to contact us for a detailed review of your case and a quote. Stay up-to-date and receive professional advice on specific regulatory requirements.
                 </p>
-                <Button type='primary' className='!px-10 !rounded-none !py-5 !font-semibold'>
+                <Button  className='!px-10 !bg-[#185e9a] !text-white !rounded-none !py-5 !font-semibold'>
                     Contact Us
                 </Button>
             </div>
@@ -45,6 +45,7 @@ const CompanyProformance = () => {
                             percent={item}
                             size={['undefined', 30]}
                             showInfo={true}
+                            strokeColor="#185e9a"
                             className="smooth-progress w-full"
                         />
                     </div>

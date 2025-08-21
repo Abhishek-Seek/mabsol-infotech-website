@@ -51,7 +51,7 @@ const ContactUs = () => {
                     </div>
 
                     <div>
-                        <HomeOutlined className="text-3xl !text-blue-600" />
+                        <HomeOutlined className="text-3xl !text-[#185e9a]" />
                         <p className="text-lg font-bold py-2 font-serif text-black">Working Hours</p>
                         <p className="italic text-sm text-black">
                             Monday to Saturday<br />

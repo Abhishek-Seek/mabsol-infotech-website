@@ -50,7 +50,7 @@ const OurProduct = () => {
 
               {/* Text & Button section */}
               <div className="flex flex-col items-center text-center flex-grow px-4 pt-4 pb-6">
-                <a className="text-blue-700 text-xl font-bold font-serif">
+                <a className="!text-[#185e9a] text-xl font-bold font-serif">
                   {product.title}
                 </a>
                 <h1 className="py-1">{product.title}</h1>
@@ -58,7 +58,7 @@ const OurProduct = () => {
                 <div className="mt-auto">
                   <Button
                     type="primary"
-                    className="!rounded-none !px-10 !py-5 mt-4"
+                    className="!rounded-none !bg-[#185e9a] !px-10 !py-5 mt-4"
                   >
                     Select options
                   </Button>

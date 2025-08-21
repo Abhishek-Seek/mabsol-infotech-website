@@ -60,10 +60,10 @@ const OurService = () => {
 
                 </div>
 
-                <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 pt-10'>
+                <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 pt-10 md:px-20 lg:px-30 xl:px-40'>
                     {service.map((item, index) => (
                         <div key={index} className='overflow-hidden'>
-                            <div className='h-[300px] sm:h-[350px] md:h-[400px] lg:h-[300px] xl:h-[400px] w-full border-white rounded-2xl overflow-hidden'>
+                            <div className='h-[300px] sm:h-[350px] md:h-[400px] lg:h-[250px] xl:h-[300px] 2xl:h-[400px] w-full border-white rounded-2xl overflow-hidden'>
                                 <img src={item.image} alt="" className='h-[100%] w-[100%] bg-contain bg-center rounded-2xl transition duration-300 ease-in-out hover:scale-110' />
                             </div>
                             <span className='text-3xl inline-block underline font-bold font-serif hover:text-[#185e9a] transition-colors duration-300 py-6'>

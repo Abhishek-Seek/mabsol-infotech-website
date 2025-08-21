@@ -25,7 +25,7 @@ export default function Home() {
       <CompanyProformance />
       <OurService />
       <Technoogy />
-      <CaseStudy />
+      {/* <CaseStudy /> */}
       {/* <OurUsp/> */}
       <ExecutiveTeam />
       <OurCustomer />

@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { StoreMallDirectoryOutlined } from '@mui/icons-material';
 
 const reviews = [
     {
@@ -52,7 +53,7 @@ const GoogleReview = () => {
                 </p>
 
                 <div className="pt-4 w-full flex justify-center items-center">
-                    <hr className="w-[15%] border-t-4 border-blue-800" />
+                    <hr className="w-[15%] border-t-4 border-[#185e9a]" />
                 </div>
             </div>
 
@@ -65,8 +66,9 @@ const GoogleReview = () => {
             >
                 <Col xs={24} lg={8}>
                     <div className='flex flex-col lg:flex-row justify-center items-center gap-4'>
-                        <div className='text-3xl'>
-                            <Image src="/gmlogo.svg" alt='img' height={60} width={60} />
+                        <div className='text-3xl !text-[#185e9a]'>
+                            {/* <Image src="/gmlogo.svg" alt='img' height={60} width={60} className=''/> */}
+                            <StoreMallDirectoryOutlined style={{ color: "#185e9a", fontSize:64 }} />
                         </div>
                         <div className='flex flex-col justify-center items-center gap-2'>
                             <h1 className='font-bold text-black'>Mabsol Infotech Pvt.Ltd.</h1>
@@ -75,7 +77,7 @@ const GoogleReview = () => {
                             </div>
                             <p className='text-black'>Based on 42 reviews</p>
                             <p className='text-gray-700'>powered by Google</p>
-                            <Button type='primary' className='!rounded-none !py-4'>
+                            <Button  className=' !rounded-none !py-4'>
                                 review us on <FcGoogle />
                             </Button>
                         </div>
@@ -84,7 +86,7 @@ const GoogleReview = () => {
 
                 <Col xs={24} lg={16}>
                     <div className="w-full px-4 py-6">
-                        <h2 className="text-2xl font-bold text-center text-blue-800 mb-6">Client Reviews</h2>
+                        <h2 className="text-2xl font-bold text-center text-[#185e9a] mb-6">Client Reviews</h2>
 
                         <Swiper
                             modules={[Pagination, Autoplay]}
@@ -101,7 +103,7 @@ const GoogleReview = () => {
                         >
                             {reviews.map((review, index) => (
                                 <SwiperSlide key={index}>
-                                    <div className="bg-white p-6 rounded-xl shadow-lg h-full flex flex-col justify-between">
+                                    <div className="bg-white p-6 shadow-lg h-full flex flex-col justify-between">
                                         <p className="italic text-gray-700 mb-4">{review.text}</p>
                                         <div>
                                             <div className="font-semibold text-sm">{review.author_name}</div>
