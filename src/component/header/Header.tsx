@@ -687,7 +687,7 @@ const Header = () => {
             >
               <Button
                 onClick={handleCRMClick}
-                className=" !text-white !rounded-none !py-6 !bg-blue-950"
+                className=" !text-white !rounded-none !py-6 !bg-[#200052]"
               >
                 Contact Us
               </Button>

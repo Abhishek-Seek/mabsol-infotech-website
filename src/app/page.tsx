@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <Header />
       <HomePage />
-      <Service />
+      {/* <Service /> */}
       <AboutUs />
       <OurProduct />
       <CompanyProformance />
