@@ -1,21 +1,15 @@
 // next.config.ts
-
 import type { NextConfig } from 'next';
 import withBundleAnalyzer from '@next/bundle-analyzer';
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export', // 👈 THIS LINE IS REQUIRED
+const nextConfig: NextConfig = {
+  reactStrictMode: true, // ✅ recommended
+  swcMinify: true,       // ✅ faster builds
+  // ❌ output: 'export' ko hatao
 };
 
-module.exports = nextConfig;
+const bundleAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
 
-
-
-// const bundleAnalyzer = withBundleAnalyzer({
-//   enabled: process.env.ANALYZE === 'true',
-// });
-
-// // ✅ Final export — wrap your config
-// export default bundleAnalyzer(nextConfig);
-
+export default bundleAnalyzer(nextConfig);
