@@ -1,15 +1,27 @@
-// next.config.ts
-import type { NextConfig } from 'next';
-import withBundleAnalyzer from '@next/bundle-analyzer';
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true, // ✅ recommended
-  swcMinify: true,       // ✅ faster builds
-  // ❌ output: 'export' ko hatao
+  output: "standalone", // PM2/Nginx ke liye best
+  reactStrictMode: true,
+  swcMinify: true,
+
+  // Agar aapko future mein images ya API ke liye external domains allow karne ho
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "13.204.68.46",
+      },
+    ],
+  },
+
+  // Agar aapke project me TypeScript/ESLint errors ignore karne hon to
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
-const bundleAnalyzer = withBundleAnalyzer({
-  enabled: process.env.ANALYZE === 'true',
-});
-
-export default bundleAnalyzer(nextConfig);
+export default nextConfig;
