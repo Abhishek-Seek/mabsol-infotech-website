@@ -89,16 +89,12 @@ const HomePage = () => {
         <Card
           data-aos="fade-right"
           styles={{
-            body: {
-              display: "flex",
-              flexDirection: "column",
-              gap: "1.5rem",
-              alignItems: "center",
-              textAlign: "center",
-            },
+            body: { padding: "16px" },
+          }}
+          classNames={{
+            body: "flex flex-col items-center text-center p-2 lg:p-4 gap-2 lg:gap-4",
           }}
         >
-          {/* <MailFilled /> */}
           <FcEditImage className="text-6xl text-[#185e9a]" />
           <h1 className="text-3xl font-serif font-bold text-[#185e9a]">
             Accounting Software
@@ -111,16 +107,14 @@ const HomePage = () => {
             View
           </Button>
         </Card>
+
         <Card
           data-aos="fade-right"
           styles={{
-            body: {
-              display: "flex",
-              flexDirection: "column",
-              gap: "1.5rem",
-              alignItems: "center",
-              textAlign: "center",
-            },
+            body: { padding: "16px"},
+          }}
+          classNames={{
+            body: "flex flex-col items-center text-center p-2 lg:p-4 gap-2 lg:gap-4",
           }}
         >
           {/* <MailFilled/> */}
@@ -138,14 +132,20 @@ const HomePage = () => {
         </Card>
         <Card
           data-aos="fade-left"
+          // styles={{
+          //   body: {
+          //     display: "flex",
+          //     flexDirection: "column",
+          //     gap: "10px",
+          //     alignItems: "center",
+          //     textAlign: "center",
+          //   },
+          // }}
           styles={{
-            body: {
-              display: "flex",
-              flexDirection: "column",
-              gap: "1.5rem",
-              alignItems: "center",
-              textAlign: "center",
-            },
+            body: { padding: "16px"},
+          }}
+          classNames={{
+            body: "flex flex-col items-center text-center p-2 lg:p-4 gap-2 lg:gap-4",
           }}
         >
           {/* <MailFilled/> */}
@@ -164,13 +164,10 @@ const HomePage = () => {
         <Card
           data-aos="fade-left"
           styles={{
-            body: {
-              display: "flex",
-              flexDirection: "column",
-              gap: "1.5rem",
-              alignItems: "center",
-              textAlign: "center",
-            },
+            body: { padding: "16px" },
+          }}
+          classNames={{
+            body: "flex flex-col items-center text-center p-2 lg:p-4 gap-2 lg:gap-4",
           }}
         >
           {/* <MailFilled /> */}

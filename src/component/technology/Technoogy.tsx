@@ -18,7 +18,7 @@ const Technoogy = () => {
           <p className="text-4xl text-gray-700 font-bold font-serif max-w-[500px] py-2">
             Where Technology Transforms Business
           </p>
-          <Button className="!text-[#185e9a] !bg-transparent !rounded-none !py-6 !px-12 hover:!text-white hover:!bg-blue-800 !mt-6 !text-xl !border-[#185e9a]">
+          <Button className="!text-[#185e9a] !bg-transparent !rounded-none !py-6 !px-12 hover:!text-white hover:!bg-[#185e9a] !mt-6 !text-xl !border-[#185e9a]">
             Project <SnippetsFilled />
           </Button>
         </div>
