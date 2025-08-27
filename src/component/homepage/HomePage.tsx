@@ -88,11 +88,11 @@ const HomePage = () => {
       <div className=" relative z-30 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-10 lg:px-20 px-6 bottom-16">
         <Card
           data-aos="fade-right"
-          styles={{
-            body: { padding: "16px" },
+           styles={{
+            body: { padding: "24px"},
           }}
           classNames={{
-            body: "flex flex-col items-center text-center p-2 lg:p-4 gap-2 lg:gap-4",
+            body: "flex flex-col items-center text-center  gap-2 lg:gap-6",
           }}
         >
           <FcEditImage className="text-6xl text-[#185e9a]" />
@@ -111,10 +111,10 @@ const HomePage = () => {
         <Card
           data-aos="fade-right"
           styles={{
-            body: { padding: "16px"},
+            body: { padding: "24px"},
           }}
           classNames={{
-            body: "flex flex-col items-center text-center p-2 lg:p-4 gap-2 lg:gap-4",
+            body: "flex flex-col items-center text-center  gap-2 lg:gap-6",
           }}
         >
           {/* <MailFilled/> */}
@@ -141,11 +141,11 @@ const HomePage = () => {
           //     textAlign: "center",
           //   },
           // }}
-          styles={{
-            body: { padding: "16px"},
+           styles={{
+            body: { padding: "24px"},
           }}
           classNames={{
-            body: "flex flex-col items-center text-center p-2 lg:p-4 gap-2 lg:gap-4",
+            body: "flex flex-col items-center text-center  gap-2 lg:gap-6",
           }}
         >
           {/* <MailFilled/> */}
@@ -164,10 +164,10 @@ const HomePage = () => {
         <Card
           data-aos="fade-left"
           styles={{
-            body: { padding: "16px" },
+            body: { padding: "24px"},
           }}
           classNames={{
-            body: "flex flex-col items-center text-center p-2 lg:p-4 gap-2 lg:gap-4",
+            body: "flex flex-col items-center text-center  gap-2 lg:gap-6",
           }}
         >
           {/* <MailFilled /> */}
