@@ -1,21 +1,19 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone", // PM2/Nginx ke liye best
+  output: "export", // 👈 static export
   reactStrictMode: true,
   swcMinify: true,
 
-  // Agar aapko future mein images ya API ke liye external domains allow karne ho
   images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "13.204.68.46",
+        hostname: "13.204.68.46", // agar images use kar rahe ho
       },
     ],
   },
 
-  // Agar aapke project me TypeScript/ESLint errors ignore karne hon to
   typescript: {
     ignoreBuildErrors: false,
   },

@@ -311,11 +311,18 @@ const Header = () => {
   const MegaMenuContent = () => (
     <div className=" text-white grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 2xl:gap-10 p-14" style={{backgroundColor:"#185e9a"}}>
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
+        <span className="">Employee</span>
         <a
           href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
-          className="!text-white select-none"
+          className="!text-blue-300  select-none"
         >
           Employee Attendance
+        </a>
+         <a
+          href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
+          className="!text-blue-300 select-none"
+        >
+          Employee Login
         </a>
       </div>
 
