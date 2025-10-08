@@ -18,7 +18,7 @@ export default function FloatingSocialBar() {
       
       {/* WhatsApp */}
       <a
-        href="https://wa.me/91722575181"
+        href="https://wa.me/9888914287"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-green-500 text-white p-2.5 rounded-r-lg shadow-md hover:bg-green-600 transition-all duration-200"
