@@ -28,7 +28,7 @@ export default function Home() {
       {/* <CaseStudy /> */}
       {/* <OurUsp/> */}
       <ExecutiveTeam />
-      <OurCustomer />
+      {/* <OurCustomer /> */}
       <OurTestimonial/>
       <ContactUs/>
       <GoogleReview/>

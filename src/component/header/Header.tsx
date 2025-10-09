@@ -309,7 +309,10 @@ const Header = () => {
   // );
 
   const MegaMenuContent = () => (
-    <div className=" text-white grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 2xl:gap-10 p-14" style={{backgroundColor:"#185e9a"}}>
+    <div
+      className=" text-white grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 2xl:gap-10 p-14"
+      style={{ backgroundColor: "#185e9a" }}
+    >
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <span className="">Employee</span>
         <a
@@ -318,7 +321,7 @@ const Header = () => {
         >
           Employee Attendance
         </a>
-         <a
+        <a
           href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
           className="!text-blue-300 select-none"
         >
@@ -481,25 +484,25 @@ const Header = () => {
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <span>School Portal</span>
         <a
-          href="https://sms.mabsolinfotech.com/dashboard/admin/"
+          href="https://sms.mabsolinfotech.com/school/admin"
           className="!text-blue-300 select-none"
         >
           Admin Portal
         </a>
         <a
-          href="https://sms.mabsolinfotech.com/dashboard/students/"
+          href="https://sms.mabsolinfotech.com/school/students"
           className="!text-blue-300 select-none"
         >
           Student Portal
         </a>
         <a
-          href="https://sms.mabsolinfotech.com/dashboard/teachers/"
+          href="https://sms.mabsolinfotech.com/school/teachers"
           className="!text-blue-300 select-none"
         >
           Teacher Portal
         </a>
         <a
-          href="https://sms.mabsolinfotech.com/dashboard/reception/"
+          href="https://sms.mabsolinfotech.com/school/reception"
           className="!text-blue-300 select-none"
         >
           Reception Portal
@@ -511,11 +514,12 @@ const Header = () => {
           Get Demo
         </a>
       </div>
-      <div className="text-sm font-bold flex flex-col gap-3 font-serif">
+      {/* <div className="text-sm font-bold flex flex-col gap-3 font-serif">
+        <span>GST File Download</span>
         <a href="" className="!text-white select-none">
           GST File Download
         </a>
-      </div>
+      </div> */}
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <span>Hospital Information System</span>
         <a
@@ -523,6 +527,15 @@ const Header = () => {
           className="!text-blue-300 select-none"
         >
           Get Demo
+        </a>
+      </div>
+      <div className="text-sm font-bold flex flex-col gap-3 font-serif">
+        <span>Wallet Recharge</span>
+        <a
+          href="https://mabsolinfotech.com/crmtest/wallet_recharge.php"
+          className="!text-blue-300 select-none"
+        >
+          Wallet Recharge
         </a>
       </div>
     </div>
@@ -624,7 +637,7 @@ const Header = () => {
                 style={{
                   fontFamily: "Roboto,sans-serif",
                   padding: "0px",
-                 gap: "5px",
+                  gap: "5px",
                 }}
               >
                 Service
