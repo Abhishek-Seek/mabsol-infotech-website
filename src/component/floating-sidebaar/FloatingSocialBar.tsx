@@ -77,7 +77,7 @@ export default function FloatingSocialBar() {
 
         {/* Twitter */}
         <a
-          href="https://twitter.com/your_twitter_handle"
+          href="https://x.com/mabsol_infotech"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-blue-400 text-white p-2.5 rounded-lg shadow-md hover:bg-blue-500 transition-all duration-200"
