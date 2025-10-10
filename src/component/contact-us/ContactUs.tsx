@@ -34,28 +34,28 @@ const ContactUs = () => {
 
             <div className="flex flex-col md:flex-row  gap-10 text-sm text-black">
               <div className="flex flex-col gap-1">
-                <a href="tel:9888914287" className="block hover:text-blue-600">
+                <a href="tel:9888914287" className="block hover:text-blue-600 underline">
                   9888914287
                 </a>
-                <a href="tel:9888914283" className="block hover:text-blue-600">
+                <a href="tel:9888914283" className="block hover:text-blue-600 underline">
                   9888914283
                 </a>
-                <a href="tel:9356042496" className="block hover:text-blue-600">
+                <a href="tel:9356042496" className="block hover:text-blue-600 underline">
                   9356042496
                 </a>
-                <a href="tel:9357815181" className="block hover:text-blue-600">
+                <a href="tel:9357815181" className="block hover:text-blue-600 underline">
                   9357815181
                 </a>
               </div>
 
               <div className="flex flex-col gap-1">
-                <a href="tel:9855605181" className="block hover:text-blue-600">
+                <a href="tel:9855605181" className="block hover:text-blue-600 underline">
                   9855605181
                 </a>
-                <a href="tel:9023415181" className="block hover:text-blue-600">
+                <a href="tel:9023415181" className="block hover:text-blue-600 underline">
                   9023415181
                 </a>
-                <a href="tel:9855145181" className="block hover:text-blue-600">
+                <a href="tel:9855145181" className="block hover:text-blue-600 underline">
                   9855145181
                 </a>
               </div>

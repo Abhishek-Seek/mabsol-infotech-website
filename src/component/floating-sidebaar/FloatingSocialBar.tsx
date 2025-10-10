@@ -24,12 +24,12 @@ export default function FloatingSocialBar() {
 
   // Auto open for 4 seconds on page load (desktop only)
   useEffect(() => {
-    if (!isMobile) {
+    {
       setOpen(true);
       const timer = setTimeout(() => setOpen(false), 4000);
       return () => clearTimeout(timer);
     }
-  }, [isMobile]);
+  }, []);
 
   // Hover effect (desktop only)
   const handleMouseEnter = () => {
