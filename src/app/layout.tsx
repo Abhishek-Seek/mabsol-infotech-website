@@ -125,7 +125,7 @@ export default function RootLayout({
         {/* ✅ Robots + Canonical + Favicon */}
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://mabsolinfotech.com" />
-        <link rel="icon" href="/images/favicon.png" />
+        <link rel="icon" href="/favicon.png" />
 
         {/* ✅ Viewport + Charset (basic SEO setup) */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
