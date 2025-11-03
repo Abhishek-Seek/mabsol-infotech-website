@@ -22,21 +22,22 @@ const teamMembers = [
     {
         name: " Shanky Mittal ",
         role: " ALCOLABS PVT. LTD.",
-        image: "images/crousel1.png",
-        description: " Mabsol Infotech’s software solutions, including Tally, have significantly enhanced our financial management capabilities. Their professionalism and expertise have provided us with a distinct competitive edge. We appreciate their ongoing support and the positive impact their solutions have had on our business.  ",
+        image: "images/alco.webp",
+        description: " Mabsol Infotech’s software solutions, including Marg, have significantly enhanced our financial management capabilities. Their professionalism and expertise have provided us with a distinct competitive edge. We appreciate their ongoing support and the positive impact their solutions have had on our business.  ",
 
     },
     {
         name: " Ashwani Mehta ",
         role: " ASTERISK LABORATORIES INDIA PVT. LTD.",
-        image: "images/maxresdefault.webp",
-        description: " The software solutions from Mabsol Infotech, particularly Tally, have been a game-changer for us. Their technical expertise and customer-centric approach have been instrumental in optimizing our financial operations. We value their proactive support and their ability to tailor solutions to meet our specific needs. ",
+        image: "images/crousel1.png",
+        description: " The software solutions from Mabsol Infotech, have been a game-changer for us. Their technical expertise and customer-centric approach have been instrumental in optimizing our financial operations. We value their proactive support and their ability to tailor solutions to meet our specific needs. ",
 
     },
     {
         name: " Deepak Pathak ",
         role: " Satyam Enterprises Zirakpur ",
-        image: "images/crousel1.png",
+        // image: "images/maxresdefault.webp",
+        image: "images/satyam.jpg",
         description: " Partnering with Mabsol Infotech has revolutionized our approach to managing business operations. Their expertise with software solutions like Tally and Marg has streamlined our financial processes, leading to greater efficiency and accuracy. The team’s commitment to our success and their responsive support make them a  partner. ",
 
     },
