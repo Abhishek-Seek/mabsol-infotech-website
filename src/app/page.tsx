@@ -7,6 +7,7 @@ import Footer from "@/component/footer/Footer";
 import GoogleReview from "@/component/google-review/GoogleReview";
 import Header from "@/component/header/Header";
 import HomePage from "@/component/homepage/HomePage";
+import UserLocation from "@/component/location/UserLocation";
 import OurCustomer from "@/component/our-customer/OurCustomer";
 import OurProduct from "@/component/our-product/OurProduct";
 import OurService from "@/component/our-service/OurService";
@@ -32,6 +33,7 @@ export default function Home() {
       <OurTestimonial/>
       <ContactUs/>
       <GoogleReview/>
+      {/* <UserLocation/> */}
       <Footer/>
     </>
   );

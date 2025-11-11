@@ -163,6 +163,11 @@ const Footer = () => {
             <li>
               <a href="#">Site Map</a>
             </li>
+            <Link href="/location">
+              <li>
+                User Locator
+              </li>
+            </Link>
           </ul>
         </div>
       </div>
