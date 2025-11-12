@@ -69,7 +69,7 @@ export default function Tally() {
           <Title className=" text-start  !text-blue-800 !text-4xl">
             What is <span className="text-[#F97316]">Tally?</span>
           </Title>
-          <Paragraph className="text-gray-600 leading-relaxed text-justify text-lg">
+          <Paragraph className="text-gray-600 leading-relaxed text-justify text-lg!">
             Tally is an accounting and business management software that provides
             a range of features for small and medium-sized businesses. It offers
             tools for financial accounting, inventory management, payroll
@@ -104,7 +104,7 @@ export default function Tally() {
           <Title className="!text-[#F97316] !text-4xl">
             Why <span className="text-blue-800">TallyPrime?</span>
           </Title>
-          <Paragraph className="text-gray-600 leading-relaxed text-justify text-lg">
+          <Paragraph className="text-gray-600 leading-relaxed text-justify text-lg!">
             At Tally, we believe in the power of technology to make business
             owners efficient, empowered and happier, so they can focus on what
             matters most for their business. We design our products to focus on
@@ -144,7 +144,7 @@ export default function Tally() {
               <div key={item.id} className="border-b border-gray-200 pb-4">
                 <h2
                   onClick={() => toggleFeature(item.id)}
-                  className={`cursor-pointer text-2xl md:text-2xl font-semibold ${activeIndex === item.id
+                  className={`cursor-pointer text-2xl md:text-xl font-semibold ${activeIndex === item.id
                       ? "text-blue-800"
                       : "text-blue-800 hover:text-[#F97316]"
                     } transition-colors duration-300`}
