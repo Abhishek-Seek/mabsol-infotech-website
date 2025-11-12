@@ -174,7 +174,7 @@ const Header = () => {
       </div>
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <span>Additional Partners</span>
-        <a href="https://mabsolinfotech.com/marg/" className="!text-blue-300">
+        <a href="/additional_partners/marg" className="!text-blue-300">
           Marg
         </a>
         <a href="/additional_partners" className="!text-blue-300">
@@ -193,7 +193,7 @@ const Header = () => {
           Greythr
         </a>
         <a
-          href="https://mabsolinfotech.com/clinic-management/"
+          href="/additional_partners/clinic"
           className="!text-blue-300"
         >
           Clinic Managment

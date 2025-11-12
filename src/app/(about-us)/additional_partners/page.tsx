@@ -1,5 +1,6 @@
-import Tally from '@/component/additional _partners/Tally'
 import React from 'react'
+import Tally from '@/component/additional_partners/Tally'
+
 
 const page = () => {
   return (
