@@ -1,13 +1,12 @@
-import Tally from '@/component/additional _partners/Tally'
+import GreytHRPage from '@/component/additional_partners/GreytHRPage'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-        <Tally />
+      <GreytHRPage/>
     </div>
   )
 }
 
 export default page
-

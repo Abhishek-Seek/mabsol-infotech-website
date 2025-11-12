@@ -177,17 +177,17 @@ const Header = () => {
         <a href="https://mabsolinfotech.com/marg/" className="!text-blue-300">
           Marg
         </a>
-        <a href="/additional_partners" className="!text-blue-300">
+        <a href="/additional/tally" className="!text-blue-300">
           Tally
         </a>
         <a
-          href="https://mabsolinfotech.com/mr-reporting/"
+          href="/additional/mr-reporting"
           className="!text-blue-300"
         >
           MR Reporting
         </a>
         <a
-          href="https://mabsolinfotech.com/greythr/"
+          href="/additional/greytHR"
           className="!text-blue-300"
         >
           Greythr
@@ -520,7 +520,7 @@ const Header = () => {
           GST File Download
         </a>
       </div> */}
-      <div className="text-sm font-bold flex flex-col gap-3 font-serif">
+      {/* <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <span>Hospital Information System</span>
         <a
           href="https://mabsolinfotech.com/his-portal-demo-form/"
@@ -528,7 +528,7 @@ const Header = () => {
         >
           Get Demo
         </a>
-      </div>
+      </div> */}
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <span>Wallet Recharge</span>
         <a
