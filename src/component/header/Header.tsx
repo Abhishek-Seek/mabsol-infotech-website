@@ -81,12 +81,12 @@ const Header = () => {
   const Content = () => (
     <div className="bg-[#185e9a] text-white flex flex-col gap-4 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
-        <Link
-          href="/about-us/additional_partners"
+        <a
+          href="https://mabsolinfotech.com/product/tally-software-solutions/"
           className="!text-blue-300 select-none"
         >
           Tally
-        </Link>
+        </a>
         <a
           href="https://mabsolinfotech.com/product/marg-erp-software/"
           className="!text-blue-300 select-none"
@@ -177,7 +177,7 @@ const Header = () => {
         <a href="https://mabsolinfotech.com/marg/" className="!text-blue-300">
           Marg
         </a>
-        <a href="https://mabsolinfotech.com/tally/" className="!text-blue-300">
+        <a href="/additional_partners" className="!text-blue-300">
           Tally
         </a>
         <a
