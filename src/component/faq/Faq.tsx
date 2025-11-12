@@ -76,7 +76,7 @@ const Faq = () => {
             <div key={index} className="border-4 border-white cursor-pointer">
               <div
                 onClick={() => toggle1(index)}
-                className=" bg-blue-900 flex justify-between items-center px-4 py-4"
+                className=" bg-[#185e9a] flex justify-between items-center px-4 py-4"
               >
                 <h1 style={{ fontFamily: "Montserrat, sans-serif" }} className="text-[16px]  text-white">
                   {item.question}
@@ -109,7 +109,7 @@ const Faq = () => {
               <div
                 key={index}
                 onClick={() => toggle2(index)}
-                className=" bg-blue-900 flex justify-between items-center px-4 py-4"
+                className=" bg-[#185e9a] flex justify-between items-center px-4 py-4"
               >
                 <h1 style={{ fontFamily: "Montserrat, sans-serif" }} className="text-lg text-white">
                   {item.question}
