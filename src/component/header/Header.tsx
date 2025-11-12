@@ -131,7 +131,7 @@ const Header = () => {
     <div className="bg-[#185e9a] text-white flex flex-col gap-0 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <a
-          href="https://mabsolinfotech.com/website-development/"
+          href="/service"
           className="!text-blue-300 select-none"
         >
           Website Development
