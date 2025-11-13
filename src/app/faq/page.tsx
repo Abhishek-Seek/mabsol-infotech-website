@@ -1,14 +1,12 @@
-import Faq from '@/component/faq/Faq'
-import Footer from '@/component/footer/Footer'
-import Header from '@/component/header/Header'
-import React from 'react'
+import Faq from "@/src/component/faq/Faq"
+
 
 const page = () => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Faq/>
-      <Footer/>
+      {/* <Footer/> */}
 
     </div>
   )
