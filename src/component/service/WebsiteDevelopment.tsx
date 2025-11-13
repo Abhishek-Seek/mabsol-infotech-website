@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-
-const WebsiteDevelopment = () => {
-  return (
-    <div>
-      fhgjk
-    </div>
-  )
-}
-
-export default WebsiteDevelopment
-=======
 "use client";
 import React from "react";
 import Link from "next/link";
@@ -85,7 +72,6 @@ export default function WebsiteDevelopment() {
       </section>
 
       {/* ===== OTHER SERVICES SECTION ===== */}
-      {/* ===== OTHER SERVICES SECTION ===== */}
       <section className="relative bg-white text-gray-800 py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/pattern.svg')] bg-cover opacity-5"></div>
 
@@ -144,4 +130,3 @@ export default function WebsiteDevelopment() {
     </div>
   );
 }
->>>>>>> 83fd6487e15a814a8b6a47b18ecc48596acd5460

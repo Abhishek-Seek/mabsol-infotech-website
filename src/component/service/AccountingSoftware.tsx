@@ -15,42 +15,41 @@ const { Title } = Typography;
 export default function AccountingSoftwarePage() {
   const sliderRef = useRef<any>(null);
   const router = useRouter();
-
   const services = [
     {
       image: "/images/our.webp",
       title: "Website Development",
       description:
-        "Website Development Services to Build Your Digital Identity. Our expert website development services help businesses establish a strong online presence...",
-      role: "Read More",
+        "Website Development Services to Build Your Digital Identity...",
+      path: "/website-development",
     },
     {
       image: "/images/our2.webp",
       title: "Accounting Software",
       description:
-        "Accounting Software Solutions to Streamline Your Financial Operations. Our accounting solutions automate billing, payroll, and GST management seamlessly...",
-      role: "Read More",
+        "Accounting Software Solutions to Streamline Your Financial Operations...",
+      path: "/accounting-software",
     },
     {
       image: "/images/our3.webp",
       title: "Payroll Software",
       description:
-        "Advanced Payroll Software for Efficient Salary and HR Management. Automate every payroll task with accuracy and compliance features...",
-      role: "Read More",
+        "Advanced Payroll Software for Efficient Salary and HR Management...",
+      path: "/payroll-software",
     },
     {
       image: "/images/our4.webp",
       title: "ERP Software",
       description:
-        "Smart ERP Software for Complete Business Management. Manage inventory, accounting, and operations efficiently in one place...",
-      role: "Read More",
+        "Smart ERP Software for Complete Business Management...",
+      path: "/erp-software",
     },
     {
       image: "/images/our5.webp",
       title: "SFA Software",
       description:
-        "Powerful SFA Software to Automate and Optimize Sales Operations. Empower your sales team with real-time insights and tracking...",
-      role: "Read More",
+        "Powerful SFA Software to Automate and Optimize Sales Operations...",
+      path: "/sfa-software",
     },
   ];
 
@@ -93,27 +92,27 @@ export default function AccountingSoftwarePage() {
         <div className="w-full max-w-6xl px-6">
           <Card className="shadow-xl rounded-2xl border border-gray-50 !p-10 bg-white">
             <h2 className="text-[28px] sm:text-[32px] font-bold text-[#1a3d7c] leading-snug">
-            Boosts Your Business Efficiency with a Complete
-            <br />
-            <span className="text-orange-600">Accounting Software?</span>
-          </h2>
-          <div>
-            <p className="text-gray-600 text-[16px] leading-7 mt-8">
-              From Accounting Transactions like Vouchers to Ledgers to Trial Balance & Balance sheets,
-              everything is available at the click of a button by using Busy Accounting Software.
-              Manage your inventory with additional details like Batch No. (with expiry), Serial Nos.,
-              and Parameters (Colour, Size, Style, etc.). Maintain multiple go-downs & locations smoothly
-              with this Inventory management Software. Create GST-compliant professional invoices easily
-              as per business requirements. Maintain Party / Item-wise & Date-wise product prices with
-              this GST Accounting Software. Manage GST from Billing to Return Filing with features like
-              GSTIN Validation, GST Reconciliation, E-Way Bill & E-Invoice Generation, and other GST
-              Accounting Software features. Manage all your business operations like Indent, Quotation,
-              Order, Challan, Invoicing, Receivable, Payable along with Payroll & Customer Support swiftly
-              with this GST Billing Software. Stay connected with your business data anywhere and anytime
-              directly through your Mobile Phone. Timely access to data with accounting software can help
-              you make smart business decisions.
-            </p>
-          </div>
+              Boosts Your Business Efficiency with a Complete
+              <br />
+              <span className="text-orange-600">Accounting Software?</span>
+            </h2>
+            <div>
+              <p className="text-gray-600 text-[16px] leading-7 mt-8">
+                From Accounting Transactions like Vouchers to Ledgers to Trial Balance & Balance sheets,
+                everything is available at the click of a button by using Busy Accounting Software.
+                Manage your inventory with additional details like Batch No. (with expiry), Serial Nos.,
+                and Parameters (Colour, Size, Style, etc.). Maintain multiple go-downs & locations smoothly
+                with this Inventory management Software. Create GST-compliant professional invoices easily
+                as per business requirements. Maintain Party / Item-wise & Date-wise product prices with
+                this GST Accounting Software. Manage GST from Billing to Return Filing with features like
+                GSTIN Validation, GST Reconciliation, E-Way Bill & E-Invoice Generation, and other GST
+                Accounting Software features. Manage all your business operations like Indent, Quotation,
+                Order, Challan, Invoicing, Receivable, Payable along with Payroll & Customer Support swiftly
+                with this GST Billing Software. Stay connected with your business data anywhere and anytime
+                directly through your Mobile Phone. Timely access to data with accounting software can help
+                you make smart business decisions.
+              </p>
+            </div>
           </Card>
         </div>
       </section>
@@ -122,8 +121,8 @@ export default function AccountingSoftwarePage() {
       <section className="py-10 bg-white relative">
         <div className="px-6 lg:px-20 max-w-7xl mx-auto">
           <div className="text-center mb-12">
-           <h2 className="text-[28px] sm:text-[32px] font-bold text-[#1a3d7c]  font-bold underline underline-offset-6 leading-snug">
-              Other 
+            <h2 className="text-[28px] sm:text-[32px] font-bold text-[#1a3d7c]  font-bold underline underline-offset-6 leading-snug">
+              Other
               <span className="text-orange-600">Services</span>
             </h2>
           </div>
@@ -150,7 +149,10 @@ export default function AccountingSoftwarePage() {
                     hoverable
                     className="rounded-2xl overflow-hidden border border-gray-200 hover:border-blue-400 transition-all duration-300 shadow-md"
                   >
-                    <div className="h-[200px] w-full overflow-hidden">
+                    <div
+                      className="h-[200px] w-full overflow-hidden cursor-pointer"
+                      onClick={() => router.push(item.path)}
+                    >
                       <Image
                         src={item.image}
                         alt={item.title}
@@ -170,7 +172,6 @@ export default function AccountingSoftwarePage() {
                         href="#"
                         className="mt-3 inline-block text-sm underline text-[#1a3d7c] font-semibold"
                       >
-                        {item.role}
                       </a>
                     </div>
                   </Card>

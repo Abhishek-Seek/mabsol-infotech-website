@@ -15,42 +15,41 @@ const { Title } = Typography;
 export default function AccountingSoftwarePage() {
   const sliderRef = useRef<any>(null);
   const router = useRouter();
-
   const services = [
     {
       image: "/images/our.webp",
       title: "Website Development",
       description:
-        "Website Development Services to Build Your Digital Identity. Our expert website development services help businesses establish a strong online presence...",
-      role: "Read More",
+        "Website Development Services to Build Your Digital Identity...",
+      path: "/website-development",
     },
     {
       image: "/images/our2.webp",
       title: "Accounting Software",
       description:
-        "Accounting Software Solutions to Streamline Your Financial Operations. Our accounting solutions automate billing, payroll, and GST management seamlessly...",
-      role: "Read More",
+        "Accounting Software Solutions to Streamline Your Financial Operations...",
+      path: "/accounting-software",
     },
     {
       image: "/images/our3.webp",
       title: "Payroll Software",
       description:
-        "Advanced Payroll Software for Efficient Salary and HR Management. Automate every payroll task with accuracy and compliance features...",
-      role: "Read More",
+        "Advanced Payroll Software for Efficient Salary and HR Management...",
+      path: "/payroll-software",
     },
     {
       image: "/images/our4.webp",
       title: "ERP Software",
       description:
-        "Smart ERP Software for Complete Business Management. Manage inventory, accounting, and operations efficiently in one place...",
-      role: "Read More",
+        "Smart ERP Software for Complete Business Management...",
+      path: "/erp-software",
     },
     {
       image: "/images/our5.webp",
       title: "SFA Software",
       description:
-        "Powerful SFA Software to Automate and Optimize Sales Operations. Empower your sales team with real-time insights and tracking...",
-      role: "Read More",
+        "Powerful SFA Software to Automate and Optimize Sales Operations...",
+      path: "/sfa-software",
     },
   ];
 
@@ -72,7 +71,7 @@ export default function AccountingSoftwarePage() {
       <header className="relative text-white text-center py-30 overflow-hidden ">
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: "url('/images/sfa.jpg')" }}
+          style={{ backgroundImage: "url('/images/sfa.jpeg')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#001F54]/80 to-[#004AAD]/70" />
         <div className="relative z-10">
@@ -128,8 +127,8 @@ export default function AccountingSoftwarePage() {
       <section className="py-10 bg-white relative">
         <div className="px-6 lg:px-20 max-w-7xl mx-auto">
           <div className="text-center mb-12">
-             <h2 className="text-[28px] sm:text-[32px] font-bold text-[#1a3d7c]  font-bold underline underline-offset-6 leading-snug">
-              Other 
+            <h2 className="text-[28px] sm:text-[32px] font-bold text-[#1a3d7c]  font-bold underline underline-offset-6 leading-snug">
+              Other
               <span className="text-orange-600">Services</span>
             </h2>
           </div>
@@ -156,7 +155,10 @@ export default function AccountingSoftwarePage() {
                     hoverable
                     className="rounded-2xl overflow-hidden border border-gray-200 hover:border-blue-400 transition-all duration-300 shadow-md"
                   >
-                    <div className="h-[200px] w-full overflow-hidden">
+                    <div
+                      className="h-[200px] w-full overflow-hidden cursor-pointer"
+                      onClick={() => router.push(item.path)}
+                    >
                       <Image
                         src={item.image}
                         alt={item.title}
@@ -176,7 +178,6 @@ export default function AccountingSoftwarePage() {
                         href="#"
                         className="mt-3 inline-block text-sm underline text-[#1a3d7c] font-semibold"
                       >
-                        {item.role}
                       </a>
                     </div>
                   </Card>

@@ -94,7 +94,7 @@ const Header = () => {
           MArg ERP 9+
         </a>
         <a
-          href="https://mabsolinfotech.com/product/mr-reporting-pharma-crm-software/"
+          href="/reporting"
           className="!text-blue-300 select-none"
         >
           MR Reporting
@@ -131,11 +131,7 @@ const Header = () => {
     <div className="bg-[#185e9a] text-white flex flex-col gap-0 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <a
-<<<<<<< HEAD
-          href="/service"
-=======
           href="/website-development"
->>>>>>> 83fd6487e15a814a8b6a47b18ecc48596acd5460
           className="!text-blue-300 select-none"
         >
           Website Development
@@ -181,29 +177,17 @@ const Header = () => {
         <a href="/marg" className="!text-blue-300">
           Marg
         </a>
-<<<<<<< HEAD
-        <a href="/additional/tally" className="!text-blue-300">
-          Tally
-        </a>
-        <a
-          href="/additional/mr-reporting"
-=======
         <a href="/tally" className="!text-blue-300">
           Tally
         </a>
         <a
           href="/mr-reporting"
->>>>>>> 83fd6487e15a814a8b6a47b18ecc48596acd5460
           className="!text-blue-300"
         >
           MR Reporting
         </a>
         <a
-<<<<<<< HEAD
-          href="/additional/greytHR"
-=======
           href="/greytHR"
->>>>>>> 83fd6487e15a814a8b6a47b18ecc48596acd5460
           className="!text-blue-300"
         >
           Greythr
