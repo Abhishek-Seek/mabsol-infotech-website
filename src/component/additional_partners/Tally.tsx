@@ -42,7 +42,8 @@ export default function Tally() {
 
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
-      <div className="relative text-white text-center py-30 overflow-hidden">
+      {/* ===== Header Section ===== */}
+      <div className="relative text-white text-center py-40 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{ backgroundImage: "url('/images/bg.jpg')" }}

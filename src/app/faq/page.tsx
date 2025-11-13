@@ -7,6 +7,10 @@ const page = () => {
   return (
     <div>
       <Faq/>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 83fd6487e15a814a8b6a47b18ecc48596acd5460
     </div>
   )
 }

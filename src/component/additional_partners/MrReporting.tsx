@@ -16,7 +16,7 @@ export default function MrReporting() {
       >
         {/* Title */}
         <h1 className="text-5xl lg:text-7xl font-bold text-white drop-shadow-md mt-4">
-          MR Reporting Software
+          MR Reporting <span className="!text-orange-500">Software</span>
         </h1>
 
         {/* Subtitle */}
@@ -68,7 +68,7 @@ export default function MrReporting() {
       <section className="bg-blue-50 py-12 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-semibold mb-4 text-[#185e9a]">
-            MRR – Pharma CRM Software (Simple & Human-Centric)
+            MRR – Pharma CRM Software <span className="!text-orange-500">(Simple & Human-Centric)</span>
           </h2>
           <p className="leading-relaxed text-justify">
             MRR is simple, easy-to-use Pharma CRM software that does not require
@@ -125,7 +125,7 @@ export default function MrReporting() {
       {/* ====== Features Section ====== */}
       <section className="max-w-6xl mx-auto py-14 px-6">
         <h2 className="text-3xl font-semibold mb-6 text-[#185e9a] text-center">
-          Outstanding Features of MR Reporting Software
+          Outstanding Features of <span className="!text-orange-500">MR Reporting Software </span>
         </h2>
         <ul className="grid md:grid-cols-2 gap-4 list-disc pl-6 text-gray-700 leading-relaxed">
           <li>User-friendly interface – saves time, cost & paper.</li>
