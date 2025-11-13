@@ -131,7 +131,7 @@ const Header = () => {
     <div className="bg-[#185e9a] text-white flex flex-col gap-0 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <a
-          href="https://mabsolinfotech.com/website-development/"
+          href="/website-development"
           className="!text-blue-300 select-none"
         >
           Website Development
@@ -174,26 +174,26 @@ const Header = () => {
       </div>
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <span>Additional Partners</span>
-        <a href="https://mabsolinfotech.com/marg/" className="!text-blue-300">
+        <a href="/marg" className="!text-blue-300">
           Marg
         </a>
-        <a href="https://mabsolinfotech.com/tally/" className="!text-blue-300">
+        <a href="/tally" className="!text-blue-300">
           Tally
         </a>
         <a
-          href="https://mabsolinfotech.com/mr-reporting/"
+          href="/mr-reporting"
           className="!text-blue-300"
         >
           MR Reporting
         </a>
         <a
-          href="https://mabsolinfotech.com/greythr/"
+          href="/greytHR"
           className="!text-blue-300"
         >
           Greythr
         </a>
         <a
-          href="https://mabsolinfotech.com/clinic-management/"
+          href="/clinic-management"
           className="!text-blue-300"
         >
           Clinic Managment
