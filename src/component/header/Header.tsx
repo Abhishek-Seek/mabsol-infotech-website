@@ -82,7 +82,7 @@ const Header = () => {
     <div className="bg-[#185e9a] text-white flex flex-col gap-4 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <a
-          href="https://mabsolinfotech.com/product/tally-software-solutions/"
+          href="/tally-portal"
           className="!text-blue-300 select-none"
         >
           Tally
@@ -143,13 +143,13 @@ const Header = () => {
           Accounting Software
         </a>
         <a
-          href="https://mabsolinfotech.com/payroll-software-services/"
+          href="/payroll-software"
           className="!text-blue-300 select-none"
         >
           PayRoll Software
         </a>
         <a
-          href="https://mabsolinfotech.com/erp-software-services/"
+          href="/erp-software"
           className="!text-blue-300 select-none"
         >
           ERP Software
