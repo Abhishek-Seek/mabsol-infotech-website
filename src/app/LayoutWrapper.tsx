@@ -1,14 +1,13 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-// import Header from "@/component/header/Header";
-// import Footer from "@/component/footer/Footer";
+import Header from "@/component/header/Header";
+import Footer from "@/component/footer/Footer";
 import { useEffect } from "react";
 import AOS from "aos";
-// import "aos/dist/aos.css";
-import "@/../public/aos.css";
-import Header from "../component/header/Header";
-import Footer from "../component/footer/Footer";
+import "aos/dist/aos.css";
+// import "@/aos.css";
+
 
 export default function LayoutWrapper({
   children,

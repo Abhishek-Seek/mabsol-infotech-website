@@ -1,13 +1,10 @@
-import Faq from "@/src/component/faq/Faq"
+import Faq from "@/component/faq/Faq"
 
 
 const page = () => {
   return (
     <div>
-      {/* <Header /> */}
       <Faq/>
-      {/* <Footer/> */}
-
     </div>
   )
 }

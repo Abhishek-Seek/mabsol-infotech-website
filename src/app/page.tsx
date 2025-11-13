@@ -31,7 +31,7 @@ import Technoogy from "../component/technology/Technoogy";
 export default function Home() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <HomePage />
       {/* <Service /> */}
       <AboutUs />
@@ -47,7 +47,7 @@ export default function Home() {
       <ContactUs/>
       <GoogleReview/>
       {/* <UserLocation/> */}
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 }

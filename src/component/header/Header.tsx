@@ -81,12 +81,12 @@ const Header = () => {
   const Content = () => (
     <div className="bg-[#185e9a] text-white flex flex-col gap-4 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
-        <Link
-          href="/about-us/additional_partners"
+        <a
+          href="https://mabsolinfotech.com/product/tally-software-solutions/"
           className="!text-blue-300 select-none"
         >
           Tally
-        </Link>
+        </a>
         <a
           href="https://mabsolinfotech.com/product/marg-erp-software/"
           className="!text-blue-300 select-none"
@@ -94,7 +94,7 @@ const Header = () => {
           MArg ERP 9+
         </a>
         <a
-          href="https://mabsolinfotech.com/product/mr-reporting-pharma-crm-software/"
+          href="/reporting"
           className="!text-blue-300 select-none"
         >
           MR Reporting
@@ -131,13 +131,13 @@ const Header = () => {
     <div className="bg-[#185e9a] text-white flex flex-col gap-0 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <a
-          href="https://mabsolinfotech.com/website-development/"
+          href="/website-development"
           className="!text-blue-300 select-none"
         >
           Website Development
         </a>
         <a
-          href="https://mabsolinfotech.com/accounting-software-services/"
+          href="/accounting-software"
           className="!text-blue-300 select-none"
         >
           Accounting Software
@@ -155,7 +155,7 @@ const Header = () => {
           ERP Software
         </a>
         <a
-          href="https://mabsolinfotech.com/sfa-software/"
+          href="/sfa-software"
           className="!text-blue-300 select-none"
         >
           SFA Software
@@ -174,26 +174,26 @@ const Header = () => {
       </div>
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <span>Additional Partners</span>
-        <a href="https://mabsolinfotech.com/marg/" className="!text-blue-300">
+        <a href="/marg" className="!text-blue-300">
           Marg
         </a>
-        <a href="https://mabsolinfotech.com/tally/" className="!text-blue-300">
+        <a href="/tally" className="!text-blue-300">
           Tally
         </a>
         <a
-          href="https://mabsolinfotech.com/mr-reporting/"
+          href="/mr-reporting"
           className="!text-blue-300"
         >
           MR Reporting
         </a>
         <a
-          href="https://mabsolinfotech.com/greythr/"
+          href="/greytHR"
           className="!text-blue-300"
         >
           Greythr
         </a>
         <a
-          href="https://mabsolinfotech.com/clinic-management/"
+          href="/clinic-management"
           className="!text-blue-300"
         >
           Clinic Managment
@@ -520,7 +520,7 @@ const Header = () => {
           GST File Download
         </a>
       </div> */}
-      <div className="text-sm font-bold flex flex-col gap-3 font-serif">
+      {/* <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <span>Hospital Information System</span>
         <a
           href="https://mabsolinfotech.com/his-portal-demo-form/"
@@ -528,7 +528,7 @@ const Header = () => {
         >
           Get Demo
         </a>
-      </div>
+      </div> */}
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
         <span>Wallet Recharge</span>
         <a

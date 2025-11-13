@@ -7,9 +7,7 @@ import Header from "@/component/header/Header";
 const page = () => {
   return (
     <div>
-      <Header />
       <Userlocation />
-      <Footer />
     </div>
   );
 };
