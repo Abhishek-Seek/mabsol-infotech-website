@@ -140,40 +140,40 @@ const Payroll = () => {
                 <img
                     src="/images/payrollmen.webp"  // 🖼️ Replace with your image path
                     alt="Centered Image"
-                    className="w-full max-w-4xl rounded-2xl shadow-xl object-contain"
+                    className="w-full max-w-4xl object-contain"
                 />
             </div>
             {/* ✅ Why Choose Section */}
-           <div className="bg-gradient-to-b from-[#f0f6ff] to-[#ffffff] py-20 px-10 md:px-20 text-gray-800">
-  <h3 className="text-5xl font-bold text-center text-[#0b3a74] mb-14">
-    Why Choose Our Payroll Software?
-  </h3>
+            <div className="bg-gradient-to-b from-[#f0f6ff] to-[#ffffff] py-20 px-10 md:px-20 text-gray-800">
+                <h3 className="text-5xl font-bold text-center text-[#0b3a74] mb-14">
+                    Why Choose Our Payroll Software?
+                </h3>
 
-  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-    {features.map((item, i) => (
-      <motion.div
-        key={i}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: i * 0.15 }}
-        className="group bg-white border border-blue-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
-      >
-        {/* Hover Glow Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#d0e5ff] via-[#ebf4ff] to-[#ffffff] opacity-0 group-hover:opacity-100 blur-xl transition duration-500" />
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                    {features.map((item, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.15 }}
+                            className="group bg-white border border-blue-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
+                        >
+                            {/* Hover Glow Background */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#d0e5ff] via-[#ebf4ff] to-[#ffffff] opacity-0 group-hover:opacity-100 blur-xl transition duration-500" />
 
-        {/* Content */}
-        <div className="relative z-10">
-          <h4 className="text-2xl font-semibold text-[#185e9a] mb-3 relative">
-            {item.title}
-            <span className="absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-20 bg-gradient-to-r from-[#0b3a74] to-[#185e9a] rounded-full transition-all duration-500"></span>
-          </h4>
+                            {/* Content */}
+                            <div className="relative z-10">
+                                <h4 className="text-2xl font-semibold text-[#185e9a] mb-3 relative">
+                                    {item.title}
+                                    <span className="absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-20 bg-gradient-to-r from-[#0b3a74] to-[#185e9a] rounded-full transition-all duration-500"></span>
+                                </h4>
 
-          <p className="text-gray-700 leading-relaxed">{item.desc}</p>
-        </div>
-      </motion.div>
-    ))}
-  </div>
-</div>
+                                <p className="text-gray-700 leading-relaxed">{item.desc}</p>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
 
 
 

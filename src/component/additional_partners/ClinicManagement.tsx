@@ -42,20 +42,20 @@ const ClinicManagement = () => {
   return (
     <div className="w-full bg-gradient-to-b from-[#0b3a74] to-[#185e9a] text-white overflow-hidden">
       {/* 🏥 Hero Section */}
-     <div className="h-[60vh] flex flex-col justify-center items-center bg-fixed bg-cover bg-center relative"
-                style={{
-                    backgroundImage:
-                        "linear-gradient(rgba(0, 44, 95, 0.7), rgba(0, 44, 95, 0.7)), url('/images/our2.webp')",
-                    filter: "brightness(0.9)",
-                }}
-            >
+      <div className="h-[60vh] flex flex-col justify-center items-center bg-fixed bg-cover bg-center relative"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0, 44, 95, 0.7), rgba(0, 44, 95, 0.7)), url('/images/our2.webp')",
+          filter: "brightness(0.9)",
+        }}
+      >
 
-                {/* Title */}
-                <h1 className="text-6xl font-bold text-white drop-shadow-md mt-4">Clinic Management</h1>
+        {/* Title */}
+        <h1 className="text-6xl font-bold text-white drop-shadow-md mt-4">Clinic Management</h1>
 
-                {/* Subtitle */}
-                <p className="text-lg mt-3 text-white">Streamline Your Clinic Operations with Ease</p>
-            </div>
+        {/* Subtitle */}
+        <p className="text-lg mt-3 text-white">Streamline Your Clinic Operations with Ease</p>
+      </div>
 
       {/* 💬 About Section */}
       <div className="bg-white text-gray-800 py-20 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
@@ -65,7 +65,7 @@ const ClinicManagement = () => {
           transition={{ duration: 1 }}
           className="md:w-1/2 space-y-5"
         >
-          <h2 className="text-4xl font-bold text-[#185e9a]">What is Clinic Management?</h2>
+          <h2 className="text-4xl font-bold text-[#185e9a]">What is<span className="text-orange-500"> Clinic Management ?</span></h2>
           <p className="text-lg leading-relaxed text-gray-600">
             Clinic Management Software is built to handle all aspects of healthcare operations — from patient
             registration and scheduling to billing and reports. It helps clinics reduce manual work, avoid errors,
@@ -79,12 +79,13 @@ const ClinicManagement = () => {
           className="md:w-1/2 flex justify-center"
         >
           <img
-            src="/images/section2.webp"
+            src="/images/section2.jpeg"
             alt="Clinic Software Dashboard"
             className="w-[600px] rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition"
           />
         </motion.div>
       </div>
+
 
       {/* 🌟 Why Choose Section */}
       <div className="bg-[#f9fbff] py-20 text-gray-800">
@@ -111,6 +112,14 @@ const ClinicManagement = () => {
           </div>
         </div>
       </div>
+      {/* images */}
+      <div className="w-full min-h-screen flex justify-center items-center bg-gradient-to-b from-[#f8fbff] to-white">
+        <img
+          src="/images/clinic-software.webp"
+          alt="Centered Image"
+          className="w-full max-w-4xl  object-contain"
+        />
+      </div>
 
       {/* 🧩 Modules Section */}
       <div className="bg-white py-20 text-gray-800">
@@ -134,17 +143,6 @@ const ClinicManagement = () => {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* 📞 Call To Action */}
-      <div className="bg-[#185e9a] text-white py-16 text-center">
-        <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Clinic?</h2>
-        <p className="text-gray-200 mb-6">
-          Empower your healthcare operations with our all-in-one Clinic Management System.
-        </p>
-        <button className="bg-white text-[#185e9a] px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition">
-          Join Us
-        </button>
       </div>
 
     </div>

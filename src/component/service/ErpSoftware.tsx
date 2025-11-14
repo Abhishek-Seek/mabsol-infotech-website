@@ -85,7 +85,7 @@ export default function ErpSoftware() {
                     <img
                         src="/images/erp-soft.webp"
                         alt="Marg Software"
-                        className="w-[500px] rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition"
+                        className="w-[600px]"
                     />
                 </div>
             </div>
@@ -128,7 +128,7 @@ export default function ErpSoftware() {
                 <img
                     src="/images/erp-custom.webp"  // 🖼️ Replace with your image path
                     alt="Centered Image"
-                    className="w-full max-w-6xl rounded-2xl object-contain"
+                    className="w-full max-w-6xl object-contain"
                 />
             </div>
 
