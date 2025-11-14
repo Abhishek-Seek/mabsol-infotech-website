@@ -36,30 +36,37 @@ export default function TallyPage() {
     },
   ];
 
-  const [cart, setCart] = useState<{ id: string; qty: number }[]>([]);
-  const [selected, setSelected] = useState<string | null>(null);
+ 
+const [cart, setCart] = useState<{ id: number; qty: number }[]>([]);
+const [selected, setSelected] = useState<number | null>(null);
 
-  const addToCart = (id: string) => {
-    const existing = cart.find((c) => c.id === id);
-    if (existing) {
-      setCart(cart.map((c) => (c.id === id ? { ...c, qty: c.qty + 1 } : c)));
-    } else {
-      setCart([...cart, { id, qty: 1 }]);
-    }
-    setSelected(id);
-    // small UX cue
-    const product = products.find((p) => p.id === id);
-    alert(`${product?.title} added to cart`);
-  };
+const [isCartOpen, setIsCartOpen] = useState(false);
+const [toastMsg, setToastMsg] = useState<string | null>(null);
+
+const addToCart = (id: number) => {
+  const exists = cart.find((c) => c.id === id);
+
+  if (exists) {
+    setCart(cart.map((c) => (c.id === id ? { ...c, qty: c.qty + 1 } : c)));
+  } else {
+    setCart([...cart, { id, qty: 1 }]);
+  }
+
+  // 🔔 Show Toast
+  setToastMsg("Item added to cart!");
+
+  // Auto hide toast after 2 sec
+  setTimeout(() => setToastMsg(null), 2000);
+};
 
   const totalItems = cart.reduce((s, i) => s + i.qty, 0);
   const totalPrice = cart.reduce((s, i) => {
-    const p = products.find((x) => x.id === i.id)!;
+   const p = products.find((x) => Number(x.id) === i.id)!;
     return s + p.price * i.qty;
   }, 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#f6fbff] to-white text-gray-900">
+    <div className="w-full min-h-screen bg-gradient-to-b from-[#f6fbff] to-white text-gray-900 overflow-hidden">
       {/* Header */}
       <header className="border-b bg-white">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -81,7 +88,11 @@ export default function TallyPage() {
             <button className="hidden md:inline text-sm px-4 py-2 rounded-lg border">
               Support
             </button>
-            <button className="flex items-center gap-2 bg-[#0b3a74] text-white px-4 py-2 rounded-lg">
+            {/* CART BUTTON WITH MODAL OPEN */}
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="flex items-center gap-2 bg-[#0b3a74] text-white px-4 py-2 rounded-lg"
+            >
               <ShoppingCart className="w-4 h-4" />
               Cart{" "}
               <span className="ml-2 bg-white text-[#0b3a74] px-2 py-0.5 rounded text-xs">
@@ -153,7 +164,7 @@ export default function TallyPage() {
           animate={{ opacity: 1, x: 0 }}
           className="hidden lg:block"
         >
-          <div className="bg-white rounded-2xl shadow-lg p-6">
+          <div className="p-6">
             <img
               src="/images/Tally-pic.png"
               alt="Tally mock"
@@ -292,11 +303,11 @@ export default function TallyPage() {
         </h2>
         <div className="flex flex-col gap-16">
           {products.map((p, index) => (
-            <motion.div
+            <div
               key={p.id}
-              whileHover={{ y: -6 }}
+             
               className={`bg-white rounded-2xl shadow-md overflow-hidden flex flex-col md:flex-row items-center ${
-                index % 2 === 1 ? "md:flex-row-reverse" : ""
+                index % 2 === 1 ? "md:flex" : ""
               }`}
             >
               {/* IMAGE SIDE */}
@@ -309,6 +320,7 @@ export default function TallyPage() {
               </div>
 
               {/* DETAILS SIDE */}
+            {/* DETAILS */}
               <div className="w-full md:w-1/2 p-8">
                 <div className="flex justify-between items-start mb-4">
                   <div>
@@ -331,7 +343,6 @@ export default function TallyPage() {
                   </div>
                 </div>
 
-                {/* FEATURES */}
                 <div
                   className={`p-5 rounded-xl border ${p.accent} bg-blue-50/40`}
                 >
@@ -345,10 +356,9 @@ export default function TallyPage() {
                   </ul>
                 </div>
 
-                {/* BUTTONS */}
                 <div className="mt-6 flex items-center gap-3">
                   <button
-                    onClick={() => addToCart(p.id)}
+                    onClick={() => addToCart(Number(p.id))}
                     className="flex-1 bg-[#0b3a74] text-white px-5 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-[#0d4891] transition-all"
                   >
                     <ShoppingCart className="w-4 h-4" /> Add to cart
@@ -362,9 +372,11 @@ export default function TallyPage() {
                   SKU: {p.id.toUpperCase()} • Support: 1 year
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
+      </section> 
+
 
         {/* CART SUMMARY */}
         <div className="mt-20 bg-white rounded-2xl p-6 shadow-md">
@@ -382,7 +394,7 @@ export default function TallyPage() {
               </div>
             ) : (
               cart.map((c) => {
-                const prod = products.find((x) => x.id === c.id)!;
+                const prod =products.find((x) => Number(x.id) === c.id)!;
                 return (
                   <div
                     key={c.id}
@@ -430,7 +442,7 @@ export default function TallyPage() {
             </button>
           </div>
         </div>
-      </section>
+   
 
       {/* FEATURES & DESCRIPTION */}
       <section className="max-w-7xl mx-auto px-6 py-12">
@@ -473,13 +485,119 @@ export default function TallyPage() {
               </li>
             </ul>
 
-            {/* <div className="mt-6">
-              <a className="inline-block px-4 py-2 bg-[#0b3a74] text-white rounded-lg">Request demo</a>
-              <a className="inline-block ml-3 px-4 py-2 border rounded-lg">Contact sales</a>
-            </div> */}
+            {/* CART MODAL */}
+      {isCartOpen && (
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white w-[90%] max-w-lg rounded-2xl shadow-xl p-6 animate-fadeIn">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-semibold text-gray-800">Your Cart</h2>
+              <button
+                onClick={() => setIsCartOpen(false)}
+                className="text-gray-500 text-xl"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* CART LIST */}
+            {cart.length === 0 ? (
+              <div className="text-center text-gray-500 py-6">
+                Your cart is empty.
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {cart.map((c) => {
+                  const prod = products.find((x) => Number(x.id) === c.id)!;
+                  return (
+                    <div
+                      key={c.id}
+                      className="flex justify-between items-center p-3 border rounded-lg"
+                    >
+                      <div>
+                        <div className="font-medium">{prod.title}</div>
+                        <div className="text-xs text-gray-500">
+                          Price: ₹{prod.price.toLocaleString("en-IN")}
+                        </div>
+                      </div>
+
+                      {/* QTY BUTTONS */}
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => {
+                            if (c.qty > 1) {
+                              setCart(
+                                cart.map((x) =>
+                                  x.id === c.id ? { ...x, qty: x.qty - 1 } : x
+                                )
+                              );
+                            }
+                          }}
+                          className="px-2 py-1 border rounded"
+                        >
+                          -
+                        </button>
+
+                        <span>{c.qty}</span>
+
+                        <button
+                          onClick={() =>
+                            setCart(
+                              cart.map((x) =>
+                                x.id === c.id
+                                  ? { ...x, qty: x.qty + 1 }
+                                  : x
+                              )
+                            )
+                          }
+                          className="px-2 py-1 border rounded"
+                        >
+                          +
+                        </button>
+
+                        <button
+                          onClick={() =>
+                            setCart(cart.filter((x) => x.id !== c.id))
+                          }
+                          className="text-red-500 ml-2 text-sm"
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+
+            {/* TOTAL */}
+            <div className="flex justify-between items-center mt-6 text-lg font-bold">
+              <span>Total:</span>
+              <span>₹{totalPrice.toLocaleString("en-IN")}</span>
+            </div>
+
+            {/* PAYMENT BUTTON */}
+            <button
+              disabled={cart.length === 0}
+              className={`w-full mt-5 py-3 rounded-lg text-white font-medium ${
+                cart.length === 0
+                  ? "bg-gray-300 cursor-not-allowed"
+                  : "bg-green-600 hover:bg-green-700"
+              }`}
+            >
+              Proceed to Payment
+            </button>
+          </div>
+        </div>
+      )}
           </div>
         </div>
       </section>
+
+      {toastMsg && (
+  <div className="fixed bottom-6 right-6 bg-[#0b3a74] text-white px-5 py-3 rounded-xl shadow-lg animate-fadeIn">
+    {toastMsg}
+  </div>
+)}
     </div>
   );
 }

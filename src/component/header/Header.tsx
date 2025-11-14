@@ -88,7 +88,7 @@ const Header = () => {
           Tally
         </a>
         <a
-          href="https://mabsolinfotech.com/product/marg-erp-software/"
+          href="/margErp-portal"
           className="!text-blue-300 select-none"
         >
           MArg ERP 9+
