@@ -5,35 +5,6 @@ import Link from "next/link";
 export default function GreytHRPage() {
   return (
     <div className="bg-gray-50 text-gray-800">
-      {/* ===== HERO SECTION ===== */}
-      {/* <section
-        className="relative text-white py-24 px-6 text-center overflow-hidden"
-        style={{
-          background:
-            "linear-gradient(to right, rgba(0, 44, 95, 0.9), rgba(0, 116, 217, 0.8))",
-          backdropFilter: "blur(8px)",
-        }}
-      >
-        <div className="absolute inset-0 bg-[url('/images/hr-bg.jpg')] bg-cover bg-center opacity-25"></div>
-
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Make Quick Work of Hard Work
-          </h1>
-          <p className="text-lg md:text-xl opacity-95 leading-relaxed">
-            Get rid of repetitive HR tasks and manual spreadsheets. Automate,
-            centralize, and empower employees with modern HRMS.
-          </p>
-          <div className="mt-6">
-            <Link
-              href="/"
-              className="bg-white/90 text-blue-700 px-6 py-2 rounded-full font-semibold shadow hover:bg-white transition"
-            >
-              HR Made Simple
-            </Link>
-          </div>
-        </div>
-      </section> */}
       <div
         className="h-[60vh] flex flex-col justify-center items-center bg-fixed bg-cover bg-center relative"
         style={{
@@ -44,7 +15,7 @@ export default function GreytHRPage() {
       >
         {/* Title */}
         <h1 className="text-5xl lg:text-7xl font-bold text-white drop-shadow-md mt-4">
-          Make Quick Work of Hard Work
+          Make Quick Work of   <span className="!text-orange-500">Hard Work</span>
         </h1>
 
         {/* Subtitle */}
@@ -65,7 +36,7 @@ export default function GreytHRPage() {
       {/* ===== FEATURES SECTION ===== */}
       <section className="max-w-6xl mx-auto py-16 px-6 text-center">
         <h2 className="text-3xl font-semibold mb-10 text-[#185e9a]">
-          Full-Suite HRMS for Indian Businesses
+          Full-Suite HRMS for <span className="!text-orange-500">Indian Businesses </span>
         </h2>
         <p className="text-lg mb-12 text-gray-600">
           Recruit, Onboard, Engage, Pay, Appraise, Retain and Retire Employees.
@@ -140,7 +111,7 @@ export default function GreytHRPage() {
 
         <div className="relative z-10 max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-[#185e9a]">
-            Trusted by Businesses Across India
+            Trusted by Businesses Across India <span className="!text-orange-500">Across India</span>
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
@@ -179,7 +150,7 @@ export default function GreytHRPage() {
       {/* ===== SOLUTIONS SECTION ===== */}
       <section className="max-w-6xl mx-auto py-16 px-6">
         <h2 className="text-3xl font-semibold text-[#185e9a] text-center mb-8">
-          Modern HR and Payroll are Complex — We Simplify It
+          Modern HR and Payroll are Complex —<span className="!text-orange-500">We Simplify It</span>
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {[

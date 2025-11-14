@@ -82,19 +82,19 @@ const Header = () => {
     <div className="bg-[#185e9a] text-white flex flex-col gap-4 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <a
-          href="https://mabsolinfotech.com/product/tally-software-solutions/"
+          href="/tallys"
           className="!text-blue-300 select-none"
         >
           Tally
         </a>
         <a
-          href="https://mabsolinfotech.com/product/marg-erp-software/"
+          href="/margErp"
           className="!text-blue-300 select-none"
         >
           MArg ERP 9+
         </a>
         <a
-          href="https://mabsolinfotech.com/product/mr-reporting-pharma-crm-software/"
+          href="/reporting"
           className="!text-blue-300 select-none"
         >
           MR Reporting
@@ -131,31 +131,31 @@ const Header = () => {
     <div className="bg-[#185e9a] text-white flex flex-col gap-0 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <a
-          href="https://mabsolinfotech.com/website-development/"
+          href="/website-development"
           className="!text-blue-300 select-none"
         >
           Website Development
         </a>
         <a
-          href="https://mabsolinfotech.com/accounting-software-services/"
+          href="/accounting-software"
           className="!text-blue-300 select-none"
         >
           Accounting Software
         </a>
         <a
-          href="/additional/payroll"
+          href="/payroll-software"
           className="!text-blue-300 select-none"
         >
           PayRoll Software
         </a>
         <a
-          href="https://mabsolinfotech.com/erp-software-services/"
+          href="/erp-software"
           className="!text-blue-300 select-none"
         >
           ERP Software
         </a>
         <a
-          href="https://mabsolinfotech.com/sfa-software/"
+          href="/sfa-software"
           className="!text-blue-300 select-none"
         >
           SFA Software
@@ -168,32 +168,32 @@ const Header = () => {
     <div className="bg-[#185e9a] text-white grid grid-cols-2 gap-0 p-14 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <span className="">Gallery</span>
-        <a href="#" className="!text-blue-300">
+        <a href="/gallery" className="!text-blue-300">
           Gallery
         </a>
       </div>
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <span>Additional Partners</span>
-        <a href="/additional/marg" className="!text-blue-300">
+        <a href="/marg" className="!text-blue-300">
           Marg
         </a>
-        <a href="/additional/tally" className="!text-blue-300">
+        <a href="/tally" className="!text-blue-300">
           Tally
         </a>
         <a
-          href="/additional/mr-reporting"
+          href="/mr-reporting"
           className="!text-blue-300"
         >
           MR Reporting
         </a>
         <a
-          href="/additional/greytHR"
+          href="/greytHR"
           className="!text-blue-300"
         >
           Greythr
         </a>
         <a
-          href="/additional/clinic"
+          href="/clinic-management"
           className="!text-blue-300"
         >
           Clinic Managment
