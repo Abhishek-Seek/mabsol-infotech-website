@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ShoppingCart, ShieldCheck, Cloud, FileText } from "lucide-react";
 
 
-export default function PricingWithCart() {
+export default function MargErp() {
   const products = [
      {
       id: "basic",

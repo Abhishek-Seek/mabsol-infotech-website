@@ -88,7 +88,7 @@ const Header = () => {
           Tally
         </a>
         <a
-          href="/margErp-portal"
+          href="/margErp"
           className="!text-blue-300 select-none"
         >
           MArg ERP 9+
