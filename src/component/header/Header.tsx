@@ -82,7 +82,7 @@ const Header = () => {
     <div className="bg-[#185e9a] text-white flex flex-col gap-4 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <a
-          href="/tally-portal"
+          href="/tallys"
           className="!text-blue-300 select-none"
         >
           Tally
@@ -168,7 +168,7 @@ const Header = () => {
     <div className="bg-[#185e9a] text-white grid grid-cols-2 gap-0 p-14 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <span className="">Gallery</span>
-        <a href="#" className="!text-blue-300">
+        <a href="/gallery" className="!text-blue-300">
           Gallery
         </a>
       </div>

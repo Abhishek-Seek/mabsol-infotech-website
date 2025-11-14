@@ -1,4 +1,4 @@
-import TallyPage from '@/component/software-portal/TallyPage'
+import TallyPage from '@/component/software-products/TallyPage'
 import React from 'react'
 
 const page = () => {
