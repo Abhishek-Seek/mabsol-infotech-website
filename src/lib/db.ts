@@ -1,8 +1,48 @@
+// import mongoose from "mongoose";
+
+// export const connectDB = async () => {
+//   if (mongoose.connections[0].readyState) return;
+
+//   await mongoose.connect(process.env.MONGO_URI!);
+//   console.log("MongoDB Connected");
+// };
+
+
+
+
 import mongoose from "mongoose";
 
-export const connectDB = async () => {
-  if (mongoose.connections[0].readyState) return;
+const MONGODB_URI = process.env.MONGODB_URI as string;
 
-  await mongoose.connect(process.env.MONGO_URI!);
-  console.log("MongoDB Connected");
-};
+if (!MONGODB_URI) {
+  throw new Error("Please define the MONGODB_URI inside .env.local");
+}
+
+interface MongooseCache {
+  conn: typeof mongoose | null;
+  promise: Promise<typeof mongoose> | null;
+}
+
+declare global {
+  var mongoose: MongooseCache;
+}
+
+const cached = global.mongoose || (global.mongoose = { conn: null, promise: null });
+
+export async function connectDB() {
+  if (cached.conn) return cached.conn;
+
+  if (!cached.promise) {
+    cached.promise = mongoose.connect(MONGODB_URI).then((mongoose) => {
+      console.log("MongoDB connected");
+      return mongoose;
+    }).catch((err) => {
+      console.error("MongoDB connection error:", err);
+      throw err;
+    });
+  }
+
+  cached.conn = await cached.promise;
+  return cached.conn;
+}
+

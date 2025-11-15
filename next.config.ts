@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export", // ✅ static export
+  // output: "export", // ✅ static export
+  dynamic: "force-static", // revalidate not configured error
+
   reactStrictMode: true,
 
   images: {
