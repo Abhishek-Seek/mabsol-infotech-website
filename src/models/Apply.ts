@@ -5,7 +5,7 @@ export interface IJobApplication extends Document {
   email: string;
   phone: string;
   coverLetter: string;
-//   resumeUrl: string;
+  resumeUrl: string;
 }
 
 const JobApplicationSchema = new Schema<IJobApplication>(
@@ -14,7 +14,7 @@ const JobApplicationSchema = new Schema<IJobApplication>(
     email: { type: String, required: true },
     phone: { type: String, required: true },
     coverLetter: { type: String, required: true },
-    // resumeUrl: { type: String, required: true },
+    resumeUrl: { type: String },
   },
   { timestamps: true }
 );

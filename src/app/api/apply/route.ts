@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/db";
 import Apply from "@/models/Apply";
 import { transporter } from "@/lib/nodemailer";
+import fs from "fs";
+import path from "path";
+
 
 export async function POST(req: NextRequest) {
   try {
@@ -9,20 +12,36 @@ export async function POST(req: NextRequest) {
 
     const body = await req.json();
 
-    const { fullName, email, phone, coverLetter } = body;
+    const { fullName, email, phone, coverLetter, resume } = body;
 
-    if (!fullName || !email || !phone || !coverLetter) {
+    if (!fullName || !email || !phone || !coverLetter || !resume) {
       return NextResponse.json(
         { error: "All fields are required" },
         { status: 400 }
       );
     }
+    // ---------- SAVE FILE LOCALLY ----------
+    const bytes = await resume.arrayBuffer();
+    const buffer = Buffer.from(bytes);
 
+    const uploadsDir = path.join(process.cwd(), "public", "resumes");
+    if (!fs.existsSync(uploadsDir)) {
+      fs.mkdirSync(uploadsDir, { recursive: true });
+    }
+
+    const fileName = `${Date.now()}-${resume.name}`;
+    const filePath = path.join(uploadsDir, fileName);
+
+    fs.writeFileSync(filePath, buffer);
+
+    const resumeUrl = `/resumes/${fileName}`;
+    // ---------- SAVE TO DB ----------
     const application = await Apply.create({
       fullName,
       email,
       phone,
       coverLetter,
+      resumeUrl: `/resumes/${fileName}`,
     });
 
     const naodemailer = await process.env.EMAIL_USER;
@@ -87,7 +106,7 @@ export async function POST(req: NextRequest) {
 `
     };
     await transporter.sendMail(mailOptions);
-    
+
     return NextResponse.json(
       { success: true, message: "Application submitted & email sent", data: application },
       { status: 201 }
