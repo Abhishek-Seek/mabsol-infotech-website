@@ -3,60 +3,107 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ShoppingCart, ShieldCheck, Cloud, FileText } from "lucide-react";
+// -------------------- CONSTANTS --------------------
+const EXTRA_USER_PRICE = 3000;
+const EXTRA_COMPANY_PRICE = 6500;
+
+// -------------------- PRODUCT TYPE --------------------
+interface ProductType {
+  id: string;
+  title: string;
+  price: number;
+  tag: string;
+  bullets: string[];
+  accent: string;
+  image: string;
+}
+
+const Products: ProductType[] = [
+  {
+    id: "basic",
+    title: "Marg Erp 9+ — Basic",
+    price: 9999,
+    tag: "Basic",
+    bullets: [
+      "Perfect for beginners & small setups.",
+      "Included Users: 1 Full-Rights User",
+      `Extra User Cost: ₹${EXTRA_USER_PRICE} per user (Max 2 Users)`,
+      `Extra Company Cost: ₹${EXTRA_COMPANY_PRICE} per company (Max 2 Companies)`,
+    ],
+    accent: "bg-blue-200",
+    image: "/images/marg-basic.png",
+  },
+  {
+    id: "silver",
+    title: "Marg Erp 9+ — Silver",
+    price: 13500,
+    tag: "Silver",
+    bullets: [
+      "Single-user access on LAN",
+      "Included Users: 1 Full-Rights User + 1 View-Only User",
+      `Extra User Cost: ₹${EXTRA_USER_PRICE} per extra user (Max 25 Users)`,
+      `Extra Company Cost: ₹${EXTRA_COMPANY_PRICE} per company (Max 25 Companies)`,
+      "Multi-company support",
+    ],
+    accent: "bg-gray-300",
+    image: "/images/marg-basic.png",
+  },
+  {
+    id: "gold",
+    title: "Marg Erp 9+ — Gold",
+    price: 25200,
+    tag: "Gold",
+    bullets: [
+      "Multi-user access on LAN",
+      "25 user access",
+      "25 companies supported",
+      "Included Users: Unlimited Users",
+      "Extra User Cost: Unlimited users allowed",
+    ],
+    accent: "bg-yellow-200",
+    image: "/images/marg-basic.png",
+  },
+];
+
+// -------------------- CART TYPES --------------------
+interface CartItem {
+  product: ProductType;
+  qty: number;
+  extraUsers: number;
+  extraCompanies: number;
+  total: number;
+}
+
+// -------------------- GET LIMITS --------------------
+const getLimits = (id: string) => {
+  if (id === "basic") return { user: 2, company: 2 };
+  if (id === "silver") return { user: 25, company: 25 };
+  return { user: Infinity, company: Infinity };
+};
 
 
 export default function MargErp() {
-  const products = [
-    {
-      id: "basic",
-      title: "Marg Erp 9+ — Basic",
-      price: 9999,
-      tag: "Basic",
-      bullets: [
-        "Perfect for beginners & small setups.",
-        "Included Users: 1 Full-Rights User",
-        "Extra User Cost: ₹3000 per user (Max 2 Users)",
-        "Extra Company Cost: ₹6500 per company (Max 2 Companies)",
+    const [cart, setCart] = useState<CartItem[]>([]);
+    const [toastMsg, setToastMsg] = useState("");
+  
+    const addToCart = (
+      product: ProductType,
+      qty: number,
+      extraUsers: number,
+      extraCompanies: number
+    ) => {
+      const total =
+        product.price * qty +
+        extraUsers * EXTRA_USER_PRICE +
+        extraCompanies * EXTRA_COMPANY_PRICE;
+  
+      setCart((prev) => [...prev, { product, qty, extraUsers, extraCompanies, total }]);
+  
+      setToastMsg(`${product.title} added to cart!`);
+      setTimeout(() => setToastMsg(""), 2000);
+    };
 
-      ],
-      accent: "bg-white",
-      image: "/images/marg-basic.png",
-    },
-    {
-      id: "silver",
-      title: "Marg Erp 9+ — Silver",
-      price: 13500,
-      tag: "Silver",
-      bullets: [
-        "Single-user access on LAN",
-        "Included Users: 1 Full-Rights User + 1 View-Only User",
-        "Extra User Cost: ₹3000 per extra user (Max 25 Users)",
-        "Extra Company Cost: ₹6500 per company (Max 25 Companies)",
-        "Multi-company support (extra charge)",
-
-      ],
-      accent: "bg-white",
-      image: "/images/marg-basic.png",
-    },
-    {
-      id: "gold",
-      title: "Marg Erp 9+ — Gold",
-      price: 25200,
-      tag: "Gold",
-      bullets: [
-        "Multi-user access on LAN",
-
-        "25 user access",
-        "25 companies supported",
-        "Included Users: Unlimited Users",
-        "Extra User Cost: Unlimited users allowed (no limit)",
-
-
-      ],
-      accent: "bg-yellow-50",
-      image: "/images/marg-basic.png",
-    },
-  ];
+ 
 
   const basicDetails = [
     "Core accounting & invoicing",
@@ -100,34 +147,6 @@ export default function MargErp() {
     "Cloud backup protection",
     "Email/SMS integration",
   ];
-
-  const [cart, setCart] = useState<{ id: number; qty: number }[]>([]);
-  const [selected, setSelected] = useState<number | null>(null);
-
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const [toastMsg, setToastMsg] = useState<string | null>(null);
-
-  const addToCart = (id: number) => {
-    const exists = cart.find((c) => c.id === id);
-
-    if (exists) {
-      setCart(cart.map((c) => (c.id === id ? { ...c, qty: c.qty + 1 } : c)));
-    } else {
-      setCart([...cart, { id, qty: 1 }]);
-    }
-
-    // 🔔 Show Toast
-    setToastMsg("Item added to cart!");
-
-    // Auto hide toast after 2 sec
-    setTimeout(() => setToastMsg(null), 2000);
-  };
-
-  const totalItems = cart.reduce((s, i) => s + i.qty, 0);
-  const totalPrice = cart.reduce((s, i) => {
-    const p = products.find((x) => Number(x.id) === i.id)!;
-    return s + p.price * i.qty;
-  }, 0);
 
   return (
     <div className="min-h-screen bg-gray-100 p-6 flex flex-col items-center">
@@ -342,156 +361,40 @@ export default function MargErp() {
   {/* features card     */}
 <Link
   href="/features-comparison"
-  className="inline-block  max-w-6xl px-5 py-3 bg-[#0b3a74] text-white rounded-lg font-medium text-white shadow-md hover:bg-blue-600 transition"
+  className="inline-block  max-w-4xl px-5 py-3 bg-[#0b3a74] text-white rounded-lg font-medium text-white shadow-md hover:bg-blue-600 transition"
 >
   View Features Comparison Chart →
 </Link>
 
       {/* PRODUCTS SIDE-BY-SIDE */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#0b3a74] mb-12">
-          Buy Your Marg ERP 9+ Basic, Silver & Gold
-        </h2>
-        <div className="flex flex-col gap-16">
-          {products.map((p, index) => (
-            <div
-              key={p.id}
-
-              className={`bg-gradient-to-br from-blue-200 via-white to-blue-300 rounded-2xl shadow-md overflow-hidden flex flex-col md:flex-row items-center ${index % 2 === 1 ? "md:flex" : ""
-                }`}
-            >
-              {/* IMAGE SIDE */}
-              <div className="w-full md:w-1/2 bg-gradient-to-br from-blue-50 to-white flex justify-center items-center p-6">
-                <img
-                  src={p.image}
-                  alt={p.title}
-                  className="w-full h-[400px] "
-                />
-              </div>
-
-              {/* DETAILS SIDE */}
-              {/* DETAILS */}
-              <div className="w-full md:w-1/2 p-8">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-3xl font-semibold text-gray-800">
-                      {p.title}
-                    </h3>
-                    <p className="text-sm text-gray-500 mt-1">
-                      {p.tag} Edition
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-gray-900">
-                      ₹
-                      {p.price.toLocaleString("en-IN", {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2,
-                      })}
-                    </div>
-                    <div className="text-xs text-gray-500">One-time</div>
-                  </div>
-                </div>
-
-                <div
-                  className={`p-5 rounded-xl border ${p.accent} bg-blue-50/40`}
-                >
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    {p.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2">
-                        <span className="mt-0.5 text-green-600">✓</span>
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mt-6 flex items-center gap-3">
-                  <button
-                    onClick={() => addToCart(Number(p.id))}
-                    className="flex-1 bg-[#0b3a74] text-white px-5 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-[#0d4891] transition-all"
-                  >
-                    <ShoppingCart className="w-4 h-4" /> Add to cart
-                  </button>
-                  <button className="px-5 py-3 rounded-lg border hover:bg-gray-50 transition-all">
-                    Buy now
-                  </button>
-                </div>
-
-                <div className="mt-4 text-xs text-gray-500">
-                  SKU:27686 • Support: 1 year
-                </div>
-              </div>
-            </div>
-          ))}
+      <div className="min-h-screen bg-gray-50 p-6 md:p-14">
+      {/* Toast */}
+      {toastMsg && (
+        <div className="fixed top-5 right-5 bg-green-600 text-white px-6 py-3 rounded-xl shadow-lg animate-slide-in">
+          {toastMsg}
         </div>
-      </section>
+      )}
 
+      <h2 className="text-4xl font-bold text-center text-[#0b3a74] mb-12">
+        Buy Your Marg ERP 9+ Basic, Silver & Gold
+      </h2>
 
-      {/* CART SUMMARY */}
-      <div className="w-full mt-20 bg-white rounded-2xl p-6 shadow-md">
-        <div className="flex items-center justify-between">
-          <div className="text-sm text-gray-700 font-medium">
-            Cart Summary
-          </div>
-          <div className="text-sm font-semibold">{totalItems} item(s)</div>
-        </div>
-
-        <div className="mt-4 space-y-3 text-sm">
-          {cart.length === 0 ? (
-            <div className="text-gray-500 text-center py-2">
-              Your cart is empty.
-            </div>
-          ) : (
-            cart.map((c) => {
-              const prod = products.find((x) => Number(x.id) === c.id)!;
-              return (
-                <div
-                  key={c.id}
-                  className="flex justify-between border-b pb-2"
-                >
-                  <div>
-                    <div className="font-medium">{prod.title}</div>
-                    <div className="text-xs text-gray-500">Qty: {c.qty}</div>
-                  </div>
-                  <div className="font-semibold">
-                    ₹{(prod.price * c.qty).toLocaleString("en-IN")}
-                  </div>
-                </div>
-              );
-            })
-          )}
-        </div>
-
-        <div className="mt-4 flex justify-between border-t pt-4">
-          <div className="text-sm text-gray-600">Total</div>
-          <div className="text-lg font-bold">
-            ₹{totalPrice.toLocaleString("en-IN")}
-          </div>
-        </div>
-
-        <div className="mt-5 flex gap-3">
-          <button
-            disabled={cart.length === 0}
-            className={`flex-1 px-4 py-2 rounded-lg ${cart.length === 0
-              ? "bg-gray-200 text-gray-400"
-              : "bg-green-600 text-white hover:bg-green-700"
-              }`}
-          >
-            Checkout
-          </button>
-          <button
-            onClick={() => {
-              setCart([]);
-              setSelected(null);
-            }}
-            className="px-4 py-2 rounded-lg border hover:bg-gray-50"
-          >
-            Clear
-          </button>
-        </div>
+      {/* FULL-WIDTH FLEX DISPLAY */}
+      <div className="flex flex-col gap-10 w-full max-w-6xl mx-auto">
+        {Products.map((p) => (
+          <ProductCard
+            key={p.id}
+            product={p}
+            addToCart={addToCart}
+            limits={getLimits(p.id)}
+          />
+        ))}
       </div>
-      {/* images */}
+
+      <CartSummary cart={cart} />
+    </div>
+
+      {/* nicha ka  images */}
       <div className="w-full min-h-screen flex justify-center items-center bg-gradient-to-b from-[#f8fbff] to-white">
         <img
           src="/images/Marg-infographics.jpg"  // 🖼️ Replace with your image path
@@ -565,3 +468,178 @@ export default function MargErp() {
     </div>
   );
 }
+
+// -------------------- PRODUCT CARD --------------------
+interface CardProps {
+  product: ProductType;
+  addToCart: (
+    product: ProductType,
+    qty: number,
+    extraUsers: number,
+    extraCompanies: number
+  ) => void;
+  limits: { user: number; company: number };
+}
+
+function ProductCard({ product, addToCart, limits }: CardProps) {
+  const [qty, setQty] = useState(1);
+  const [extraUsers, setExtraUsers] = useState(0);
+  const [extraCompanies, setExtraCompanies] = useState(0);
+
+  const handleAdd = () => {
+    addToCart(product, qty, extraUsers, extraCompanies);
+  };
+
+  return (
+  <div className="bg-white text-[#0b3a74] w-full rounded-lg shadow-md border overflow-hidden">
+  <div className="grid md:grid-cols-2 gap-2 p-4">
+
+    {/* LEFT IMAGE */}
+    <div className="flex w-full items-center p-4 justify-center">
+      <img
+        src={product.image}
+        alt={product.title}
+        className="w-full h-[400px]  object-contain"
+      />
+    </div>
+
+    {/* RIGHT CONTENT */}
+    <div className="w-full p-2">
+      {/* Title & Price */}
+      <div className="flex justify-between">
+        <div>
+          <h3 className="text-3xl font-bold text-[#0b3a74]">{product.title}</h3>
+          <p className="text-gray-500">{product.tag} Edition</p>
+        </div>
+
+        <div className="text-right">
+          <h3 className="text-3xl font-bold text-[#0b3a74]">₹{product.price}</h3>
+          <p className="text-gray-500 text-sm">One-time</p>
+        </div>
+      </div>
+
+      {/* Bullets */}
+      <ul className="mt-5 border rounded-xl p-5 space-y-3 text-gray-700">
+        {product.bullets.map((b, i) => (
+          <li key={i} className="flex gap-2">
+            <span className="text-green-600">✓</span> {b}
+          </li>
+        ))}
+      </ul>
+
+      {/* Inputs */}
+      <div className="grid md:grid-cols-3 gap-4 mt-6">
+        <InputField label="Quantity" value={qty} min={1} onChange={setQty} />
+
+        <InputField
+          label={`Extra Users (Max: ${
+            limits.user === Infinity ? "∞" : limits.user
+          })`}
+          value={extraUsers}
+          min={0}
+          max={limits.user === Infinity ? undefined : limits.user}
+          onChange={setExtraUsers}
+        />
+
+        <InputField
+          label={`Extra Companies (Max: ${
+            limits.company === Infinity ? "∞" : limits.company
+          })`}
+          value={extraCompanies}
+          min={0}
+          max={limits.company === Infinity ? undefined : limits.company}
+          onChange={setExtraCompanies}
+        />
+      </div>
+
+      {/* Buttons */}
+      <div className="flex gap-4 mt-6">
+        <button
+          onClick={handleAdd}
+          className="flex-1 bg-[#0b3a74] hover:bg-[#072452] text-white py-3 rounded-xl font-semibold transition"
+        >
+          Add to Cart
+        </button>
+
+        <button className="px-6 py-3 rounded-xl border hover:bg-gray-100 font-semibold transition">
+          Buy Now
+        </button>
+      </div>
+
+      <p className="text-gray-500 text-sm mt-3">
+        SKU: 27686 • Support: 1 year
+      </p>
+    </div>
+
+  </div>
+
+  {/* Accent Bar */}
+  <div className="h-5 w-full bg-blue-100"></div>
+</div>
+
+  );
+}
+
+// -------------------- INPUT FIELD COMPONENT --------------------
+function InputField({
+  label,
+  value,
+  onChange,
+  min,
+  max,
+}: {
+  label: string;
+  value: number;
+  onChange: (v: number) => void;
+  min?: number;
+  max?: number;
+}) {
+  return (
+    <div>
+      <label className="font-semibold">{label}</label>
+      <input
+        type="number"
+        value={value}
+        min={min}
+        max={max}
+        onChange={(e) => onChange(Number(e.target.value))}
+        className="border p-2 rounded w-full mt-1"
+      />
+    </div>
+  );
+}
+
+// -------------------- CART SUMMARY --------------------
+function CartSummary({ cart }: { cart: CartItem[] }) {
+  const total = cart.reduce((sum, item) => sum + item.total, 0);
+
+  return (
+    <div className="mt-12 bg-white text-black p-8 shadow-md rounded-lg w-full max-w-6xl mx-auto border">
+      <h3 className="text-3xl text-[#0b3a74] font-bold text-center mb-6">Cart Summary</h3>
+
+      {cart.length === 0 ? (
+        <p className="text-center text-gray-500">No items added yet.</p>
+      ) : (
+        <div className="space-y-6">
+          {cart.map((c, i) => (
+            <div key={i} className="border-b pb-4 flex justify-between">
+              <div>
+                <p className="font-semibold text-lg">{c.product.title}</p>
+                <p>Qty: {c.qty}</p>
+                <p>Extra Users: {c.extraUsers} × ₹{EXTRA_USER_PRICE}</p>
+                <p>Extra Companies: {c.extraCompanies} × ₹{EXTRA_COMPANY_PRICE}</p>
+              </div>
+              <p className="font-bold text-lg">₹{c.total}</p>
+            </div>
+          ))}
+
+          <div className="flex justify-between text-2xl font-bold pt-2">
+            <span>Total:</span>
+            <span>₹{total}</span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
