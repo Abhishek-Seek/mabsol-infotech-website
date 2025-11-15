@@ -2,9 +2,16 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ShoppingCart, ShieldCheck, Cloud, FileText } from "lucide-react";
+import { Button, Modal } from "antd";
+import PaymentGetway from "../payment-getway/PaymentGetway";
 
 // Modern responsive TallyPrime product showcase
 // Next.js + Tailwind styling (single-file React component preview)
+const user = {
+  name: "Abhishek Singh",
+  email: "abhishek@example.com",
+  company: "Mabsol Infotech",
+};
 
 export default function TallyPage() {
   const products = [
@@ -36,35 +43,44 @@ export default function TallyPage() {
     },
   ];
 
- 
-const [cart, setCart] = useState<{ id: number; qty: number }[]>([]);
-const [selected, setSelected] = useState<number | null>(null);
 
-const [isCartOpen, setIsCartOpen] = useState(false);
-const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const [cart, setCart] = useState<{ id: string; qty: number }[]>([]);
+  const [selected, setSelected] = useState<number | null>(null);
 
-const addToCart = (id: number) => {
-  const exists = cart.find((c) => c.id === id);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const [open, setOpen] = React.useState<boolean>(false);
+  const [loading, setLoading] = React.useState<boolean>(true);
 
-  if (exists) {
-    setCart(cart.map((c) => (c.id === id ? { ...c, qty: c.qty + 1 } : c)));
-  } else {
-    setCart([...cart, { id, qty: 1 }]);
-  }
+  const addToCart = (id: string) => {
+    const exists = cart.find((c) => c.id === id);
 
-  // 🔔 Show Toast
-  setToastMsg("Item added to cart!");
+    if (exists) {
+      setCart(cart.map((c) => (c.id === id ? { ...c, qty: c.qty + 1 } : c)));
+    } else {
+      setCart([...cart, { id, qty: 1 }]);
+    }
 
-  // Auto hide toast after 2 sec
-  setTimeout(() => setToastMsg(null), 2000);
-};
+    setToastMsg("Item added to cart!");
+    setTimeout(() => setToastMsg(null), 2000);
+  };
+
 
   const totalItems = cart.reduce((s, i) => s + i.qty, 0);
   const totalPrice = cart.reduce((s, i) => {
-   const p = products.find((x) => Number(x.id) === i.id)!;
+    const p = products.find((x) => x.id === i.id)!;
     return s + p.price * i.qty;
   }, 0);
 
+  const showLoading = () => {
+    setOpen(true);
+    setLoading(true);
+
+    // Simple loading mock. You should add cleanup logic in real world.
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  };
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-[#f6fbff] to-white text-gray-900 overflow-hidden">
       {/* Header */}
@@ -305,10 +321,9 @@ const addToCart = (id: number) => {
           {products.map((p, index) => (
             <div
               key={p.id}
-             
-              className={`bg-white rounded-2xl shadow-md overflow-hidden flex flex-col md:flex-row items-center ${
-                index % 2 === 1 ? "md:flex" : ""
-              }`}
+
+              className={`bg-white rounded-2xl shadow-md overflow-hidden flex flex-col md:flex-row items-center ${index % 2 === 1 ? "md:flex" : ""
+                }`}
             >
               {/* IMAGE SIDE */}
               <div className="w-full md:w-1/2 bg-gradient-to-br from-blue-50 to-white flex justify-center items-center p-6">
@@ -320,7 +335,7 @@ const addToCart = (id: number) => {
               </div>
 
               {/* DETAILS SIDE */}
-            {/* DETAILS */}
+              {/* DETAILS */}
               <div className="w-full md:w-1/2 p-8">
                 <div className="flex justify-between items-start mb-4">
                   <div>
@@ -358,7 +373,7 @@ const addToCart = (id: number) => {
 
                 <div className="mt-6 flex items-center gap-3">
                   <button
-                    onClick={() => addToCart(Number(p.id))}
+                    onClick={() => addToCart((p.id))}
                     className="flex-1 bg-[#0b3a74] text-white px-5 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-[#0d4891] transition-all"
                   >
                     <ShoppingCart className="w-4 h-4" /> Add to cart
@@ -375,74 +390,74 @@ const addToCart = (id: number) => {
             </div>
           ))}
         </div>
-      </section> 
+      </section>
 
 
-        {/* CART SUMMARY */}
-        <div className="mt-20 bg-white rounded-2xl p-6 shadow-md">
-          <div className="flex items-center justify-between">
-            <div className="text-sm text-gray-700 font-medium">
-              Cart Summary
-            </div>
-            <div className="text-sm font-semibold">{totalItems} item(s)</div>
+      {/* CART SUMMARY */}
+      <div className="mt-20 bg-white rounded-2xl p-6 shadow-md">
+        <div className="flex items-center justify-between">
+          <div className="text-sm text-gray-700 font-medium">
+            Cart Summary
           </div>
+          <div className="text-sm font-semibold">{totalItems} item(s)</div>
+        </div>
 
-          <div className="mt-4 space-y-3 text-sm">
-            {cart.length === 0 ? (
-              <div className="text-gray-500 text-center py-2">
-                Your cart is empty.
-              </div>
-            ) : (
-              cart.map((c) => {
-                const prod =products.find((x) => Number(x.id) === c.id)!;
-                return (
-                  <div
-                    key={c.id}
-                    className="flex justify-between border-b pb-2"
-                  >
-                    <div>
-                      <div className="font-medium">{prod.title}</div>
-                      <div className="text-xs text-gray-500">Qty: {c.qty}</div>
-                    </div>
-                    <div className="font-semibold">
-                      ₹{(prod.price * c.qty).toLocaleString("en-IN")}
-                    </div>
+        <div className="mt-4 space-y-3 text-sm">
+          {cart.length === 0 ? (
+            <div className="text-gray-500 text-center py-2">
+              Your cart is empty.
+            </div>
+          ) : (
+            cart.map((c) => {
+              const prod = products.find((x) => x.id === c.id)!;
+              return (
+                <div
+                  key={c.id}
+                  className="flex justify-between pb-2"
+                >
+                  <div>
+                    <div className="font-medium">{prod.title}</div>
+                    <div className="text-xs text-gray-500">Qty: {c.qty}</div>
                   </div>
-                );
-              })
-            )}
-          </div>
+                  <div className="font-semibold">
+                    ₹{(prod.price * c.qty).toLocaleString("en-IN")}
+                  </div>
+                </div>
+              );
+            })
+          )}
+        </div>
 
-          <div className="mt-4 flex justify-between border-t pt-4">
-            <div className="text-sm text-gray-600">Total</div>
-            <div className="text-lg font-bold">
-              ₹{totalPrice.toLocaleString("en-IN")}
-            </div>
-          </div>
-
-          <div className="mt-5 flex gap-3">
-            <button
-              disabled={cart.length === 0}
-              className={`flex-1 px-4 py-2 rounded-lg ${
-                cart.length === 0
-                  ? "bg-gray-200 text-gray-400"
-                  : "bg-green-600 text-white hover:bg-green-700"
-              }`}
-            >
-              Checkout
-            </button>
-            <button
-              onClick={() => {
-                setCart([]);
-                setSelected(null);
-              }}
-              className="px-4 py-2 rounded-lg border hover:bg-gray-50"
-            >
-              Clear
-            </button>
+        <div className="mt-4 flex justify-between border-t pt-4">
+          <div className="text-sm text-gray-600">Total</div>
+          <div className="text-lg font-bold">
+            ₹{totalPrice.toLocaleString("en-IN")}
           </div>
         </div>
-   
+
+        <div className="mt-5 flex gap-3">
+          <Button
+            disabled={cart.length === 0}
+            className={`flex-1 px-4 py-5! rounded-lg ${cart.length === 0
+              ? "bg-gray-200 text-gray-400"
+              : "bg-[#185e9a]! !text-white hover:!bg-[#185e9a]"
+              }`}
+            onClick={showLoading}
+          >
+            Checkout
+          </Button>
+          <button
+            onClick={() => {
+              setCart([]);
+              setSelected(null);
+            }}
+            className="px-4 py-2 rounded-lg border hover:bg-gray-50"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+
 
       {/* FEATURES & DESCRIPTION */}
       <section className="max-w-7xl mx-auto px-6 py-12">
@@ -486,118 +501,151 @@ const addToCart = (id: number) => {
             </ul>
 
             {/* CART MODAL */}
-      {isCartOpen && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="bg-white w-[90%] max-w-lg rounded-2xl shadow-xl p-6 animate-fadeIn">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-semibold text-gray-800">Your Cart</h2>
-              <button
-                onClick={() => setIsCartOpen(false)}
-                className="text-gray-500 text-xl"
-              >
-                ✕
-              </button>
-            </div>
-
-            {/* CART LIST */}
-            {cart.length === 0 ? (
-              <div className="text-center text-gray-500 py-6">
-                Your cart is empty.
-              </div>
-            ) : (
-              <div className="space-y-4">
-                {cart.map((c) => {
-                  const prod = products.find((x) => Number(x.id) === c.id)!;
-                  return (
-                    <div
-                      key={c.id}
-                      className="flex justify-between items-center p-3 border rounded-lg"
+            {isCartOpen && (
+              <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
+                <div className="bg-white w-[90%] max-w-lg rounded-2xl shadow-xl p-6 animate-fadeIn">
+                  <div className="flex justify-between items-center mb-4">
+                    <h2 className="text-xl font-semibold text-gray-800">Your Cart</h2>
+                    <button
+                      onClick={() => setIsCartOpen(false)}
+                      className="text-gray-500 text-xl"
                     >
-                      <div>
-                        <div className="font-medium">{prod.title}</div>
-                        <div className="text-xs text-gray-500">
-                          Price: ₹{prod.price.toLocaleString("en-IN")}
-                        </div>
-                      </div>
+                      ✕
+                    </button>
+                  </div>
 
-                      {/* QTY BUTTONS */}
-                      <div className="flex items-center gap-2">
-                        <button
-                          onClick={() => {
-                            if (c.qty > 1) {
-                              setCart(
-                                cart.map((x) =>
-                                  x.id === c.id ? { ...x, qty: x.qty - 1 } : x
-                                )
-                              );
-                            }
-                          }}
-                          className="px-2 py-1 border rounded"
-                        >
-                          -
-                        </button>
-
-                        <span>{c.qty}</span>
-
-                        <button
-                          onClick={() =>
-                            setCart(
-                              cart.map((x) =>
-                                x.id === c.id
-                                  ? { ...x, qty: x.qty + 1 }
-                                  : x
-                              )
-                            )
-                          }
-                          className="px-2 py-1 border rounded"
-                        >
-                          +
-                        </button>
-
-                        <button
-                          onClick={() =>
-                            setCart(cart.filter((x) => x.id !== c.id))
-                          }
-                          className="text-red-500 ml-2 text-sm"
-                        >
-                          Remove
-                        </button>
-                      </div>
+                  {/* CART LIST */}
+                  {cart.length === 0 ? (
+                    <div className="text-center text-gray-500 py-6">
+                      Your cart is empty.
                     </div>
-                  );
-                })}
+                  ) : (
+                    <div className="space-y-4">
+                      {cart.map((c) => {
+                        const prod = products.find((x) => x.id === c.id)!;
+                        return (
+                          <div
+                            key={c.id}
+                            className="flex justify-between items-center p-3 border rounded-lg"
+                          >
+                            <div>
+                              <div className="font-medium">{prod.title}</div>
+                              <div className="text-xs text-gray-500">
+                                Price: ₹{prod.price.toLocaleString("en-IN")}
+                              </div>
+                            </div>
+
+                            {/* QTY BUTTONS */}
+                            <div className="flex items-center gap-2">
+                              <button
+                                onClick={() => {
+                                  if (c.qty > 1) {
+                                    setCart(
+                                      cart.map((x) =>
+                                        x.id === c.id ? { ...x, qty: x.qty - 1 } : x
+                                      )
+                                    );
+                                  }
+                                }}
+                                className="px-2 py-1 border rounded"
+                              >
+                                -
+                              </button>
+
+                              <span>{c.qty}</span>
+
+                              <button
+                                onClick={() =>
+                                  setCart(
+                                    cart.map((x) =>
+                                      x.id === c.id
+                                        ? { ...x, qty: x.qty + 1 }
+                                        : x
+                                    )
+                                  )
+                                }
+                                className="px-2 py-1 border rounded"
+                              >
+                                +
+                              </button>
+
+                              <button
+                                onClick={() =>
+                                  setCart(cart.filter((x) => x.id !== c.id))
+                                }
+                                className="text-red-500 ml-2 text-sm"
+                              >
+                                Remove
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  {/* TOTAL */}
+                  <div className="flex justify-between items-center mt-6 text-lg font-bold">
+                    <span>Total:</span>
+                    <span>₹{totalPrice.toLocaleString("en-IN")}</span>
+                  </div>
+
+                  {/* PAYMENT BUTTON */}
+                  <button
+                    disabled={cart.length === 0}
+                    className={`w-full mt-5 py-3 rounded-lg text-white font-medium ${cart.length === 0
+                      ? "bg-gray-300 cursor-not-allowed"
+                      : "bg-green-600 hover:bg-green-700"
+                      }`}
+                  >
+                    Proceed to Payment
+                  </button>
+                </div>
               </div>
             )}
-
-            {/* TOTAL */}
-            <div className="flex justify-between items-center mt-6 text-lg font-bold">
-              <span>Total:</span>
-              <span>₹{totalPrice.toLocaleString("en-IN")}</span>
-            </div>
-
-            {/* PAYMENT BUTTON */}
-            <button
-              disabled={cart.length === 0}
-              className={`w-full mt-5 py-3 rounded-lg text-white font-medium ${
-                cart.length === 0
-                  ? "bg-gray-300 cursor-not-allowed"
-                  : "bg-green-600 hover:bg-green-700"
-              }`}
-            >
-              Proceed to Payment
-            </button>
-          </div>
-        </div>
-      )}
           </div>
         </div>
       </section>
 
       {toastMsg && (
-  <div className="fixed bottom-6 right-6 bg-[#0b3a74] text-white px-5 py-3 rounded-xl shadow-lg animate-fadeIn">
-    {toastMsg}
-  </div>
-)}
+        <div className="fixed bottom-6 right-6 bg-[#0b3a74] text-white px-5 py-3 rounded-xl shadow-lg animate-fadeIn">
+          {toastMsg}
+        </div>
+      )}
+
+      <Modal
+        title="Checkout Summary"
+        footer={
+          <>
+            <Button onClick={() => setOpen(false)}>Cancel</Button>
+            {/* PaymentGetway ke handler ko call karenge */}
+            <PaymentGetway totalPrice={totalPrice} user={user} />
+          </>
+        }
+        open={open}
+        onCancel={() => setOpen(false)}
+      >
+        <div className="text-lg font-bold mb-4">
+          Total Amount: ₹{totalPrice.toLocaleString("en-IN")}
+        </div>
+        {cart.map((c) => {
+          const prod = products.find((x) => x.id === c.id)!;
+          return (
+            <div key={c.id} className="flex justify-between border-b pb-2">
+              <div>
+                <div className="font-medium">{prod.title}</div>
+                <div className="text-xs text-gray-500">Qty: {c.qty}</div>
+              </div>
+              <div className="font-semibold">
+                ₹{(prod.price * c.qty).toLocaleString("en-IN")}
+              </div>
+            </div>
+          );
+        })}
+      </Modal>
+
+
     </div>
+
   );
 }

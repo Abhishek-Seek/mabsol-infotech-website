@@ -1,13 +1,22 @@
-"use client";
+import { Button } from "antd";
 import { useEffect, useState } from "react";
 
+interface PaymentProps {
+  totalPrice: number;
+  user: {
+    name: string;
+    email: string;
+    company: string;
+  };
+}
 declare global {
   interface Window {
     Razorpay: any;
   }
 }
 
-export default function PaymentGetway() {
+
+export default function PaymentGetway({ totalPrice, user }: PaymentProps) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -18,50 +27,51 @@ export default function PaymentGetway() {
   }, []);
 
   const handlePayment = async () => {
+    if (!totalPrice) return;
     setLoading(true);
 
-    const res = await fetch("/api/order", { method: "POST" });
+    const res = await fetch("/api/order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ amount: totalPrice, user }),
+    });
+
     const order = await res.json();
 
     const options = {
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID!,
       amount: order.amount,
       currency: order.currency,
-      name: "My Store",
-      description: "Test Payment",
+      name: user.company,
+      description: `Payment by ${user.name}`,
       order_id: order.id,
-
+      prefill: { name: user.name, email: user.email },
+      theme: { color: "#3399cc" },
       handler: async function (response: any) {
         const verifyRes = await fetch("/api/verify", {
           method: "POST",
-          body: JSON.stringify(response),
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...response,
+            amount: totalPrice,
+            ...user,
+          }),
         });
-
         const verifyData = await verifyRes.json();
         verifyData.success
           ? alert("Payment Successful!")
           : alert("Payment Failed!");
       },
-
-      theme: {
-        color: "#3399cc",
-      },
     };
 
     const rzp = new window.Razorpay(options);
-
     rzp.open();
     setLoading(false);
   };
 
   return (
-    <div className="p-5">
-      <button
-        onClick={handlePayment}
-        className="bg-green-600 text-white px-4 py-2 rounded"
-      >
-        Pay Now
-      </button>
-    </div>
+    <Button type="primary" onClick={handlePayment} loading={loading}>
+      Pay ₹{totalPrice.toLocaleString("en-IN")}
+    </Button>
   );
 }
