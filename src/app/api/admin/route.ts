@@ -3,8 +3,8 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 // Hardcoded admin password and email
-const ADMIN_EMAIL = "admin@mabsol.com";
-const ADMIN_PASSWORD = "admin123"; // plain password
+const ADMIN_EMAIL = "mabsoleinfotech@gmail.com"
+const ADMIN_PASSWORD = "Mab@5181ain password"
 
 // Pre-generate hash once
 const ADMIN_PASSWORD_HASH = bcrypt.hashSync(ADMIN_PASSWORD, 10);
