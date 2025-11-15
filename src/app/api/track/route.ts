@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import mongoose from "mongoose";
-import Visit from "@/lib/visit";
+import Visit from "@/models/visit";
 
 const MONGODB_URI = process.env.MONGODB_URI!;
 if (!mongoose.connection.readyState) {

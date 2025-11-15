@@ -202,6 +202,9 @@ const Footer = () => {
             <li>
               <a href="#">Site Map</a>
             </li>
+            <li>
+              <a href="/payment">Payment Getway</a>
+            </li>
             <Link href="/location">
               <li>User Locator</li>
             </Link>
