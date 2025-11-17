@@ -1,52 +1,94 @@
-import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/db";
 import Apply from "@/models/Apply";
 import { transporter } from "@/lib/nodemailer";
-import fs from "fs";
+import { NextResponse } from "next/server";
 import path from "path";
+import fs from "fs";
 
+export async function POST(req: Request) {
+  console.log("👉 API HIT: /api/apply");
 
-export async function POST(req: NextRequest) {
   try {
     await connectDB();
+    console.log("👉 MONGO CONNECTED");
 
-    const body = await req.json();
+    const contentType = req.headers.get("content-type") || "";
+    console.log("👉 CONTENT TYPE:", contentType);
 
-    const { fullName, email, phone, coverLetter, resume } = body;
+    let fullName, email, phone, coverLetter, fileUrl;
 
-    if (!fullName || !email || !phone || !coverLetter || !resume) {
+    // ----- CASE 1: JSON -----
+    if (contentType.includes("application/json")) {
+      console.log("👉 JSON REQUEST RECEIVED");
+
+      const body = await req.json();
+      console.log("👉 JSON BODY:", body);
+
+      fullName = body.fullName;
+      email = body.email;
+      phone = body.phone;
+      coverLetter = body.coverLetter;
+      fileUrl = body.resume || null;
+    }
+
+    // ----- CASE 2: Form-Data -----
+    else if (contentType.includes("multipart/form-data")) {
+      console.log("👉 FORM-DATA REQUEST RECEIVED");
+
+      const formData = await req.formData();
+      console.log("👉 FORM DATA RECEIVED:", formData);
+
+      fullName = formData.get("fullName") as string;
+      email = formData.get("email") as string;
+      phone = formData.get("phone") as string;
+      coverLetter = formData.get("coverLetter") as string;
+      const resume = formData.get("resume") as File;
+
+      console.log("👉 FILE RECEIVED:", resume?.name);
+
+      if (resume) {
+        const buffer = Buffer.from(await resume.arrayBuffer());
+        const fileName = `${Date.now()}-${resume.name}`;
+        const uploadsDir = path.join(process.cwd(), "public/resumes");
+
+        if (!fs.existsSync(uploadsDir)) {
+          fs.mkdirSync(uploadsDir, { recursive: true });
+          console.log("👉 UPLOAD DIRECTORY CREATED");
+        }
+
+        const filePath = path.join(uploadsDir, fileName);
+        fs.writeFileSync(filePath, buffer);
+
+        fileUrl = `/resumes/${fileName}`;
+
+        console.log("👉 FILE SAVED AT:", fileUrl);
+      }
+    }
+
+    else {
+      console.log("❌ INVALID CONTENT TYPE RECEIVED");
       return NextResponse.json(
-        { error: "All fields are required" },
+        { error: "Invalid Content-Type. Use JSON or form-data." },
         { status: 400 }
       );
     }
-    // ---------- SAVE FILE LOCALLY ----------
-    const bytes = await resume.arrayBuffer();
-    const buffer = Buffer.from(bytes);
 
-    const uploadsDir = path.join(process.cwd(), "public", "resumes");
-    if (!fs.existsSync(uploadsDir)) {
-      fs.mkdirSync(uploadsDir, { recursive: true });
-    }
+    console.log("👉 SAVING DB RECORD...");
 
-    const fileName = `${Date.now()}-${resume.name}`;
-    const filePath = path.join(uploadsDir, fileName);
-
-    fs.writeFileSync(filePath, buffer);
-
-    const resumeUrl = `/resumes/${fileName}`;
-    // ---------- SAVE TO DB ----------
     const application = await Apply.create({
       fullName,
       email,
       phone,
       coverLetter,
-      resumeUrl: `/resumes/${fileName}`,
+      resume: fileUrl,
     });
 
-    const naodemailer = await process.env.EMAIL_USER;
-    const mailOptions = {
-      from: naodemailer,
+    console.log("👉 SAVED TO DB:", application._id);
+
+    console.log("👉 SENDING EMAIL...");
+
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER,
       to: email,
       subject: "Application Received",
       html: `
@@ -104,15 +146,17 @@ export async function POST(req: NextRequest) {
 </div>
 
 `
-    };
-    await transporter.sendMail(mailOptions);
+    });
+
+    console.log("👉 EMAIL SENT SUCCESSFULLY");
 
     return NextResponse.json(
-      { success: true, message: "Application submitted & email sent", data: application },
+      { success: true, message: "Applied successfully", application },
       { status: 201 }
     );
+
   } catch (error) {
-    console.error("ERROR:", error);
+    console.error("❌ SERVER ERROR:", error);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
