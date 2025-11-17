@@ -24,7 +24,7 @@ export default function TermsPage() {
       </div>
 
       {/* CONTENT SECTION */}
-      <section className="max-w-5xl mx-auto px-6 py-16 leading-relaxed space-y-6">
+      <section className="max-w-[1300px] mx-auto px-6 py-16 leading-relaxed space-y-6">
         <h2 className="text-3xl font-bold text-[#185e9a]">
           Welcome to MABSOL INFOTECH!
         </h2>
