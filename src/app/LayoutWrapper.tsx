@@ -8,7 +8,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 // import "@/aos.css";
 
-
 export default function LayoutWrapper({
   children,
 }: {
@@ -29,6 +28,7 @@ export default function LayoutWrapper({
     <>
       {!isDashboard && <Header />}
       {children}
+      {/* <ToastContainer position="top-right" /> */}
       {!isDashboard && <Footer />}
     </>
   );

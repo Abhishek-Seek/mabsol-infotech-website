@@ -81,22 +81,13 @@ const Header = () => {
   const Content = () => (
     <div className="bg-[#185e9a] text-white flex flex-col gap-4 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
-        <a
-          href="/tallys"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/tallys" className="!text-blue-300 select-none">
           Tally
         </a>
-        <a
-          href="/margErp"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/margErp" className="!text-blue-300 select-none">
           MArg ERP 9+
         </a>
-        <a
-          href="/reporting"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/reporting" className="!text-blue-300 select-none">
           MR Reporting
         </a>
         <a
@@ -130,34 +121,19 @@ const Header = () => {
   const Mega = () => (
     <div className="bg-[#185e9a] text-white flex flex-col gap-0 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
-        <a
-          href="/website-development"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/website-development" className="!text-blue-300 select-none">
           Website Development
         </a>
-        <a
-          href="/accounting-software"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/accounting-software" className="!text-blue-300 select-none">
           Accounting Software
         </a>
-        <a
-          href="/payroll-software"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/payroll-software" className="!text-blue-300 select-none">
           PayRoll Software
         </a>
-        <a
-          href="/erp-software"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/erp-software" className="!text-blue-300 select-none">
           ERP Software
         </a>
-        <a
-          href="/sfa-software"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/sfa-software" className="!text-blue-300 select-none">
           SFA Software
         </a>
       </div>
@@ -180,22 +156,13 @@ const Header = () => {
         <a href="/tally" className="!text-blue-300">
           Tally
         </a>
-        <a
-          href="/mr-reporting"
-          className="!text-blue-300"
-        >
+        <a href="/mr-reporting" className="!text-blue-300">
           MR Reporting
         </a>
-        <a
-          href="/greytHR"
-          className="!text-blue-300"
-        >
+        <a href="/greytHR" className="!text-blue-300">
           Greythr
         </a>
-        <a
-          href="/clinic-management"
-          className="!text-blue-300"
-        >
+        <a href="/clinic-management" className="!text-blue-300">
           Clinic Managment
         </a>
       </div>
@@ -700,18 +667,20 @@ const Header = () => {
               </Button>
             </div>
 
-            <div
-              data-aos="fade-down"
-              data-aos-easing="linear"
-              data-aos-duration="700"
-            >
-              <Button
-                onClick={handleCRMClick}
-                className=" !text-white !rounded-none !py-6 !bg-[#34396e]"
+            <Link href="/contact-us">
+              <div
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="700"
               >
-                Contact Us
-              </Button>
-            </div>
+                <Button
+                  onClick={handleCRMClick}
+                  className=" !text-white !rounded-none !py-6 !bg-[#34396e]"
+                >
+                  Contact Us
+                </Button>
+              </div>
+            </Link>
           </div>
         </div>
 
@@ -1443,7 +1412,7 @@ const Header = () => {
             </div>
           </Link>
 
-          <Link href="https://next-auth-email-verification-h7sd.vercel.app/">
+          <Link href="/contact-us">
             <div
               data-aos="fade-down"
               data-aos-easing="linear"
