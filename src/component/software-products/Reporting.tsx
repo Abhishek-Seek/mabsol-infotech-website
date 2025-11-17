@@ -255,11 +255,8 @@ export default function MRReportingPage() {
               className="bg-white rounded-2xl shadow-md flex flex-col md:flex-row overflow-hidden"
             >
               {/* IMAGE */}
-              <div className="md:w-1/2 p-6 bg-blue-50 flex justify-center">
-                <img
-                  src={p.image}
-                  className="w-full h-[500px] object-contain"
-                />
+              <div className="md:w-1/2  bg-blue-50 flex justify-center">
+                <img src={p.image} className="w-full object-contain" />
               </div>
 
               {/* DETAILS */}
@@ -291,16 +288,16 @@ export default function MRReportingPage() {
                 </ul>
 
                 <div className="mt-6 flex gap-3">
-                  <button
+                  <Button
                     onClick={() => addToCart(Number(p.id))}
-                    className="flex-1 bg-[#0b3a74] text-white px-5 py-3 rounded-lg flex items-center justify-center gap-2"
+                    className="flex-1 !bg-[#185e9a] !text-white px-5 py-4! rounded-lg flex items-center justify-center gap-2"
                   >
                     <ShoppingCart className="w-4 h-4" /> Add to cart
-                  </button>
+                  </Button>
 
-                  <button className="px-5 py-3 rounded-lg border">
+                  <Button className="px-5 py-4! rounded-lg border">
                     Buy now
-                  </button>
+                  </Button>
                 </div>
 
                 <div className="mt-4 text-xs text-gray-500">
@@ -352,25 +349,27 @@ export default function MRReportingPage() {
           </div>
         </div>
 
-        <div className="mt-5 flex gap-3">
-          <button
+        <div className="mt-5 w-1/2 flex gap-3 justify-end ml-auto">
+          {/* SMALL CLEAR BUTTON */}
+          <Button
+            onClick={() => setCart([])}
+            className="flex-[0.1] py-4 rounded-lg border"
+          >
+            Clear
+          </Button>
+
+          {/* BIGGER CHECKOUT BUTTON */}
+          <Button
             disabled={cart.length === 0}
-            className={`flex-1 px-4 py-2 rounded-lg ${
+            className={`flex-[1] py-4 rounded-lg ${
               cart.length === 0
-                ? "bg-gray-200 text-gray-400"
-                : "bg-green-600 text-white"
+                ? "bg-gray-200! text-gray-400!"
+                : "bg-[#339933]! text-white!"
             }`}
             onClick={showLoading}
           >
             Checkout
-          </button>
-
-          <button
-            onClick={() => setCart([])}
-            className="px-4 py-2 rounded-lg border"
-          >
-            Clear
-          </button>
+          </Button>
         </div>
       </div>
 

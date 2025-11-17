@@ -10,6 +10,7 @@ import {
   FileText,
   Trash2,
 } from "lucide-react";
+import { Button } from "antd";
 
 type CartSummaryProps = {
   cart: CartItem[];
@@ -373,11 +374,10 @@ export default function MargErp() {
       </section>
 
       {/* features card     */}
-      <Link
-        href="/features-comparison"
-        className="inline-block  max-w-4xl px-5 py-3 bg-[#0b3a74] text-white rounded-lg font-medium text-white shadow-md hover:bg-blue-600 transition"
-      >
-        View Features Comparison Chart →
+      <Link href="/features-comparison">
+        <Button className="inline-block  max-w-4xl px-5 py-5! bg-[#0b3a74]! text-white! rounded-lg font-medium shadow-md hover:bg-blue-600 transition">
+          View Features Comparison Chart →
+        </Button>
       </Link>
 
       {/* PRODUCTS SIDE-BY-SIDE */}
@@ -577,12 +577,12 @@ function ProductCard({ product, addToCart, limits }: CardProps) {
 
           {/* Buttons */}
           <div className="flex gap-4 mt-6">
-            <button
+            <Button
               onClick={handleAdd}
-              className="flex-1 bg-[#0b3a74] hover:bg-[#072452] text-white py-3 rounded-xl font-semibold transition"
+              className="flex-1 bg-[#185e9a]! text-white! py-4!"
             >
               Add to Cart
-            </button>
+            </Button>
             {/* Buttons */}
             {/* <div className="flex gap-4 mt-6">
               <button
@@ -596,9 +596,9 @@ function ProductCard({ product, addToCart, limits }: CardProps) {
                 Buy Now
               </button>
             </div> */}
-            <button className="px-6 py-3 rounded-xl border hover:bg-gray-100 font-semibold transition">
+            <Button className="px-6 py-4! rounded-xl border bg-[] font-semibold transition">
               Buy Now
-            </button>
+            </Button>
           </div>
 
           <p className="text-gray-500 text-sm mt-3">
@@ -707,21 +707,17 @@ function CartSummary({ cart, setCart }: CartSummaryProps) {
 
           {/* MODERN GLASSMORPHISM / GRADIENT PROCEED BUTTON */}
           <div className="pt-4 text-right">
-            <button
+            <Button
               onClick={onProceed}
               className="
-            relative px-8 py-3 rounded-xl overflow-hidden text-white font-semibold
-            shadow-lg transition-all duration-300
-            bg-gradient-to-r from-[#0b3a74] to-[#1e5ab6]
-            hover:from-[#1e5ab6] hover:to-[#0b3a74]
-            backdrop-blur-md border border-white/20
-          "
+            relative px-8 py-4!  text-white! bg-[#339933]!"
+          
             >
               <span className="relative z-10">Proceed to Payment</span>
 
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-white/10 blur-xl opacity-40"></div>
-            </button>
+            </Button>
           </div>
         </div>
       )}
