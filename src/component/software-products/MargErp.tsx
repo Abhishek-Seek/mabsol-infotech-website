@@ -2,7 +2,19 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ShoppingCart, ShieldCheck, Cloud, FileText } from "lucide-react";
+import { useRouter } from "next/navigation";
+import {
+  ShoppingCart,
+  ShieldCheck,
+  Cloud,
+  FileText,
+  Trash2,
+} from "lucide-react";
+
+type CartSummaryProps = {
+  cart: CartItem[];
+  setCart?: (items: CartItem[]) => void;
+};
 // -------------------- CONSTANTS --------------------
 const EXTRA_USER_PRICE = 3000;
 const EXTRA_COMPANY_PRICE = 6500;
@@ -118,6 +130,8 @@ export default function MargErp() {
     "Browser access & basic reports",
     "Limited salesman/discount/scheme features",
     "No cloud backup protection",
+    "Limited salesman/discount/scheme features",
+    "No cloud backup protection",
   ];
 
   const silverDetails = [
@@ -143,6 +157,7 @@ export default function MargErp() {
     "25 companies supported",
     "Included Users: Unlimited Users",
     "Extra User Cost: Unlimited users allowed (no limit)",
+    "Salesman/discount/scheme features (advanced)",
     "Salesman/discount/scheme features (advanced)",
     "Cloud backup protection",
     "Email/SMS integration",
@@ -366,20 +381,19 @@ export default function MargErp() {
       </Link>
 
       {/* PRODUCTS SIDE-BY-SIDE */}
-      <div className="min-h-screen bg-gray-50 p-6 md:p-14">
+      <div className="min-h-screen w-full max-w-7xl bg-gray-50 p-6 mt-6 md:p-14">
         {/* Toast */}
         {toastMsg && (
           <div className="fixed top-5 right-5 bg-green-600 text-white px-6 py-3 rounded-xl shadow-lg animate-slide-in">
             {toastMsg}
           </div>
         )}
-
         <h2 className="text-4xl font-bold text-center text-[#0b3a74] mb-12">
           Buy Your Marg ERP 9+ Basic, Silver & Gold
         </h2>
 
         {/* FULL-WIDTH FLEX DISPLAY */}
-        <div className="flex flex-col gap-10 w-full max-w-6xl mx-auto">
+        <div className="flex flex-col gap-10 w-full max-w-7xl mx-auto">
           {Products.map((p) => (
             <ProductCard
               key={p.id}
@@ -390,7 +404,7 @@ export default function MargErp() {
           ))}
         </div>
 
-        <CartSummary cart={cart} />
+        <CartSummary cart={cart} setCart={setCart} />
       </div>
 
       {/* nicha ka  images */}
@@ -406,13 +420,6 @@ export default function MargErp() {
         <h2 className="text-4xl  md:text-5xl font-bold text-center text-[#0b3a74] mb-10">
           What Exactly is Marg ERP 9+?
         </h2>
-
-        {/* <p className="text-gray-600  max-w-8xl text-lg md:text-xl max-w-4xl mx-auto text-center leading-relaxed">
-          Marg ERP 9+ is a complete business management software designed for billing,
-          inventory, accounting, GST filing, reporting, and multi-location operations.
-          It is widely used across retail, distribution, manufacturing, FMCG,
-          pharmaceuticals, jewelry, supermarkets, and more.
-        </p> */}
 
         <div className="grid md:grid-cols-3 gap-8 mt-14">
           {/* CARD 1 */}
@@ -576,7 +583,19 @@ function ProductCard({ product, addToCart, limits }: CardProps) {
             >
               Add to Cart
             </button>
+            {/* Buttons */}
+            {/* <div className="flex gap-4 mt-6">
+              <button
+                onClick={handleAdd}
+                className="flex-1 bg-[#0b3a74] hover:bg-[#072452] text-white py-3 rounded-xl font-semibold transition"
+              >
+                Add to Cart
+              </button>
 
+              <button className="px-6 py-3 rounded-xl border hover:bg-gray-100 font-semibold transition">
+                Buy Now
+              </button>
+            </div> */}
             <button className="px-6 py-3 rounded-xl border hover:bg-gray-100 font-semibold transition">
               Buy Now
             </button>
@@ -624,11 +643,23 @@ function InputField({
 }
 
 // -------------------- CART SUMMARY --------------------
-function CartSummary({ cart }: { cart: CartItem[] }) {
+function CartSummary({ cart, setCart }: CartSummaryProps) {
+  const router = useRouter();
+
   const total = cart.reduce((sum, item) => sum + item.total, 0);
 
+  const onDelete = (index: number) => {
+    if (!setCart) return; // safeguard
+    const updated = cart.filter((_, i) => i !== index);
+    setCart(updated);
+  };
+
+  const onProceed = () => {
+    router.push("/checkout");
+  };
+
   return (
-    <div className="mt-12 bg-white text-black p-8 shadow-md rounded-lg w-full max-w-6xl mx-auto border">
+    <div className="mt-12 bg-white text-gray-700 p-8 shadow-md rounded-lg w-full max-w-7xl mx-auto border">
       <h3 className="text-3xl text-[#0b3a74] font-bold text-center mb-6">
         Cart Summary
       </h3>
@@ -638,7 +669,11 @@ function CartSummary({ cart }: { cart: CartItem[] }) {
       ) : (
         <div className="space-y-6">
           {cart.map((c, i) => (
-            <div key={i} className="border-b pb-4 flex justify-between">
+            <div
+              key={i}
+              className="border-b pb-4 flex justify-between items-start"
+            >
+              {/* LEFT SIDE DETAILS */}
               <div>
                 <p className="font-semibold text-lg">{c.product.title}</p>
                 <p>Qty: {c.qty}</p>
@@ -649,13 +684,44 @@ function CartSummary({ cart }: { cart: CartItem[] }) {
                   Extra Companies: {c.extraCompanies} × ₹{EXTRA_COMPANY_PRICE}
                 </p>
               </div>
-              <p className="font-bold text-lg">₹{c.total}</p>
+
+              {/* RIGHT SIDE PRICE + TRASH ICON */}
+              <div className="text-right flex flex-col items-end gap-2">
+                <p className="font-bold text-lg">₹{c.total}</p>
+
+                <button
+                  onClick={() => onDelete(i)}
+                  className="text-red-600 hover:text-red-800 transition"
+                >
+                  <Trash2 size={20} />
+                </button>
+              </div>
             </div>
           ))}
 
+          {/* TOTAL */}
           <div className="flex justify-between text-2xl font-bold pt-2">
             <span>Total:</span>
             <span>₹{total}</span>
+          </div>
+
+          {/* MODERN GLASSMORPHISM / GRADIENT PROCEED BUTTON */}
+          <div className="pt-4 text-right">
+            <button
+              onClick={onProceed}
+              className="
+            relative px-8 py-3 rounded-xl overflow-hidden text-white font-semibold
+            shadow-lg transition-all duration-300
+            bg-gradient-to-r from-[#0b3a74] to-[#1e5ab6]
+            hover:from-[#1e5ab6] hover:to-[#0b3a74]
+            backdrop-blur-md border border-white/20
+          "
+            >
+              <span className="relative z-10">Proceed to Payment</span>
+
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-white/10 blur-xl opacity-40"></div>
+            </button>
           </div>
         </div>
       )}

@@ -313,7 +313,7 @@ export default function MRReportingPage() {
       </section>
 
       {/* CART SUMMARY */}
-      <div className="w-full max-w-3xl mt-20 bg-white rounded-2xl p-6 shadow-md">
+      <div className="w-full max-w-7xl mt-20 bg-white rounded-2xl p-6 shadow-md">
         <div className="flex justify-between">
           <div className="font-medium">Cart Summary</div>
           <div className="font-semibold">{totalItems} item(s)</div>
@@ -330,7 +330,7 @@ export default function MRReportingPage() {
               if (!prod) return null;
 
               return (
-                <div key={c.id} className="flex justify-between border-b pb-2">
+                <div key={c.id} className="flex justify-between pb-2">
                   <div>
                     <div className="font-medium">{prod.title}</div>
                     <div className="text-xs text-gray-500">Qty: {c.qty}</div>
@@ -375,7 +375,7 @@ export default function MRReportingPage() {
       </div>
 
       {/* IMAGE BELOW */}
-      <div className="w-full min-h-screen flex justify-center items-center mt-10">
+      <div className="max-w-7xl w-full min-h-screen flex justify-center items-center mt-5">
         <img
           src="/images/mr-people.png"
           className="w-full max-w-6xl object-contain"
@@ -404,7 +404,7 @@ export default function MRReportingPage() {
 
         <div className="flex justify-center items-center">
           <img
-            src="/images/reporting-Software.jpg"
+            src="/images/Reporting-Software.jpg"
             className="w-full h-[600px] object-contain"
           />
         </div>
