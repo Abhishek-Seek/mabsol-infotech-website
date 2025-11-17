@@ -43,13 +43,13 @@ const [jobs, setJobs] = useState<JobType[]>([]);
  const [editingJob, setEditingJob] = useState<JobType | null>(null);
   const [form] = Form.useForm();
 
-  const fetchJobs = async () => {
-    const res = await fetch("http://localhost:3000/api/jobs");
-    const data = await res.json();
-      console.log("API Response:", data);
-    setJobs(data);
-  
-  };
+const fetchJobs = async () => {
+  const res = await fetch("http://localhost:3000/api/jobs");
+  const data = await res.json();
+  console.log("API Response:", data);
+
+  setJobs(data.jobs || []);  // only this line changed
+};
 
   useEffect(() => {
     fetchJobs();
@@ -65,7 +65,9 @@ const [jobs, setJobs] = useState<JobType[]>([]);
         : [],
       positions: Number(values.positions),
       expireAt: values.expireAt.toISOString(),
+     
     };
+     console.log(values.expireAt);
 
     try {
       let res;
