@@ -78,7 +78,7 @@ const AboutUs = () => {
             className="rounded-2xl overflow-hidden shadow-2xl border-none w-[600px] max-w-full"
           >
             <img
-              src="images/section2.webp"
+              src="images/section2.jpeg"
               alt=""
               className="w-full h-60 sm:h-72 md:h-96 object-cover transition duration-300 ease-in-out hover:scale-105"
             />

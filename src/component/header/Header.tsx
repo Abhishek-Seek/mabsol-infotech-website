@@ -82,13 +82,13 @@ const Header = () => {
     <div className="bg-[#185e9a] text-white flex flex-col gap-4 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <a
-          href="https://mabsolinfotech.com/product/tally-software-solutions/"
+          href="/tallys"
           className="!text-blue-300 select-none"
         >
           Tally
         </a>
         <a
-          href="https://mabsolinfotech.com/product/marg-erp-software/"
+          href="/margErp"
           className="!text-blue-300 select-none"
         >
           MArg ERP 9+
@@ -143,13 +143,13 @@ const Header = () => {
           Accounting Software
         </a>
         <a
-          href="https://mabsolinfotech.com/payroll-software-services/"
+          href="/payroll-software"
           className="!text-blue-300 select-none"
         >
           PayRoll Software
         </a>
         <a
-          href="https://mabsolinfotech.com/erp-software-services/"
+          href="/erp-software"
           className="!text-blue-300 select-none"
         >
           ERP Software
@@ -168,7 +168,7 @@ const Header = () => {
     <div className="bg-[#185e9a] text-white grid grid-cols-2 gap-0 p-14 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
         <span className="">Gallery</span>
-        <a href="#" className="!text-blue-300">
+        <a href="/gallery" className="!text-blue-300">
           Gallery
         </a>
       </div>

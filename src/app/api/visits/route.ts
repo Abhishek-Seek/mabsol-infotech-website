@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import mongoose from "mongoose";
-import visit from "@/lib/visit";
+import visit from "@/models/visit";
 
 const MONGODB_URI = process.env.MONGODB_URI!;
 

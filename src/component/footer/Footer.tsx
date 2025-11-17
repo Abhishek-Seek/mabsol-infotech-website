@@ -80,21 +80,60 @@ const Footer = () => {
           </form>
         </div>
 
+
         <div>
           <h3 className="text-xl font-semibold mb-4">Our Products</h3>
           <ul className="space-y-2 text-gray-300 text-sm">
-            <li>Tally</li>
-            <li>MARG ERP 9+</li>
-            <li>M R Reporting</li>
-            <li>Order Tracking</li>
+            <li>
+              <a href="/tally" className="hover:text-white transition">
+                Tally
+              </a>
+            </li>
+            <li>
+              <a href="/margErp" className="hover:text-white transition">
+                MARG ERP 9+
+              </a>
+            </li>
+            <li>
+              <a href="/mr-reporting" className="hover:text-white transition">
+                M R Reporting
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white transition">
+                Order Tracking
+              </a>
+            </li>
           </ul>
 
           <h3 className="text-xl font-semibold mt-6 mb-4">Our Services</h3>
           <ul className="space-y-2 text-gray-300 text-sm">
-            <li>Website Development</li>
-            <li>Accounting Software</li>
-            <li>Payroll Software</li>
-            <li>ERP Software</li>
+            <li>
+              <a
+                href="/website-development"
+                className="hover:text-white transition"
+              >
+                Website Development
+              </a>
+            </li>
+            <li>
+              <a
+                href="/accounting-software"
+                className="hover:text-white transition"
+              >
+                Accounting Software
+              </a>
+            </li>
+            <li>
+              <a href="/pay-software" className="hover:text-white transition">
+                Payroll Software
+              </a>
+            </li>
+            <li>
+              <a href="/erp-software" className="hover:text-white transition">
+                ERP Software
+              </a>
+            </li>
             <li>SFA Software</li>
           </ul>
         </div>
@@ -152,7 +191,7 @@ const Footer = () => {
               <a href="#">Portfolio Single</a>
             </li>
             <li>
-              <a href="#">Terms and Conditions</a>
+              <a href="/term-condition">Terms and Conditions</a>
             </li>
             <li>
               <a href="#">Refund and Cancellation Policy</a>
@@ -165,10 +204,11 @@ const Footer = () => {
             <li>
               <a href="#">Site Map</a>
             </li>
+            <li>
+              <a href="/payment">Payment Getway</a>
+            </li>
             <Link href="/location">
-              <li>
-                User Locator
-              </li>
+              <li>User Locator</li>
             </Link>
           </ul>
         </div>
