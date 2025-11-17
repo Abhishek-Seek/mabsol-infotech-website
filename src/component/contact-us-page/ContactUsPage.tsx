@@ -123,7 +123,7 @@ export default function ContactSection() {
                 masolinfotech@gmail.com
               </Link>
               <br />
-              contact@mabsolinfotech.in
+              contact@mabsolinfotech.com
             </p>
 
             <p>
