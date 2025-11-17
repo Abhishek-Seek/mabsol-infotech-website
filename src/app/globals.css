@@ -68,5 +68,26 @@ body {
   animation: slide-down 0.3s ease;
 }
 
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
 
 
+.custom-dropdown .ant-select-item-option:hover {
+    @apply bg-blue-600 text-white;
+}
+
+.custom-dropdown .ant-select-item-option-selected {
+    @apply bg-white text-black;
+}

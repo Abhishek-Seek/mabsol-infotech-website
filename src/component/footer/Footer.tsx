@@ -197,14 +197,16 @@ const Footer = () => {
               <a href="#">Refund and Cancellation Policy</a>
             </li>
             <li>
-              <a href="#">Privacy Policy</a>
+              <Link href="/privacy-policy" className="hover:text-blue-600 transition-colors">
+                Privacy Policy
+              </Link>
             </li>
             <li>
               <a href="#">Site Map</a>
             </li>
-            <li>
+            {/* <li>
               <a href="/payment">Payment Getway</a>
-            </li>
+            </li> */}
             <Link href="/location">
               <li>User Locator</li>
             </Link>

@@ -43,7 +43,6 @@ export default function TallyPage() {
     },
   ];
 
-
   const [cart, setCart] = useState<{ id: string; qty: number }[]>([]);
   const [selected, setSelected] = useState<number | null>(null);
 
@@ -64,7 +63,6 @@ export default function TallyPage() {
     setToastMsg("Item added to cart!");
     setTimeout(() => setToastMsg(null), 2000);
   };
-
 
   const totalItems = cart.reduce((s, i) => s + i.qty, 0);
   const totalPrice = cart.reduce((s, i) => {
@@ -313,7 +311,7 @@ export default function TallyPage() {
       </section>
 
       {/* PRODUCTS SIDE-BY-SIDE */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
+      <section className="max-w-7xl mx-auto px-6 py-6">
         <h2 className="text-6xl md:text-6xl font-bold text-center text-[#0b3a74] mb-12">
           Buy Your Tally Prime Silver & Gold
         </h2>
@@ -321,9 +319,9 @@ export default function TallyPage() {
           {products.map((p, index) => (
             <div
               key={p.id}
-
-              className={`bg-white rounded-2xl shadow-md overflow-hidden flex flex-col md:flex-row items-center ${index % 2 === 1 ? "md:flex" : ""
-                }`}
+              className={`bg-white rounded-2xl shadow-md overflow-hidden flex flex-col md:flex-row items-center ${
+                index % 2 === 1 ? "md:flex" : ""
+              }`}
             >
               {/* IMAGE SIDE */}
               <div className="w-full md:w-1/2 bg-gradient-to-br from-blue-50 to-white flex justify-center items-center p-6">
@@ -372,15 +370,15 @@ export default function TallyPage() {
                 </div>
 
                 <div className="mt-6 flex items-center gap-3">
-                  <button
-                    onClick={() => addToCart((p.id))}
-                    className="flex-1 bg-[#0b3a74] text-white px-5 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-[#0d4891] transition-all"
+                  <Button
+                    onClick={() => addToCart(p.id)}
+                    className="flex-1 bg-[#185e9a]! text-white! py-4! lg:py-4!"
                   >
                     <ShoppingCart className="w-4 h-4" /> Add to cart
-                  </button>
-                  <button className="px-5 py-3 rounded-lg border hover:bg-gray-50 transition-all">
+                  </Button>
+                  <Button className="px-5 py-4! lg:py-4! rounded-lg border">
                     Buy now
-                  </button>
+                  </Button>
                 </div>
 
                 <div className="mt-4 text-xs text-gray-500">
@@ -392,13 +390,10 @@ export default function TallyPage() {
         </div>
       </section>
 
-
       {/* CART SUMMARY */}
-      <div className="mt-20 bg-white rounded-2xl p-6 shadow-md">
+      <div className="mt-20 max-w-7xl mx-auto bg-white rounded-2xl p-4 py-10 shadow-md">
         <div className="flex items-center justify-between">
-          <div className="text-sm text-gray-700 font-medium">
-            Cart Summary
-          </div>
+          <div className="text-sm text-gray-700 font-medium">Cart Summary</div>
           <div className="text-sm font-semibold">{totalItems} item(s)</div>
         </div>
 
@@ -411,10 +406,7 @@ export default function TallyPage() {
             cart.map((c) => {
               const prod = products.find((x) => x.id === c.id)!;
               return (
-                <div
-                  key={c.id}
-                  className="flex justify-between pb-2"
-                >
+                <div key={c.id} className="flex justify-between pb-2">
                   <div>
                     <div className="font-medium">{prod.title}</div>
                     <div className="text-xs text-gray-500">Qty: {c.qty}</div>
@@ -435,32 +427,32 @@ export default function TallyPage() {
           </div>
         </div>
 
-        <div className="mt-5 flex gap-3">
+        <div className="mt-5 w-1/2 flex gap-3 justify-end ml-auto">
           <Button
-            disabled={cart.length === 0}
-            className={`flex-1 px-4 py-5! rounded-lg ${cart.length === 0
-              ? "bg-gray-200 text-gray-400"
-              : "bg-[#185e9a]! !text-white hover:!bg-[#185e9a]"
-              }`}
-            onClick={showLoading}
-          >
-            Checkout
-          </Button>
-          <button
             onClick={() => {
               setCart([]);
               setSelected(null);
             }}
-            className="px-4 py-2 rounded-lg border hover:bg-gray-50"
+            className="flex-[0.1] px-4 py-4!"
           >
             Clear
-          </button>
+          </Button>
+          <Button
+            disabled={cart.length === 0}
+            className={`flex-[1] px-4 py-4! rounded-lg ${
+              cart.length === 0
+                ? "bg-gray-200 text-gray-400"
+                : "bg-[#185e9a]! text-white!"
+            }`}
+            onClick={showLoading}
+          >
+            Checkout
+          </Button>
         </div>
       </div>
 
-
       {/* FEATURES & DESCRIPTION */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
+      <section className="max-w-7xl mx-auto px-6 py-32">
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <h3 className="text-3xl font-bold text-gray-800">
@@ -505,7 +497,9 @@ export default function TallyPage() {
               <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
                 <div className="bg-white w-[90%] max-w-lg rounded-2xl shadow-xl p-6 animate-fadeIn">
                   <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-xl font-semibold text-gray-800">Your Cart</h2>
+                    <h2 className="text-xl font-semibold text-gray-800">
+                      Your Cart
+                    </h2>
                     <button
                       onClick={() => setIsCartOpen(false)}
                       className="text-gray-500 text-xl"
@@ -542,7 +536,9 @@ export default function TallyPage() {
                                   if (c.qty > 1) {
                                     setCart(
                                       cart.map((x) =>
-                                        x.id === c.id ? { ...x, qty: x.qty - 1 } : x
+                                        x.id === c.id
+                                          ? { ...x, qty: x.qty - 1 }
+                                          : x
                                       )
                                     );
                                   }
@@ -593,10 +589,11 @@ export default function TallyPage() {
                   {/* PAYMENT BUTTON */}
                   <button
                     disabled={cart.length === 0}
-                    className={`w-full mt-5 py-3 rounded-lg text-white font-medium ${cart.length === 0
-                      ? "bg-gray-300 cursor-not-allowed"
-                      : "bg-green-600 hover:bg-green-700"
-                      }`}
+                    className={`w-full mt-5 py-3 rounded-lg text-white font-medium ${
+                      cart.length === 0
+                        ? "bg-gray-300 cursor-not-allowed"
+                        : "bg-green-600 hover:bg-green-700"
+                    }`}
                   >
                     Proceed to Payment
                   </button>
@@ -643,9 +640,6 @@ export default function TallyPage() {
           );
         })}
       </Modal>
-
-
     </div>
-
   );
 }
