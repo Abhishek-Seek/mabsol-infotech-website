@@ -1,11 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export", // ✅ static export
+  // output: "export", 
+  // dynamic: "force-static",
+
   reactStrictMode: true,
 
   images: {
-    unoptimized: true, // ✅ static export ke liye
+    unoptimized: true, 
     remotePatterns: [
       {
         protocol: "https",

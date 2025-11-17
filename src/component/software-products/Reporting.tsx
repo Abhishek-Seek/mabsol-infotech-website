@@ -424,5 +424,6 @@ const totalPrice = cart.reduce((sum, item) => {
 
 
     </div>
+
   );
 }

@@ -20,35 +20,35 @@ export default function AccountingSoftwarePage() {
       image: "/images/our.webp",
       title: "Website Development",
       description:
-        "Website Development Services to Build Your Digital Identity...",
+        "Website Development Services to Build Your Digital Identity Our expert website development services are designed to hel...",
       path: "/website-development",
     },
     {
       image: "/images/our2.webp",
       title: "Accounting Software",
       description:
-        "Accounting Software Solutions to Streamline Your Financial Operations...",
+        "Accounting Software Solutions to Streamline Your Financial Operations Our accounting software solutions provide...",
       path: "/accounting-software",
     },
     {
       image: "/images/our3.webp",
       title: "Payroll Software",
       description:
-        "Advanced Payroll Software for Efficient Salary and HR Management...",
+        "Advanced Payroll Software for Efficient Salary and HR Management Our advanced payroll software is designed to...",
       path: "/payroll-software",
     },
     {
       image: "/images/our4.webp",
       title: "ERP Software",
       description:
-        "Smart ERP Software for Complete Business Management...",
+        "Smart ERP Software for Complete Business Management Our powerful ERP software provides everything you need to...",
       path: "/erp-software",
     },
     {
       image: "/images/our5.webp",
       title: "SFA Software",
       description:
-        "Powerful SFA Software to Automate and Optimize Sales Operations...",
+        "Powerful SFA Software to Automate and Optimize Sales Operations Our robust SFA software is designed to automate and streamline your......",
       path: "/sfa-software",
     },
   ];
@@ -79,10 +79,27 @@ export default function AccountingSoftwarePage() {
             SFA Software
           </Title>
           <Button
-            className="!py-6 !px-8 !rounded-none !text-md !text-white hover:!bg-blue-800 !bg-transparent mt-6 border border-white"
+            className="
+    group 
+    flex items-center gap-2
+    py-6! px-6! 
+    rounded-none! 
+    text-md text-white! 
+    bg-transparent!
+    mt-6 
+
+    border border-transparent!       
+    hover:border-white!               
+    hover:bg-white/10             
+
+    transition-all duration-300
+  "
             onClick={() => router.push("/")}
           >
-            Home
+            <RightOutlined
+            />
+
+            <span className="text-lg">Home</span>
           </Button>
         </div>
       </header>
