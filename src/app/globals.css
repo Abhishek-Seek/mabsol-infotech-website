@@ -50,4 +50,10 @@ body {
 } */
 
 
+.custom-dropdown .ant-select-item-option:hover {
+    @apply bg-blue-600 text-white;
+}
 
+.custom-dropdown .ant-select-item-option-selected {
+    @apply bg-white text-black;
+}
