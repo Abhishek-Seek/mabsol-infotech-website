@@ -1,5 +1,5 @@
 import React from 'react'
-import CareerPage from '@/component/Career-jobs/Career'
+import CareerPage from '@/components/Career-jobs/Career'
 
 const Page = () => {
   return (

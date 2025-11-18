@@ -82,7 +82,7 @@ const CareerPage = () => {
                         </h2>
                         {/* Line */}
                         <div className="w-28 h-1 bg-gray-700 mt-4 mb-6 rounded-full"></div>
-                        <p className="text-gray-700 leading-relaxed text-[16px] md:text-[20px] justify-center">
+                        <p className="text-gray-700 leading-relaxed text-[14px] md:text-[16px] justify-center">
                             Welcome to Mabsol Infotech, where passion meets purpose. We specialize in selling industry-leading software like Marg, Tally, Busy, MR Reporting, and Greythr. Our commitment to providing unparalleled customer support makes us a trusted partner for businesses of all sizes.<br />
 
                             At Mabsol Infotech, we believe our people are our most valuable asset. We provide an environment where your skills are nurtured, ideas are valued, and your career aspirations are turned into reality.<br />
@@ -128,7 +128,7 @@ const CareerPage = () => {
                             <div className="w-28 h-1 bg-gray-700 mt-4 mb-6 rounded-full"></div>
 
                             {/* Description */}
-                            <p className="text-gray-700 leading-relaxed text-[16px] md:text-[20px] justify-center">
+                            <p className="text-gray-700 leading-relaxed text-[14px] md:text-[16px] justify-center">
                                 At Mabsol Infotech, we’re more than just a workplace—we’re a thriving
                                 community of innovators, problem-solvers, and passionate professionals
                                 dedicated to transforming businesses with cutting-edge software
@@ -149,7 +149,7 @@ const CareerPage = () => {
 
                 {/* job section */}
                  <section className="w-full px-4 py-10 md:py-16 bg-gray-50">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-6xl mx-auto">
                 <h2 className="text-4xl text-[#185e9a] md:text-5xl font-bold mb-8">
                     Our Open Roles
                 </h2>
