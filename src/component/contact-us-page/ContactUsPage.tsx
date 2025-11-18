@@ -58,7 +58,7 @@ export default function ContactSection() {
       return message.warning("Please verify your email first");
     }
     console.log("🔍 Form values before submit:", values);
-    const res = await fetch("/api/submit-form", {
+    const res = await fetch("/api/auth/submit-form", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -79,7 +79,7 @@ export default function ContactSection() {
     }
   };
   return (
-    <div className="w-full bg-gray-50 py-32 px-6">
+    <div className="w-full bg-gray-50 pb-32 px-6">
       <h1 className="py-20 text-center text-4xl font-bold">
         Contact <span className="text-orange-500!">Us</span>{" "}
       </h1>

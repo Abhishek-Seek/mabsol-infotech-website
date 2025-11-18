@@ -91,28 +91,31 @@ const Header = () => {
           MR Reporting
         </a>
         <a
-          href="https://mabsolinfotech.com/human-resources-demo-portal/"
+          href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
           className="!text-blue-300 select-none"
         >
           HR Payroll Portal
         </a>
         <a
-          href="https://mabsolinfotech.com/dcr-portal-demo-form/"
+          href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
           className="!text-blue-300 select-none"
         >
           DCR Portal
         </a>
         <a
-          href="https://mabsolinfotech.com/institute-portal-demo-form/"
+          href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
           className="!text-blue-300 select-none"
         >
           Institute Portal
         </a>
         <a
-          href="https://mabsolinfotech.com/school-portal-demo/"
+          href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
           className="!text-blue-300 select-none"
         >
           School Portal
+        </a>
+        <a href="/hotel-login" className="!text-blue-300 select-none">
+          Hotel Portal
         </a>
       </div>
     </div>
@@ -543,13 +546,15 @@ const Header = () => {
   return (
     <div className=" bg-[#185e9a] sticky top-0 z-50">
       <div className="flex justify-around items-center gap-10 px-6 py-4">
-        <div>
-          <img
-            src={img}
-            alt="imgs"
-            className="h-[50px] w-[130px] md:h-[70px] md:w-[150px] lg:h-[70px] lg:w-[170px]"
-          />
-        </div>
+        <Link href="/">
+          <div>
+            <img
+              src={img}
+              alt="imgs"
+              className="h-[50px] w-[130px] md:h-[70px] md:w-[150px] lg:h-[70px] lg:w-[170px]"
+            />
+          </div>
+        </Link>
         <div className="flex justify-center items-center gap-8 xl:gap-16 min-w-0 overflow-hidden">
           <nav
             data-aos="fade-up"
