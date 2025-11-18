@@ -7,13 +7,13 @@ export const dynamic = "force-dynamic";
 // ------------------ GET Job by ID ------------------
 export async function GET(
   req: NextRequest,
-  context: { params: { id: string } }
-)
- {
+  { params }: { params: { id: string } }
+) {
   try {
     await connectDB();
 
-        const { id } = context.params;
+    const { id } = params;
+
     if (!id) throw new Error("Job ID not provided");
 
     const job = await Job.findById(id);
@@ -25,32 +25,34 @@ export async function GET(
       );
     }
 
-    // Check if job is expired
+    // Check expiry
     const now = new Date();
     if (job.expireAt < now) {
       return NextResponse.json(
         { success: false, message: "Job has expired" },
-        { status: 410 } // 410 Gone
+        { status: 410 }
       );
     }
 
     return NextResponse.json({ success: true, job });
   } catch (error: any) {
     console.error("JOB GET ERROR:", error);
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+    return NextResponse.json(
+      { success: false, error: error.message },
+      { status: 500 }
+    );
   }
 }
 
 // ------------------ DELETE Job ------------------
 export async function DELETE(
-  req: Request,
+  req: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
     await connectDB();
 
     const { id } = params;
-    if (!id) throw new Error("Job ID not provided");
 
     const deletedJob = await Job.findByIdAndDelete(id);
 
@@ -61,27 +63,31 @@ export async function DELETE(
       );
     }
 
-    return NextResponse.json({ success: true, message: "Job deleted successfully" });
+    return NextResponse.json({
+      success: true,
+      message: "Job deleted successfully",
+    });
   } catch (error: any) {
     console.error("JOB DELETE ERROR:", error);
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+    return NextResponse.json(
+      { success: false, error: error.message },
+      { status: 500 }
+    );
   }
 }
 
 // ------------------ UPDATE Job ------------------
 export async function PATCH(
-  req: Request,
+  req: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
     await connectDB();
 
     const { id } = params;
-    if (!id) throw new Error("Job ID not provided");
 
     const body = await req.json();
 
-    // Optional: If expireDays provided, update expireAt
     if (body.expireDays) {
       const now = new Date();
       body.expireAt = new Date(now.setDate(now.getDate() + body.expireDays));
@@ -100,6 +106,9 @@ export async function PATCH(
     return NextResponse.json({ success: true, job: updatedJob });
   } catch (error: any) {
     console.error("JOB PATCH ERROR:", error);
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+    return NextResponse.json(
+      { success: false, error: error.message },
+      { status: 500 }
+    );
   }
 }
