@@ -1,3 +1,5 @@
+"use client"
+
 import PaymentGetway from "@/component/payment-getway/PaymentGetway";
 
 const Page = ({ searchParams }: any) => {
