@@ -1,26 +1,55 @@
+"use client";
 import React from 'react'
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation"; 
 
+interface Job {
+    _id: string;
+ title: string;
+  company: string;
+  location: string;
+  experience: string;
+  positions: number;
+  qualification: string;
+  jobType: string;
+  timings: string;
+  aboutUs: string;
+  positionOverview: string;
+ 
+  responsibilities: string[];
+  requiredSkills: string[];
+  preferredSkills: string[];
+  whatWeOffer: string[];
+  howToApply: string;
+  category: string;
+  createdAt: Date;
+  updatedAt: Date;
+  expireAt: Date;
+} 
 const CareerPage = () => {
-    const jobs = [
-        {
-            title: "Senior Inventory Specialist",
-            type: "Full Time",
-            salary: "$100 – $500K",
-            location: "Boston, United States",
-        },
-        {
-            title: "Senior Software Developer",
-            type: "Full Time",
-            salary: "$100 – $500K",
-            location: "Boston, United States",
-        },
-        {
-            title: "Junior UI/UX Fullstack Designer",
-            type: "Full Time",
-            salary: "$100 – $500K",
-            location: "Boston, United States",
-        },
-    ];
+    const [jobs, setJobs] = useState<Job[]>([]);
+    const router = useRouter();
+
+    useEffect(() => {
+    fetch("http://localhost:3000/api/jobs")
+      .then(res => res.json())
+      .then((data) => {
+        // ✅ make sure we have an array
+        if (Array.isArray(data)) {
+          setJobs(data);
+        } else if (Array.isArray(data.jobs)) {
+          setJobs(data.jobs);
+        } else {
+          console.error("Jobs API did not return an array", data);
+        }
+      })
+      .catch(err => console.error(err));
+  }, []);
+
+    const handleApply = (id: string) => {
+        router.push(`/jobsApply/${id}`); // Navigate to job details page
+    };
+
     return (
         <>
             <div className="w-full min-h-screen text-white overflow-hidden">
@@ -119,54 +148,45 @@ const CareerPage = () => {
                 </section>
 
                 {/* job section */}
-                <section className="w-full px-4 py-10 md:py-16 bg-gray-50">
-                    <div className="max-w-7xl mx-auto">
+                 <section className="w-full px-4 py-10 md:py-16 bg-gray-50">
+            <div className="max-w-7xl mx-auto">
+                <h2 className="text-4xl text-[#185e9a] md:text-5xl font-bold mb-8">
+                    Our Open Roles
+                </h2>
 
-                        {/* Section Heading */}
-                        <h2 className="text-4xl text-[#185e9a] md:text-5xl font-bold mb-8">
-                            Our Open Roles
-                        </h2>
-
-                        {/* Job List */}
-                        <div className="space-y-6">
-                            {jobs.map((job, index) => (
-                                <div
-                                    key={index}
-                                    className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 flex flex-col md:flex-row md:items-center justify-between hover:shadow-md transition"
-                                >
-
-                                    {/* Job Info */}
-                                    <div>
-                                        <p className="text-xs font-semibold text-green-600 tracking-wide">
-                                            OPEN ROLE
-                                        </p>
-
-                                        <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mt-1">
-                                            {job.title}
-                                        </h3>
-
-                                        <div className="flex flex-wrap gap-4 text-sm text-gray-600 mt-3">
-                                            <span>{job.type}</span>
-                                            <span>•</span>
-                                            {/* <span>{job.salary}</span> */}
-                                            <span>•</span>
-                                            <span>{job.location}</span>
-                                        </div>
-                                    </div>
-
-                                    {/* Apply Button */}
-                                    <div className="mt-5 md:mt-0">
-                                        <button className="bg-[#185e9a] hover:bg-blue-400 text-white px-5 py-2.5 rounded-full text-xl font-medium flex items-center gap-2 transition">
-                                            Apply Now
-                                            <span className="text-lg">↗</span>
-                                        </button>
-                                    </div>
+                <div className="space-y-6">
+                     {Array.isArray(jobs) && jobs.map(job => (
+                        <div
+                            key={job._id}
+                            className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 flex flex-col md:flex-row md:items-center justify-between hover:shadow-md transition"
+                        >
+                            <div>
+                                <p className="text-lg mb-2 font-semibold text-green-600 tracking-wide">
+                                    OPEN ROLE
+                                </p>
+                                <h3 className="text-xl md:text-3xl font-semibold text-gray-700 mt-2">
+                                    {job.title}
+                                </h3>
+                                <div className="flex flex-wrap gap-4 text-md text-gray-600 mt-3">
+                                    <span>{job.jobType}</span>
+                                    <span>•</span>
+                                    <span>{job.location}</span>
                                 </div>
-                            ))}
-                        </div>
+                            </div>
 
-                    </div>
-                </section>
+                            <div className="mt-5 md:mt-0">
+                                <button
+                                    onClick={() => handleApply(job._id)}
+                                    className="bg-[#185e9a] hover:bg-blue-400 text-white px-5 py-2.5 rounded-full text-xl font-medium flex items-center gap-2 transition"
+                                >
+                                    Apply Now <span className="text-lg">↗</span>
+                                </button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
 
 
 
