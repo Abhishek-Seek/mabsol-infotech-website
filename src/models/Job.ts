@@ -10,10 +10,14 @@ export interface IJob extends Document {
   qualification: string;
   jobType: string;
   timings: string;
-  description: string;
+  aboutUs: string;
+  positionOverview: string;
+  // description: string;
   responsibilities: string[];
   requiredSkills: string[];
   preferredSkills: string[];
+  whatWeOffer: string[];
+  howToApply: string;
   category: string;
   createdAt: Date;
   updatedAt: Date;
@@ -31,10 +35,14 @@ const JobSchema: Schema<IJob> = new Schema(
     qualification: { type: String, required: true },
     jobType: { type: String, required: true },
     timings: { type: String, required: true },
-    description: { type: String, required: true },
+    aboutUs: { type: String, required: true },
+    positionOverview: { type: String, required: true },
+    // description: { type: String, required: true },
     responsibilities: { type: [String], required: true },
     requiredSkills: { type: [String], required: true },
     preferredSkills: { type: [String], default: [] },
+    whatWeOffer: { type: [String], default: [] },
+    howToApply: { type: String, required: true },
     category: { type: String, required: true },
     expireAt: { type: Date, required: true }, // required so that always set ho
   },

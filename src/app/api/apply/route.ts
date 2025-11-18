@@ -1,99 +1,168 @@
-import { NextRequest, NextResponse } from "next/server";
+// pages/api/apply.ts
+import type { NextApiRequest, NextApiResponse } from "next";
+// import { connectDB } from "../../lib/db";
+// import Apply from "../../models/Apply";
+// import { transporter } from "../../lib/nodemailer";
+
+// import formidable, { File } from "formidable";
+import fs from "fs";
+import path from "path";
+import formidable from "formidable";
 import { connectDB } from "@/lib/db";
 import Apply from "@/models/Apply";
 import { transporter } from "@/lib/nodemailer";
 
-export async function POST(req: NextRequest) {
+export const config = {
+  api: { bodyParser: false }
+};
+
+const uploadDir = path.join(process.cwd(), "uploads");
+
+// directory create if not exists
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
+function parseFormData(req: NextApiRequest) {
+  const form = new formidable.IncomingForm({
+    uploadDir,
+    keepExtensions: true,
+    multiples: false
+  });
+
+  return new Promise((resolve, reject) => {
+    form.parse(req, (err, fields, files) => {
+      if (err) reject(err);
+      resolve({ fields, files });
+    });
+  });
+}
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== "POST")
+    return res.status(405).json({ message: "Method not allowed" });
+
   try {
-    await connectDB();
+    const { fields, files }: any = await parseFormData(req);
 
-    const body = await req.json();
+    const fullName = fields.fullName;
+    const email = fields.email;
+    const phone = fields.phone;
+    const coverLetter = fields.coverLetter;
 
-    const { fullName, email, phone, coverLetter } = body;
-
-    if (!fullName || !email || !phone || !coverLetter) {
-      return NextResponse.json(
-        { error: "All fields are required" },
-        { status: 400 }
-      );
+    if (!fullName || !email || !phone) {
+      return res.status(400).json({ message: "Missing required fields" });
     }
 
-    const application = await Apply.create({
+    // Resume file
+    const file = files.resume as any;
+    if (!file) return res.status(400).json({ message: "Resume is required" });
+
+    const originalName = file.originalFilename || "resume.pdf";
+    const ext = path.extname(originalName);
+    const newFileName = `${Date.now()}_${fullName.replace(/ /g, "_")}${ext}`;
+    const newPath = path.join(uploadDir, newFileName);
+
+    await fs.promises.rename(file.filepath, newPath);
+
+    // MongoDB Save
+    await connectDB();
+
+    await Apply.create({
       fullName,
       email,
       phone,
       coverLetter,
+      resumeFilename: newFileName
     });
 
-    const naodemailer = await process.env.EMAIL_USER;
-    const mailOptions = {
-      from: naodemailer,
-      to: email,
-      subject: "Application Received",
-      html: `
-  <div style="font-family: Arial, sans-serif; background:#f5f7fa; padding:30px;">
-  <div style="max-width:600px; margin:auto; background:white; border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,0.1); overflow:hidden;">
+    // Email to Admin
+//     await transporter.sendMail({
+//       from: process.env.FROM_EMAIL,
+//       to: process.env.ADMIN_EMAIL,
+//       subject: `New Job Application from ${fullName}`,
+//       text: `
+// Full Name: ${fullName}
+// Email: ${email}
+// Phone: ${phone}
 
-    <!-- Header -->
-    <div style="background:#0d1a59; padding:20px 30px; text-align:center;">
-      <img src="https://i.postimg.cc/Hkz9wGDW/mabsol.png" alt="MABSOL Logo" style="max-width:180px;">
-      <h2 style="color:white; margin-top:15px; font-weight:500;">New Job Application Submitted</h2>
-    </div>
+// Cover Letter:
+// ${coverLetter || "No cover letter provided"}
+//       `,
+//       attachments: [
+//         {
+//           filename: originalName,
+//           path: newPath
+//         }
+//       ]
+//     });
 
-    <!-- Body -->
-    <div style="padding:30px; color:#333;">
+await transporter.sendMail({
+  from: `"HR Notifications" <${process.env.FROM_EMAIL}>`,
+  to: process.env.ADMIN_EMAIL,
+  subject: `🧑‍💼 New Job Application — ${fullName}`,
 
-      <p style="font-size:16px; line-height:1.6;">
-        A new job application has been received for one of the open positions at 
-        <strong>MABSOL Infotech Pvt. Ltd.</strong>  
-        The candidate’s details have been included below for your review.
-      </p>
+  html: `
+  <div style="font-family: Arial, sans-serif; padding: 20px; background: #f4f7fb;">
+    <div style="max-width: 600px; margin: auto; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
 
-      <table style="width:100%; font-size:15px; margin-top:15px;">
-        <tr>
-          <td style="font-weight:bold; padding:8px 0;">Name:</td>
-          <td>${fullName}</td>
-        </tr>
-        <tr>
-          <td style="font-weight:bold; padding:8px 0;">Email:</td>
-          <td>${email}</td>
-        </tr>
-        <tr>
-          <td style="font-weight:bold; padding:8px 0;">Phone:</td>
-          <td>${phone}</td>
-        </tr>
-        <tr>
-          <td style="font-weight:bold; padding:8px 0;">Cover Letter:</td>
-          <td>${coverLetter}</td>
-        </tr>
-      </table>
+      <div style="background: #004aad; padding: 20px;">
+        <h2 style="color: white; margin: 0;">New Job Application Received</h2>
+      </div>
 
-      <div style="text-align:center; margin-top:30px;">
-        <a href="#" style="background:#0d1a59; color:white; padding:12px 25px; border-radius:6px; text-decoration:none; font-weight:bold;">
-          View Candidate Profile
-        </a>
+      <div style="padding: 25px;">
+        <p style="font-size: 15px; color: #333;">
+          A new candidate has applied for the job. Below are the details:
+        </p>
+
+        <table style="width: 100%; margin-top: 15px; border-collapse: collapse;">
+          <tr>
+            <td style="padding: 10px; border: 1px solid #eee;"><strong>Full Name:</strong></td>
+            <td style="padding: 10px; border: 1px solid #eee;">${fullName}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border: 1px solid #eee;"><strong>Email:</strong></td>
+            <td style="padding: 10px; border: 1px solid #eee;">${email}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border: 1px solid #eee;"><strong>Phone:</strong></td>
+            <td style="padding: 10px; border: 1px solid #eee;">${phone}</td>
+          </tr>
+        </table>
+
+        <h3 style="margin-top: 25px;">Cover Letter</h3>
+        <p style="background: #f1f1f1; padding: 10px; border-radius: 6px; color: #333;">
+          ${coverLetter || "No cover letter provided."}
+        </p>
+
+        <p style="margin-top: 20px; font-size: 14px;">
+          The applicant's resume is attached with this email.
+        </p>
+
+      </div>
+
+      <div style="background: #f0f0f0; padding: 15px; text-align: center;">
+        <p style="margin: 0; color: #666; font-size: 13px;">
+          HR Dashboard – New Application Alert
+        </p>
       </div>
 
     </div>
-
-    <!-- Footer -->
-    <div style="background:#eef1f7; padding:15px 20px; text-align:center; font-size:13px; color:#666;">
-      © 2025 MABSOL Infotech Pvt. Ltd. | Automated job application notification.
-    </div>
-
   </div>
-</div>
+  `,
 
-`
-    };
-    await transporter.sendMail(mailOptions);
-    
-    return NextResponse.json(
-      { success: true, message: "Application submitted & email sent", data: application },
-      { status: 201 }
-    );
-  } catch (error) {
-    console.error("ERROR:", error);
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+  attachments: [
+    {
+      filename: originalName,
+      path: newPath
+    }
+  ]
+});
+
+
+    return res.status(200).json({ message: "Application submitted successfully" });
+  } catch (err) {
+    console.error("Error:", err);
+    return res.status(500).json({ message: "Server Error", error: err });
   }
 }

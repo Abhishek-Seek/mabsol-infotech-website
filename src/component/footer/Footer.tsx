@@ -207,9 +207,16 @@ const Footer = () => {
             {/* <li>
               <a href="/payment">Payment Getway</a>
             </li> */}
+             <li>
             <Link href="/location">
-              <li>User Locator</li>
+             User Locator
             </Link>
+            </li>
+            <li>
+              <Link href="/jobs-create" className="hover:text-blue-600 transition-colors">
+                Jobs Create
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
