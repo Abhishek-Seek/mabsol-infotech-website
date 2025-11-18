@@ -1,12 +1,13 @@
-import WebsiteDevelopment from '@/components/service/WebsiteDevelopment'
+import HotelLoginPage from '@/components/hotel-login/HotelLogin'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      <WebsiteDevelopment/>
+      <HotelLoginPage/>
     </div>
   )
 }
 
 export default page
+

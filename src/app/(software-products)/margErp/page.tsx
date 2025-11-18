@@ -1,4 +1,4 @@
-import MargErp from '@/component/software-products/MargErp'
+import MargErp from '@/components/software-products/MargErp'
 
 import React from 'react'
 

@@ -1,4 +1,4 @@
-import ErpSoftware from '@/component/service/ErpSoftware'
+import ErpSoftware from '@/components/service/ErpSoftware'
 import React from 'react'
 
 const page = () => {

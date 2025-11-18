@@ -1,4 +1,4 @@
-import Payroll from '@/component/additional_partners/Payroll'
+import Payroll from '@/components/additional_partners/Payroll'
 import React from 'react'
 
 const page = () => {

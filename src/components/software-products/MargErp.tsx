@@ -10,7 +10,8 @@ import {
   FileText,
   Trash2,
 } from "lucide-react";
-import { Button } from "antd";
+import { Button, Modal } from "antd";
+import PaymentGetway from "../payment-getway/PaymentGetway";
 
 type CartSummaryProps = {
   cart: CartItem[];
@@ -30,6 +31,12 @@ interface ProductType {
   accent: string;
   image: string;
 }
+
+const user = {
+  name: "Abhishek Singh",
+  email: "abhishek@example.com",
+  company: "Mabsol Infotech",
+};
 
 const Products: ProductType[] = [
   {
@@ -645,82 +652,130 @@ function InputField({
 // -------------------- CART SUMMARY --------------------
 function CartSummary({ cart, setCart }: CartSummaryProps) {
   const router = useRouter();
+  const [open, setOpen] = React.useState<boolean>(false);
+  const [loading, setLoading] = React.useState<boolean>(true);
+  // const [cart, setCart] = useState<{ id: number; qty: number }[]>([]);
 
+  // ✔ Correct total price
   const total = cart.reduce((sum, item) => sum + item.total, 0);
 
   const onDelete = (index: number) => {
-    if (!setCart) return; // safeguard
+    if (!setCart) return;
     const updated = cart.filter((_, i) => i !== index);
     setCart(updated);
   };
 
-  const onProceed = () => {
-    router.push("/checkout");
+  const showLoading = () => {
+    setOpen(true);
+    setLoading(true);
+
+    // Simple loading mock. You should add cleanup logic in real world.
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   };
 
   return (
-    <div className="mt-12 bg-white text-gray-700 p-8 shadow-md rounded-lg w-full max-w-7xl mx-auto border">
-      <h3 className="text-3xl text-[#0b3a74] font-bold text-center mb-6">
-        Cart Summary
-      </h3>
+    <>
+      <div className="mt-10 bg-white p-6 rounded-xl shadow-md">
+        <h2 className="text-3xl font-bold text-[#0b3a74] mb-5">Your Cart</h2>
 
-      {cart.length === 0 ? (
-        <p className="text-center text-gray-500">No items added yet.</p>
-      ) : (
-        <div className="space-y-6">
-          {cart.map((c, i) => (
+        {cart.length === 0 ? (
+          <p className="text-gray-600 text-center py-10">Cart is empty</p>
+        ) : (
+          cart.map((item, index) => (
             <div
-              key={i}
-              className="border-b pb-4 flex justify-between items-start"
+              key={index}
+              className="flex justify-between items-center border-b py-3"
             >
-              {/* LEFT SIDE DETAILS */}
               <div>
-                <p className="font-semibold text-lg">{c.product.title}</p>
-                <p>Qty: {c.qty}</p>
-                <p>
-                  Extra Users: {c.extraUsers} × ₹{EXTRA_USER_PRICE}
-                </p>
-                <p>
-                  Extra Companies: {c.extraCompanies} × ₹{EXTRA_COMPANY_PRICE}
-                </p>
+                <div className="font-semibold text-lg">
+                  {item.product.title}
+                </div>
+                <div className="text-sm text-gray-500">
+                  Qty: {item.qty} • Extra Users: {item.extraUsers} • Extra
+                  Companies: {item.extraCompanies}
+                </div>
               </div>
 
-              {/* RIGHT SIDE PRICE + TRASH ICON */}
-              <div className="text-right flex flex-col items-end gap-2">
-                <p className="font-bold text-lg">₹{c.total}</p>
+              <div className="flex items-center gap-4">
+                <div className="font-bold text-[#0b3a74]">
+                  ₹{item.total.toLocaleString("en-IN")}
+                </div>
 
-                <button
-                  onClick={() => onDelete(i)}
-                  className="text-red-600 hover:text-red-800 transition"
-                >
-                  <Trash2 size={20} />
-                </button>
+                <Trash2
+                  className="text-red-500 cursor-pointer"
+                  onClick={() => onDelete(index)}
+                />
               </div>
             </div>
-          ))}
+          ))
+        )}
 
-          {/* TOTAL */}
-          <div className="flex justify-between text-2xl font-bold pt-2">
-            <span>Total:</span>
-            <span>₹{total}</span>
-          </div>
-
-          {/* MODERN GLASSMORPHISM / GRADIENT PROCEED BUTTON */}
-          <div className="pt-4 text-right">
-            <Button
-              onClick={onProceed}
-              className="
-            relative px-8 py-4!  text-white! bg-[#339933]!"
-          
-            >
-              <span className="relative z-10">Proceed to Payment</span>
-
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-white/10 blur-xl opacity-40"></div>
-            </Button>
+        <div className="mt-4 flex justify-between pt-4">
+          <div className="text-2xl font-bold text-[#0b3a74]">
+            Total: ₹{total.toLocaleString("en-IN")}
           </div>
         </div>
-      )}
-    </div>
+
+        <div className="mt-5 w-1/2 flex gap-3 justify-end ml-auto">
+          {/* SMALL CLEAR BUTTON */}
+          <Button
+            onClick={() => setCart?.([])}
+            className="flex-[0.1] py-4 rounded-lg border"
+          >
+            Clear
+          </Button>
+
+          {/* BIGGER CHECKOUT BUTTON */}
+          {cart.length > 0 && (
+            // <div className="flex justify-between items-center">
+            <Button
+              disabled={cart.length === 0}
+              onClick={() => setOpen(true)}
+              className={`flex-[1] py-4 rounded-lg ${
+                cart.length === 0
+                  ? "bg-gray-200! text-gray-400!"
+                  : "bg-[#339933]! text-white!"
+              }`}
+            >
+              Checkout
+            </Button>
+            // </div>
+          )}
+        </div>
+      </div>
+
+      {/* -------------------- MODAL -------------------- */}
+      <Modal
+        title="Checkout Summary"
+        open={open}
+        onCancel={() => setOpen(false)}
+        footer={
+          <>
+            <Button onClick={() => setOpen(false)}>Cancel</Button>
+
+            {/* Payment gateway */}
+            <PaymentGetway totalPrice={total} user={user} />
+          </>
+        }
+      >
+        <div className="text-lg font-bold mb-4">
+          Total Amount: ₹{total.toLocaleString("en-IN")}
+        </div>
+
+        {cart.map((item, index) => (
+          <div key={index} className="flex justify-between border-b pb-2">
+            <div>
+              <div className="font-medium">{item.product.title}</div>
+              <div className="text-xs text-gray-500">Qty: {item.qty}</div>
+            </div>
+            <div className="font-semibold">
+              ₹{item.total.toLocaleString("en-IN")}
+            </div>
+          </div>
+        ))}
+      </Modal>
+    </>
   );
 }

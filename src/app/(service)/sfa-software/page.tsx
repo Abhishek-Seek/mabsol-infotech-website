@@ -1,5 +1,5 @@
 import React from "react";
-import SfaSoftware from "@/component/service/SfaSoftware";
+import SfaSoftware from "@/components/service/SfaSoftware";
 
 const Page = () => {
   return (

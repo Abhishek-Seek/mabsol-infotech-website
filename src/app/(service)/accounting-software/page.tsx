@@ -1,4 +1,4 @@
-import AccountingSoftware from '@/component/service/AccountingSoftware'
+import AccountingSoftware from '@/components/service/AccountingSoftware'
 import React from 'react'
 
 const Page= () => {

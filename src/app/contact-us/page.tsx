@@ -1,10 +1,10 @@
-import WebsiteDevelopment from '@/components/service/WebsiteDevelopment'
+import ContactUsPage from '@/components/contact-us-page/ContactUsPage'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      <WebsiteDevelopment/>
+      <ContactUsPage/>
     </div>
   )
 }

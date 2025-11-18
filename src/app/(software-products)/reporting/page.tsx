@@ -1,4 +1,4 @@
-import Reporting from '@/component/software-products/Reporting'
+import Reporting from '@/components/software-products/Reporting'
 import React from 'react'
 
 const page = () => {

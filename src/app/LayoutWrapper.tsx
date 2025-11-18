@@ -1,13 +1,12 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Header from "@/component/header/Header";
-import Footer from "@/component/footer/Footer";
+import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 // import "@/aos.css";
-
 
 export default function LayoutWrapper({
   children,
@@ -29,6 +28,7 @@ export default function LayoutWrapper({
     <>
       {!isDashboard && <Header />}
       {children}
+      {/* <ToastContainer position="top-right" /> */}
       {!isDashboard && <Footer />}
     </>
   );

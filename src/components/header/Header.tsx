@@ -81,47 +81,41 @@ const Header = () => {
   const Content = () => (
     <div className="bg-[#185e9a] text-white flex flex-col gap-4 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
-        <a
-          href="/tallys"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/tallys" className="!text-blue-300 select-none">
           Tally
         </a>
-        <a
-          href="/margErp"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/margErp" className="!text-blue-300 select-none">
           MArg ERP 9+
         </a>
-        <a
-          href="/reporting"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/reporting" className="!text-blue-300 select-none">
           MR Reporting
         </a>
         <a
-          href="https://mabsolinfotech.com/human-resources-demo-portal/"
+          href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
           className="!text-blue-300 select-none"
         >
           HR Payroll Portal
         </a>
         <a
-          href="https://mabsolinfotech.com/dcr-portal-demo-form/"
+          href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
           className="!text-blue-300 select-none"
         >
           DCR Portal
         </a>
         <a
-          href="https://mabsolinfotech.com/institute-portal-demo-form/"
+          href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
           className="!text-blue-300 select-none"
         >
           Institute Portal
         </a>
         <a
-          href="https://mabsolinfotech.com/school-portal-demo/"
+          href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
           className="!text-blue-300 select-none"
         >
           School Portal
+        </a>
+        <a href="/hotel-login" className="!text-blue-300 select-none">
+          Hotel Portal
         </a>
       </div>
     </div>
@@ -130,34 +124,19 @@ const Header = () => {
   const Mega = () => (
     <div className="bg-[#185e9a] text-white flex flex-col gap-0 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
-        <a
-          href="/website-development"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/website-development" className="!text-blue-300 select-none">
           Website Development
         </a>
-        <a
-          href="/accounting-software"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/accounting-software" className="!text-blue-300 select-none">
           Accounting Software
         </a>
-        <a
-          href="/payroll-software"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/payroll-software" className="!text-blue-300 select-none">
           PayRoll Software
         </a>
-        <a
-          href="/erp-software"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/erp-software" className="!text-blue-300 select-none">
           ERP Software
         </a>
-        <a
-          href="/sfa-software"
-          className="!text-blue-300 select-none"
-        >
+        <a href="/sfa-software" className="!text-blue-300 select-none">
           SFA Software
         </a>
       </div>
@@ -180,22 +159,13 @@ const Header = () => {
         <a href="/tally" className="!text-blue-300">
           Tally
         </a>
-        <a
-          href="/mr-reporting"
-          className="!text-blue-300"
-        >
+        <a href="/mr-reporting" className="!text-blue-300">
           MR Reporting
         </a>
-        <a
-          href="/greytHR"
-          className="!text-blue-300"
-        >
+        <a href="/greytHR" className="!text-blue-300">
           Greythr
         </a>
-        <a
-          href="/clinic-management"
-          className="!text-blue-300"
-        >
+        <a href="/clinic-management" className="!text-blue-300">
           Clinic Managment
         </a>
       </div>
@@ -576,13 +546,15 @@ const Header = () => {
   return (
     <div className=" bg-[#185e9a] sticky top-0 z-50">
       <div className="flex justify-around items-center gap-10 px-6 py-4">
-        <div>
-          <img
-            src={img}
-            alt="imgs"
-            className="h-[50px] w-[130px] md:h-[70px] md:w-[150px] lg:h-[70px] lg:w-[170px]"
-          />
-        </div>
+        <Link href="/">
+          <div>
+            <img
+              src={img}
+              alt="imgs"
+              className="h-[50px] w-[130px] md:h-[70px] md:w-[150px] lg:h-[70px] lg:w-[170px]"
+            />
+          </div>
+        </Link>
         <div className="flex justify-center items-center gap-8 xl:gap-16 min-w-0 overflow-hidden">
           <nav
             data-aos="fade-up"
@@ -700,18 +672,20 @@ const Header = () => {
               </Button>
             </div>
 
-            <div
-              data-aos="fade-down"
-              data-aos-easing="linear"
-              data-aos-duration="700"
-            >
-              <Button
-                onClick={handleCRMClick}
-                className=" !text-white !rounded-none !py-6 !bg-[#34396e]"
+            <Link href="/contact-us">
+              <div
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="700"
               >
-                Contact Us
-              </Button>
-            </div>
+                <Button
+                  onClick={handleCRMClick}
+                  className=" !text-white !rounded-none !py-6 !bg-[#34396e]"
+                >
+                  Contact Us
+                </Button>
+              </div>
+            </Link>
           </div>
         </div>
 
@@ -1443,7 +1417,7 @@ const Header = () => {
             </div>
           </Link>
 
-          <Link href="https://next-auth-email-verification-h7sd.vercel.app/">
+          <Link href="/contact-us">
             <div
               data-aos="fade-down"
               data-aos-easing="linear"

@@ -1,4 +1,4 @@
-import PayrollSoftware from '@/component/service/PayrollSoftware'
+import PayrollSoftware from '@/components/service/PayrollSoftware'
 import React from 'react'
 
 const page = () => {

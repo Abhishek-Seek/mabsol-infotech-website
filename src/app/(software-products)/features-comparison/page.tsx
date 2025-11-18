@@ -1,5 +1,5 @@
 import React from 'react'
-import FeaturesComparison from '@/component/software-products/FeaturesComparison';
+import FeaturesComparison from '@/components/software-products/FeaturesComparison';
 
 const page = () => {
   return (

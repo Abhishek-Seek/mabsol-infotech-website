@@ -1,4 +1,4 @@
-import TermsPage from '@/component/term-condition/TermCondition'
+import TermsPage from '@/components/term-condition/TermCondition'
 import React from 'react'
 
 const page = () => {
