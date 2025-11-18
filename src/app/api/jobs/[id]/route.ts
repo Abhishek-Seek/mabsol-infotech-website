@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import Job from "@/models/Job";
 import { connectDB } from "@/lib/db";
 
@@ -6,13 +6,14 @@ export const dynamic = "force-dynamic";
 
 // ------------------ GET Job by ID ------------------
 export async function GET(
-  req: Request,
-  { params }: { params: { id: string } }
-) {
+  req: NextRequest,
+  context: { params: { id: string } }
+)
+ {
   try {
     await connectDB();
 
-    const { id } = params;
+        const { id } = context.params;
     if (!id) throw new Error("Job ID not provided");
 
     const job = await Job.findById(id);
