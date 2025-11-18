@@ -1,4 +1,4 @@
-import ClinicManagement from '@/component/additional_partners/ClinicManagement'
+import ClinicManagement from '@/components/additional_partners/ClinicManagement'
 import React from 'react'
 
 const page = () => {

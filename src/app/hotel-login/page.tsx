@@ -1,4 +1,4 @@
-import HotelLoginPage from '@/component/hotel-login/HotelLogin'
+import HotelLoginPage from '@/components/hotel-login/HotelLogin'
 import React from 'react'
 
 const page = () => {

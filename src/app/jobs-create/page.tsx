@@ -1,5 +1,5 @@
 import React from 'react'
-import CreateLogin from '@/component/Jobs/CreateLogin'
+import CreateLogin from '@/components/Jobs/CreateLogin'
 
 const page = () => {
   return (

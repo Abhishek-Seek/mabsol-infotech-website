@@ -1,6 +1,6 @@
 "use client"
 
-import PaymentGetway from "@/component/payment-getway/PaymentGetway";
+import PaymentGetway from "@/components/payment-getway/PaymentGetway";
 
 const Page = ({ searchParams }: any) => {
   const totalPrice = Number(searchParams.totalPrice);

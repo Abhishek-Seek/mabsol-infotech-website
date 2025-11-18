@@ -1,4 +1,4 @@
-import WebsiteDevelopment from '@/component/service/WebsiteDevelopment'
+import WebsiteDevelopment from '@/components/service/WebsiteDevelopment'
 import React from 'react'
 
 const page = () => {

@@ -1,4 +1,4 @@
-import Marg from '@/component/additional_partners/Marg'
+import Marg from '@/components/additional_partners/Marg'
 import React from 'react'
 
 const page = () => {
