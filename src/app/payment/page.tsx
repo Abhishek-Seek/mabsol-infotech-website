@@ -1,12 +1,15 @@
-import PaymentGetway from '@/component/payment-getway/PaymentGetway'
-import React from 'react'
+import PaymentGetway from "@/component/payment-getway/PaymentGetway";
 
-const page = () => {
-  return (
-    <div>
-      <PaymentGetway/>
-    </div>
-  )
-}
+const Page = ({ searchParams }: any) => {
+  const totalPrice = Number(searchParams.totalPrice);
 
-export default page
+  const user = {
+    name: "Abhishek Singh",
+    email: "abhishek@example.com",
+    company: "Mabsol Infotech",
+  };
+
+  return <PaymentGetway totalPrice={totalPrice} user={user} />;
+};
+
+export default Page;
