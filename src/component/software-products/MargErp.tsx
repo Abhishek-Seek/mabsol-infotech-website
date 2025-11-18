@@ -42,7 +42,7 @@ const Products: ProductType[] = [
   {
     id: "basic",
     title: "Marg Erp 9+ — Basic",
-    price: 1,
+    price: 9999,
     tag: "Basic",
     bullets: [
       "Perfect for beginners & small setups.",
