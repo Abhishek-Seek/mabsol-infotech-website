@@ -164,7 +164,9 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="#">Career</a>
+              <Link href="/Career" className="hover:text-blue-300 transition-colors">
+                Career
+              </Link>
             </li>
             {/* <li>
               <a href="#" onClick={handleClick}>
@@ -197,7 +199,7 @@ const Footer = () => {
               <a href="#">Refund and Cancellation Policy</a>
             </li>
             <li>
-              <Link href="/privacy-policy" className="hover:text-blue-600 transition-colors">
+              <Link href="/privacy-policy" className="hover:text-blue-300 transition-colors">
                 Privacy Policy
               </Link>
             </li>
@@ -213,7 +215,7 @@ const Footer = () => {
             </Link>
             </li>
             <li>
-              <Link href="/jobs-create" className="hover:text-blue-600 transition-colors">
+              <Link href="/jobs-create" className="hover:text-blue-300 transition-colors">
                 Jobs Create
               </Link>
             </li>
