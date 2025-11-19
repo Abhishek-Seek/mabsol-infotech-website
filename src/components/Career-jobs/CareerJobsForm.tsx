@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Form, Input, Button, Upload, message, Checkbox } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
+import { toast } from "react-toastify";
 
 interface Job {
   _id: string;
@@ -74,13 +75,13 @@ export default function CareerJobsForm() {
       const data = await res.json();
 
       if (res.ok) {
-        message.success("Application submitted successfully! Email sent to admin.");
+        toast.success("Application submitted successfully! Email sent to admin.");
       } else {
-        message.error(data.message || "Failed to submit");
+        toast.error(data.message || "Failed to submit");
       }
     } catch (err) {
       console.error(err);
-      message.error("Server error, try again later.");
+      toast.error("Server error, try again later.");
     }
   };
 

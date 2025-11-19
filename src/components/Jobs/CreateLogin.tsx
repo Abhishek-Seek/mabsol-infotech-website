@@ -3,6 +3,7 @@
 import React from "react";
 import { Form, Input, Button, Typography, notification, Card, message } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import { toast } from "react-toastify";
 
 const { Title } = Typography;
 
@@ -21,16 +22,12 @@ export default function CreateLogin() {
       const data = await res.json();
 
       if (!res.ok) {
-        return message.error(data.message || "Invalid username or password");
+        return toast.error(data.message || "Invalid username or password");
       }
 
-      // 🔥 SUCCESS TOAST
-      notification.success({
-        message: "Login Successful",
-        description: "Welcome Admin! Redirecting you to dashboard...",
-        placement: "topRight",
-      });
 
+      // SUCCESS TOAST
+      toast.success("Login Successful! Redirecting you to dashboard...");
       // Save token
       if (data.token) {
         localStorage.setItem("token", data.token);
@@ -55,7 +52,7 @@ export default function CreateLogin() {
         </Title>
 
         <Form layout="vertical" onFinish={onFinish}>
-          
+
           <Form.Item
             name="email"
             label="User Email"
