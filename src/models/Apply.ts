@@ -1,4 +1,3 @@
-// models/Apply.ts
 import mongoose, { Schema } from "mongoose";
 
 const ApplySchema = new Schema(
@@ -7,10 +6,11 @@ const ApplySchema = new Schema(
     email: { type: String, required: true },
     phone: { type: String, required: true },
     coverLetter: { type: String },
-    resumeFilename: { type: String, required: true }
+    resumeFileName: String,
+    resumeFilePath: String,
+    resumeFileType: String,
   },
   { timestamps: true }
 );
 
-export default mongoose.models.Apply ||
-  mongoose.model("Apply", ApplySchema);
+export default mongoose.models.Apply || mongoose.model("Apply", ApplySchema);
