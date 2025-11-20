@@ -36,7 +36,8 @@ export default function CreateLogin() {
       }
 
       // SUCCESS TOAST
-      toast.success("Login Successful! Redirecting you to dashboard...");
+      toast.success("Login Successful! Redirecting you to dashboard....");
+
       // Save token
       // if (data.token) {
       //   localStorage.setItem("token", data.token);
