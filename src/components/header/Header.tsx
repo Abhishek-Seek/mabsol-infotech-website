@@ -513,6 +513,7 @@ const Header = () => {
 
   const router = useRouter();
   const [isMainOpen, setIsMainOpen] = useState(false);
+  const [isMainSubOpen, setIsMainSubOpen] = useState(false);
   const [isDcrSubOpen, setIsDcrSubOpen] = useState(false);
   const [isHRSubOpen, setIsHRSubOpen] = useState(false);
   const [isHrPayrollSubOpen, setIsHrPayrollSubOpen] = useState(false);
@@ -522,6 +523,7 @@ const Header = () => {
   const [isInstituteSubOpen, setIsInstituteSubOpen] = useState(false);
   const [isSchoolSubOpen, setIsSchoolSubOpen] = useState(false);
 
+  const toggleMAinSubDropdown = () => setIsMainSubOpen(!isMainSubOpen);
   const toggleMainDropdown = () => setIsMainOpen(!isMainOpen);
   const toggleDcrDemoSubmenu = () => setIsDcrSubOpen(!isDcrSubOpen);
   const toggleHRSubmenu = () => setIsHRSubOpen(!isHRSubOpen);
@@ -694,6 +696,8 @@ const Header = () => {
         </div>
       </div>
 
+      {/* mobile view */}
+
       <Drawer
         title={
           <div className="flex justify-center gap-2">
@@ -727,34 +731,111 @@ const Header = () => {
           <a className="!text-white border-b border-gray-300 py-3 p-2">
             Service
           </a>
-          {/* <Popover content={click} title="Software Product" trigger="click" placement="topRight">
-            <div className="cursor-pointer font-semibold text-sm text-blue-600">
-              Software Product<DownOutlined />
-            </div>
-          </Popover> */}
-          <a className="!text-white border-b border-gray-300 py-3 p-2">
-            Software Product
-          </a>
-          {/* <a href="">Mabsol Portal</a> */}
-          {/* <Popover
-            content={contents}
-            title="Mabsol Portal"
-            trigger="click"
-            placement="topRight"
-          >
-            <div className="cursor-pointer font-semibold text-sm text-white">
-              Mabsol Portal <DownOutlined />
-            </div>
-          </Popover> */}
-          {/* <Dropdown menu={{ items }} trigger={['click']}>
-            <a onClick={(e) => e.preventDefault()}>
-              <Space className="cursor-pointer font-semibold text-sm text-white w-full">
-                Mabsol Portal 
-                <DownOutlined />
-              </Space>
-            </a>
-          </Dropdown> */}
 
+
+          <div className="relative w-full">
+            {/* Inline Dropdown Menu */}
+            <div
+              onClick={toggleMAinSubDropdown}
+              className="cursor-pointer font-medium text-lg !text-white  py-3 p-2! "
+            >
+              <div className="flex justify-between items-center">
+                <div>Software Product</div>
+                {isMainSubOpen ? (
+                  <UpOutlined className="text-sm" />
+                ) : (
+                  <DownOutlined className="text-sm" />
+                )}
+              </div>
+            </div>
+            <AnimatePresence initial={false}>
+              {isMainSubOpen && (
+                <motion.div
+                  layout
+                  key="dropdown"
+                  initial={{ opacity: 0, maxHeight: 0 }}
+                  animate={{ opacity: 1, maxHeight: 700 }}
+                  exit={{ opacity: 0, maxHeight: 0 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="overflow-hidden bg-sky-blue-900 border-none rounded text-sm mt-2"
+                >
+                  <Link href="/tallys"
+                    className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
+                  >
+                    <div className="flex justify-start items-center gap-1">
+                      <AiOutlineUser />
+                      Tally
+                    </div>
+                  </Link>
+                  <Link href="/margErp"
+                    className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
+                  >
+                    <div className="flex justify-start items-center gap-1">
+                      <AiOutlineUser />
+                      MARgERP 9+
+                    </div>
+                  </Link>
+                  <Link href="/reporting"
+                    className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                  >
+                    <div className="flex justify-start items-center gap-1">
+                      <AiOutlineTeam />
+                      MR Reporting
+                    </div>
+                  </Link>
+                  <a
+                    href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
+                    className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                  >
+                    <div className="flex justify-start items-center gap-1">
+                      <AiOutlineSync />
+                      HR Payroll Portal
+                    </div>
+                  </a>
+                  <a
+                    href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
+                    className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                  >
+                    <div className="flex justify-start items-center gap-1">
+                      <ExperimentOutlined />
+                      DCR Portal
+                    </div>
+                  </a>
+                  <a
+                    href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
+                    className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                  >
+                    <div className="flex justify-start items-center gap-1">
+                      <AiOutlineTeam />
+                      Institute Portal
+                    </div>
+                  </a>
+                  <a
+                    href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
+                    className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                  >
+                    <div className="flex justify-start items-center gap-1">
+                      <AiOutlineSync />
+                      School Portal
+                    </div>
+                  </a>
+                  <Link
+                    href="/hotel-login"
+                    className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                  >
+                    <div className="flex justify-start items-center gap-1">
+                      <ExperimentOutlined />
+                      Hotel Portal
+                    </div>
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Inline Dropdown Menu */}
+
+          {/* ******************************************************************************************************************************************************************* */}
           <div className="relative w-full">
             {/* Trigger */}
             <div
@@ -792,34 +873,6 @@ const Header = () => {
                       Employee Attendance
                     </div>
                   </a>
-
-                  {/* <a
-                    href="https://demo.mabsolinfotech.com/hr/admin/index"
-                    className="block hover:border-b hover:border-gray-300 p-2 !text-white"
-                  >
-                    <div className="flex justify-start items-center gap-1">
-                      <IoBagHandleOutline />
-                      HR Admin
-                    </div>
-                  </a>
-                  <a
-                    href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
-                    className="block hover:border-b hover:border-gray-300 p-2 !text-white"
-                  >
-                    <div className="flex justify-start items-center gap-1">
-                      <SiCivicrm />
-                      CRM Admin
-                    </div>
-                  </a>
-                  <a
-                    href="https://demo.mabsolinfotech.com/institute/admin/"
-                    className="block hover:border-b hover:border-gray-300 p-2 !text-white"
-                  >
-                    <div className="flex justify-start items-center gap-1">
-                      <IoSchool />
-                      Institute Admin
-                    </div>
-                  </a> */}
 
                   {/* *******************************************sub menu******************************************** */}
 
