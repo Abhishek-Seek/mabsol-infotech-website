@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import {
   ShoppingCart,
   ShieldCheck,
@@ -10,48 +9,22 @@ import {
   FileText,
   Trash2,
 } from "lucide-react";
-import { Button, Modal } from "antd";
-import PaymentGetway from "../payment-getway/PaymentGetway";
+import { Button  } from "antd";
 
-type CartSummaryProps = {
-  cart: CartItem[];
-  setCart?: (items: CartItem[]) => void;
-};
-// -------------------- CONSTANTS --------------------
-const EXTRA_USER_PRICE = 3000;
-const EXTRA_COMPANY_PRICE = 6500;
-
-// -------------------- PRODUCT TYPE --------------------
-interface ProductType {
-  id: string;
-  title: string;
-  price: number;
-  tag: string;
-  bullets: string[];
-  accent: string;
-  image: string;
-}
-
-const user = {
-  name: "Abhishek Singh",
-  email: "abhishek@example.com",
-  company: "Mabsol Infotech",
-};
-
-const Products: ProductType[] = [
+const products = [
   {
     id: "basic",
     title: "Marg Erp 9+ — Basic",
     price: 9999,
     tag: "Basic",
     bullets: [
-      "Perfect for beginners & small setups.",
-      "Included Users: 1 Full-Rights User",
-      `Extra User Cost: ₹${EXTRA_USER_PRICE} per user (Max 2 Users)`,
-      `Extra Company Cost: ₹${EXTRA_COMPANY_PRICE} per company (Max 2 Companies)`,
+      "Single-user access",
+      "Included Users: 1",
+      "Extra User Cost: ₹2500 per user",
+      "Multi-company support",
     ],
-    accent: "bg-blue-200",
     image: "/images/marg-basic.png",
+    route: "/margErp/margErp-Basic",
   },
   {
     id: "silver",
@@ -60,70 +33,35 @@ const Products: ProductType[] = [
     tag: "Silver",
     bullets: [
       "Single-user access on LAN",
-      "Included Users: 1 Full-Rights User + 1 View-Only User",
-      `Extra User Cost: ₹${EXTRA_USER_PRICE} per extra user (Max 25 Users)`,
-      `Extra Company Cost: ₹${EXTRA_COMPANY_PRICE} per company (Max 25 Companies)`,
+      "Included Users: 1 Full + 1 View-Only",
+      "Extra User Cost: ₹3000 (Max 25)",
+      "Extra Company Cost: ₹6500 (Max 25)",
       "Multi-company support",
     ],
-    accent: "bg-gray-300",
     image: "/images/marg-basic.png",
+    route: "/margErp/margErp-Silver",
   },
   {
     id: "gold",
     title: "Marg Erp 9+ — Gold",
-    price: 25200,
+    price: 21000,
     tag: "Gold",
     bullets: [
-      "Multi-user access on LAN",
-      "25 user access",
-      "25 companies supported",
-      "Included Users: Unlimited Users",
-      "Extra User Cost: Unlimited users allowed",
+      "Multi-user with maximum features",
+      "Advanced reports & analytics",
+      "Extra users supported",
+      "Best for growing businesses",
     ],
-    accent: "bg-yellow-200",
-    image: "/images/marg-basic.png",
+    image: "/images/marg-gold.webp",
+    route: "/margErp/margErp-Gold",
   },
 ];
 
-// -------------------- CART TYPES --------------------
-interface CartItem {
-  product: ProductType;
-  qty: number;
-  extraUsers: number;
-  extraCompanies: number;
-  total: number;
-}
-
-// -------------------- GET LIMITS --------------------
-const getLimits = (id: string) => {
-  if (id === "basic") return { user: 2, company: 2 };
-  if (id === "silver") return { user: 25, company: 25 };
-  return { user: Infinity, company: Infinity };
-};
-
 export default function MargErp() {
-  const [cart, setCart] = useState<CartItem[]>([]);
+ 
   const [toastMsg, setToastMsg] = useState("");
 
-  const addToCart = (
-    product: ProductType,
-    qty: number,
-    extraUsers: number,
-    extraCompanies: number
-  ) => {
-    const total =
-      product.price * qty +
-      extraUsers * EXTRA_USER_PRICE +
-      extraCompanies * EXTRA_COMPANY_PRICE;
-
-    setCart((prev) => [
-      ...prev,
-      { product, qty, extraUsers, extraCompanies, total },
-    ]);
-
-    setToastMsg(`${product.title} added to cart!`);
-    setTimeout(() => setToastMsg(""), 2000);
-  };
+ 
 
   const basicDetails = [
     "Core accounting & invoicing",
@@ -154,6 +92,8 @@ export default function MargErp() {
     "Multi-company support (extra charge)",
     "Better security controls",
     "Faster reporting & improved performance",
+    "Dedicated customer support",
+    "Regular software updates with new features",
   ];
   const goldDetails = [
     "Multi-user access on LAN",
@@ -287,9 +227,11 @@ export default function MargErp() {
               </ul>
 
               <div className="mt-6 flex justify-center">
-                <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
-                  Choose Basic
-                </button>
+                <Link href="/margErp/margErp-Basic">
+                  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                    Choose Basic
+                  </button>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -329,9 +271,11 @@ export default function MargErp() {
               </ul>
 
               <div className="mt-6 flex justify-center">
-                <button className="bg-[#0b3a74] text-white px-6 py-2 rounded-lg hover:bg-[#0d4891] transition">
-                  Choose Silver
-                </button>
+                <Link href="/margErp/margErp-Silver">
+                  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                    Choose Silver
+                  </button>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -371,9 +315,11 @@ export default function MargErp() {
               </ul>
 
               <div className="mt-6 flex justify-center">
-                <button className="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition">
-                  Choose Gold
-                </button>
+                <Link href="/margErp/margErp-Gold">
+                  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                    Choose Gold
+                  </button>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -382,7 +328,7 @@ export default function MargErp() {
 
       {/* features card     */}
       <Link href="/features-comparison">
-        <Button className="inline-block  max-w-4xl px-5 py-5! bg-[#0b3a74]! text-white! rounded-lg font-medium shadow-md hover:bg-blue-600 transition">
+        <Button className="inline-block  max-w-4xl px-5 py-5! bg-[#0b3a74]! text-white! !text-xl rounded-md font-medium shadow-md hover:bg-blue-600 transition">
           View Features Comparison Chart →
         </Button>
       </Link>
@@ -400,18 +346,48 @@ export default function MargErp() {
         </h2>
 
         {/* FULL-WIDTH FLEX DISPLAY */}
-        <div className="flex flex-col gap-10 w-full max-w-7xl mx-auto">
-          {Products.map((p) => (
-            <ProductCard
-              key={p.id}
-              product={p}
-              addToCart={addToCart}
-              limits={getLimits(p.id)}
+        <div className="w-full max-w-7xl mx-auto p-6 md:p-12 space-y-12">
+      {products.map((p) => (
+        <div
+          key={p.id}
+          className="bg-gray-50 hover:border-blue-800 transition shadow-md rounded-xl p-6 flex flex-col md:flex-row gap-8 items-center"
+        >
+          {/* LEFT IMAGE */}
+          <div className="w-full md:w-1/2">
+            <img
+              src={p.image}
+              alt={p.title}
+              className="w-full h-64 object-contain"
             />
-          ))}
-        </div>
+          </div>
 
-        <CartSummary cart={cart} setCart={setCart} />
+          {/* RIGHT CONTENT */}
+          <div className="w-full md:w-1/2 space-y-4">
+            <h2 className="text-3xl font-bold text-[#0b3a74]">{p.title}</h2>
+            <p className="text-2xl font-semibold text-gray-700">₹{p.price}</p>
+
+            <ul className="space-y-2 text-gray-600">
+              {p.bullets.map((b, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span>✔️</span>
+                  {b}
+                </li>
+              ))}
+            </ul>
+
+            {/* BUY NOW BUTTON */}
+            <Link
+              href={`${p.route}`}
+              className="inline-block mt-6 bg-[#0b3a74] hover:bg-[#082c56] text-white font-semibold px-6 py-3 rounded-xl transition-all"
+            >
+              Buy Now
+            </Link>
+          </div>
+        </div>
+      ))}
+    </div>
+
+       
       </div>
 
       {/* nicha ka  images */}
@@ -491,291 +467,3 @@ export default function MargErp() {
   );
 }
 
-// -------------------- PRODUCT CARD --------------------
-interface CardProps {
-  product: ProductType;
-  addToCart: (
-    product: ProductType,
-    qty: number,
-    extraUsers: number,
-    extraCompanies: number
-  ) => void;
-  limits: { user: number; company: number };
-}
-
-function ProductCard({ product, addToCart, limits }: CardProps) {
-  const [qty, setQty] = useState(1);
-  const [extraUsers, setExtraUsers] = useState(0);
-  const [extraCompanies, setExtraCompanies] = useState(0);
-
-  const handleAdd = () => {
-    addToCart(product, qty, extraUsers, extraCompanies);
-  };
-
-  return (
-    <div className="bg-white text-[#0b3a74] w-full rounded-lg shadow-md border overflow-hidden">
-      <div className="grid md:grid-cols-2 gap-2 p-4">
-        {/* LEFT IMAGE */}
-        <div className="flex w-full items-center p-4 justify-center">
-          <img
-            src={product.image}
-            alt={product.title}
-            className="w-full h-[400px]  object-contain"
-          />
-        </div>
-
-        {/* RIGHT CONTENT */}
-        <div className="w-full p-2">
-          {/* Title & Price */}
-          <div className="flex justify-between">
-            <div>
-              <h3 className="text-3xl font-bold text-[#0b3a74]">
-                {product.title}
-              </h3>
-              <p className="text-gray-500">{product.tag} Edition</p>
-            </div>
-
-            <div className="text-right">
-              <h3 className="text-3xl font-bold text-[#0b3a74]">
-                ₹{product.price}
-              </h3>
-              <p className="text-gray-500 text-sm">One-time</p>
-            </div>
-          </div>
-
-          {/* Bullets */}
-          <ul className="mt-5 border rounded-xl p-5 space-y-3 text-gray-700">
-            {product.bullets.map((b, i) => (
-              <li key={i} className="flex gap-2">
-                <span className="text-green-600">✓</span> {b}
-              </li>
-            ))}
-          </ul>
-
-          {/* Inputs */}
-          <div className="grid md:grid-cols-3 gap-4 mt-6">
-            <InputField
-              label="Quantity"
-              value={qty}
-              min={1}
-              onChange={setQty}
-            />
-
-            <InputField
-              label={`Extra Users (Max: ${
-                limits.user === Infinity ? "∞" : limits.user
-              })`}
-              value={extraUsers}
-              min={0}
-              max={limits.user === Infinity ? undefined : limits.user}
-              onChange={setExtraUsers}
-            />
-
-            <InputField
-              label={`Extra Companies (Max: ${
-                limits.company === Infinity ? "∞" : limits.company
-              })`}
-              value={extraCompanies}
-              min={0}
-              max={limits.company === Infinity ? undefined : limits.company}
-              onChange={setExtraCompanies}
-            />
-          </div>
-
-          {/* Buttons */}
-          <div className="flex gap-4 mt-6">
-            <Button
-              onClick={handleAdd}
-              className="flex-1 bg-[#185e9a]! text-white! py-4!"
-            >
-              Add to Cart
-            </Button>
-            {/* Buttons */}
-            {/* <div className="flex gap-4 mt-6">
-              <button
-                onClick={handleAdd}
-                className="flex-1 bg-[#0b3a74] hover:bg-[#072452] text-white py-3 rounded-xl font-semibold transition"
-              >
-                Add to Cart
-              </button>
-
-              <button className="px-6 py-3 rounded-xl border hover:bg-gray-100 font-semibold transition">
-                Buy Now
-              </button>
-            </div> */}
-            <Button className="px-6 py-4! rounded-xl border bg-[] font-semibold transition">
-              Buy Now
-            </Button>
-          </div>
-
-          <p className="text-gray-500 text-sm mt-3">
-            SKU: 27686 • Support: 1 year
-          </p>
-        </div>
-      </div>
-
-      {/* Accent Bar */}
-      <div className="h-5 w-full bg-blue-100"></div>
-    </div>
-  );
-}
-
-// -------------------- INPUT FIELD COMPONENT --------------------
-function InputField({
-  label,
-  value,
-  onChange,
-  min,
-  max,
-}: {
-  label: string;
-  value: number;
-  onChange: (v: number) => void;
-  min?: number;
-  max?: number;
-}) {
-  return (
-    <div>
-      <label className="font-semibold">{label}</label>
-      <input
-        type="number"
-        value={value}
-        min={min}
-        max={max}
-        onChange={(e) => onChange(Number(e.target.value))}
-        className="border p-2 rounded w-full mt-1"
-      />
-    </div>
-  );
-}
-
-// -------------------- CART SUMMARY --------------------
-function CartSummary({ cart, setCart }: CartSummaryProps) {
-  const router = useRouter();
-  const [open, setOpen] = React.useState<boolean>(false);
-  const [loading, setLoading] = React.useState<boolean>(true);
-  // const [cart, setCart] = useState<{ id: number; qty: number }[]>([]);
-
-  // ✔ Correct total price
-  const total = cart.reduce((sum, item) => sum + item.total, 0);
-
-  const onDelete = (index: number) => {
-    if (!setCart) return;
-    const updated = cart.filter((_, i) => i !== index);
-    setCart(updated);
-  };
-
-  const showLoading = () => {
-    setOpen(true);
-    setLoading(true);
-
-    // Simple loading mock. You should add cleanup logic in real world.
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  };
-
-  return (
-    <>
-      <div className="mt-10 bg-white p-6 rounded-xl shadow-md">
-        <h2 className="text-3xl font-bold text-[#0b3a74] mb-5">Your Cart</h2>
-
-        {cart.length === 0 ? (
-          <p className="text-gray-600 text-center py-10">Cart is empty</p>
-        ) : (
-          cart.map((item, index) => (
-            <div
-              key={index}
-              className="flex justify-between items-center border-b py-3"
-            >
-              <div>
-                <div className="font-semibold text-lg">
-                  {item.product.title}
-                </div>
-                <div className="text-sm text-gray-500">
-                  Qty: {item.qty} • Extra Users: {item.extraUsers} • Extra
-                  Companies: {item.extraCompanies}
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="font-bold text-[#0b3a74]">
-                  ₹{item.total.toLocaleString("en-IN")}
-                </div>
-
-                <Trash2
-                  className="text-red-500 cursor-pointer"
-                  onClick={() => onDelete(index)}
-                />
-              </div>
-            </div>
-          ))
-        )}
-
-        <div className="mt-4 flex justify-between pt-4">
-          <div className="text-2xl font-bold text-[#0b3a74]">
-            Total: ₹{total.toLocaleString("en-IN")}
-          </div>
-        </div>
-
-        <div className="mt-5 w-1/2 flex gap-3 justify-end ml-auto">
-          {/* SMALL CLEAR BUTTON */}
-          <Button
-            onClick={() => setCart?.([])}
-            className="flex-[0.1] py-4 rounded-lg border"
-          >
-            Clear
-          </Button>
-
-          {/* BIGGER CHECKOUT BUTTON */}
-          {cart.length > 0 && (
-            // <div className="flex justify-between items-center">
-            <Button
-              disabled={cart.length === 0}
-              onClick={() => setOpen(true)}
-              className={`flex-[1] py-4 rounded-lg ${
-                cart.length === 0
-                  ? "bg-gray-200! text-gray-400!"
-                  : "bg-[#339933]! text-white!"
-              }`}
-            >
-              Checkout
-            </Button>
-            // </div>
-          )}
-        </div>
-      </div>
-
-      {/* -------------------- MODAL -------------------- */}
-      <Modal
-        title="Checkout Summary"
-        open={open}
-        onCancel={() => setOpen(false)}
-        footer={
-          <>
-            <Button onClick={() => setOpen(false)}>Cancel</Button>
-
-            {/* Payment gateway */}
-            <PaymentGetway totalPrice={total} user={user} />
-          </>
-        }
-      >
-        <div className="text-lg font-bold mb-4">
-          Total Amount: ₹{total.toLocaleString("en-IN")}
-        </div>
-
-        {cart.map((item, index) => (
-          <div key={index} className="flex justify-between border-b pb-2">
-            <div>
-              <div className="font-medium">{item.product.title}</div>
-              <div className="text-xs text-gray-500">Qty: {item.qty}</div>
-            </div>
-            <div className="font-semibold">
-              ₹{item.total.toLocaleString("en-IN")}
-            </div>
-          </div>
-        ))}
-      </Modal>
-    </>
-  );
-}
