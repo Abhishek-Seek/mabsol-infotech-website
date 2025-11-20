@@ -45,14 +45,56 @@ export async function POST(req: NextRequest) {
 
 
   // GET ALL JOBS
-export async function GET() {
+// export async function GET() {
+//   try {
+//     await connectDB();
+//     const today = new Date();
+
+    
+//     const jobs = await Job.find({ expireAt: { $gt: today } }).sort({ createdAt: -1 });
+
+//     return NextResponse.json({ success: true, jobs });
+//   } catch (error) {
+//     return NextResponse.json({ success: false, error }, { status: 500 });
+//   }
+// }
+
+// GET ALL JOBS WITH PAGINATION
+export async function GET(req: NextRequest) {
   try {
     await connectDB();
-    const today = new Date();
-    const jobs = await Job.find({ expireAt: { $gt: today } }).sort({ createdAt: -1 });
 
-    return NextResponse.json({ success: true, jobs });
-  } catch (error) {
-    return NextResponse.json({ success: false, error }, { status: 500 });
+    const today = new Date();
+
+    // -------- PAGINATION LOGIC --------
+    const { searchParams } = new URL(req.url);
+    const page = Number(searchParams.get("page")) || 1;
+    const limit = Number(searchParams.get("limit")) || 10;
+    const skip = (page - 1) * limit;
+    // ----------------------------------
+
+    // Fetch active jobs only (not expired)
+    const jobs = await Job.find({ expireAt: { $gt: today } })
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(limit);
+
+    // Total count (for pagination)
+    const totalJobs = await Job.countDocuments({ expireAt: { $gt: today } });
+
+    return NextResponse.json({
+      success: true,
+      page,
+      limit,
+      totalJobs,
+      totalPages: Math.ceil(totalJobs / limit),
+      jobs,
+    });
+  } catch (error: any) {
+    return NextResponse.json(
+      { success: false, error: error.message },
+      { status: 500 }
+    );
   }
 }
+
