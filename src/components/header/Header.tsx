@@ -732,7 +732,6 @@ const Header = () => {
             Service
           </a>
 
-
           <div className="relative w-full">
             {/* Inline Dropdown Menu */}
             <div
@@ -759,7 +758,10 @@ const Header = () => {
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                   className="overflow-hidden bg-sky-blue-900 border-none rounded text-sm mt-2"
                 >
-                  <Link href="/tallys"
+                  <Link
+                    href="/tallys"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
                   >
                     <div className="flex justify-start items-center gap-1">
@@ -767,15 +769,20 @@ const Header = () => {
                       Tally
                     </div>
                   </Link>
-                  <Link href="/margErp"
-                    className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
+                  <Link
+                    href="/margErp"
+                    target="_blank"
+                    className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                   >
                     <div className="flex justify-start items-center gap-1">
                       <AiOutlineUser />
                       MARgERP 9+
                     </div>
                   </Link>
-                  <Link href="/reporting"
+
+                  <Link
+                    href="/reporting"
+                    target="_blank"
                     className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                   >
                     <div className="flex justify-start items-center gap-1">
