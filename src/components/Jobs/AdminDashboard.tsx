@@ -46,7 +46,7 @@ export default function AdminDashboard() {
   const [form] = Form.useForm();
 
   const fetchJobs = async () => {
-    const res = await fetch("http://localhost:3000/api/jobs");
+    const res = await fetch("/api/jobs");
     const data = await res.json();
     console.log("API Response:", data);
 
@@ -106,7 +106,7 @@ export default function AdminDashboard() {
   // DELETE JOB
   const deleteJob = async (id: string) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/jobs/${id}`, { method: "DELETE" });
+      const res = await fetch(`/api/jobs/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error();
 
       toast.success("Job deleted!");
