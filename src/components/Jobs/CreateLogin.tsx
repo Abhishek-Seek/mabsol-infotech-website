@@ -1,16 +1,27 @@
 "use client";
 
 import React from "react";
-import { Form, Input, Button, Typography, notification, Card, message } from "antd";
+import {
+  Form,
+  Input,
+  Button,
+  Typography,
+  notification,
+  Card,
+  message,
+} from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 const { Title } = Typography;
 
 export default function CreateLogin() {
+  const router = useRouter();
 
   const onFinish = async (values: { email: string; password: string }) => {
     try {
-      const res = await fetch("http://localhost:3000/api/admin", {
+      const res = await fetch("/api/admin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -21,26 +32,17 @@ export default function CreateLogin() {
       const data = await res.json();
 
       if (!res.ok) {
-        return message.error(data.message || "Invalid username or password");
+        return toast.error(data.message || "Invalid username or password");
       }
 
-      // 🔥 SUCCESS TOAST
-      notification.success({
-        message: "Login Successful",
-        description: "Welcome Admin! Redirecting you to dashboard...",
-        placement: "topRight",
-      });
+      // SUCCESS TOAST
+      toast.success("Login Successful! Redirecting you to dashboard....");
 
       // Save token
-      if (data.token) {
-        localStorage.setItem("token", data.token);
-      }
-
-      // Redirect after 1 second
-      setTimeout(() => {
-        window.location.href = "/admin-jobs-dashboard";
-      }, 1000);
-
+      // if (data.token) {
+      //   localStorage.setItem("token", data.token);
+      // }
+      router.push("/admin-jobs-dashboard");
     } catch (error) {
       message.error("Error while connecting to server");
       console.error(error);
@@ -48,14 +50,13 @@ export default function CreateLogin() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 p-4">
+    <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-blue-50 to-blue-100 p-4">
       <Card className="w-full max-w-md shadow-2xl rounded-2xl p-6">
         <Title level={3} className="text-center mb-6 font-semibold">
           Admin Login
         </Title>
 
         <Form layout="vertical" onFinish={onFinish}>
-          
           <Form.Item
             name="email"
             label="User Email"
@@ -81,11 +82,16 @@ export default function CreateLogin() {
           </Form.Item>
 
           <Form.Item>
-            <Button type="primary" htmlType="submit" block size="large" className="rounded-xl">
+            <Button
+              type="primary"
+              htmlType="submit"
+              block
+              size="large"
+              className="rounded-xl"
+            >
               Login
             </Button>
           </Form.Item>
-
         </Form>
       </Card>
     </div>

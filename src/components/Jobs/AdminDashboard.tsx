@@ -15,6 +15,7 @@ import {
   Popconfirm,
   message,
 } from "antd";
+import { toast } from "react-toastify";
 
 export interface JobType {
   _id: string;
@@ -45,7 +46,7 @@ export default function AdminDashboard() {
   const [form] = Form.useForm();
 
   const fetchJobs = async () => {
-    const res = await fetch("http://localhost:3000/api/jobs");
+    const res = await fetch("/api/jobs");
     const data = await res.json();
     console.log("API Response:", data);
 
@@ -90,14 +91,14 @@ export default function AdminDashboard() {
 
     if (!res.ok || !data.success) throw new Error(data?.message || "Something went wrong");
 
-    message.success(editingJob ? "Job updated successfully!" : "Job created successfully!");
+    toast.success(editingJob ? "Job updated successfully!" : "Job created successfully!");
 
     form.resetFields();
     setShowForm(false);
     setEditingJob(null);
     fetchJobs(); // refresh the list
   } catch (error: any) {
-    message.error(error.message || "Something went wrong!");
+    toast.error(error.message || "Something went wrong!");
   }
 
   };
@@ -105,13 +106,13 @@ export default function AdminDashboard() {
   // DELETE JOB
   const deleteJob = async (id: string) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/jobs/${id}`, { method: "DELETE" });
+      const res = await fetch(`/api/jobs/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error();
 
-      message.success("Job deleted!");
+      toast.success("Job deleted!");
       fetchJobs();
     } catch {
-      message.error("Delete failed");
+      toast.error("Delete failed");
     }
   };
 
