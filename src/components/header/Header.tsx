@@ -526,9 +526,15 @@ const Header = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isAboutGellaryOpen, setIsAboutGellaryOpen] = useState(false);
   const [isAdditionalOpen, setIsAdditionalOpen] = useState(false);
+  const [isHotel, setIsHotel] = useState(false);
+
+
+
+
 
   const toggleMAinSubDropdown = () => setIsMainSubOpen(!isMainSubOpen);
   const toggleServiceDropdown = () => setIsServiceOpen(!isServiceOpen);
+  const toggleHotelDropdown = () => setIsHotel(!isHotel);
   const toggleMainDropdown = () => setIsMainOpen(!isMainOpen);
   const toggleAboutDropdown = () => setIsAboutOpen(!isAboutOpen);
   const toggleAdditionalDropdown = () => setIsAdditionalOpen(!isAdditionalOpen);
@@ -734,9 +740,6 @@ const Header = () => {
             Home
           </a>
 
-          {/* <a className="!text-white border-b border-gray-300 py-3 p-2">
-            About Us
-          </a> */}
 
           <div className="relative w-full">
             {/* Trigger */}
@@ -905,9 +908,7 @@ const Header = () => {
               )}
             </AnimatePresence>
           </div>
-          {/* <a className="!text-white border-b border-gray-300 py-3 p-2">
-            Service
-          </a> */}
+        
 
           <div className="relative w-full">
             {/* Inline Dropdown Menu */}
@@ -1723,6 +1724,50 @@ const Header = () => {
               )}
             </AnimatePresence>
           </div>
+          
+          <div className="relative w-full">
+            {/* Inline Dropdown Menu */}
+            <div
+              onClick={toggleHotelDropdown}
+              className="cursor-pointer font-medium text-lg text-white!  py-3 p-2! "
+            >
+              <div className="flex justify-between items-center">
+                <div>Mabsol Hotel</div>
+                {isHotel ? (
+                  <UpOutlined className="text-sm" />
+                ) : (
+                  <DownOutlined className="text-sm" />
+                )}
+              </div>
+            </div>
+            <AnimatePresence initial={false}>
+              {isHotel && (
+                <motion.div
+                  layout
+                  key="dropdown"
+                  initial={{ opacity: 0, maxHeight: 0 }}
+                  animate={{ opacity: 1, maxHeight: 700 }}
+                  exit={{ opacity: 0, maxHeight: 0 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="overflow-hidden bg-sky-blue-900 border-none rounded text-sm mt-2"
+                >
+                  <Link
+                    href="/hotel-login"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
+                  >
+                    <div className="flex justify-start items-center gap-1">
+                      <AiOutlineUser />
+                      Mabsol Hotel
+                    </div>
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+
         </nav>
         <div className="flex justify-center items-center pt-10 gap-6 ">
           <Link href="https://mabsolinfotech.com/crmtest/">
