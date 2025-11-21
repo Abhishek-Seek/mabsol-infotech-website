@@ -44,17 +44,17 @@ const PayrollSoftware = () => {
     <div className="w-full min-h-screen bg-gradient-to-b from-[#0b3a74] to-[#185e9a] text-white overflow-hidden">
       {/* Top Section */}
       <div
-        className="h-[60vh] flex flex-col justify-center items-center bg-fixed bg-cover bg-center relative"
+        className="h-[60vh] flex flex-col justify-center items-center bg-fixed bg-cover bg-center relative text-center"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0, 44, 95, 0.7), rgba(0, 44, 95, 0.7)), url('/images/payroll2.jpeg')",
           filter: "brightness(0.9)",
         }}
       >
-        <h1 className="text-6xl font-bold text-white drop-shadow-md mt-4">
+        <h1 className="text-6xl font-bold text-white drop-shadow-md mt-4 text-center">
           Payroll Software
         </h1>
-        <p className="text-lg mt-3 text-white">
+        <p className="text-lg mt-3 text-white text-center">
           Payroll & HR automation for smooth month-ends.
         </p>
       </div>

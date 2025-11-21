@@ -528,10 +528,6 @@ const Header = () => {
   const [isAdditionalOpen, setIsAdditionalOpen] = useState(false);
   const [isHotel, setIsHotel] = useState(false);
 
-
-
-
-
   const toggleMAinSubDropdown = () => setIsMainSubOpen(!isMainSubOpen);
   const toggleServiceDropdown = () => setIsServiceOpen(!isServiceOpen);
   const toggleHotelDropdown = () => setIsHotel(!isHotel);
@@ -740,7 +736,6 @@ const Header = () => {
             Home
           </a>
 
-
           <div className="relative w-full">
             {/* Trigger */}
             <div
@@ -803,7 +798,7 @@ const Header = () => {
                         >
                           <Link
                             href="/gallery"
-                            target="_blank"
+                            target="_self"
                             rel="noopener noreferrer"
                             className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
                           >
@@ -908,7 +903,6 @@ const Header = () => {
               )}
             </AnimatePresence>
           </div>
-        
 
           <div className="relative w-full">
             {/* Inline Dropdown Menu */}
@@ -938,7 +932,7 @@ const Header = () => {
                 >
                   <Link
                     href="/website-development"
-                    target="_blank"
+                    target="_self"
                     rel="noopener noreferrer"
                     className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
                   >
@@ -949,7 +943,7 @@ const Header = () => {
                   </Link>
                   <Link
                     href="/accounting-software"
-                    target="_blank"
+                    target="_self"
                     className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                   >
                     <div className="flex justify-start items-center gap-1">
@@ -960,7 +954,7 @@ const Header = () => {
 
                   <Link
                     href="/payroll-software"
-                    target="_blank"
+                    target="_self"
                     className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                   >
                     <div className="flex justify-start items-center gap-1">
@@ -970,7 +964,7 @@ const Header = () => {
                   </Link>
                   <Link
                     href="/erp-software"
-                    target="_blank"
+                    target="_self"
                     className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                   >
                     <div className="flex justify-start items-center gap-1">
@@ -980,7 +974,7 @@ const Header = () => {
                   </Link>
                   <Link
                     href="/sfa-software"
-                    target="_blank"
+                    target="_self"
                     className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                   >
                     <div className="flex justify-start items-center gap-1">
@@ -1021,7 +1015,7 @@ const Header = () => {
                 >
                   <Link
                     href="/tallys"
-                    target="_blank"
+                    target="_self"
                     rel="noopener noreferrer"
                     className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
                   >
@@ -1032,7 +1026,7 @@ const Header = () => {
                   </Link>
                   <Link
                     href="/margErp"
-                    target="_blank"
+                    target="_self"
                     className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                   >
                     <div className="flex justify-start items-center gap-1">
@@ -1043,7 +1037,7 @@ const Header = () => {
 
                   <Link
                     href="/reporting"
-                    target="_blank"
+                    target="_self"
                     className="block hover:border-b hover:border-gray-300 p-2 !text-white"
                   >
                     <div className="flex justify-start items-center gap-1">
@@ -1724,7 +1718,7 @@ const Header = () => {
               )}
             </AnimatePresence>
           </div>
-          
+
           <div className="relative w-full">
             {/* Inline Dropdown Menu */}
             <div
@@ -1753,7 +1747,7 @@ const Header = () => {
                 >
                   <Link
                     href="/hotel-login"
-                    target="_blank"
+                    target="_self"
                     rel="noopener noreferrer"
                     className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
                   >
@@ -1766,8 +1760,6 @@ const Header = () => {
               )}
             </AnimatePresence>
           </div>
-
-
         </nav>
         <div className="flex justify-center items-center pt-10 gap-6 ">
           <Link href="https://mabsolinfotech.com/crmtest/">
