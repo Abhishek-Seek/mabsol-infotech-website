@@ -232,17 +232,18 @@ const PrivacyPolicyPage = () => {
       </header>
 
       {/* Content Section with Equal Padding */}
-      <div className="w-full mx-auto px-[192px] py-20 space-y-12">
+      <div className="w-full mx-auto px-4 sm:px-6 md:px-12 lg:px-24 xl:px-40 2xl:px-52 py-12 md:py-20 space-y-10 md:space-y-12">
         {sections.map((section) => (
           <section
             key={section.id}
             id={section.id}
-            className="bg-white p-8 rounded-xl shadow-md scroll-mt-24"
+            className="bg-white p-6 md:p-8 rounded-xl shadow-md scroll-mt-24"
           >
-            <h2 className="text-2xl font-semibold text-[#1a3d7c] mb-4">
+            <h2 className="text-xl md:text-2xl font-semibold text-[#1a3d7c] mb-3 md:mb-4">
               {section.title}
             </h2>
-            <div className="text-gray-700 leading-relaxed !text-lg">
+
+            <div className="text-gray-700 leading-relaxed text-base md:!text-lg">
               {section.content}
             </div>
           </section>
