@@ -228,7 +228,7 @@ export default function MargErp() {
 
               <div className="mt-6 flex justify-center">
                 <Link href="/margErp/margErp-Basic">
-                  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition cursor-pointer">
                     Choose Basic
                   </button>
                 </Link>
@@ -272,7 +272,7 @@ export default function MargErp() {
 
               <div className="mt-6 flex justify-center">
                 <Link href="/margErp/margErp-Silver">
-                  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition cursor-pointer">
                     Choose Silver
                   </button>
                 </Link>
@@ -316,7 +316,7 @@ export default function MargErp() {
 
               <div className="mt-6 flex justify-center">
                 <Link href="/margErp/margErp-Gold">
-                  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition cursor-pointer">
                     Choose Gold
                   </button>
                 </Link>

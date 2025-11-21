@@ -129,7 +129,7 @@ function ProductCard({ product, addToCart, limits }: CardProps) {
   };
 
   return (
-    <div className="bg-white text-[#0b3a74] w-full rounded-lg shadow-md border overflow-hidden">
+    <div className="bg-white max-w-[1400px] mx-auto text-[#0b3a74] w-full rounded-lg shadow-md border overflow-hidden">
       <div className="grid md:grid-cols-2 gap-2 p-4">
 
         {/* LEFT IMAGE */}
@@ -252,7 +252,7 @@ function CartSummary({ cart, setCart }: CartSummaryProps) {
 
   return (
     <>
-      <div className="mt-10 bg-white p-6 rounded-xl shadow-md">
+      <div className="mt-10 max-w-[1400px] mx-auto bg-white p-6 rounded-xl shadow-md">
         <h2 className="text-3xl font-bold text-[#0b3a74] mb-5">Your Cart</h2>
 
         {cart.length === 0 ? (

@@ -128,9 +128,8 @@ function ProductCard({ product, addToCart, limits }: CardProps) {
   };
 
   return (
-    <div className="bg-white text-[#0b3a74] w-full rounded-lg shadow-md border overflow-hidden">
+    <div className="bg-white max-w-[1400px] mx-auto text-[#0b3a74] items-center rounded-lg shadow-md border overflow-hidden">
       <div className="grid md:grid-cols-2 gap-2 p-4">
-
         {/* LEFT IMAGE */}
         <div className="flex w-full items-center p-4 justify-center">
           <img
@@ -166,7 +165,12 @@ function ProductCard({ product, addToCart, limits }: CardProps) {
 
           {/* Inputs */}
           <div className="grid md:grid-cols-3 gap-4 mt-6">
-            <InputField label="Quantity" value={qty} min={1} onChange={setQty} />
+            <InputField
+              label="Quantity"
+              value={qty}
+              min={1}
+              onChange={setQty}
+            />
 
             <InputField
               label={`Add Users (Max: ${limits.user})`}
@@ -251,7 +255,7 @@ function CartSummary({ cart, setCart }: CartSummaryProps) {
 
   return (
     <>
-      <div className="mt-10 bg-white p-6 rounded-xl shadow-md">
+      <div className=" max-w-[1400px] mx-auto mt-10 bg-white p-6 rounded-xl shadow-md">
         <h2 className="text-3xl font-bold text-[#0b3a74] mb-5">Your Cart</h2>
 
         {cart.length === 0 ? (
@@ -284,7 +288,9 @@ function CartSummary({ cart, setCart }: CartSummaryProps) {
 
         {cart.length > 0 && (
           <div className="mt-4 flex justify-between pt-4">
-            <div className="text-2xl font-bold">Total: ₹{total.toLocaleString("en-IN")}</div>
+            <div className="text-2xl font-bold">
+              Total: ₹{total.toLocaleString("en-IN")}
+            </div>
           </div>
         )}
 
@@ -316,12 +322,15 @@ function CartSummary({ cart, setCart }: CartSummaryProps) {
           <Button key="cancel" onClick={() => setOpen(false)}>
             Cancel
           </Button>,
-          <PaymentGetway key="pay" totalPrice={total} 
-           user={{
-            name: "User",
-            email: "user@example.com",
-            company: "My Company"
-          }} />,
+          <PaymentGetway
+            key="pay"
+            totalPrice={total}
+            user={{
+              name: "User",
+              email: "user@example.com",
+              company: "My Company",
+            }}
+          />,
         ]}
       >
         <div className="text-lg font-bold mb-4">

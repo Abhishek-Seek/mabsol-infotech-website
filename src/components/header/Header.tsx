@@ -513,6 +513,7 @@ const Header = () => {
 
   const router = useRouter();
   const [isMainOpen, setIsMainOpen] = useState(false);
+  const [isServiceOpen, setIsServiceOpen] = useState(false);
   const [isMainSubOpen, setIsMainSubOpen] = useState(false);
   const [isDcrSubOpen, setIsDcrSubOpen] = useState(false);
   const [isHRSubOpen, setIsHRSubOpen] = useState(false);
@@ -522,9 +523,17 @@ const Header = () => {
   const [isCustomerPortalSubOpen, setIsCustomerPortalSubOpen] = useState(false);
   const [isInstituteSubOpen, setIsInstituteSubOpen] = useState(false);
   const [isSchoolSubOpen, setIsSchoolSubOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isAboutGellaryOpen, setIsAboutGellaryOpen] = useState(false);
+  const [isAdditionalOpen, setIsAdditionalOpen] = useState(false);
 
   const toggleMAinSubDropdown = () => setIsMainSubOpen(!isMainSubOpen);
+  const toggleServiceDropdown = () => setIsServiceOpen(!isServiceOpen);
   const toggleMainDropdown = () => setIsMainOpen(!isMainOpen);
+  const toggleAboutDropdown = () => setIsAboutOpen(!isAboutOpen);
+  const toggleAdditionalDropdown = () => setIsAdditionalOpen(!isAdditionalOpen);
+  const toggleAboutGellaryDropdown = () =>
+    setIsAboutGellaryOpen(!isAboutGellaryOpen);
   const toggleDcrDemoSubmenu = () => setIsDcrSubOpen(!isDcrSubOpen);
   const toggleHRSubmenu = () => setIsHRSubOpen(!isHRSubOpen);
   const togglePayrollSubmenu = () => setIsHrPayrollSubOpen(!isHrPayrollSubOpen);
@@ -725,12 +734,263 @@ const Header = () => {
             Home
           </a>
 
-          <a className="!text-white border-b border-gray-300 py-3 p-2">
+          {/* <a className="!text-white border-b border-gray-300 py-3 p-2">
             About Us
-          </a>
-          <a className="!text-white border-b border-gray-300 py-3 p-2">
+          </a> */}
+
+          <div className="relative w-full">
+            {/* Trigger */}
+            <div
+              onClick={toggleAboutDropdown}
+              className="cursor-pointer font-medium text-lg !text-white  pt-4 p-2"
+            >
+              <div className="flex justify-between items-center">
+                <div>About Us</div>
+                {isAboutOpen ? (
+                  <UpOutlined className="text-sm" />
+                ) : (
+                  <DownOutlined className="text-sm" />
+                )}
+              </div>
+            </div>
+
+            {/* Inline Dropdown Menu */}
+            <AnimatePresence initial={false}>
+              {isAboutOpen && (
+                <motion.div
+                  layout
+                  key="dropdown"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="bg-sky-blue-900  border-none rounded pb-4 text-sm"
+                >
+                  <div className=" w-full">
+                    {/* Trigger */}
+                    <div
+                      onClick={toggleAboutGellaryDropdown}
+                      className="cursor-pointer font-medium text-white"
+                    >
+                      <div className=" pt-4 py-2 text-[16px] font-medium flex justify-between items-center">
+                        <div className="flex justify-start items-center gap-1">
+                          <FcComboChart />
+                          Gallery
+                        </div>
+
+                        {isAboutGellaryOpen ? (
+                          <UpOutlined className="text-sm" />
+                        ) : (
+                          <DownOutlined className="text-sm" />
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Inline Dropdown Menu */}
+                    <AnimatePresence initial={false}>
+                      {isAboutGellaryOpen && (
+                        <motion.div
+                          layout
+                          key="dropdown"
+                          initial={{ opacity: 0, maxHeight: 0 }}
+                          animate={{ opacity: 1, maxHeight: 700 }}
+                          exit={{ opacity: 0, maxHeight: 0 }}
+                          transition={{ duration: 0.4, ease: "easeInOut" }}
+                          className="overflow-hidden bg-sky-blue-900 border-none rounded text-sm mt-2"
+                        >
+                          <Link
+                            href="/gallery"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
+                          >
+                            <div className="flex justify-start items-center gap-1">
+                              <AiOutlineUser />
+                              Gallery
+                            </div>
+                          </Link>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+
+                  <div className=" w-full">
+                    {/* Trigger */}
+                    <div
+                      onClick={toggleAdditionalDropdown}
+                      className="cursor-pointer font-medium text-white"
+                    >
+                      <div className="py-2 text-[16px] font-medium flex justify-between items-center">
+                        <div className="flex justify-start items-center gap-1">
+                          <FcBusinessman />
+                          Additional Partners
+                        </div>
+
+                        {isAdditionalOpen ? (
+                          <UpOutlined className="text-sm" />
+                        ) : (
+                          <DownOutlined className="text-sm" />
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Inline Dropdown Menu */}
+                    <AnimatePresence initial={false}>
+                      {/* <motion.div> */}
+                      {isAdditionalOpen && (
+                        <motion.div
+                          layout
+                          key="dropdown"
+                          initial={{ opacity: 0, maxHeight: 0 }}
+                          animate={{ opacity: 1, maxHeight: 500 }}
+                          exit={{ opacity: 0, maxHeight: 0 }}
+                          transition={{ duration: 0.4, ease: "easeInOut" }}
+                          className="overflow-hidden bg-sky-blue-900 border-none rounded text-sm mt-2"
+                        >
+                          <Link
+                            href="/marg"
+                            target="_blank"
+                            className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
+                          >
+                            <div className="flex justify-start items-center gap-1">
+                              <MdOutlineAdminPanelSettings />
+                              Marg
+                            </div>
+                          </Link>
+                          <Link
+                            href="/tally"
+                            target="_blank"
+                            className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                          >
+                            <div className="flex justify-start items-center gap-1">
+                              <SiSimplelogin />
+                              Tally
+                            </div>
+                          </Link>
+                          <Link
+                            href="/mr-reporting"
+                            target="_blank"
+                            className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                          >
+                            <div className="flex justify-start items-center gap-1">
+                              <ExperimentOutlined />
+                              MR Reporting
+                            </div>
+                          </Link>
+                          <Link
+                            href="/greytHR"
+                            target="_blank"
+                            className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                          >
+                            <div className="flex justify-start items-center gap-1">
+                              <SiSimplelogin />
+                              GreytHr
+                            </div>
+                          </Link>
+                          <Link
+                            href="clinic-management"
+                            target="_blank"
+                            className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                          >
+                            <div className="flex justify-start items-center gap-1">
+                              <ExperimentOutlined />
+                              Clinic Managment
+                            </div>
+                          </Link>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          {/* <a className="!text-white border-b border-gray-300 py-3 p-2">
             Service
-          </a>
+          </a> */}
+
+          <div className="relative w-full">
+            {/* Inline Dropdown Menu */}
+            <div
+              onClick={toggleServiceDropdown}
+              className="cursor-pointer font-medium text-lg !text-white  py-3 p-2! "
+            >
+              <div className="flex justify-between items-center">
+                <div>Service</div>
+                {isServiceOpen ? (
+                  <UpOutlined className="text-sm" />
+                ) : (
+                  <DownOutlined className="text-sm" />
+                )}
+              </div>
+            </div>
+            <AnimatePresence initial={false}>
+              {isServiceOpen && (
+                <motion.div
+                  layout
+                  key="dropdown"
+                  initial={{ opacity: 0, maxHeight: 0 }}
+                  animate={{ opacity: 1, maxHeight: 700 }}
+                  exit={{ opacity: 0, maxHeight: 0 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="overflow-hidden bg-sky-blue-900 border-none rounded text-sm mt-2"
+                >
+                  <Link
+                    href="/website-development"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
+                  >
+                    <div className="flex justify-start items-center gap-1">
+                      <AiOutlineUser />
+                      Website Development
+                    </div>
+                  </Link>
+                  <Link
+                    href="/accounting-software"
+                    target="_blank"
+                    className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                  >
+                    <div className="flex justify-start items-center gap-1">
+                      <AiOutlineUser />
+                      Accounting Software
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/payroll-software"
+                    target="_blank"
+                    className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                  >
+                    <div className="flex justify-start items-center gap-1">
+                      <AiOutlineTeam />
+                      PayRoll Software
+                    </div>
+                  </Link>
+                  <Link
+                    href="/erp-software"
+                    target="_blank"
+                    className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                  >
+                    <div className="flex justify-start items-center gap-1">
+                      <AiOutlineSync />
+                      ERP Software
+                    </div>
+                  </Link>
+                  <Link
+                    href="/sfa-software"
+                    target="_blank"
+                    className="block hover:border-b hover:border-gray-300 p-2 !text-white"
+                  >
+                    <div className="flex justify-start items-center gap-1">
+                      <ExperimentOutlined />
+                      SFA Software
+                    </div>
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           <div className="relative w-full">
             {/* Inline Dropdown Menu */}
