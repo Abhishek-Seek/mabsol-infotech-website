@@ -31,7 +31,7 @@ const CareerPage = () => {
     const router = useRouter();
 
     useEffect(() => {
-    fetch("http://localhost:3000/api/jobs")
+    fetch("/api/jobs")
       .then(res => res.json())
       .then((data) => {
         // ✅ make sure we have an array
