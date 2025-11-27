@@ -5,10 +5,7 @@ import { Form, Input, Button, Typography, Card } from "antd";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import Link from "next/link";
-// import { API } from "@/lib/api";
-// import Link from "next/link";
-// import { useAuth } from "@/contexts/AuthContext";
-// import ModuleSelector from "../ModuleSelector";
+
 
 const { Title, Text } = Typography;
 
@@ -34,14 +31,6 @@ const LoginPage = () => {
 
       if (res.ok) {
         toast.success("Login successful!");
-        // setUserData(apiData.user);
-        console.log("✅login Setting userData:111111111111111111111111111", apiData.user);
-
-        // if (apiData.user.selectedModules.length <= 0) {
-        //   setData(true);
-        //   return;
-        // }
-
         router.replace("/selected-modules");
       } else {
         toast.error(apiData.message || "Login failed!");

@@ -50,7 +50,7 @@ const CompanyProformance = () => {
 
     {/* Button */}
     <Link href="/contact-us">
-    <Button className="!px-8 !py-6 !rounded-md !bg-[#185e9a] !text-white !text-lg !font-semibold hover:!bg-[#0b3a74] transition-all duration-300">
+    <Button className="!px-8 !py-6 !rounded-md bg-[#185e9a]! !text-white !text-lg !font-semibold hover:!bg-[#0b3a74] transition-all duration-300">
         Contact Us
     </Button>
     </Link>

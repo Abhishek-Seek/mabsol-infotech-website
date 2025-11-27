@@ -88,8 +88,8 @@ export default function ContactUsPage() {
         {/* LEFT SIDE CONTACT DETAILS */}
         <div>
           <h2 className="text-3xl font-bold mb-3">
-            We'd love to
-            <span className="text-orange-500!">hear from you</span>
+            We'd love to <span className="text-orange-500!">hear from you</span>
+           {/* {""} */}
           </h2>
           <p className="text-gray-600 mb-8">
             Contact Mabsol Infotech today for reliable IT and ERP support. Our
@@ -103,6 +103,7 @@ export default function ContactUsPage() {
             <p>
               <strong>Address:</strong>
               <br />
+              Mabsol Infotech Pvt.Ltd
               SCO-76, 2ND Floor, near railway Crossing, Shree Ram Atta Chakki,
               Ekta Vihar, Sector 19, Panchkula, Haryana 134113, India
             </p>

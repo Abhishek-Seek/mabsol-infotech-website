@@ -172,111 +172,6 @@ const Header = () => {
     </div>
   );
 
-  // const click = () => (
-  //   <div className="flex flex-col gap-2 text-blue-600 text-sm font-normal">
-  //     <a
-  //       href="https://mabsolinfotech.com/product/tally-software-solutions/"
-  //     >
-  //       Tally
-  //     </a>
-  //     <a
-  //       href="https://mabsolinfotech.com/product/marg-erp-software/"
-  //     >
-  //       MArg ERP 9+
-  //     </a>
-  //     <a
-  //       href="https://mabsolinfotech.com/product/mr-reporting-pharma-crm-software/"
-  //     >
-  //       MR Reporting
-  //     </a>
-  //     <a
-  //       href="https://mabsolinfotech.com/human-resources-demo-portal/"
-  //     >
-  //       HR Payroll Portal
-  //     </a>
-  //     <a
-  //       href="https://mabsolinfotech.com/dcr-portal-demo-form/"
-  //     >
-  //       DCR Portal
-  //     </a>
-  //     <a
-  //       href="https://mabsolinfotech.com/institute-portal-demo-form/"
-  //     >
-  //       Institute Portal
-  //     </a>
-  //     <a
-  //       href="https://mabsolinfotech.com/school-portal-demo/"
-  //     >
-  //       School Portal
-  //     </a>
-  //   </div>)
-
-  // const contents = () => (
-  //   <div
-  //     style={{ fontFamily: "Montserrat, sans-serif" }}
-  //     className="flex flex-col gap-4 text-blue-600 text-sm font-normal"
-  //   >
-  //     <a
-  //       href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
-  //     // className="!text-white"
-  //     >
-  //       Employee Attendance
-  //     </a>
-  //     <a
-  //       href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
-  //     // className="!text-blue-300"
-  //     >
-  //       Admin Portal
-  //     </a>
-  //     <a
-  //       href="https://demo.mabsolinfotech.com/crm/employee/employee_register.php"
-  //     // className="!text-blue-300"
-  //     >
-  //       Employee Portal
-  //     </a>
-  //     <a
-  //       href="https://demo.mabsolinfotech.com/crm/"
-  //     // className="!text-blue-300"
-  //     >
-  //       Users Portal
-  //     </a>
-  //     <a
-  //       href="https://demo.mabsolinfotech.com/hr/admin/index"
-  //     // target="_blank"
-  //     // rel="noopener noreferrer"
-  //     >
-  //       HR Admin
-  //     </a>
-  //     {/* <a
-  //       href="https://demo.mabsolinfotech.com/hr/employee/"
-  //       // target="_blank"
-  //       // rel="noopener noreferrer"
-  //     >
-  //       Employee Portal
-  //     </a> */}
-  //     <a
-  //       href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
-  //     // target="_blank"
-  //     // rel="noopener noreferrer"
-  //     >
-  //       CRM Admin
-  //     </a>
-  //     <a
-  //       href="https://demo.mabsolinfotech.com/institute/admin/"
-  //     // target="_blank"
-  //     // rel="noopener noreferrer"
-  //     >
-  //       Institute Admin
-  //     </a>
-
-  //     <a href="https://humanresources.mabsolinfotech.com/admin/index.php">
-  //       Admin Login
-  //     </a>
-  //     <a href="https://humanresources.mabsolinfotech.com/employee/">
-  //       Employee Login
-  //     </a>
-  //   </div>
-  // );
 
   const MegaMenuContent = () => (
     <div
@@ -511,6 +406,17 @@ const Header = () => {
     </div>
   );
 
+  const MegaMenuHotel = () => (
+    <div className="bg-[#185e9a] text-white flex flex-col gap-4 p-8 ">
+      <div className="text-sm font-bold flex flex-col gap-4 font-serif">
+        <a href="/hotel-login" className="!text-blue-300 select-none">
+          Hotel Portal
+        </a>
+      </div>
+    </div>
+  );
+
+
   const router = useRouter();
   const [isMainOpen, setIsMainOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
@@ -671,6 +577,26 @@ const Header = () => {
                 }}
               >
                 Mabsol Portal
+                <DownOutlined />
+              </Button>
+            </Popover>
+
+            <Popover
+              content={MegaMenuHotel()}
+              trigger="hover"
+              placement="bottomLeft"
+              styles={{ body: { padding: 0, borderRadius: 8 } }}
+            >
+              <Button
+                type="text"
+                className="!text-white !text-sm !font-extrabold"
+                style={{
+                  fontFamily: "Roboto,sans-serif",
+                  padding: "0px",
+                  gap: "5px",
+                }}
+              >
+                Hotal Portal
                 <DownOutlined />
               </Button>
             </Popover>
