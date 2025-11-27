@@ -83,11 +83,13 @@ export default function HeroSection() {
         </Link>
       </div>
     </motion.div>
+    </section>
 
-<<<<<<< HEAD
+
       {/* MAIN GRID */}
-      <section className="relative z-20 max-w-7xl mx-auto px-2 py-12 grid lg:grid-cols-2 gap-3 items-center">
-=======
+
+    <section className="relative z-20 max-w-7xl mx-auto px-2 py-12 grid lg:grid-cols-2 gap-3 items-center">
+
     {/* RIGHT ILLUSTRATION */}
     <motion.div
       initial={{ opacity: 0, x: 50 }}
@@ -104,7 +106,7 @@ export default function HeroSection() {
       />
     </motion.div>
   </section>
->>>>>>> b30f6c83e563882bf5095fc16bd3599c64022115
+
 
   <div className="absolute bottom-0 left-0 right-0 overflow-hidden">
     <svg viewBox="0 0 1440 120" className="w-full">
