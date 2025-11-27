@@ -467,7 +467,7 @@ const Header = () => {
   };
 
   return (
-    <div className=" bg-[#185e9a] sticky top-0 z-50">
+    <div className=" bg-[#0B1E3D] sticky top-0 z-50">
       <div className="flex justify-around items-center gap-10 px-6 py-4">
         <Link href="/">
           <div>
@@ -489,7 +489,7 @@ const Header = () => {
               <Link href="/">
                 <Button
                   type="link"
-                  className="text-lg !font-extrabold !text-green-600"
+                  className="text-lg !font-extrabold !text-[#00C16E]"
                   style={{ fontFamily: "Roboto,sans-serif" }}
                 >
                   Home
@@ -508,7 +508,7 @@ const Header = () => {
             >
               <Button
                 type="text"
-                className="!text-white !text-sm !font-extrabold"
+                className="!text-[#E3ECFF] !text-sm !font-extrabold"
                 style={{
                   fontFamily: "Roboto,sans-serif",
                   padding: "0px",
@@ -528,7 +528,7 @@ const Header = () => {
             >
               <Button
                 type="text"
-                className="!text-white !text-sm !font-extrabold "
+                className="!text-[#EAF1FF] !text-sm !font-extrabold "
                 style={{
                   fontFamily: "Roboto,sans-serif",
                   padding: "0px",
@@ -549,7 +549,7 @@ const Header = () => {
             >
               <Button
                 type="text"
-                className="!text-white !text-sm !font-extrabold"
+                className="!text-[#EAF1FF] !text-sm !font-extrabold"
                 style={{
                   fontFamily: "Roboto,sans-serif",
                   padding: "0px",
@@ -569,7 +569,7 @@ const Header = () => {
             >
               <Button
                 type="text"
-                className="!text-white !text-sm !font-extrabold"
+                className="!text-[#EAF1FF] !text-sm !font-extrabold"
                 style={{
                   fontFamily: "Roboto,sans-serif",
                   padding: "0px",
@@ -589,7 +589,7 @@ const Header = () => {
             >
               <Button
                 type="text"
-                className="!text-white !text-sm !font-extrabold"
+                className="!text-[#EAF1FF] !text-sm !font-extrabold"
                 style={{
                   fontFamily: "Roboto,sans-serif",
                   padding: "0px",
@@ -609,7 +609,7 @@ const Header = () => {
             >
               <Button
                 onClick={handleSupportClick}
-                className="!bg-green-700 !text-white !py-6 !px-5 !rounded-none"
+                className="!bg-[#F57C00] !text-white !py-6 !px-5 !rounded-none"
               >
                 Raise a Support Ticket
               </Button>
@@ -623,7 +623,7 @@ const Header = () => {
               >
                 <Button
                   onClick={handleCRMClick}
-                  className=" !text-white !rounded-none !py-6 !bg-[#34396e]"
+                  className=" !text-white !rounded-none !py-6 !bg-[#1C2948]"
                 >
                   Contact Us
                 </Button>
@@ -1702,7 +1702,7 @@ const Header = () => {
               data-aos-easing="linear"
               data-aos-duration="700"
             >
-              <Button className="!text-white !bg-green-600 !rounded-none !py-6 !px-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+              <Button className="!text-white !bg-orange-600 !rounded-none !py-6 !px-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                 Raise a Support Ticket
               </Button>
             </div>
