@@ -1,122 +1,86 @@
 "use client";
-import { Button } from "antd";
-import React, { useEffect, useState } from "react";
-import Marquee from "react-fast-marquee";
+import React from "react";
 
-const service = [
+const features = [
   {
-    image: "images/our.webp",
+    icon: "/icons/coding.png",
     title: "Website Development",
-    Descriptions:
-      "Website Development Services to Build Your Digital Identity Our expert website development  services are designed to help businesses establish a...",
-    role: "Read More",
+    desc: "We build modern, fast, and fully responsive websites tailored to your business needs. From corporate sites to e-commerce platforms, our development ensures clean design, smooth performance, and a powerful online presence that helps your brand stand out.",
   },
   {
-    image: "images/our2.webp",
+    icon: "/icons/accounting.png",
     title: "Accounting Software",
-    Descriptions:
-      "Accounting Software Solutions to Streamline Your Financial Operations Our accounting software solutions provide seamless business accounting, automated accounting, and payroll...",
-    role: "Read More",
+    desc: "Our accounting software simplifies financial management with automated bookkeeping, accurate reporting, and seamless transaction tracking—helping businesses streamline operations, reduce errors, and maintain complete financial clarity.",
   },
   {
-    image: "images/our3.webp",
+    icon: "/icons/payroll.png",
     title: "Payroll Software",
-    Descriptions:
-      "Advanced Payroll Software for Efficient Salary and HR Management Our advanced payroll software is designed to simplify and automate every...",
-    role: "Read More",
+    desc: "Our payroll software automates salary processing, tax calculations, attendance tracking, and compliance—ensuring fast, error-free payroll management and smoother HR operations for businesses of all sizes.",
   },
   {
-    image: "images/our4.webp",
+    icon: "/icons/Tally.png",
+    title: "Tally Software",
+    desc: "Tally software simplifies accounting and financial management for your business, handling GST compliance, invoicing, payroll, and inventory efficiently, empowering you with accurate, real-time insights."
+  },
+  {
+    icon: "/icons/erp-icon.png",
     title: "ERP Software",
-    Descriptions:
-      "Smart ERP Software for Complete Business Management Our powerful ERP software provides everything you need to manage your business efficiently....",
-    role: "Read More",
+    desc: "Our ERP software unifies all your business processes—from accounting and inventory to HR and sales—into one seamless platform, helping you automate tasks, reduce errors, and make smarter, data-driven decisions."
   },
   {
-    image: "images/our5.webp",
+    icon: "/icons/sfa.png",
     title: "SFA Software",
-    Descriptions:
-      "Powerful SFA Software to Automate and Optimize Sales Operations Our robust SFA software is designed to automate and streamline your...",
-    role: "Read More",
+    desc: "Our SFA software automates and streamlines your sales processes, from lead management and tracking to customer follow-ups and reporting, helping your team close deals faster and improve overall sales efficiency."
   },
 ];
 
 const OurService = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsPlaying((prev) => !prev);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="relative w-full py-20 overflow-hidden">
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-10"
-        // style={{ backgroundImage: `url(/bg.avif)` }}
-        style={{ backgroundImage: "url('/base-1.png')" }}
-      ></div>
+    <section className="w-full py-20 bg-white">
+      <div className="text-center mb-14">
+        <h1 className="text-5xl lg:text-5xl font-bold text-center text-[#0b3a74] mb-4 tracking-wide">
+          Our Services
+        </h1>
+        <p className="text-center text-gray-700 max-w-5xl mx-auto mb-12">
+          We provide all-in-one software solutions to simplify operations, boost efficiency, and support business growth.
 
-      <div className="relative z-10 opacity-100 px-6 lg:px-20">
-        <div>
-          <h1 className="text-center text-[#185e9a] text-4xl font-bold underline">
-            Our Services
-          </h1>
-          <div className="flex justify-center items-center gap-4 pt-4">
-            <Button className="!bg-gray-100 !py-5 !px-4 !border-none">
-              All Posts
-            </Button>
-            <Button className="!bg-gray-100 !py-5 !px-4 !border-none">
-              Services
-            </Button>
-          </div>
-        </div>
-
-        <div className="pt-10">
-          <Marquee
-            speed={100}
-            pauseOnHover={true}
-            gradient={false}
-            play={isPlaying}
-          >
-            {service.map((item, index) => (
-              <div
-                key={index}
-                className="flex items-center rounded-2xl mx-6 w-[600px] h-[250px] overflow-hidden group border border-transparent hover:border-2 hover:border-blue-300 transition-all duration-300 "
-              >
-                {/* Image */}
-                <div className="w-1/2 h-full overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-110"
-                  />
-                </div>
-
-                {/* Text */}
-                <div className="w-1/2 p-4 flex flex-col justify-center ">
-                  <h2 className="text-xl font-bold text-[#185e9a] mb-2">
-                    {item.title}
-                  </h2>
-                  <p className="text-sm text-gray-600 line-clamp-3">
-                    {item.Descriptions}
-                  </p>
-                  <a
-                    href="#"
-                    className="mt-3 text-sm underline text-[#185e9a] font-semibold"
-                  >
-                    {item.role}
-                  </a>
-                </div>
-              </div>
-            ))}
-          </Marquee>
-        </div>
+        </p>
       </div>
-    </div>
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+        {features.map((item, index) => (
+          <div
+            key={index}
+            className="group relative bg-white rounded-lg shadow-md p-8 text-center hover:shadow-xl transition-all duration-300 border border-gray-300 overflow-hidden"
+          >
+            {/* ICON */}
+            <div className="flex justify-center mb-4 relative z-10">
+              <div className="w-16 h-16 flex justify-center items-center rounded-full bg-blue-100">
+                <img src={item.icon} alt="icon" width={50} height={50} />
+              </div>
+            </div>
+
+            {/* TITLE & DESC */}
+            <h3 className="text-xl font-semibold text-[#0b3a74] mb-3 group-hover:text-orange-400 transition z-10 relative">
+              {item.title}
+            </h3>
+            <p className="text-gray-800 text-sm group-hover:text-white leading-relaxed z-10 relative text-justify">
+              {item.desc}
+            </p>
+
+            {/* ⭐ LEFT-TO-RIGHT HOVER OVERLAY */}
+            <div
+              className="absolute inset-0 bg-gradient-to-r from-[#080d1f] via-[#0f234a] to-[#070b1a]
+              text-white p-6 flex items-center justify-center text-center
+              translate-x-[-100%] group-hover:translate-x-0 
+              transition-all duration-500 ease-out rounded-xl"
+            >
+              
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

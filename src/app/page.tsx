@@ -26,7 +26,7 @@ import HomePage from "../components/homepage/HomePage";
 import OurProduct from "../components/our-product/OurProduct";
 import OurService from "../components/our-service/OurService";
 import OurTestimonial from "../components/ourtes-timonial/OurTestimonial";
-import Technoogy from "../components/technology/Technoogy";
+import Technology from "../components/technology/Technology";
 
 export default function Home() {
   return (
@@ -38,7 +38,7 @@ export default function Home() {
       <OurProduct />
       <CompanyProformance />
       <OurService />
-      <Technoogy />
+      <Technology />
       {/* <CaseStudy /> */}
       {/* <OurUsp/> */}
       <ExecutiveTeam />

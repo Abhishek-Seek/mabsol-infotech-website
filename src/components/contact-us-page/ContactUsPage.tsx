@@ -120,10 +120,10 @@ export default function ContactSection() {
                 className="text-blue-500"
                 href="https://mabsolinfotech.com/"
               >
-                masolinfotech@gmail.com
+                mabsolinfotech@gmail.com
               </Link>
               <br />
-              contact@mabsolinfotech.com
+              support@mabsolinfotech.com
             </p>
 
             <p>
