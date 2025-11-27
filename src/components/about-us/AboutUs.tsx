@@ -41,7 +41,7 @@ export default function AboutUs() {
       </section>
 
       {/* Why Choose Mabsol Section */}
-      <section className="max-w-7xl w-full px-6 py-16 bg-gray-200">
+      <section className="max-w-9xl w-full px-36 py-16 bg-[#f8fafc]">
         <p className="text-orange-600 text-xl text-center font-semibold mb-2">Why Choose Us</p>
         <h2 className="text-5xl font-bold text-center text-[#0b3a74] mb-4">Why Choose Mabsol Infotech?</h2>
         <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12">

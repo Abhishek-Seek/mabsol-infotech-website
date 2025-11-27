@@ -20,7 +20,7 @@ const CompanyProformance = () => {
     }, []);
 
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-2 lg:px-20 px-6 mt-10 py-10 gap-6 bg-gray-200'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 lg:px-20 px-6 mt-10 py-10 gap-6 bg-[#f8fafc]"'>
            <div className="space-y-3">
 
     {/* Small Top Label */}
