@@ -25,21 +25,17 @@ const ExecutiveTeam = () => {
       {/* Heading */}
       <div>
         <h1
-          data-aos="fade-down"
-          data-aos-easing="linear"
-          data-aos-duration="1500"
-          className="text-3xl sm:text-4xl text-center font-bold text-[#185e9a] font-serif"
+          className="text-3xl sm:text-4xl text-center font-bold text-[#0b3a74] font-serif"
         >
-          Executive <span className="text-black">Team</span>
+          Executive <span className="text-orange-500">Team</span>
         </h1>
         <div className="pt-4 w-full flex justify-center items-center">
-          <hr className="w-[80%] border-t-4 border-[#185e9a]" />
+          <hr className="w-[80%] border-t-4 border-[#0b3a74]" />
         </div>
       </div>
 
       {/* Team Cards */}
       <div
-        data-aos="zoom-in-left"
         className="flex flex-col lg:flex-row justify-center items-center gap-8 pt-10"
       >
         {executiveTeam.map((member, index) => (
@@ -60,9 +56,9 @@ const ExecutiveTeam = () => {
 
               {/* Info */}
               <div className="flex flex-col items-center text-center">
-                <span className="text-lg font-semibold text-gray-600">{member.role}</span>
-                <span className="text-xl font-bold text-gray-800 mt-1">{member.name}</span>
-                <p className="text-sm sm:text-base text-gray-600 mt-4 italic">
+                <span className="text-lg font-semibold text-orange-600">{member.role}</span>
+                <span className="text-xl font-bold text-[#0b3a74] mt-1">{member.name}</span>
+                <p className="text-sm sm:text-base text-gray-700 text-justify mt-4 italic">
                   {member.description}
                 </p>
 

@@ -1,71 +1,82 @@
-import { Button, Card } from "antd";
+"use client"
+import Link from "next/link";
 import React from "react";
+import { Button } from "antd";
+
 
 const productData = [
   {
     title: "M R Reporting",
     price: "₹1,500.00",
-    img: "product1.webp",
+    img: "/images/MR-report.jpg",
+    link: "/reporting",
   },
   {
     title: "Tally",
     price: "₹22,500.00 – ₹64,000.00",
-    img: "images/Tally.webp",
+    img: "/images/Tally-images.jpg",
+    link: "/tallys",
   },
   {
     title: "MARG ERP 9+",
     price: "₹1,000.00 – ₹25,200.00",
-    img: "Bannner.webp",
+    img: "/images/marg-logo.webp",
+    link: "/margErp",
   },
 ];
 
 const OurProduct = () => {
   return (
-    <div className="py-10 lg:py-20 lg:px-20 px-6 bg-white">
-      <h1
-        data-aos="fade-down"
-        data-aos-easing="linear"
-        data-aos-duration="1500"
-        className="text-center text-4xl font-bold text-[#185e9a] underline"
-      >
+    <div className="py-10 lg:py-15 px-6 lg:px-20 bg-[#f8fafc]">
+      {/* Heading */}
+      <h1 className="text-5xl lg:text-5xl font-bold text-center text-[#0b3a74] mb-4 tracking-wide">
         Our Products
       </h1>
+      <p className="text-center text-gray-600 max-w-5xl mx-auto mb-12">
+        Our product range includes MR Reporting, Tally, and MARG ERP 9+—powerful and
+        reliable solutions designed to simplify accounting, business management, and
+        reporting. Whether you're a small business or a large enterprise, our tools
+        streamline operations, improve accuracy, and help you manage your business with ease.
+      </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center max-w-6xl mx-auto py-6">
+      {/* Product Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto mt-12">
         {productData.map((product, index) => (
-          <Card
+          <div
             key={index}
-            styles={{ body: { padding: "0" } }}
-            className="shadow-2xl w-full max-w-[400px] overflow-hidden flex flex-col justify-between"
+            className="group bg-white shadow-lg hover:shadow-xl transition-all duration-500 rounded-lg overflow-hidden border border-gray-200"
           >
-            <div className="flex flex-col h-full">
-              {/* Image section */}
-              <div className="h-[250px] w-full overflow-hidden relative group rounded-lg">
-                <img
-                  src={product.img}
-                  alt={product.title}
-                  className="h-full w-full object-cover rounded-lg transition duration-300 ease-in-out group-hover:scale-110"
-                />
-              </div>
-
-              {/* Text & Button section */}
-              <div className="flex flex-col items-center text-center flex-grow px-4 pt-4 pb-6">
-                <a className="!text-[#185e9a] text-xl font-bold font-serif">
-                  {product.title}
-                </a>
-                <h1 className="py-1">{product.title}</h1>
-                <p className="text-green-700">{product.price}</p>
-                <div className="mt-auto">
-                  <Button
-                    type="primary"
-                    className="!rounded-none !bg-[#185e9a] !px-10 !py-5 mt-4"
-                  >
-                    Select options
-                  </Button>
-                </div>
-              </div>
+            {/* Image Section */}
+            <div className="relative h-[260px] overflow-hidden">
+              <img
+                src={product.img}
+                alt={product.title}
+                className="h-full w-full object-cover"
+              />
             </div>
-          </Card>
+
+            {/* Text Section */}
+            <div className="p-6 text-center flex flex-col">
+              <h2 className="text-2xl font-bold text-[#185e9a]">
+                {product.title}
+              </h2>
+
+              <p className="text-gray-600 mt-1">{product.title}</p>
+
+              <p className="text-green-700 text-xl font-semibold mt-3">
+                {product.price}
+              </p>
+              <Link href={product.link}>
+                <Button
+                  type="primary"
+                  htmlType="button"
+                  className="!rounded-md !bg-[#185e9a] !py-5 !px-8 mt-6 mx-auto text-lg font-medium shadow-md hover:!bg-[#0f4c7d]"
+                >
+                  Buy Now
+                </Button>
+              </Link>
+            </div>
+          </div>
         ))}
       </div>
     </div>

@@ -30,7 +30,7 @@ const teamMembers = [
         name: " Ashwani Mehta ",
         role: " ASTERISK LABORATORIES INDIA PVT. LTD.",
         image: "images/crousel1.png",
-        description: " The software solutions from Mabsol Infotech, have been a game-changer for us. Their technical expertise and customer-centric approach have been instrumental in optimizing our financial operations. We value their proactive support and their ability to tailor solutions to meet our specific needs. ",
+        description: " The software solutions from Mabsol Infotech have been a game-changer for us. Their technical expertise and customer-centric approach have been instrumental in optimizing our financial operations.Their commitment to quality and timely assistance has made them a trusted technology partner for our organization.  ",
 
     },
     {
@@ -63,11 +63,11 @@ const OurTestimonial = () => {
     };
 
     useEffect(() => {
-        AOS.init({
-            duration: 700,
-            once: false,
-            easing: "ease-in-out",
-        });
+        // AOS.init({
+        //     duration: 700,
+        //     once: false,
+        //     easing: "ease-in-out",
+        // });
         const handleScroll = () => {
             AOS.refresh();
         };
@@ -80,20 +80,21 @@ const OurTestimonial = () => {
     }, []);
 
     return (
-        <div className='py-20 lg:px-20 px-6 bg-white'>
-            <div className='text-center'>
-                <h1 className='text-[#185e9a] text-2xl font-bold underline'>
-                    # Our Testimonial
-                </h1>
+        <div className='py-20 lg:px-20 px-6 bg-gray-200'>
+           <div className='text-center'>
+  <p className="text-orange-600 text-xl font-semibold mb-2">
+    Innovation Hub
+  </p>
 
-                <p className='text-5xl font-bold font-serif py-6 text-black'>
-                    <span className='text-5xl text-[#185e9a]'>What our</span> clients says?
-                </p>
+  <h2 className="text-4xl text-[#0b3a74] font-bold mb-4">
+    Empowering Businesses with Next-Gen Digital Solutions.
+  </h2>
 
-                <div className="pt-4 w-full flex justify-center items-center">
-                    <hr className="w-[15%] border-t-4 border-blue-800" />
-                </div>
-            </div>
+  <div className="pt-4 w-full flex justify-center items-center">
+    <hr className="w-[15%] border-t-4 border-[#0b3a74]" />
+  </div>
+</div>
+
 
             <div data-aos="zoom-in-up" className="relative mt-16 w-full ">
                 <button
@@ -126,18 +127,18 @@ const OurTestimonial = () => {
                 >
                     {teamMembers.map((item, index) => (
                         <div key={index} className="px-1 md:px-4 py-8">
-                            <div className="flex flex-col  hover:border-orange-400 items-center text-center shadow-lg rounded-2xl bg-white transition-transform duration-300 hover:scale-105 group">
+                            <div className="flex flex-col  hover:border-orange-400 items-center text-center shadow-lg rounded-xl bg-white transition-transform duration-500 hover:scale-105 group">
                                 <div>
                                     <img
                                         src={item.image}
                                         alt={item.name}
-                                        className="h-40 w-40 rounded-full object-cover mt-10 shadow-[0_0_0_4px_#d1d5db] transition-all duration-300 hover:scale-110 group-hover:shadow-orange-500"
+                                        className="h-40 w-40 rounded-full object-cover mt-10 shadow-[0_0_0_4px_#d1d5db] transition-all duration-500 hover:scale-110 group-hover:shadow-orange-500"
                                     />
                                 </div>
-                                <h1 className="pt-10 text-2xl font-semibold text-gray-800">{item.name}</h1>
+                                <h1 className="pt-10 text-2xl font-semibold text-[#0b3a74]">{item.name}</h1>
 
                                 <p
-                                    className="py-4 px-4 text-gray-600 overflow-hidden text-ellipsis max-w-[400px]"
+                                    className="py-4 px-4 text-gray-600 overflow-hidden text-ellipsis max-w-[400px] text-justify "
                                     // style={{
                                     //     display: "-webkit-box",
                                     //     WebkitBoxOrient: "vertical",
@@ -151,7 +152,7 @@ const OurTestimonial = () => {
                                     {item.description}
                                 </p>
 
-                                <h2 className="text-lg font-semibold text-gray-700 py-6 group-hover:text-orange-500">{item.role}</h2>
+                                <h2 className="text-lg text-[#0b3a74] font-semibold text-gray-700 py-6 group-hover:text-orange-500">{item.role}</h2>
                             </div>
                         </div>
                     ))}

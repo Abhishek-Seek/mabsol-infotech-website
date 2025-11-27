@@ -1,191 +1,178 @@
 "use client";
-
-import { Button, Card } from "antd";
-import { div } from "framer-motion/client";
+import Image from "next/image";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { FcEditImage, FcElectronics, FcGlobe, FcPlanner } from "react-icons/fc";
 
-// const image = [
-//   {
-//     image: "/1.webp",
-//   },
-//   {
-//     image: "/2.webp",
-//   },
-//   {
-//     image: "/3.webp",
-//   },
-//   {
-//     image: "/4.png",
-//   },
-//   {
-//     image: "/5.jpg",
-//   },
-//   {
-//     image: "/1.webp",
-//   },
-//   {
-//     image: "/1.webp",
-//   },
-//   {
-//     image: "/1.webp",
-//   },
-// ];
-
-const HomePage = () => {
-  const images = [
-    "images/background.jpg",
-    "images/background2.jpg",
-    "images/background.avif",
+export default function HeroSection() {
+  const services = [
+    {
+      icon: "/icons/accounting.png",
+      title: "Accounting Software",
+      desc: "Manage billing, inventory, GST, and financial reports with smart automated accounting tools designed to simplify your daily business operations.",
+    },
+    {
+      icon: "/icons/coding.png",
+      title: "Web Development",
+      desc: "From design to deployment, we deliver high-performance websites that enhance your online presence and business growth.",
+    },
+    {
+      icon: "/icons/erp-icon.png",
+      title: "ERP Software",
+      desc: "Streamline your business operations with ERP solutions that manage inventory, sales, accounts, and reporting in one centralized system.",
+    },
+    {
+      icon: "/icons/payroll.png",
+      title: "Payroll Software",
+      desc: "Automate salary processing, attendance tracking, and compliance with smart payroll tools designed for smooth HR management.",
+    },
   ];
 
-  const [index, setIndex] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((preIndex) => (preIndex + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="relative">
-      <div className="relative w-full min-h-[80vh]">
-        <div
-          style={{
-            backgroundImage: `url(${images[index]})`,
-            transition: "background-image 1s ease-in-out",
-          }}
-          className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
-        ></div>
+    <div>
+    <header className="relative w-full overflow-hidden text-white bg-gradient-to-br from-[#080d1f] via-[#0f234a] to-[#070b1a]">
+      
+      {/* Soft Glow Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-transparent pointer-events-none" />
 
-        {/* <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div> */}
+      {/* Floating Blob Light */}
+      <div className="absolute right-0 top-20 w-72 h-72 bg-blue-500/20 blur-[120px] rounded-full animate-pulse" />
 
-        <div className="relative z-10 flex flex-col h-[80vh] justify-center items-center gap-6 px-4 text-center bg-black/50 text-white">
-          <h1 className="text-3xl lg:text-5xl text-center font-bold max-w-[700px] pt-6">
-            Smart Solutions for Smarter Business Management
-          </h1>
+      {/* Floating Blob Light Left */}
+      <div className="absolute left-0 bottom-20 w-64 h-64 bg-purple-500/20 blur-[120px] rounded-full animate-pulse" />
 
-          <p className="text-center lg:max-w-[800px] w-full lg:leading-8">
-            Mabsol Infotech empowers businesses with cutting-edge software
-            solutions like Marg, Tally, MR Reporting, and greytHR. From
-            accounting to HR management, we simplify your operations and ensure
-            seamless workflows with top-notch customer support.
+      {/* Network Line Background */}
+      <div className="absolute inset-0 opacity-20">
+        <svg viewBox="0 0 800 400" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#ffffff35" strokeWidth="1">
+            <circle cx="120" cy="80" r="2" />
+            <circle cx="300" cy="210" r="2" />
+            <circle cx="520" cy="140" r="2" />
+            <circle cx="720" cy="260" r="2" />
+
+            <line x1="120" y1="80" x2="300" y2="210" />
+            <line x1="300" y1="210" x2="520" y2="140" />
+            <line x1="520" y1="140" x2="720" y2="260" />
+            <line x1="120" y1="80" x2="520" y2="140" />
+          </g>
+        </svg>
+      </div>
+
+      {/* MAIN GRID */}
+      <section className="relative z-20 max-w-7xl mx-auto px-2 py-24 grid lg:grid-cols-2 gap-3 items-center">
+
+        {/* LEFT CONTENT */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-7"
+        >
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold leading-tight"
+          >
+            Smart Solutions for <br />
+            <span className="text-orange-400 drop-shadow">
+            Smarter Business Management
+            </span>
+          </motion.h1>
+
+          <motion.p
+            className="text-xl italic font-light"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <span className="text-white/90">You Imagine.</span>{" "}
+            <span className="bg-orange-400 text-white px-4 py-1 font-bold rounded-sm shadow">
+              We Create.
+            </span>
+          </motion.p>
+
+          <p className="text-white/85 max-w-xl text-lg leading-relaxed">
+            Mabsol Infotech empowers businesses with modern solutions like Marg, Tally,
+            MR Reporting, and greytHR. We streamline operations with automation,
+            accuracy, and next-level support — giving your business power to grow faster.
           </p>
 
-          <div
-            data-aos="fade-up"
-            className="flex justify-start items-center text-start"
-          >
-            <Link href="https://mabsolinfotech.com/tally/">
-              <Button className="!py-6 !px-8 !rounded-none !text-md text-white!  hover:!bg-blue-900 !bg-transparent">
-                About Us
-              </Button>
+          {/* BUTTONS */}
+          <div className="pt-1 flex gap-5">
+
+            <Link href="/contact-us">
+              <button className="px-6 py-2 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 hover:-translate-y-1 transition-all duration-300 text-sm shadow">
+                Contact Us
+              </button>
             </Link>
           </div>
-        </div>
-      </div>
-      <div className=" relative z-30 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-10 lg:px-20 px-6 bottom-16">
-        <Card
-          data-aos="fade-right"
-           styles={{
-            body: { padding: "24px"},
-          }}
-          classNames={{
-            body: "flex flex-col items-center text-center  gap-2 lg:gap-6",
-          }}
-        >
-          <FcEditImage className="text-6xl text-[#185e9a]" />
-          <h1 className="text-3xl font-serif font-bold text-[#185e9a]">
-            Accounting Software
-          </h1>
-          <p className="text-lg italic">
-            Simplify financial management with tools like Tally, Marg, and Busy
-            for invoicing, GST, and reporting.
-          </p>
-          <Button className="!bg-[#185e9a] !py-5 !px-8 !rounded-none !text-white">
-            View
-          </Button>
-        </Card>
+        </motion.div>
 
-        <Card
-          data-aos="fade-right"
-          styles={{
-            body: { padding: "24px"},
-          }}
-          classNames={{
-            body: "flex flex-col items-center text-center  gap-2 lg:gap-6",
-          }}
+        {/* RIGHT ILLUSTRATION */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center drop-shadow-[0_25px_40px_rgba(0,0,0,0.4)]"
         >
-          {/* <MailFilled/> */}
-          <FcGlobe className="text-6xl text-[#185e9a]" />
-          <h1 className="text-3xl font-serif font-bold text-[#185e9a]">
-            Web Development
-          </h1>
-          <p className="text-lg italic">
-            We design responsive, user-friendly websites to enhance your online
-            presence and drive engagement.
-          </p>
-          <Button className="!bg-[#185e9a] !py-5 !rounded-none !px-8 !text-white">
-            View
-          </Button>
-        </Card>
-        <Card
-          data-aos="fade-left"
-          // styles={{
-          //   body: {
-          //     display: "flex",
-          //     flexDirection: "column",
-          //     gap: "10px",
-          //     alignItems: "center",
-          //     textAlign: "center",
-          //   },
-          // }}
-           styles={{
-            body: { padding: "24px"},
-          }}
-          classNames={{
-            body: "flex flex-col items-center text-center  gap-2 lg:gap-6",
-          }}
-        >
-          {/* <MailFilled/> */}
-          <FcPlanner className="text-6xl text-[#185e9a]" />
-          <h1 className="text-3xl font-serif font-bold text-[#185e9a]">
-            ERP Software
-          </h1>
-          <p className="text-lg italic">
-            Optimize business operations with ERP solutions that integrate
-            inventory, resource planning, and more.
-          </p>
-          <Button className="!bg-[#185e9a] !py-5 !px-8 !rounded-none !text-white">
-            View
-          </Button>
-        </Card>
-        <Card
-          data-aos="fade-left"
-          styles={{
-            body: { padding: "24px"},
-          }}
-          classNames={{
-            body: "flex flex-col items-center text-center  gap-2 lg:gap-6",
-          }}
-        >
-          {/* <MailFilled /> */}
-          <FcElectronics className="text-6xl text-[#185e9a]" />
-          <h1 className="text-3xl font-bold text-[#185e9a] font-serif">
-            Payroll Software
-          </h1>
-          <p className="text-lg italic">
-            Automate payroll and compliance with reliable tools like greytHR,
-            saving time and ensuring accuracy.
-          </p>
-          <Button className="!bg-[#185e9a] !rounded-none !py-5 !px-8 !text-white">
-            View
-          </Button>
-        </Card>
+          <Image
+            src="/images/erp-custom.webp"
+            alt="Hero Illustration"
+            width={550}
+            height={550}
+            className="max-w-[900px] w-full h-[460px] object-cover"
+          />
+        </motion.div>
+      </section>
+
+      {/* Bottom Wave */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden">
+        <svg viewBox="0 0 1440 120" className="w-full">
+          <path
+            fill="#ffffff"
+            d="M0,96L48,80C96,64,192,32,288,32C384,32,480,64,576,69.3C672,75,768,53,864,42.7
+             C960,32,1056,32,1152,37.3C1248,43,1344,53,1392,58.7L1440,64L1440,120L0,120Z"
+          />
+        </svg>
+      </div>
+    </header>
+    {/* cards boxes */}
+ <div className="relative z-30 w-full max-w-7xl mx-auto mt-4 px-6 lg:px-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        {services.map((item, i) => (
+          <div
+            key={i}
+            className="relative bg-white rounded-xl border border-gray-300 
+            shadow-md p-8 text-center overflow-hidden 
+            group hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+          >
+            {/* ⭐ Default Visible Content (Icon + Heading) */}
+            <div className="relative z-10 group-hover:opacity-0 transition-all duration-300">
+              <Image
+                src={item.icon}
+                alt={item.title}
+                width={80}
+                height={150}
+                className="mx-auto mb-4"
+              />
+              <h1 className="text-xl font-bold text-[#0b3a74]">
+                {item.title}
+              </h1>
+            </div>
+
+            {/* ⭐ HOVER OVERLAY (Slides From Top) */}
+            <div
+              className="absolute inset-0 bg-gradient-to-br from-[#080d1f] via-[#0f234a] to-[#070b1a]
+              text-white p-6 flex items-center justify-center text-center
+              translate-y-[-100%] group-hover:translate-y-0 
+              transition-all duration-500 ease-out rounded-xl"
+            >
+              <p className="text-base leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+
       </div>
     </div>
-  );
-};
 
-export default HomePage;
+    </div>
+  );
+}
