@@ -94,7 +94,7 @@ const Marg = () => {
         <div className="w-full min-h-screen bg-gradient-to-b from-[#0b3a74] to-[#185e9a] text-white overflow-hidden">
             {/* Top Section */}
             <div
-                className="h-[60vh] flex flex-col justify-center items-center bg-fixed bg-cover bg-center relative"
+                className="h-[60vh] flex flex-col justify-center items-center bg-fixed bg-cover bg-center relative text-center"
                 style={{
                     backgroundImage:
                         "linear-gradient(rgba(0, 44, 95, 0.7), rgba(0, 44, 95, 0.7)), url('/images/our3.webp')",
@@ -103,10 +103,10 @@ const Marg = () => {
             >
 
                 {/* Title */}
-                <h1 className="text-6xl font-bold text-white drop-shadow-md mt-4">Marg ERP Software</h1>
+                <h1 className="text-6xl font-bold text-white drop-shadow-md mt-4 text-center">Marg ERP Software</h1>
 
                 {/* Subtitle */}
-                <p className="text-lg mt-3 text-white">Smart Billing, Accounting & Inventory Software trusted by 1M+ businesses.</p>
+                <p className="text-lg mt-3 text-white text-center">Smart Billing, Accounting & Inventory Software trusted by 1M+ businesses.</p>
             </div>
 
             {/* Content Section */}

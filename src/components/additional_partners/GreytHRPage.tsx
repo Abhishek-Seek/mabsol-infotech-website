@@ -10,19 +10,19 @@ export default function GreytHRPage() {
     <div className="bg-gray-50 text-gray-800">
       {/* ===== HERO SECTION ===== */}
       <div
-        className="h-[60vh] flex flex-col justify-center items-center bg-fixed bg-cover bg-center relative"
+        className="h-[60vh] flex flex-col justify-center items-center bg-fixed bg-cover bg-center relative text-center"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0, 44, 95, 0.7), rgba(0, 44, 95, 0.7)), url('/images/our3.webp')",
           filter: "brightness(0.9)",
         }}
       >
-        <h1 className="text-5xl lg:text-7xl font-bold text-white drop-shadow-md mt-4">
+        <h1 className="text-5xl lg:text-7xl font-bold text-white drop-shadow-md mt-4 text-center">
           Make Quick Work of{" "}
           <span className="!text-orange-500">Hard Work</span>
         </h1>
 
-        <p className="text-lg mt-3 text-white">
+        <p className="text-lg mt-3 text-white text-center">
           Get rid of repetitive HR tasks and manual spreadsheets. Automate,
           centralize, and empower employees with modern HRMS.
         </p>
