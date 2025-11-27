@@ -80,7 +80,7 @@ const OurTestimonial = () => {
     }, []);
 
     return (
-        <div className='py-20 lg:px-20 px-6 bg-gray-200'>
+        <div className='py-20 lg:px-20 px-6 bg-[#f8fafc]"'>
            <div className='text-center'>
   <p className="text-orange-600 text-xl font-semibold mb-2">
     Innovation Hub

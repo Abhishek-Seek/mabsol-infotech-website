@@ -37,8 +37,8 @@ export default function Home() {
       <AboutUs />
       <OurProduct />
       <CompanyProformance />
-      <OurService />
       <Technology />
+      <OurService />
       {/* <CaseStudy /> */}
       {/* <OurUsp/> */}
       <ExecutiveTeam />

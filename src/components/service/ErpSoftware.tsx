@@ -47,17 +47,17 @@ export default function ErpSoftware() {
         <div className="bg-[#f9fbff] text-gray-800">
             {/* Top Section */}
             <div
-                className="h-[60vh] flex flex-col justify-center items-center bg-fixed bg-cover bg-center relative"
+                className="h-[60vh] flex flex-col justify-center items-center bg-fixed bg-cover bg-center relative text-center"
                 style={{
                     backgroundImage:
                         "linear-gradient(rgba(0, 44, 95, 0.7), rgba(0, 44, 95, 0.7)), url('/images/our4.webp')",
                     filter: "brightness(0.9)",
                 }}
             >
-                <h1 className="text-6xl font-bold text-white drop-shadow-md mt-4">
+                <h1 className="text-6xl font-bold text-white drop-shadow-md mt-4 text-center">
                     ERP Software
                 </h1>
-                <p className="text-lg mt-3 text-white">
+                <p className="text-lg mt-3 text-white text-center">
                     Manage your entire organization with real-time agility and unified
                     data insights for smarter growth.
                 </p>

@@ -11,7 +11,7 @@ type FormData = {
   phone: string;
   subject: string;
 };
-export default function ContactSection() {
+export default function ContactUsPage() {
   const [form] = Form.useForm();
   const [emailVerified, setEmailVerified] = useState(false);
   const [otpSent, setOtpSent] = useState(false);

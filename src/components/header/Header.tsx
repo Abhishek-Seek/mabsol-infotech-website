@@ -689,7 +689,7 @@ const Header = () => {
               </Button>
             </div>
 
-            <Link href="/contact-us">
+            <Link href="/contact">
               <div
                 data-aos="fade-down"
                 data-aos-easing="linear"
