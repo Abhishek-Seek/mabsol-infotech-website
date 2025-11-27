@@ -79,42 +79,42 @@ const Header = () => {
   // ];
 
   const Content = () => (
-    <div className="bg-[#185e9a] text-white flex flex-col gap-4 p-8 ">
+    <div className="bg-[#0F2A4A] text-white flex flex-col gap-4 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
-        <a href="/tallys" className="!text-blue-300 select-none">
+        <a href="/tallys" className="!text-[#FFFFFF] select-none">
           Tally
         </a>
-        <a href="/margErp" className="!text-blue-300 select-none">
+        <a href="/margErp" className="!text-[#FFFFFF] select-none">
           MArg ERP 9+
         </a>
-        <a href="/reporting" className="!text-blue-300 select-none">
+        <a href="/reporting" className="!text-[#FFFFFF] select-none">
           MR Reporting
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           HR Payroll Portal
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           DCR Portal
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Institute Portal
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           School Portal
         </a>
-        <a href="/hotel-login" className="!text-blue-300 select-none">
+        <a href="/hotel-login" className="!text-[#FFFFFF] select-none">
           Hotel Portal
         </a>
       </div>
@@ -122,21 +122,21 @@ const Header = () => {
   );
 
   const Mega = () => (
-    <div className="bg-[#185e9a] text-white flex flex-col gap-0 p-8 ">
+    <div className="bg-[#0F2A4A] text-white flex flex-col gap-0 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
-        <a href="/website-development" className="!text-blue-300 select-none">
+        <a href="/website-development" className="!text-[#FFFFFF] select-none">
           Website Development
         </a>
-        <a href="/accounting-software" className="!text-blue-300 select-none">
+        <a href="/accounting-software" className="!text-[#FFFFFF] select-none">
           Accounting Software
         </a>
-        <a href="/payroll-software" className="!text-blue-300 select-none">
+        <a href="/payroll-software" className="!text-[#FFFFFF] select-none">
           PayRoll Software
         </a>
-        <a href="/erp-software" className="!text-blue-300 select-none">
+        <a href="/erp-software" className="!text-[#FFFFFF] select-none">
           ERP Software
         </a>
-        <a href="/sfa-software" className="!text-blue-300 select-none">
+        <a href="/sfa-software" className="!text-[#FFFFFF] select-none">
           SFA Software
         </a>
       </div>
@@ -144,28 +144,28 @@ const Header = () => {
   );
 
   const MegaMenu = () => (
-    <div className="bg-[#185e9a] text-white grid grid-cols-2 gap-0 p-14 ">
+    <div className="bg-[#0F2A4A] text-white grid grid-cols-2 gap-0 p-14 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
-        <span className="">Gallery</span>
-        <a href="/gallery" className="!text-blue-300">
+        <span className="text-[#D7E2F5]">Gallery</span>
+        <a href="/gallery" className="!text-[#FFFFFF]">
           Gallery
         </a>
       </div>
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
-        <span>Additional Partners</span>
-        <a href="/marg" className="!text-blue-300">
+        <span className="text-[#D7E2F5]">Additional Partners</span>
+        <a href="/marg" className="!text-[#FFFFFF]">
           Marg
         </a>
-        <a href="/tally" className="!text-blue-300">
+        <a href="/tally" className="!text-[#FFFFFF]">
           Tally
         </a>
-        <a href="/mr-reporting" className="!text-blue-300">
+        <a href="/mr-reporting" className="!text-[#FFFFFF]">
           MR Reporting
         </a>
-        <a href="/greytHR" className="!text-blue-300">
+        <a href="/greytHR" className="!text-[#FFFFFF]">
           Greythr
         </a>
-        <a href="/clinic-management" className="!text-blue-300">
+        <a href="/clinic-management" className="!text-[#FFFFFF]">
           Clinic Managment
         </a>
       </div>
@@ -175,72 +175,72 @@ const Header = () => {
 
   const MegaMenuContent = () => (
     <div
-      className=" text-white grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 2xl:gap-10 p-14"
-      style={{ backgroundColor: "#185e9a" }}
+      className="bg-[#0F2A4A]! text-white grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 2xl:gap-10 p-14"
+      // style={{ backgroundColor: "#185e9a" }}
     >
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
-        <span className="">Employee</span>
+        <span className="text-[#D7E2F5]">Employee</span>
         <a
           href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
-          className="!text-blue-300  select-none"
+          className="!text-[#FFFFFF]  select-none"
         >
           Employee Attendance
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Employee Login
         </a>
       </div>
 
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
-        <span className="">HR Payroll</span>
+        <span className="text-[#D7E2F5]">HR Payroll</span>
         <a
           href="https://humanresources.mabsolinfotech.com/admin/index.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Admin Login
         </a>
         <a
           href="https://humanresources.mabsolinfotech.com/employee/"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Employee Login
         </a>
       </div>
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
-        <span>HR Payroll Demo</span>
+        <span className="text-[#D7E2F5]">HR Payroll Demo</span>
         <a
           href="https://demo.mabsolinfotech.com/hr/admin/index"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Admin Portal
         </a>
         <a
           href="https://demo.mabsolinfotech.com/hr/employee/"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Empoyee Portal
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/demo_contact_hr.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Get Demo
         </a>
       </div>
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
-        <span>DCR</span>
+        <span className="text-[#D7E2F5]">DCR</span>
         <a
           href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Employee Login
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Report
         </a>
@@ -248,65 +248,65 @@ const Header = () => {
       </div>
 
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
-        <span>DCR Demo</span>
+        <span className="text-[#D7E2F5]">DCR Demo</span>
         <a
           href="https://demo.mabsolinfotech.com/crm/admin/admin_login.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Admin Portal
         </a>
         <a
           href="https://demo.mabsolinfotech.com/crm/employee/employee_register.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Employee Portal
         </a>
         <a
           href="https://demo.mabsolinfotech.com/crm/"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Users Portal
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/demo_contact_dcr.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Get DCR Demo
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/pricing_contacts.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Get Demo Or Pricing Detail
         </a>
       </div>
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
-        <span>Customer Portal</span>
+        <span className="text-[#D7E2F5]">Customer Portal</span>
         <a
           href="https://mabsolinfotech.com/crmtest/"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Raise A Ticket
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Report
         </a>
         {/* <a href="#">Get Demo</a> */}
       </div>
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
-        <span>Testing Portal</span>
+        <span className="text-[#D7E2F5]">Testing Portal</span>
         <a
           href="https://mabsolinfotech.com/crmtest/employee/employee_register.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           DCR Portal
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/admin/admin_login.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Customer Portal
         </a>
@@ -314,67 +314,67 @@ const Header = () => {
       </div>
 
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
-        <span>Download Merg ERP Setup</span>
-        <a href="#" className="!text-blue-300 select-none">
+        <span className="text-[#D7E2F5]">Download Merg ERP Setup</span>
+        <a href="#" className="!text-[#FFFFFF] select-none">
           Download Merg ERP Setup
         </a>
       </div>
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
-        <span>Institute Portal Demo</span>
+        <span className="text-[#D7E2F5]">Institute Portal Demo</span>
         <a
           href="https://demo.mabsolinfotech.com/institute/admin/"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Admin Portal
         </a>
         <a
           href="https://demo.mabsolinfotech.com/institute/staff/"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Staff Portal
         </a>
         <a
           href="https://demo.mabsolinfotech.com/institute/student/"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Student Portal
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/demo_contact.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Get Demo
         </a>
       </div>
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
-        <span>School Portal</span>
+        <span className="text-[#D7E2F5]">School Portal</span>
         <a
           href="https://sms.mabsolinfotech.com/school/admin"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Admin Portal
         </a>
         <a
           href="https://sms.mabsolinfotech.com/school/students"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Student Portal
         </a>
         <a
           href="https://sms.mabsolinfotech.com/school/teachers"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Teacher Portal
         </a>
         <a
           href="https://sms.mabsolinfotech.com/school/reception"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Reception Portal
         </a>
         <a
           href="https://mabsolinfotech.com/crmtest/demo_contact_school.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Get Demo
         </a>
@@ -395,10 +395,10 @@ const Header = () => {
         </a>
       </div> */}
       <div className="text-sm font-bold flex flex-col gap-3 font-serif">
-        <span>Wallet Recharge</span>
+        <span className="text-[#D7E2F5]">Wallet Recharge</span>
         <a
           href="https://mabsolinfotech.com/crmtest/wallet_recharge.php"
-          className="!text-blue-300 select-none"
+          className="!text-[#FFFFFF] select-none"
         >
           Wallet Recharge
         </a>
@@ -407,9 +407,9 @@ const Header = () => {
   );
 
   const MegaMenuHotel = () => (
-    <div className="bg-[#185e9a] text-white flex flex-col gap-4 p-8 ">
+    <div className="bg-[#0F2A4A] text-white flex flex-col gap-4 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
-        <a href="/hotel-login" className="!text-blue-300 select-none">
+        <a href="/hotel-login" className="!text-[#FFFFFF] select-none">
           Hotel Portal
         </a>
       </div>
