@@ -57,21 +57,21 @@ const ExecutiveTeam = () => {
               {/* Info */}
               <div className="flex flex-col items-center text-center">
                 <span className="text-lg font-semibold text-orange-600">{member.role}</span>
-                <span className="text-xl font-bold text-[#0b3a74] mt-1">{member.name}</span>
-                <p className="text-sm sm:text-base text-gray-700 text-justify mt-4 italic">
+                <span className="text-2xl font-bold text-[#0b3a74] mt-1">{member.name}</span>
+                <p className="text-sm sm:text-base text-gray-700 text-justify mt-4">
                   {member.description}
                 </p>
 
                 {/* Divider */}
                 <div className="pt-6 w-full flex justify-center">
-                  <hr className="w-[80%] border-t-2 border-[#185e9a]" />
+                  <hr className="w-[80%] border-t-2 border-[#0b3a74]" />
                 </div>
 
                 {/* Social Icons */}
                 <div className="flex gap-4 text-xl mt-4">
-                  <a href="#" className='!text-[#185e9a]'><FacebookFilled /></a>
-                  <a href="#" className='!text-[#185e9a]'><GoogleOutlined /></a>
-                  <a href="#" className='!text-[#185e9a]'><TwitterOutlined /></a>
+                  <a href="#" className='!text-[#0b3a74]'><FacebookFilled /></a>
+                  <a href="#" className='!text-[#0b3a74]'><GoogleOutlined /></a>
+                  <a href="#" className='!text-[#0b3a74]'><TwitterOutlined /></a>
                 </div>
               </div>
             </div>
