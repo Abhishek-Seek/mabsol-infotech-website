@@ -78,17 +78,29 @@ export default function HeroSection() {
             <div className="flex flex-col lg:flex-row gap-6">
               <div className="pt-1 flex gap-5">
                 <Link href="/contact">
-                  <button className="px-6 py-2 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 hover:-translate-y-1 transition-all duration-300 text-sm shadow">
+                  <button className="px-6 py-2 bg-orange-500 text-white">
                     Contact Us
                   </button>
                 </Link>
               </div>
               <div className="pt-1 flex gap-5">
-                <a href="https://mabsolinfotech.com/">
+                {/* <a
+                  href="https://mabsolinfotech.cloud/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <button className="px-6 py-2 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 hover:-translate-y-1 transition-all duration-300 text-sm shadow">
                     Mabsol Main Portal
                   </button>
-                </a>
+                </a> */}
+                <button
+                  onClick={() =>
+                    window.open("https://mabsolinfotech.in/", "_self")
+                  }
+                  className="px-6 py-2 bg-orange-500 text-white"
+                >
+                  Mabsol Main Portal
+                </button>
               </div>
             </div>
           </motion.div>
