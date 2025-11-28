@@ -481,7 +481,7 @@ const Header = () => {
         <div className="flex justify-center items-center gap-8 xl:gap-16 min-w-0 overflow-hidden">
           <nav
             data-aos="fade-up"
-            className="lg:flex flex-wrap hidden justify-center gap-4 xl:gap-6 items-center text-white text-sm font-bold"
+            className="lg:flex flex-wrap hidden justify-center gap-4 items-center text-white text-sm font-bold"
             style={{ fontFamily: "Roboto,sans-serif" }}
           >
             <div>
