@@ -52,7 +52,7 @@ export async function POST(request: Request) {
 
       <p>
         Need help? Contact us at
-        <a href="mailto:support@mabsolinfotech.com" style="color: #1565c0;">support@mabsolinfotech.com</a>.
+        <a href="mailto:support@mabsolinfotech.com" style="color: #1565c0;">support@mabsolinfotech.com</a>
       </p>
     </div>
 
