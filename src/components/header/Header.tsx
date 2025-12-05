@@ -409,7 +409,7 @@ const Header = () => {
   const MegaMenuHotel = () => (
     <div className="bg-[#0F2A4A] text-white flex flex-col gap-4 p-8 ">
       <div className="text-sm font-bold flex flex-col gap-4 font-serif">
-        <a href="https://hotel.mabsolinfotech.cloud/" className="!text-[#D7E2F5] hover:!text-[#00C16E] select-none">
+        <a href="https://hotel.mabsolinfotech.cloud/login" className="!text-[#D7E2F5] hover:!text-[#00C16E] select-none">
           Hotel Portal
         </a>
       </div>
@@ -1678,7 +1678,7 @@ const Header = () => {
                   className="overflow-hidden bg-sky-blue-900 border-none rounded text-sm mt-2"
                 >
                   <Link
-                    href="https://hotel.mabsolinfotech.cloud/"
+                    href="https://hotel.mabsolinfotech.cloud/login"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block hover:border-b hover:border-gray-300 p-2 pt-0 !text-white"
